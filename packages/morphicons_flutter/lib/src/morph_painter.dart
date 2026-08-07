@@ -9,20 +9,21 @@
 /// Only touches dart:ui here — never in morphicons_core.
 library;
 
-import 'dart:ui' as ui;
+import 'dart:typed_data';
 
+import 'package:flutter/rendering.dart';
 import 'package:morphicons_core/morphicons_core.dart';
 
 /// CustomPainter for rendering a morph plan at progress t.
 ///
 /// When [t] >= 1, paints the exact canonical shape from [canonicalPaths]
 /// instead of the interpolated polyline for pixel-perfect rest state.
-class MorphPainter extends ui.CustomPainter {
+class MorphPainter extends CustomPainter {
   /// The morph plan to render. Null when at rest (use canonicalPaths).
   final MorphPlan? plan;
 
   /// Interpolated output buffers (preallocated, zero allocation per frame).
-  final List<ui.Float64List>? out;
+  final List<Float64List>? out;
 
   /// Progress through the morph (0..1). Values > 1 are extrapolation (overshoot).
   final double t;
@@ -35,7 +36,11 @@ class MorphPainter extends ui.CustomPainter {
   final double strokeWidth;
 
   /// Stroke color for the path.
-  final ui.Color color;
+  final Color color;
+
+  /// Icon coordinate-space extent (icons are drawn in this box and scaled
+  /// to the paint size). Defaults to the canonical 24×24 grid.
+  final double viewBox;
 
   MorphPainter({
     required this.plan,
@@ -43,36 +48,44 @@ class MorphPainter extends ui.CustomPainter {
     required this.t,
     this.canonicalPaths,
     this.strokeWidth = 2,
-    this.color = const ui.Color(0xFF000000),
+    this.color = const Color(0xFF000000),
+    this.viewBox = 24,
   });
 
   @override
-  void paint(ui.Canvas canvas, ui.Size size) {
-    final paint = ui.Paint()
-      ..style = ui.PaintingStyle.stroke
-      ..strokeCap = ui.StrokeCap.round
-      ..strokeJoin = ui.StrokeJoin.round
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round
+      ..strokeJoin = StrokeJoin.round
       ..strokeWidth = strokeWidth
       ..color = color;
 
-    // When t >= 1 and we have canonical paths, render them exactly.
-    // This ensures pixel-perfect matching with a static icon at rest.
-    if (t >= 1 && canonicalPaths != null) {
-      final path = _cubicsToPath(canonicalPaths!);
+    // Icon geometry lives in the viewBox square; scale to the paint size.
+    canvas.save();
+    canvas.scale(size.width / viewBox, size.height / viewBox);
+    try {
+      // When t >= 1 and we have canonical paths, render them exactly.
+      // This ensures pixel-perfect matching with a static icon at rest.
+      if (t >= 1 && canonicalPaths != null) {
+        final path = _cubicsToPath(canonicalPaths!);
+        canvas.drawPath(path, paint);
+        return;
+      }
+
+      // Otherwise, render the interpolated polyline.
+      if (plan == null || out == null) return;
+
+      // Interpolate to the current t.
+      interpPolar(plan!, t, out!);
+
+      // Build the path from interpolated polyline points.
+      final closed = plan!.items.map((it) => it.closed).toList();
+      final path = _polylineToPath(out!, closed);
       canvas.drawPath(path, paint);
-      return;
+    } finally {
+      canvas.restore();
     }
-
-    // Otherwise, render the interpolated polyline.
-    if (plan == null || out == null) return;
-
-    // Interpolate to the current t.
-    interpPolar(plan!, t, out!);
-
-    // Build the path from interpolated polyline points.
-    final closed = plan!.items.map((it) => it.closed).toList();
-    final path = _polylineToPath(out!, closed);
-    canvas.drawPath(path, paint);
   }
 
   @override
@@ -85,9 +98,9 @@ class MorphPainter extends ui.CustomPainter {
   }
 }
 
-/// Converts a list of CubicPath to a single dart:ui.Path.
-ui.Path _cubicsToPath(List<CubicPath> paths) {
-  final path = ui.Path();
+/// Converts a list of CubicPath to a single dart:Path.
+Path _cubicsToPath(List<CubicPath> paths) {
+  final path = Path();
   for (final cubic in paths) {
     final pts = cubic.pts;
     if (pts.length < 2) continue;
@@ -108,9 +121,9 @@ ui.Path _cubicsToPath(List<CubicPath> paths) {
   return path;
 }
 
-/// Converts interpolated polyline points to a dart:ui.Path.
-ui.Path _polylineToPath(List<ui.Float64List> subs, List<bool> closed) {
-  final path = ui.Path();
+/// Converts interpolated polyline points to a dart:Path.
+Path _polylineToPath(List<Float64List> subs, List<bool> closed) {
+  final path = Path();
   for (var k = 0; k < subs.length; k++) {
     final pts = subs[k];
     final n = pts.length ~/ 2;

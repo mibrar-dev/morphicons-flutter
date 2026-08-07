@@ -10,3 +10,5 @@ export 'src/spring.dart';
 export 'src/correspondence.dart';
 export 'src/procrustes.dart';
 export 'src/resample.dart';
+export 'src/plan.dart';
+export 'src/interpolate.dart';

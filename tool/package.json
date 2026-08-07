@@ -1,0 +1,9 @@
+{
+  "name": "morphicons-lucide-extractor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "lucide": "^0.487.0"
+  }
+}

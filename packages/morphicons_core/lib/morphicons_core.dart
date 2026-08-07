@@ -7,3 +7,5 @@ export 'src/geometry.dart';
 export 'src/svg_path_parser.dart';
 export 'src/normalize.dart';
 export 'src/spring.dart';
+export 'src/correspondence.dart';
+export 'src/procrustes.dart';

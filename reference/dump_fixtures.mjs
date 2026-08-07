@@ -27,7 +27,10 @@ const PAIRS = [
   ["plus", "minus"],
 ];
 
-const arr = (f) => Array.from(f, (v) => Math.round(v * 1e6) / 1e6);
+// Full-precision dump: golden parity tests compare at 1e-9, so the point
+// clouds and centroids must not be quantized (frames stay 2-decimal via
+// serialize()).
+const arr = (f) => Array.from(f, (v) => v);
 
 const fixtures = {};
 for (const [from, to] of PAIRS) {

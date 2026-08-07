@@ -11,3 +11,6 @@ resolution: workspace
 
 dependencies:
   morphicons_core:
+
+dev_dependencies:
+  test: ^1.25.0

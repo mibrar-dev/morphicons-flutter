@@ -1,0 +1,15 @@
+name: morphicons_core
+description: >-
+  Pure-Dart similarity-transform solver for icon morphing. A faithful port of
+  the morphicons core: SVG path parsing, cubic normalization, arc-length
+  resampling, correspondence, 2D Procrustes alignment, polar interpolation and
+  spring physics. No Flutter dependency.
+version: 0.1.0
+repository: https://github.com/infinora/morphicons_flutter
+environment:
+  sdk: ^3.6.0
+
+resolution: workspace
+
+dev_dependencies:
+  test: ^1.25.0

@@ -1,0 +1,16 @@
+WORKING DIRECTORY: /Users/ibrar/Desktop/infinora.noworkspace/morph_icons_flutter
+
+PROJECT: Faithful Dart port of 'morphicons' (icon morphing library). Pure-Dart package packages/morphicons_core (NO Flutter / dart:ui imports — dart:math and dart:typed_data only). Existing files: geometry.dart (CubicPath, Sampled), svg_path_parser.dart, normalize.dart, spring.dart. JS reference: reference/morphicons/src/core/plan.ts (contains correspondence + procrustes + buildPlan). Golden fixtures: reference/fixtures.json.
+
+TASK (Phases 4+5): Port correspondence search + 2D Procrustes alignment:
+1. Read reference/morphicons/src/core/plan.ts CAREFULLY. Port ONLY the correspondence + procrustes parts (leave buildPlan/plan cache for a later phase):
+   - Correspondence: try both traversal directions, all N circular start-point rotations for closed paths, subpath matching between icon A and B by score dist(centroids) + 0.35*|deltaL| (Hungarian-style for <=8 subpaths, greedy above). Unequal subpath counts handled by DUPLICATING the nearest subpath.
+   - 2D closed-form Procrustes per subpath: theta = atan2(sxy-syx, sxx+syy); sigma = (cos(theta)*(sxx+syy)+sin(theta)*(sxy-syx))/bNormSq; residual by re-projecting. Minimal-rotation tie-break score = res + 0.05*|theta|/pi. Transcribe exactly from upstream, do not re-derive.
+   - Global hybrid pass over the concatenated cloud with block-transport bookkeeping (ca/cb centroids, block flag) exactly as upstream structures it.
+2. Create packages/morphicons_core/lib/src/correspondence.dart and packages/morphicons_core/lib/src/procrustes.dart; append both export lines to packages/morphicons_core/lib/morphicons_core.dart.
+3. Parity test packages/morphicons_core/test/procrustes_test.dart loading reference/fixtures.json (dart:io + dart:convert). Fixture shape: {pairs: {'arrow-right<->arrow-down': {d: [fromD, toD], global: {theta, sigma, residual, blockHybridApplied}, subpaths: [{from: [128 doubles], to: [128 doubles], theta, sigma, residual, ca: [2], cb: [2], closed, block}]}}}. Build Sampled objects directly from the fixture from/to arrays (they are already resampled+corresponded), run your procrustes on them, assert: per-subpath theta/sigma/residual within 1e-9; global theta/sigma/residual within 1e-9; HARD GATE: arrow-right<->arrow-down global theta == pi/2 within 1e-9 and residual < 1e-9.
+4. Run: export PATH=$HOME/flutter/bin:$PATH && cd packages/morphicons_core && dart test test/procrustes_test.dart — must pass. dart analyze clean for your files.
+
+IMPORTANT: another agent is concurrently adding resample.dart — ONLY create correspondence.dart, procrustes.dart, procrustes_test.dart; touch nothing else except the two export lines in the barrel.
+
+Summarize: files created, test count, max parity error observed.

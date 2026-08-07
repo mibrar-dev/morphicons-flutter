@@ -1,0 +1,11 @@
+name: morphicons_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.6.0
+
+workspace:
+  - packages/morphicons_core
+  - packages/morphicons_flutter
+  - packages/morphicons_lucide
+  - packages/morphicons_example

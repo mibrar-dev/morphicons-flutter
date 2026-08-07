@@ -1,0 +1,20 @@
+name: morphicons_flutter
+description: >-
+  MorphIcon widget for Flutter: similarity-aware icon morphing powered by
+  morphicons_core. Uncontrolled, controlled and imperative modes.
+version: 0.1.0
+repository: https://github.com/infinora/morphicons_flutter
+environment:
+  sdk: ^3.6.0
+
+resolution: workspace
+
+dependencies:
+  flutter:
+    sdk: flutter
+  morphicons_core:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0

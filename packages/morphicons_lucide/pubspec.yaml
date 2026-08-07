@@ -1,0 +1,13 @@
+name: morphicons_lucide
+description: >-
+  Lucide icon data for Morphicons, generated from the npm lucide package as
+  plain Dart const maps of raw SVG `d` strings.
+version: 0.1.0
+repository: https://github.com/infinora/morphicons_flutter
+environment:
+  sdk: ^3.6.0
+
+resolution: workspace
+
+dependencies:
+  morphicons_core:

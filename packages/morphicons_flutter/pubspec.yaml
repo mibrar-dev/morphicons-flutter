@@ -12,7 +12,7 @@ resolution: workspace
 dependencies:
   flutter:
     sdk: flutter
-  morphicons_core:
+  morphicons_core: ^0.1.0
 
 dev_dependencies:
   flutter_test:

@@ -10,7 +10,7 @@ environment:
 resolution: workspace
 
 dependencies:
-  morphicons_core:
+  morphicons_core: ^0.1.0
 
 dev_dependencies:
   test: ^1.25.0

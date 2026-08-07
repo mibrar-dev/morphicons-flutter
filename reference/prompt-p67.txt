@@ -1,0 +1,17 @@
+WORKING DIRECTORY: /Users/ibrar/Desktop/infinora.noworkspace/morph_icons_flutter
+
+PROJECT: Faithful Dart port of 'morphicons' (icon morphing library). Pure-Dart package packages/morphicons_core (NO Flutter / dart:ui imports — dart:math and dart:typed_data only). Existing ported files: geometry.dart, svg_path_parser.dart (parsePath), normalize.dart (iconToCubics), spring.dart, correspondence.dart (pairSubpaths and friends), procrustes.dart (centroid, procrustes, applyGlobal, PlanItem, Block, Similarity). JS reference: reference/morphicons/src/core/plan.ts, interpolate.ts, serialize.ts. Golden fixtures: reference/fixtures.json (full float64 precision).
+
+TASK (Phases 6+7): Port polar interpolation + block transport + plan builder/cache:
+1. Read reference/morphicons/src/core/interpolate.ts, serialize.ts and the buildPlan/cache parts of plan.ts CAREFULLY. Transcribe faithfully:
+   - interpPolar: per-point motion = translation + rotation(t*theta) + scale(sigma^t) applied to the residual shape difference (NOT raw x/y lerp), exactly as upstream formulas.
+   - Block transport correction so off-center subpath centroids ride the global rotation (upstream plan.ts/interpolate.ts structure — keep the same math).
+   - serialize: plan+t -> polyline 'M x y L x y...' d string at the precision upstream uses.
+   - buildPlan(from, to): resample both icons, correspondence, per-subpath + global procrustes, returns the plan object; plus the Expando/WeakMap-style cache keyed by icon identity (Expando in Dart) with cache hit/miss semantics mirroring upstream.
+2. Create packages/morphicons_core/lib/src/interpolate.dart and packages/morphicons_core/lib/src/plan.dart; append both export lines to packages/morphicons_core/lib/morphicons_core.dart. Build on the existing correspondence.dart/procrustes.dart APIs — do not duplicate their logic.
+3. Parity test packages/morphicons_core/test/interpolate_test.dart using reference/fixtures.json (path ../../reference/fixtures.json). Fixture shape: {pairs: {'menu<->x': {d: [fromD,toD], subpaths: [...], frames: {'0': ['<polyline d per subpath>', ...], '0.25': [...], '0.5': [...], '0.75': [...], '1': [...]}}}} — frames[t] is an ARRAY of serialized polyline d strings, one per subpath, at upstream's 2-decimal serialize precision. For each pair: buildPlan(fromD, toD), then for each t in [0, 0.25, 0.5, 0.75, 1] serialize each subpath and compare against the fixture frame strings point-by-point (parse both polylines numerically) with epsilon 6e-3 (fixture strings are 2-decimal rounded). Also: t=0 must reproduce the FROM icon resampled points within 1e-9, t=1 the TO icon; buildPlan cache: same identity input returns the identical cached plan object, different input rebuilds; plan() timing sanity: building a plan for two 2-subpath icons completes in well under 5ms.
+4. Run: export PATH=$HOME/flutter/bin:$PATH && cd packages/morphicons_core && dart test test/interpolate_test.dart — must pass; then full dart test + dart analyze — clean.
+
+IMPORTANT: another agent is concurrently adding resample.dart — you MAY import resample.dart symbols (resampleIcon) in plan.dart IF it already exists; if it does not exist yet, inline the resample call through normalize+correspondence only if necessary, but PREFER waiting/using resampleIcon since it will exist — check the file first. ONLY create interpolate.dart, plan.dart, interpolate_test.dart + two barrel export lines.
+
+Summarize: files, test count, max frame-parity error, plan build time observed.

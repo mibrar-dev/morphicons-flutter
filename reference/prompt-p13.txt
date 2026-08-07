@@ -1,0 +1,14 @@
+WORKING DIRECTORY: /Users/ibrar/Desktop/infinora.noworkspace/morph_icons_flutter
+
+PROJECT: Morphicons Flutter monorepo. packages/morphicons_example is a Flutter app shell (lib/main.dart placeholder) depending on morphicons_core, morphicons_flutter (MorphIcon widget + MorphPainter + MorphScheduler), morphicons_lucide (MorphIconsLucide + lucideIcons map with 1500+ icons). Read those packages' public APIs first. Plan doc: /Users/ibrar/Downloads/Morphicons Flutter Plan.md phase 13: playground with icon grid, spring picker, t-scrubber, and θ/σ/residual debug readout.
+
+TASK (Phase 13): Build the playground app in packages/morphicons_example/lib/:
+1. main.dart — MaterialApp with the playground home screen.
+2. Home screen: a morph stage showing one large MorphIcon (e.g. menu -> x) with controls below: icon pair picker (a dropdown or two icon pickers), spring preset picker (smooth/snappy/bouncy from morphicons_core SpringPreset), and a 'morph' trigger button.
+3. t-scrubber mode: a Slider 0..1 that drives MorphIcon.controlled(from:, to:, progress:) so users can scrub the interpolation manually.
+4. Icon grid screen: a scrollable grid of ~60 lucide icons (take the first 60 from lucideIcons) rendered as static stroke paths via morphicons_core + a small CustomPaint helper; tapping an icon selects it as the morph target.
+5. Debug readout panel: after buildPlan for the selected pair, show θ (global theta), σ (sigma), and residual values formatted to 4 decimals (data from the core plan API).
+6. Keep it clean Material 3, light/dark following system. No third-party deps.
+7. Verify: export PATH=$HOME/flutter/bin:$PATH && cd packages/morphicons_example && flutter analyze — clean. (Do NOT run the app; analyze + compile check is enough. You may run 'flutter build' style checks only if quick; a passing 'flutter analyze' is the acceptance gate.)
+
+Summarize files created and any API mismatches you had to work around.

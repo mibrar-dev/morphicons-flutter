@@ -9,3 +9,4 @@ export 'src/normalize.dart';
 export 'src/spring.dart';
 export 'src/correspondence.dart';
 export 'src/procrustes.dart';
+export 'src/resample.dart';

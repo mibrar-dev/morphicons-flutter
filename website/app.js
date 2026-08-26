@@ -183,6 +183,9 @@ const hero = (() => {
   const canvas = document.getElementById('heroCanvas');
   if (!canvas) return {};
   const label = document.getElementById('heroPairLabel');
+  const fromCanvas = document.getElementById('heroFromCanvas');
+  const toCanvas = document.getElementById('heroToCanvas');
+  const slowToggle = document.getElementById('heroSlow');
   const heroSection = canvas.closest('.hero') || canvas.parentElement;
   let idx = 0;
   let plan = null, out = null;
@@ -191,16 +194,33 @@ const hero = (() => {
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   let visible = true;
   let rafId = null;
+  let slow = false;
+  if (slowToggle) slowToggle.addEventListener('change', () => { slow = slowToggle.checked; });
+
+  function drawStatic(canvasEl, d) {
+    if (!canvasEl) return;
+    const fit = fitCanvas(canvasEl);
+    if (!fit) return;
+    // For static from/to, build a trivial plan and draw at t=0 or 1 without spring
+    try {
+      const soloPlan = M.buildPlan(M.resampleIcon(d), M.resampleIcon(d));
+      const soloOut = M.allocOutputs(soloPlan);
+      M.interpPolar(soloPlan, 1, soloOut);
+      drawSubs(fit.ctx, fit.w, fit.h, soloOut, '#6b6b6b', 1.6 * (fit.w / 112) * 0.9);
+    } catch {}
+  }
 
   function loadPair(i) {
     const p = PAIRS[i];
     const t0 = performance.now();
     plan = M.buildPlan(M.resampleIcon(p.from), M.resampleIcon(p.to));
     out = M.allocOutputs(plan);
-    spring.config(170, 26);
+    spring.config(slow ? 90 : 170, slow ? 20 : 26);
     spring.start();
     phase = 'morph';
     if (label) label.textContent = p.label;
+    drawStatic(fromCanvas, p.from);
+    drawStatic(toCanvas, p.to);
     return performance.now() - t0;
   }
 
@@ -225,10 +245,11 @@ const hero = (() => {
         M.interpPolar(plan, 1, out);
         drawSubs(ctx, w, h, out, '#24211d', 2 * (w / 240) * 0.9);
       } else if (phase === 'morph') {
-        const settled = spring.step(1 / 60);
+        const dt = slow ? 1/120 : 1/60; // slow motion halves speed
+        const settled = spring.step(dt);
         M.interpPolar(plan, Math.min(spring.x, 1), out);
-        drawSubs(ctx, w, h, out, '#24211d', 2 * (w / 240) * 0.9);
-        if (settled) { phase = 'hold'; holdUntil = performance.now() + 1400; }
+        drawSubs(ctx, w, h, out, '#111111', 2 * (w / 240) * 0.9);
+        if (settled) { phase = 'hold'; holdUntil = performance.now() + (slow ? 2200 : 1400); }
       } else if (phase === 'hold') {
         M.interpPolar(plan, 1, out);
         drawSubs(ctx, w, h, out, '#24211d', 2 * (w / 240) * 0.9);
@@ -447,10 +468,12 @@ const pg = (() => {
       const inView = r.bottom > 0 && r.top < window.innerHeight;
       if (!inView) canAnimate = false;
     }
+    const isSlow = document.getElementById('pgSlow')?.checked;
+    const dt = isSlow ? 1/120 : 1/60;
     window._lastCanAnimate = canAnimate;
     window._lastTickMode = state.mode;
     if (state.mode === 'playing' && canAnimate) {
-      const settled = state.spring.step(1 / 60);
+      const settled = state.spring.step(dt);
       state.t = Math.min(state.spring.x, 1.2);
       render(Math.min(state.t, 1));
         if (settled) {
@@ -548,16 +571,74 @@ const pg = (() => {
       document.querySelectorAll('#playground svg').forEach((svg) => svg.setAttribute('stroke-width', String(state.stroke)));
    });
 
-  compareBox.addEventListener('change', () => {
-    cmpWrap.hidden = !compareBox.checked;
-    render(Math.min(state.t, 1));
-  });
+   compareBox.addEventListener('change', () => {
+     cmpWrap.hidden = !compareBox.checked;
+     render(Math.min(state.t, 1));
+   });
 
-  window.addEventListener('resize', () => render(Math.min(state.t, 1)));
+   // Slow motion + from→to preview (minimal, matches hero)
+   const slowToggle = document.getElementById('pgSlow');
+   const fromToWrap = document.getElementById('pgFromTo');
+   const fromCanvas = document.getElementById('pgFromCanvas');
+   const toCanvas = document.getElementById('pgToCanvas');
+   let slow = false;
+   function drawStaticPG(canvasEl, d, color) {
+     const fit = fitCanvas(canvasEl);
+     if (!fit) return;
+     try {
+       const soloPlan = M.buildPlan(M.resampleIcon(d), M.resampleIcon(d));
+       const soloOut = M.allocOutputs(soloPlan);
+       M.interpPolar(soloPlan, 1, soloOut);
+       drawSubs(fit.ctx, fit.w, fit.h, soloOut, color, 1.6 * (fit.w / 84) * 0.9);
+     } catch {}
+   }
+   function drawFromToPG() {
+     if (!slow || !fromCanvas || !toCanvas) return;
+     const p = currentPair();
+     drawStaticPG(fromCanvas, p.from, '#6b6b6b');
+     drawStaticPG(toCanvas, p.to, '#6b6b6b');
+   }
+   if (slowToggle) {
+     slowToggle.addEventListener('change', () => {
+       slow = slowToggle.checked;
+       if (fromToWrap) fromToWrap.hidden = !slow;
+       if (slow) {
+         drawFromToPG();
+         state.k = 90; state.c = 20;
+         kSlider.value = '90'; cSlider.value = '20';
+         kVal.textContent = '90'; cVal.textContent = '20';
+         // mark as custom but keep slow flag
+         seg.querySelectorAll('.seg-btn').forEach((x) => { x.classList.remove('is-active'); x.setAttribute('aria-selected','false'); });
+         const cust = seg.querySelector('[data-preset="custom"]');
+         if (cust) { cust.classList.add('is-active'); cust.setAttribute('aria-selected','true'); }
+         state.preset = 'custom';
+         applySpring();
+         slow = true;
+       } else {
+         state.k = 170; state.c = 26;
+         kSlider.value = '170'; cSlider.value = '26';
+         kVal.textContent = '170'; cVal.textContent = '26';
+         seg.querySelectorAll('.seg-btn').forEach((x) => { x.classList.remove('is-active'); x.setAttribute('aria-selected','false'); });
+         const sm = seg.querySelector('[data-preset="smooth"]');
+         if (sm) { sm.classList.add('is-active'); sm.setAttribute('aria-selected','true'); }
+         state.preset = 'smooth';
+         applySpring();
+       }
+     });
+   }
+   const origRebuild = rebuildPlan;
+   rebuildPlan = function() {
+     origRebuild();
+     drawFromToPG();
+   };
 
-   rebuildPlan();
-  restart();
-  requestAnimationFrame(tick);
+   window.addEventListener('resize', () => { render(Math.min(state.t, 1)); if (slow) drawFromToPG(); });
+
+    rebuildPlan();
+   restart();
+   requestAnimationFrame(tick);
+   // expose for viewport test
+   window._pgSlow = () => slow;
    state.setAnimationSet = (names) => {
      state.animationSet = Array.isArray(names) ? names.filter((name) => typeof name === 'string' && LUCIDE[name]) : [];
      state.animationIndex = 0;

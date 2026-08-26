@@ -70,16 +70,16 @@
     frame.addEventListener('load', () => {
       if (loading) loading.hidden = true;
     });
-    // Viewport-aware: avoid keeping offscreen Flutter engines hot.
+    // Viewport-aware: when the showcase card is offscreen, hint the browser
+    // to throttle the Flutter engine. We keep the iframe loaded; we just avoid
+    // forcing a repaint each frame from the parent.
     if ('IntersectionObserver' in window && wrap) {
       const io = new IntersectionObserver((entries) => {
         const visible = entries[0].isIntersecting;
-        // Keep the iframe but hint the browser it can throttle.
-        frame.style.visibility = visible ? '' : 'hidden';
-        frame.style.visibility = '';
-        // For older engines, pause/resume via cached src swap is avoided;
-        // visibility tracking primarily saves parent DOM thrash.
-      }, { threshold: 0.12 });
+        wrap.setAttribute('data-visible', String(visible));
+        // Use content-visibility to let the browser skip offscreen work
+        wrap.style.contentVisibility = visible ? '' : 'auto';
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
       io.observe(wrap);
     }
   });

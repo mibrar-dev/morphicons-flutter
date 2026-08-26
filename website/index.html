@@ -92,10 +92,16 @@
       <p class="window-title">morphicons_flutter — MorphIcon(icon: …)</p>
     </div>
     <div class="window-body hero-stage">
+      <div class="hero-fromto" aria-hidden="true">
+        <canvas id="heroFromCanvas" width="112" height="112" title="from"></canvas>
+        <span class="mono" style="color:var(--mute);">→</span>
+        <canvas id="heroToCanvas" width="112" height="112" title="to"></canvas>
+      </div>
       <canvas id="heroCanvas" width="560" height="560" aria-hidden="true"></canvas>
       <div class="hero-stage-meta">
         <p class="mono" id="heroPairLabel">menu → x</p>
         <p class="hero-stage-note">live · the exact solver from <span class="mono">morphicons_core</span>, running in your browser</p>
+        <label class="hero-slow"><input type="checkbox" id="heroSlow"> Slow motion (0.5×)</label>
       </div>
     </div>
   </div>
@@ -193,6 +199,15 @@
           <span class="mono" id="pgCVal">26</span>
         </div>
         <p class="hint">Semi-implicit Euler at 1/240 s substeps. Presets: smooth (170, 26), snappy (420, 30), bouncy (300, 14).</p>
+        <label class="toggle-row" style="margin-top:14px">
+          <input type="checkbox" id="pgSlow">
+          <span>Slow motion (0.5×) — show from → to</span>
+        </label>
+        <div class="hero-fromto" id="pgFromTo" hidden style="margin-top:12px; justify-content:center">
+          <canvas id="pgFromCanvas" width="84" height="84" aria-hidden="true"></canvas>
+          <span class="mono" style="color:var(--mute)">→</span>
+          <canvas id="pgToCanvas" width="84" height="84" aria-hidden="true"></canvas>
+        </div>
       </div>
 
        <div class="card reveal">

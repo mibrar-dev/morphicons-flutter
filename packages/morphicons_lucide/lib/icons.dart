@@ -2,1570 +2,3135 @@
 
 /// Lucide icon path data.
 class MorphIconsLucide {
+  /// Lucide icon `a-arrow-down` (24x24 stroke paths).
   static const String aArrowDown = "M0 0M3.5 13h6 M0 0m2 16 4.5-9 4.5 9 M0 0M18 7v9 M0 0m14 12 4 4 4-4";
+  /// Lucide icon `a-arrow-up` (24x24 stroke paths).
   static const String aArrowUp = "M0 0M3.5 13h6 M0 0m2 16 4.5-9 4.5 9 M0 0M18 16V7 M0 0m14 11 4-4 4 4";
+  /// Lucide icon `a-large-small` (24x24 stroke paths).
   static const String aLargeSmall = "M0 0M21 14h-5 M0 0M16 16v-3.5a2.5 2.5 0 0 1 5 0V16 M0 0M4.5 13h6 M0 0m3 16 4.5-9 4.5 9";
+  /// Lucide icon `accessibility` (24x24 stroke paths).
   static const String accessibility = "M0 0M15 4A1 1 0 1 0 17 4A1 1 0 1 0 15 4 M0 0m18 19 1-7-6 1 M0 0m5 8 3-3 5.5 3-2.36 3.5 M0 0M4.24 14.5a5 5 0 0 0 6.88 6 M0 0M13.76 17.5a5 5 0 0 0-6.88-6";
+  /// Lucide icon `activity` (24x24 stroke paths).
   static const String activity = "M0 0M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2";
+  /// Lucide icon `air-vent` (24x24 stroke paths).
   static const String airVent = "M0 0M6 12H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2 M0 0M6 8h12 M0 0M18.3 17.7a2.5 2.5 0 0 1-3.16 3.83 2.53 2.53 0 0 1-1.14-2V12 M0 0M6.6 15.6A2 2 0 1 0 10 17v-5";
+  /// Lucide icon `airplay` (24x24 stroke paths).
   static const String airplay = "M0 0M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1 M0 0m12 15 5 6H7Z";
+  /// Lucide icon `alarm-clock-check` (24x24 stroke paths).
   static const String alarmClockCheck = "M0 0M4 13A8 8 0 1 0 20 13A8 8 0 1 0 4 13 M0 0M5 3 2 6 M0 0m22 6-3-3 M0 0M6.38 18.7 4 21 M0 0M17.64 18.67 20 21 M0 0m9 13 2 2 4-4";
+  /// Lucide icon `alarm-clock-minus` (24x24 stroke paths).
   static const String alarmClockMinus = "M0 0M4 13A8 8 0 1 0 20 13A8 8 0 1 0 4 13 M0 0M5 3 2 6 M0 0m22 6-3-3 M0 0M6.38 18.7 4 21 M0 0M17.64 18.67 20 21 M0 0M9 13h6";
+  /// Lucide icon `alarm-clock-off` (24x24 stroke paths).
   static const String alarmClockOff = "M0 0M6.87 6.87a8 8 0 1 0 11.26 11.26 M0 0M19.9 14.25a8 8 0 0 0-9.15-9.15 M0 0m22 6-3-3 M0 0M6.26 18.67 4 21 M0 0m2 2 20 20 M0 0M4 4 2 6";
+  /// Lucide icon `alarm-clock-plus` (24x24 stroke paths).
   static const String alarmClockPlus = "M0 0M4 13A8 8 0 1 0 20 13A8 8 0 1 0 4 13 M0 0M5 3 2 6 M0 0m22 6-3-3 M0 0M6.38 18.7 4 21 M0 0M17.64 18.67 20 21 M0 0M12 10v6 M0 0M9 13h6";
+  /// Lucide icon `alarm-clock` (24x24 stroke paths).
   static const String alarmClock = "M0 0M4 13A8 8 0 1 0 20 13A8 8 0 1 0 4 13 M0 0M12 9v4l2 2 M0 0M5 3 2 6 M0 0m22 6-3-3 M0 0M6.38 18.7 4 21 M0 0M17.64 18.67 20 21";
+  /// Lucide icon `alarm-smoke` (24x24 stroke paths).
   static const String alarmSmoke = "M0 0M11 21c0-2.5 2-2.5 2-5 M0 0M16 21c0-2.5 2-2.5 2-5 M0 0m19 8-.8 3a1.25 1.25 0 0 1-1.2 1H7a1.25 1.25 0 0 1-1.2-1L5 8 M0 0M21 3a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a1 1 0 0 1 1-1z M0 0M6 21c0-2.5 2-2.5 2-5";
+  /// Lucide icon `album` (24x24 stroke paths).
   static const String album = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M11 3L11 11L14 8L17 11L17 3";
+  /// Lucide icon `align-center-horizontal` (24x24 stroke paths).
   static const String alignCenterHorizontal = "M0 0M2 12h20 M0 0M10 16v4a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-4 M0 0M10 8V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v4 M0 0M20 16v1a2 2 0 0 1-2 2h-2a2 2 0 0 1-2-2v-1 M0 0M14 8V7c0-1.1.9-2 2-2h2a2 2 0 0 1 2 2v1";
+  /// Lucide icon `align-center-vertical` (24x24 stroke paths).
   static const String alignCenterVertical = "M0 0M12 2v20 M0 0M8 10H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2h4 M0 0M16 10h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4 M0 0M8 20H7a2 2 0 0 1-2-2v-2c0-1.1.9-2 2-2h1 M0 0M16 14h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1";
+  /// Lucide icon `align-center` (24x24 stroke paths).
   static const String alignCenter = "M0 0M17 12H7 M0 0M19 18H5 M0 0M21 6H3";
+  /// Lucide icon `align-end-horizontal` (24x24 stroke paths).
   static const String alignEndHorizontal = "M0 0M6 2h2a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M16 9h2a2 2 0 0 1 2 2v5a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-5a2 2 0 0 1 2 -2Z M0 0M22 22H2";
+  /// Lucide icon `align-end-vertical` (24x24 stroke paths).
   static const String alignEndVertical = "M0 0M4 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M11 14h5a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-5a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M22 22V2";
+  /// Lucide icon `align-horizontal-distribute-center` (24x24 stroke paths).
   static const String alignHorizontalDistributeCenter = "M0 0M6 5h2a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M16 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z M0 0M17 22v-5 M0 0M17 7V2 M0 0M7 22v-3 M0 0M7 5V2";
+  /// Lucide icon `align-horizontal-distribute-end` (24x24 stroke paths).
   static const String alignHorizontalDistributeEnd = "M0 0M6 5h2a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M16 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z M0 0M10 2v20 M0 0M20 2v20";
+  /// Lucide icon `align-horizontal-distribute-start` (24x24 stroke paths).
   static const String alignHorizontalDistributeStart = "M0 0M6 5h2a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M16 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z M0 0M4 2v20 M0 0M14 2v20";
+  /// Lucide icon `align-horizontal-justify-center` (24x24 stroke paths).
   static const String alignHorizontalJustifyCenter = "M0 0M4 5h2a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M18 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z M0 0M12 2v20";
+  /// Lucide icon `align-horizontal-justify-end` (24x24 stroke paths).
   static const String alignHorizontalJustifyEnd = "M0 0M4 5h2a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M14 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z M0 0M22 2v20";
+  /// Lucide icon `align-horizontal-justify-start` (24x24 stroke paths).
   static const String alignHorizontalJustifyStart = "M0 0M8 5h2a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M18 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z M0 0M2 2v20";
+  /// Lucide icon `align-horizontal-space-around` (24x24 stroke paths).
   static const String alignHorizontalSpaceAround = "M0 0M11 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z M0 0M4 22V2 M0 0M20 22V2";
+  /// Lucide icon `align-horizontal-space-between` (24x24 stroke paths).
   static const String alignHorizontalSpaceBetween = "M0 0M5 5h2a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M17 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z M0 0M3 2v20 M0 0M21 2v20";
+  /// Lucide icon `align-justify` (24x24 stroke paths).
   static const String alignJustify = "M0 0M3 12h18 M0 0M3 18h18 M0 0M3 6h18";
+  /// Lucide icon `align-left` (24x24 stroke paths).
   static const String alignLeft = "M0 0M15 12H3 M0 0M17 18H3 M0 0M21 6H3";
+  /// Lucide icon `align-right` (24x24 stroke paths).
   static const String alignRight = "M0 0M21 12H9 M0 0M21 18H7 M0 0M21 6H3";
+  /// Lucide icon `align-start-horizontal` (24x24 stroke paths).
   static const String alignStartHorizontal = "M0 0M6 6h2a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M16 6h2a2 2 0 0 1 2 2v5a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-5a2 2 0 0 1 2 -2Z M0 0M22 2H2";
+  /// Lucide icon `align-start-vertical` (24x24 stroke paths).
   static const String alignStartVertical = "M0 0M8 14h5a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-5a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M8 4h12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M2 2v20";
+  /// Lucide icon `align-vertical-distribute-center` (24x24 stroke paths).
   static const String alignVerticalDistributeCenter = "M0 0M22 17h-3 M0 0M22 7h-5 M0 0M5 17H2 M0 0M7 7H2 M0 0M7 14h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M9 4h6a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `align-vertical-distribute-end` (24x24 stroke paths).
   static const String alignVerticalDistributeEnd = "M0 0M7 14h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M9 4h6a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M2 20h20 M0 0M2 10h20";
+  /// Lucide icon `align-vertical-distribute-start` (24x24 stroke paths).
   static const String alignVerticalDistributeStart = "M0 0M7 14h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M9 4h6a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M2 14h20 M0 0M2 4h20";
+  /// Lucide icon `align-vertical-justify-center` (24x24 stroke paths).
   static const String alignVerticalJustifyCenter = "M0 0M7 16h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M9 2h6a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M2 12h20";
+  /// Lucide icon `align-vertical-justify-end` (24x24 stroke paths).
   static const String alignVerticalJustifyEnd = "M0 0M7 12h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M9 2h6a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M2 22h20";
+  /// Lucide icon `align-vertical-justify-start` (24x24 stroke paths).
   static const String alignVerticalJustifyStart = "M0 0M7 16h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M9 6h6a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M2 2h20";
+  /// Lucide icon `align-vertical-space-around` (24x24 stroke paths).
   static const String alignVerticalSpaceAround = "M0 0M9 9h6a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M22 20H2 M0 0M22 4H2";
+  /// Lucide icon `align-vertical-space-between` (24x24 stroke paths).
   static const String alignVerticalSpaceBetween = "M0 0M7 15h10a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M9 3h6a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M2 21h20 M0 0M2 3h20";
+  /// Lucide icon `ambulance` (24x24 stroke paths).
   static const String ambulance = "M0 0M10 10H6 M0 0M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2 M0 0M19 18h2a1 1 0 0 0 1-1v-3.28a1 1 0 0 0-.684-.948l-1.923-.641a1 1 0 0 1-.578-.502l-1.539-3.076A1 1 0 0 0 16.382 8H14 M0 0M8 8v4 M0 0M9 18h6 M0 0M15 18A2 2 0 1 0 19 18A2 2 0 1 0 15 18 M0 0M5 18A2 2 0 1 0 9 18A2 2 0 1 0 5 18";
+  /// Lucide icon `ampersand` (24x24 stroke paths).
   static const String ampersand = "M0 0M17.5 12c0 4.4-3.6 8-8 8A4.5 4.5 0 0 1 5 15.5c0-6 8-4 8-8.5a3 3 0 1 0-6 0c0 3 2.5 8.5 12 13 M0 0M16 12h3";
+  /// Lucide icon `ampersands` (24x24 stroke paths).
   static const String ampersands = "M0 0M10 17c-5-3-7-7-7-9a2 2 0 0 1 4 0c0 2.5-5 2.5-5 6 0 1.7 1.3 3 3 3 2.8 0 5-2.2 5-5 M0 0M22 17c-5-3-7-7-7-9a2 2 0 0 1 4 0c0 2.5-5 2.5-5 6 0 1.7 1.3 3 3 3 2.8 0 5-2.2 5-5";
+  /// Lucide icon `amphora` (24x24 stroke paths).
   static const String amphora = "M0 0M10 2v5.632c0 .424-.272.795-.653.982A6 6 0 0 0 6 14c.006 4 3 7 5 8 M0 0M10 5H8a2 2 0 0 0 0 4h.68 M0 0M14 2v5.632c0 .424.272.795.652.982A6 6 0 0 1 18 14c0 4-3 7-5 8 M0 0M14 5h2a2 2 0 0 1 0 4h-.68 M0 0M18 22H6 M0 0M9 2h6";
+  /// Lucide icon `anchor` (24x24 stroke paths).
   static const String anchor = "M0 0M12 22V8 M0 0M5 12H2a10 10 0 0 0 20 0h-3 M0 0M9 5A3 3 0 1 0 15 5A3 3 0 1 0 9 5";
+  /// Lucide icon `angry` (24x24 stroke paths).
   static const String angry = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M16 16s-1.5-2-4-2-4 2-4 2 M0 0M7.5 8 10 9 M0 0m14 9 2.5-1 M0 0M9 10h.01 M0 0M15 10h.01";
+  /// Lucide icon `annoyed` (24x24 stroke paths).
   static const String annoyed = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M8 15h8 M0 0M8 9h2 M0 0M14 9h2";
+  /// Lucide icon `antenna` (24x24 stroke paths).
   static const String antenna = "M0 0M2 12 7 2 M0 0m7 12 5-10 M0 0m12 12 5-10 M0 0m17 12 5-10 M0 0M4.5 7h15 M0 0M12 16v6";
+  /// Lucide icon `anvil` (24x24 stroke paths).
   static const String anvil = "M0 0M7 10H6a4 4 0 0 1-4-4 1 1 0 0 1 1-1h4 M0 0M7 5a1 1 0 0 1 1-1h13a1 1 0 0 1 1 1 7 7 0 0 1-7 7H8a1 1 0 0 1-1-1z M0 0M9 12v5 M0 0M15 12v5 M0 0M5 20a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3 1 1 0 0 1-1 1H6a1 1 0 0 1-1-1";
+  /// Lucide icon `aperture` (24x24 stroke paths).
   static const String aperture = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0m14.31 8 5.74 9.94 M0 0M9.69 8h11.48 M0 0m7.38 12 5.74-9.94 M0 0M9.69 16 3.95 6.06 M0 0M14.31 16H2.83 M0 0m16.62 12-5.74 9.94";
+  /// Lucide icon `app-window-mac` (24x24 stroke paths).
   static const String appWindowMac = "M0 0M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M6 8h.01 M0 0M10 8h.01 M0 0M14 8h.01";
+  /// Lucide icon `app-window` (24x24 stroke paths).
   static const String appWindow = "M0 0M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M10 4v4 M0 0M2 8h20 M0 0M6 4v4";
+  /// Lucide icon `apple` (24x24 stroke paths).
   static const String apple = "M0 0M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z M0 0M10 2c1 .5 2 2 2 5";
+  /// Lucide icon `archive-restore` (24x24 stroke paths).
   static const String archiveRestore = "M0 0M3 3h18a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z M0 0M4 8v11a2 2 0 0 0 2 2h2 M0 0M20 8v11a2 2 0 0 1-2 2h-2 M0 0m9 15 3-3 3 3 M0 0M12 12v9";
+  /// Lucide icon `archive-x` (24x24 stroke paths).
   static const String archiveX = "M0 0M3 3h18a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z M0 0M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8 M0 0m9.5 17 5-5 M0 0m9.5 12 5 5";
+  /// Lucide icon `archive` (24x24 stroke paths).
   static const String archive = "M0 0M3 3h18a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z M0 0M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8 M0 0M10 12h4";
+  /// Lucide icon `armchair` (24x24 stroke paths).
   static const String armchair = "M0 0M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3 M0 0M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z M0 0M5 18v2 M0 0M19 18v2";
+  /// Lucide icon `arrow-big-down-dash` (24x24 stroke paths).
   static const String arrowBigDownDash = "M0 0M15 5H9 M0 0M15 9v3h4l-7 7-7-7h4V9z";
+  /// Lucide icon `arrow-big-down` (24x24 stroke paths).
   static const String arrowBigDown = "M0 0M15 6v6h4l-7 7-7-7h4V6h6z";
+  /// Lucide icon `arrow-big-left-dash` (24x24 stroke paths).
   static const String arrowBigLeftDash = "M0 0M19 15V9 M0 0M15 15h-3v4l-7-7 7-7v4h3v6z";
+  /// Lucide icon `arrow-big-left` (24x24 stroke paths).
   static const String arrowBigLeft = "M0 0M18 15h-6v4l-7-7 7-7v4h6v6z";
+  /// Lucide icon `arrow-big-right-dash` (24x24 stroke paths).
   static const String arrowBigRightDash = "M0 0M5 9v6 M0 0M9 9h3V5l7 7-7 7v-4H9V9z";
+  /// Lucide icon `arrow-big-right` (24x24 stroke paths).
   static const String arrowBigRight = "M0 0M6 9h6V5l7 7-7 7v-4H6V9z";
+  /// Lucide icon `arrow-big-up-dash` (24x24 stroke paths).
   static const String arrowBigUpDash = "M0 0M9 19h6 M0 0M9 15v-3H5l7-7 7 7h-4v3H9z";
+  /// Lucide icon `arrow-big-up` (24x24 stroke paths).
   static const String arrowBigUp = "M0 0M9 18v-6H5l7-7 7 7h-4v6H9z";
+  /// Lucide icon `arrow-down-0-1` (24x24 stroke paths).
   static const String arrowDown01 = "M0 0m3 16 4 4 4-4 M0 0M7 20V4 M0 0M17 4h0a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h0a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M17 20v-6h-2 M0 0M15 20h4";
+  /// Lucide icon `arrow-down-1-0` (24x24 stroke paths).
   static const String arrowDown10 = "M0 0m3 16 4 4 4-4 M0 0M7 20V4 M0 0M17 10V4h-2 M0 0M15 10h4 M0 0M17 14h0a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h0a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `arrow-down-a-z` (24x24 stroke paths).
   static const String arrowDownAZ = "M0 0m3 16 4 4 4-4 M0 0M7 20V4 M0 0M20 8h-5 M0 0M15 10V6.5a2.5 2.5 0 0 1 5 0V10 M0 0M15 14h5l-5 6h5";
+  /// Lucide icon `arrow-down-from-line` (24x24 stroke paths).
   static const String arrowDownFromLine = "M0 0M19 3H5 M0 0M12 21V7 M0 0m6 15 6 6 6-6";
+  /// Lucide icon `arrow-down-left` (24x24 stroke paths).
   static const String arrowDownLeft = "M0 0M17 7 7 17 M0 0M17 17H7V7";
+  /// Lucide icon `arrow-down-narrow-wide` (24x24 stroke paths).
   static const String arrowDownNarrowWide = "M0 0m3 16 4 4 4-4 M0 0M7 20V4 M0 0M11 4h4 M0 0M11 8h7 M0 0M11 12h10";
+  /// Lucide icon `arrow-down-right` (24x24 stroke paths).
   static const String arrowDownRight = "M0 0m7 7 10 10 M0 0M17 7v10H7";
+  /// Lucide icon `arrow-down-to-dot` (24x24 stroke paths).
   static const String arrowDownToDot = "M0 0M12 2v14 M0 0m19 9-7 7-7-7 M0 0M11 21A1 1 0 1 0 13 21A1 1 0 1 0 11 21";
+  /// Lucide icon `arrow-down-to-line` (24x24 stroke paths).
   static const String arrowDownToLine = "M0 0M12 17V3 M0 0m6 11 6 6 6-6 M0 0M19 21H5";
+  /// Lucide icon `arrow-down-up` (24x24 stroke paths).
   static const String arrowDownUp = "M0 0m3 16 4 4 4-4 M0 0M7 20V4 M0 0m21 8-4-4-4 4 M0 0M17 4v16";
+  /// Lucide icon `arrow-down-wide-narrow` (24x24 stroke paths).
   static const String arrowDownWideNarrow = "M0 0m3 16 4 4 4-4 M0 0M7 20V4 M0 0M11 4h10 M0 0M11 8h7 M0 0M11 12h4";
+  /// Lucide icon `arrow-down-z-a` (24x24 stroke paths).
   static const String arrowDownZA = "M0 0m3 16 4 4 4-4 M0 0M7 4v16 M0 0M15 4h5l-5 6h5 M0 0M15 20v-3.5a2.5 2.5 0 0 1 5 0V20 M0 0M20 18h-5";
+  /// Lucide icon `arrow-down` (24x24 stroke paths).
   static const String arrowDown = "M0 0M12 5v14 M0 0m19 12-7 7-7-7";
+  /// Lucide icon `arrow-left-from-line` (24x24 stroke paths).
   static const String arrowLeftFromLine = "M0 0m9 6-6 6 6 6 M0 0M3 12h14 M0 0M21 19V5";
+  /// Lucide icon `arrow-left-right` (24x24 stroke paths).
   static const String arrowLeftRight = "M0 0M8 3 4 7l4 4 M0 0M4 7h16 M0 0m16 21 4-4-4-4 M0 0M20 17H4";
+  /// Lucide icon `arrow-left-to-line` (24x24 stroke paths).
   static const String arrowLeftToLine = "M0 0M3 19V5 M0 0m13 6-6 6 6 6 M0 0M7 12h14";
+  /// Lucide icon `arrow-left` (24x24 stroke paths).
   static const String arrowLeft = "M0 0m12 19-7-7 7-7 M0 0M19 12H5";
+  /// Lucide icon `arrow-right-from-line` (24x24 stroke paths).
   static const String arrowRightFromLine = "M0 0M3 5v14 M0 0M21 12H7 M0 0m15 18 6-6-6-6";
+  /// Lucide icon `arrow-right-left` (24x24 stroke paths).
   static const String arrowRightLeft = "M0 0m16 3 4 4-4 4 M0 0M20 7H4 M0 0m8 21-4-4 4-4 M0 0M4 17h16";
+  /// Lucide icon `arrow-right-to-line` (24x24 stroke paths).
   static const String arrowRightToLine = "M0 0M17 12H3 M0 0m11 18 6-6-6-6 M0 0M21 5v14";
+  /// Lucide icon `arrow-right` (24x24 stroke paths).
   static const String arrowRight = "M0 0M5 12h14 M0 0m12 5 7 7-7 7";
+  /// Lucide icon `arrow-up-0-1` (24x24 stroke paths).
   static const String arrowUp01 = "M0 0m3 8 4-4 4 4 M0 0M7 4v16 M0 0M17 4h0a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h0a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M17 20v-6h-2 M0 0M15 20h4";
+  /// Lucide icon `arrow-up-1-0` (24x24 stroke paths).
   static const String arrowUp10 = "M0 0m3 8 4-4 4 4 M0 0M7 4v16 M0 0M17 10V4h-2 M0 0M15 10h4 M0 0M17 14h0a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h0a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `arrow-up-a-z` (24x24 stroke paths).
   static const String arrowUpAZ = "M0 0m3 8 4-4 4 4 M0 0M7 4v16 M0 0M20 8h-5 M0 0M15 10V6.5a2.5 2.5 0 0 1 5 0V10 M0 0M15 14h5l-5 6h5";
+  /// Lucide icon `arrow-up-down` (24x24 stroke paths).
   static const String arrowUpDown = "M0 0m21 16-4 4-4-4 M0 0M17 20V4 M0 0m3 8 4-4 4 4 M0 0M7 4v16";
+  /// Lucide icon `arrow-up-from-dot` (24x24 stroke paths).
   static const String arrowUpFromDot = "M0 0m5 9 7-7 7 7 M0 0M12 16V2 M0 0M11 21A1 1 0 1 0 13 21A1 1 0 1 0 11 21";
+  /// Lucide icon `arrow-up-from-line` (24x24 stroke paths).
   static const String arrowUpFromLine = "M0 0m18 9-6-6-6 6 M0 0M12 3v14 M0 0M5 21h14";
+  /// Lucide icon `arrow-up-left` (24x24 stroke paths).
   static const String arrowUpLeft = "M0 0M7 17V7h10 M0 0M17 17 7 7";
+  /// Lucide icon `arrow-up-narrow-wide` (24x24 stroke paths).
   static const String arrowUpNarrowWide = "M0 0m3 8 4-4 4 4 M0 0M7 4v16 M0 0M11 12h4 M0 0M11 16h7 M0 0M11 20h10";
+  /// Lucide icon `arrow-up-right` (24x24 stroke paths).
   static const String arrowUpRight = "M0 0M7 7h10v10 M0 0M7 17 17 7";
+  /// Lucide icon `arrow-up-to-line` (24x24 stroke paths).
   static const String arrowUpToLine = "M0 0M5 3h14 M0 0m18 13-6-6-6 6 M0 0M12 7v14";
+  /// Lucide icon `arrow-up-wide-narrow` (24x24 stroke paths).
   static const String arrowUpWideNarrow = "M0 0m3 8 4-4 4 4 M0 0M7 4v16 M0 0M11 12h10 M0 0M11 16h7 M0 0M11 20h4";
+  /// Lucide icon `arrow-up-z-a` (24x24 stroke paths).
   static const String arrowUpZA = "M0 0m3 8 4-4 4 4 M0 0M7 4v16 M0 0M15 4h5l-5 6h5 M0 0M15 20v-3.5a2.5 2.5 0 0 1 5 0V20 M0 0M20 18h-5";
+  /// Lucide icon `arrow-up` (24x24 stroke paths).
   static const String arrowUp = "M0 0m5 12 7-7 7 7 M0 0M12 19V5";
+  /// Lucide icon `arrows-up-from-line` (24x24 stroke paths).
   static const String arrowsUpFromLine = "M0 0m4 6 3-3 3 3 M0 0M7 17V3 M0 0m14 6 3-3 3 3 M0 0M17 17V3 M0 0M4 21h16";
+  /// Lucide icon `asterisk` (24x24 stroke paths).
   static const String asterisk = "M0 0M12 6v12 M0 0M17.196 9 6.804 15 M0 0m6.804 9 10.392 6";
+  /// Lucide icon `at-sign` (24x24 stroke paths).
   static const String atSign = "M0 0M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12 M0 0M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8";
+  /// Lucide icon `atom` (24x24 stroke paths).
   static const String atom = "M0 0M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12 M0 0M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z M0 0M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z";
+  /// Lucide icon `audio-lines` (24x24 stroke paths).
   static const String audioLines = "M0 0M2 10v3 M0 0M6 6v11 M0 0M10 3v18 M0 0M14 8v7 M0 0M18 5v13 M0 0M22 10v3";
+  /// Lucide icon `audio-waveform` (24x24 stroke paths).
   static const String audioWaveform = "M0 0M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2";
+  /// Lucide icon `award` (24x24 stroke paths).
   static const String award = "M0 0m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526 M0 0M6 8A6 6 0 1 0 18 8A6 6 0 1 0 6 8";
+  /// Lucide icon `axe` (24x24 stroke paths).
   static const String axe = "M0 0m14 12-8.5 8.5a2.12 2.12 0 1 1-3-3L11 9 M0 0M15 13 9 7l4-4 6 6h3a8 8 0 0 1-7 7z";
+  /// Lucide icon `axis-3d` (24x24 stroke paths).
   static const String axis3d = "M0 0M4 4v16h16 M0 0m4 20 7-7";
+  /// Lucide icon `baby` (24x24 stroke paths).
   static const String baby = "M0 0M9 12h.01 M0 0M15 12h.01 M0 0M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5 M0 0M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1";
+  /// Lucide icon `backpack` (24x24 stroke paths).
   static const String backpack = "M0 0M4 10a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z M0 0M8 10h8 M0 0M8 18h8 M0 0M8 22v-6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v6 M0 0M9 6V4a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2";
+  /// Lucide icon `badge-alert` (24x24 stroke paths).
   static const String badgeAlert = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M12 8L12 12 M0 0M12 16L12.01 16";
+  /// Lucide icon `badge-cent` (24x24 stroke paths).
   static const String badgeCent = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M12 7v10 M0 0M15.4 10a4 4 0 1 0 0 4";
+  /// Lucide icon `badge-check` (24x24 stroke paths).
   static const String badgeCheck = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0m9 12 2 2 4-4";
+  /// Lucide icon `badge-dollar-sign` (24x24 stroke paths).
   static const String badgeDollarSign = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8 M0 0M12 18V6";
+  /// Lucide icon `badge-euro` (24x24 stroke paths).
   static const String badgeEuro = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M7 12h5 M0 0M15 9.4a4 4 0 1 0 0 5.2";
+  /// Lucide icon `badge-help` (24x24 stroke paths).
   static const String badgeHelp = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3 M0 0M12 17L12.01 17";
+  /// Lucide icon `badge-indian-rupee` (24x24 stroke paths).
   static const String badgeIndianRupee = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M8 8h8 M0 0M8 12h8 M0 0m13 17-5-1h1a4 4 0 0 0 0-8";
+  /// Lucide icon `badge-info` (24x24 stroke paths).
   static const String badgeInfo = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M12 16L12 12 M0 0M12 8L12.01 8";
+  /// Lucide icon `badge-japanese-yen` (24x24 stroke paths).
   static const String badgeJapaneseYen = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0m9 8 3 3v7 M0 0m12 11 3-3 M0 0M9 12h6 M0 0M9 16h6";
+  /// Lucide icon `badge-minus` (24x24 stroke paths).
   static const String badgeMinus = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M8 12L16 12";
+  /// Lucide icon `badge-percent` (24x24 stroke paths).
   static const String badgePercent = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0m15 9-6 6 M0 0M9 9h.01 M0 0M15 15h.01";
+  /// Lucide icon `badge-plus` (24x24 stroke paths).
   static const String badgePlus = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M12 8L12 16 M0 0M8 12L16 12";
+  /// Lucide icon `badge-pound-sterling` (24x24 stroke paths).
   static const String badgePoundSterling = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M8 12h4 M0 0M10 16V9.5a2.5 2.5 0 0 1 5 0 M0 0M8 16h7";
+  /// Lucide icon `badge-russian-ruble` (24x24 stroke paths).
   static const String badgeRussianRuble = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M9 16h5 M0 0M9 12h5a2 2 0 1 0 0-4h-3v9";
+  /// Lucide icon `badge-swiss-franc` (24x24 stroke paths).
   static const String badgeSwissFranc = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M11 17V8h4 M0 0M11 12h3 M0 0M9 16h4";
+  /// Lucide icon `badge-x` (24x24 stroke paths).
   static const String badgeX = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z M0 0M15 9L9 15 M0 0M9 9L15 15";
+  /// Lucide icon `badge` (24x24 stroke paths).
   static const String badge = "M0 0M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z";
+  /// Lucide icon `baggage-claim` (24x24 stroke paths).
   static const String baggageClaim = "M0 0M22 18H6a2 2 0 0 1-2-2V7a2 2 0 0 0-2-2 M0 0M17 14V4a2 2 0 0 0-2-2h-1a2 2 0 0 0-2 2v10 M0 0M9 6h11a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-11a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1Z M0 0M16 20A2 2 0 1 0 20 20A2 2 0 1 0 16 20 M0 0M7 20A2 2 0 1 0 11 20A2 2 0 1 0 7 20";
+  /// Lucide icon `ban` (24x24 stroke paths).
   static const String ban = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0m4.9 4.9 14.2 14.2";
+  /// Lucide icon `banana` (24x24 stroke paths).
   static const String banana = "M0 0M4 13c3.5-2 8-2 10 2a5.5 5.5 0 0 1 8 5 M0 0M5.15 17.89c5.52-1.52 8.65-6.89 7-12C11.55 4 11.5 2 13 2c3.22 0 5 5.5 5 8 0 6.5-4.2 12-10.49 12C5.11 22 2 22 2 20c0-1.5 1.14-1.55 3.15-2.11Z";
+  /// Lucide icon `bandage` (24x24 stroke paths).
   static const String bandage = "M0 0M10 10.01h.01 M0 0M10 14.01h.01 M0 0M14 10.01h.01 M0 0M14 14.01h.01 M0 0M18 6v11.5 M0 0M6 6v12 M0 0M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `banknote-arrow-down` (24x24 stroke paths).
   static const String banknoteArrowDown = "M0 0M12 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5 M0 0m16 19 3 3 3-3 M0 0M18 12h.01 M0 0M19 16v6 M0 0M6 12h.01 M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12";
+  /// Lucide icon `banknote-arrow-up` (24x24 stroke paths).
   static const String banknoteArrowUp = "M0 0M12 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5 M0 0M18 12h.01 M0 0M19 22v-6 M0 0m22 19-3-3-3 3 M0 0M6 12h.01 M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12";
+  /// Lucide icon `banknote-x` (24x24 stroke paths).
   static const String banknoteX = "M0 0M13 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5 M0 0m17 17 5 5 M0 0M18 12h.01 M0 0m22 17-5 5 M0 0M6 12h.01 M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12";
+  /// Lucide icon `banknote` (24x24 stroke paths).
   static const String banknote = "M0 0M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12 M0 0M6 12h.01M18 12h.01";
+  /// Lucide icon `barcode` (24x24 stroke paths).
   static const String barcode = "M0 0M3 5v14 M0 0M8 5v14 M0 0M12 5v14 M0 0M17 5v14 M0 0M21 5v14";
+  /// Lucide icon `baseline` (24x24 stroke paths).
   static const String baseline = "M0 0M4 20h16 M0 0m6 16 6-12 6 12 M0 0M8 12h8";
+  /// Lucide icon `bath` (24x24 stroke paths).
   static const String bath = "M0 0M10 4 8 6 M0 0M17 19v2 M0 0M2 12h20 M0 0M7 19v2 M0 0M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5";
+  /// Lucide icon `battery-charging` (24x24 stroke paths).
   static const String batteryCharging = "M0 0M15 7h1a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2 M0 0M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h1 M0 0m11 7-3 5h4l-3 5 M0 0M22 11L22 13";
+  /// Lucide icon `battery-full` (24x24 stroke paths).
   static const String batteryFull = "M0 0M4 7h12a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z M0 0M22 11L22 13 M0 0M6 11L6 13 M0 0M10 11L10 13 M0 0M14 11L14 13";
+  /// Lucide icon `battery-low` (24x24 stroke paths).
   static const String batteryLow = "M0 0M4 7h12a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z M0 0M22 11L22 13 M0 0M6 11L6 13";
+  /// Lucide icon `battery-medium` (24x24 stroke paths).
   static const String batteryMedium = "M0 0M4 7h12a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z M0 0M22 11L22 13 M0 0M6 11L6 13 M0 0M10 11L10 13";
+  /// Lucide icon `battery-plus` (24x24 stroke paths).
   static const String batteryPlus = "M0 0M10 9v6 M0 0M13.5 7H16a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2.5 M0 0M22 11v2 M0 0M6.5 17H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2.5 M0 0M7 12h6";
+  /// Lucide icon `battery-warning` (24x24 stroke paths).
   static const String batteryWarning = "M0 0M10 17h.01 M0 0M10 7v6 M0 0M14 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2 M0 0M22 11v2 M0 0M6 7H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2";
+  /// Lucide icon `battery` (24x24 stroke paths).
   static const String battery = "M0 0M4 7h12a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z M0 0M22 11L22 13";
+  /// Lucide icon `beaker` (24x24 stroke paths).
   static const String beaker = "M0 0M4.5 3h15 M0 0M6 3v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V3 M0 0M6 14h12";
+  /// Lucide icon `bean-off` (24x24 stroke paths).
   static const String beanOff = "M0 0M9 9c-.64.64-1.521.954-2.402 1.165A6 6 0 0 0 8 22a13.96 13.96 0 0 0 9.9-4.1 M0 0M10.75 5.093A6 6 0 0 1 22 8c0 2.411-.61 4.68-1.683 6.66 M0 0M5.341 10.62a4 4 0 0 0 6.487 1.208M10.62 5.341a4.015 4.015 0 0 1 2.039 2.04 M0 0M2 2L22 22";
+  /// Lucide icon `bean` (24x24 stroke paths).
   static const String bean = "M0 0M10.165 6.598C9.954 7.478 9.64 8.36 9 9c-.64.64-1.521.954-2.402 1.165A6 6 0 0 0 8 22c7.732 0 14-6.268 14-14a6 6 0 0 0-11.835-1.402Z M0 0M5.341 10.62a4 4 0 1 0 5.279-5.28";
+  /// Lucide icon `bed-double` (24x24 stroke paths).
   static const String bedDouble = "M0 0M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8 M0 0M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4 M0 0M12 4v6 M0 0M2 18h20";
+  /// Lucide icon `bed-single` (24x24 stroke paths).
   static const String bedSingle = "M0 0M3 20v-8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8 M0 0M5 10V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4 M0 0M3 18h18";
+  /// Lucide icon `bed` (24x24 stroke paths).
   static const String bed = "M0 0M2 4v16 M0 0M2 8h18a2 2 0 0 1 2 2v10 M0 0M2 17h20 M0 0M6 8v9";
+  /// Lucide icon `beef` (24x24 stroke paths).
   static const String beef = "M0 0M16.4 13.7A6.5 6.5 0 1 0 6.28 6.6c-1.1 3.13-.78 3.9-3.18 6.08A3 3 0 0 0 5 18c4 0 8.4-1.8 11.4-4.3 M0 0m18.5 6 2.19 4.5a6.48 6.48 0 0 1-2.29 7.2C15.4 20.2 11 22 7 22a3 3 0 0 1-2.68-1.66L2.4 16.5 M0 0M10 8.5A2.5 2.5 0 1 0 15 8.5A2.5 2.5 0 1 0 10 8.5";
+  /// Lucide icon `beer-off` (24x24 stroke paths).
   static const String beerOff = "M0 0M13 13v5 M0 0M17 11.47V8 M0 0M17 11h1a3 3 0 0 1 2.745 4.211 M0 0m2 2 20 20 M0 0M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-3 M0 0M7.536 7.535C6.766 7.649 6.154 8 5.5 8a2.5 2.5 0 0 1-1.768-4.268 M0 0M8.727 3.204C9.306 2.767 9.885 2 11 2c1.56 0 2 1.5 3 1.5s1.72-.5 2.5-.5a1 1 0 1 1 0 5c-.78 0-1.5-.5-2.5-.5a3.149 3.149 0 0 0-.842.12 M0 0M9 14.6V18";
+  /// Lucide icon `beer` (24x24 stroke paths).
   static const String beer = "M0 0M17 11h1a3 3 0 0 1 0 6h-1 M0 0M9 12v6 M0 0M13 12v6 M0 0M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 2 11 2s2 1.5 3 1.5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z M0 0M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8";
+  /// Lucide icon `bell-dot` (24x24 stroke paths).
   static const String bellDot = "M0 0M10.268 21a2 2 0 0 0 3.464 0 M0 0M13.916 2.314A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.74 7.327A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673 9 9 0 0 1-.585-.665 M0 0M15 8A3 3 0 1 0 21 8A3 3 0 1 0 15 8";
+  /// Lucide icon `bell-electric` (24x24 stroke paths).
   static const String bellElectric = "M0 0M18.8 4A6.3 8.7 0 0 1 20 9 M0 0M9 9h.01 M0 0M2 9A7 7 0 1 0 16 9A7 7 0 1 0 2 9 M0 0M6 16h6a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M14 19c3 0 4.6-1.6 4.6-1.6 M0 0M18 16A2 2 0 1 0 22 16A2 2 0 1 0 18 16";
+  /// Lucide icon `bell-minus` (24x24 stroke paths).
   static const String bellMinus = "M0 0M10.268 21a2 2 0 0 0 3.464 0 M0 0M15 8h6 M0 0M16.243 3.757A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673A9.4 9.4 0 0 1 18.667 12";
+  /// Lucide icon `bell-off` (24x24 stroke paths).
   static const String bellOff = "M0 0M10.268 21a2 2 0 0 0 3.464 0 M0 0M17 17H4a1 1 0 0 1-.74-1.673C4.59 13.956 6 12.499 6 8a6 6 0 0 1 .258-1.742 M0 0m2 2 20 20 M0 0M8.668 3.01A6 6 0 0 1 18 8c0 2.687.77 4.653 1.707 6.05";
+  /// Lucide icon `bell-plus` (24x24 stroke paths).
   static const String bellPlus = "M0 0M10.268 21a2 2 0 0 0 3.464 0 M0 0M15 8h6 M0 0M18 5v6 M0 0M20.002 14.464a9 9 0 0 0 .738.863A1 1 0 0 1 20 17H4a1 1 0 0 1-.74-1.673C4.59 13.956 6 12.499 6 8a6 6 0 0 1 8.75-5.332";
+  /// Lucide icon `bell-ring` (24x24 stroke paths).
   static const String bellRing = "M0 0M10.268 21a2 2 0 0 0 3.464 0 M0 0M22 8c0-2.3-.8-4.3-2-6 M0 0M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326 M0 0M4 2C2.8 3.7 2 5.7 2 8";
+  /// Lucide icon `bell` (24x24 stroke paths).
   static const String bell = "M0 0M10.268 21a2 2 0 0 0 3.464 0 M0 0M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326";
+  /// Lucide icon `between-horizontal-end` (24x24 stroke paths).
   static const String betweenHorizontalEnd = "M0 0M4 3h11a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-11a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0m22 15-3-3 3-3 M0 0M4 14h11a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-11a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `between-horizontal-start` (24x24 stroke paths).
   static const String betweenHorizontalStart = "M0 0M9 3h11a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-11a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0m2 9 3 3-3 3 M0 0M9 14h11a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-11a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `between-vertical-end` (24x24 stroke paths).
   static const String betweenVerticalEnd = "M0 0M4 3h5a1 1 0 0 1 1 1v11a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-11a1 1 0 0 1 1 -1Z M0 0m9 22 3-3 3 3 M0 0M15 3h5a1 1 0 0 1 1 1v11a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-11a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `between-vertical-start` (24x24 stroke paths).
   static const String betweenVerticalStart = "M0 0M4 8h5a1 1 0 0 1 1 1v11a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-11a1 1 0 0 1 1 -1Z M0 0m15 2-3 3-3-3 M0 0M15 8h5a1 1 0 0 1 1 1v11a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-11a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `biceps-flexed` (24x24 stroke paths).
   static const String bicepsFlexed = "M0 0M12.409 13.017A5 5 0 0 1 22 15c0 3.866-4 7-9 7-4.077 0-8.153-.82-10.371-2.462-.426-.316-.631-.832-.62-1.362C2.118 12.723 2.627 2 10 2a3 3 0 0 1 3 3 2 2 0 0 1-2 2c-1.105 0-1.64-.444-2-1 M0 0M15 14a5 5 0 0 0-7.584 2 M0 0M9.964 6.825C8.019 7.977 9.5 13 8 15";
+  /// Lucide icon `bike` (24x24 stroke paths).
   static const String bike = "M0 0M15 17.5A3.5 3.5 0 1 0 22 17.5A3.5 3.5 0 1 0 15 17.5 M0 0M2 17.5A3.5 3.5 0 1 0 9 17.5A3.5 3.5 0 1 0 2 17.5 M0 0M14 5A1 1 0 1 0 16 5A1 1 0 1 0 14 5 M0 0M12 17.5V14l-3-3 4-3 2 3h2";
+  /// Lucide icon `binary` (24x24 stroke paths).
   static const String binary = "M0 0M16 14h0a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h0a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M8 4h0a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h0a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M6 20h4 M0 0M14 10h4 M0 0M6 14h2v6 M0 0M14 4h2v6";
+  /// Lucide icon `binoculars` (24x24 stroke paths).
   static const String binoculars = "M0 0M10 10h4 M0 0M19 7V4a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3 M0 0M20 21a2 2 0 0 0 2-2v-3.851c0-1.39-2-2.962-2-4.829V8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2z M0 0M 22 16 L 2 16 M0 0M4 21a2 2 0 0 1-2-2v-3.851c0-1.39 2-2.962 2-4.829V8a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v11a2 2 0 0 1-2 2z M0 0M9 7V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v3";
+  /// Lucide icon `biohazard` (24x24 stroke paths).
   static const String biohazard = "M0 0M10 11.9A2 2 0 1 0 14 11.9A2 2 0 1 0 10 11.9 M0 0M6.7 3.4c-.9 2.5 0 5.2 2.2 6.7C6.5 9 3.7 9.6 2 11.6 M0 0m8.9 10.1 1.4.8 M0 0M17.3 3.4c.9 2.5 0 5.2-2.2 6.7 2.4-1.2 5.2-.6 6.9 1.5 M0 0m15.1 10.1-1.4.8 M0 0M16.7 20.8c-2.6-.4-4.6-2.6-4.7-5.3-.2 2.6-2.1 4.8-4.7 5.2 M0 0M12 13.9v1.6 M0 0M13.5 5.4c-1-.2-2-.2-3 0 M0 0M17 16.4c.7-.7 1.2-1.6 1.5-2.5 M0 0M5.5 13.9c.3.9.8 1.8 1.5 2.5";
+  /// Lucide icon `bird` (24x24 stroke paths).
   static const String bird = "M0 0M16 7h.01 M0 0M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20 M0 0m20 7 2 .5-2 .5 M0 0M10 18v3 M0 0M14 17.75V21 M0 0M7 18a6 6 0 0 0 3.84-10.61";
+  /// Lucide icon `bitcoin` (24x24 stroke paths).
   static const String bitcoin = "M0 0M11.767 19.089c4.924.868 6.14-6.025 1.216-6.894m-1.216 6.894L5.86 18.047m5.908 1.042-.347 1.97m1.563-8.864c4.924.869 6.14-6.025 1.215-6.893m-1.215 6.893-3.94-.694m5.155-6.2L8.29 4.26m5.908 1.042.348-1.97M7.48 20.364l3.126-17.727";
+  /// Lucide icon `blend` (24x24 stroke paths).
   static const String blend = "M0 0M2 9A7 7 0 1 0 16 9A7 7 0 1 0 2 9 M0 0M8 15A7 7 0 1 0 22 15A7 7 0 1 0 8 15";
+  /// Lucide icon `blinds` (24x24 stroke paths).
   static const String blinds = "M0 0M3 3h18 M0 0M20 7H8 M0 0M20 11H8 M0 0M10 19h10 M0 0M8 15h12 M0 0M4 3v14 M0 0M2 19A2 2 0 1 0 6 19A2 2 0 1 0 2 19";
+  /// Lucide icon `blocks` (24x24 stroke paths).
   static const String blocks = "M0 0M15 3h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3";
+  /// Lucide icon `bluetooth-connected` (24x24 stroke paths).
   static const String bluetoothConnected = "M0 0m7 7 10 10-5 5V2l5 5L7 17 M0 0M18 12L21 12 M0 0M3 12L6 12";
+  /// Lucide icon `bluetooth-off` (24x24 stroke paths).
   static const String bluetoothOff = "M0 0m17 17-5 5V12l-5 5 M0 0m2 2 20 20 M0 0M14.5 9.5 17 7l-5-5v4.5";
+  /// Lucide icon `bluetooth-searching` (24x24 stroke paths).
   static const String bluetoothSearching = "M0 0m7 7 10 10-5 5V2l5 5L7 17 M0 0M20.83 14.83a4 4 0 0 0 0-5.66 M0 0M18 12h.01";
+  /// Lucide icon `bluetooth` (24x24 stroke paths).
   static const String bluetooth = "M0 0m7 7 10 10-5 5V2l5 5L7 17";
+  /// Lucide icon `bold` (24x24 stroke paths).
   static const String bold = "M0 0M6 12h9a4 4 0 0 1 0 8H7a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h7a4 4 0 0 1 0 8";
+  /// Lucide icon `bolt` (24x24 stroke paths).
   static const String bolt = "M0 0M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z M0 0M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12";
+  /// Lucide icon `bomb` (24x24 stroke paths).
   static const String bomb = "M0 0M2 13A9 9 0 1 0 20 13A9 9 0 1 0 2 13 M0 0M14.35 4.65 16.3 2.7a2.41 2.41 0 0 1 3.4 0l1.6 1.6a2.4 2.4 0 0 1 0 3.4l-1.95 1.95 M0 0m22 2-1.5 1.5";
+  /// Lucide icon `bone` (24x24 stroke paths).
   static const String bone = "M0 0M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z";
+  /// Lucide icon `book-a` (24x24 stroke paths).
   static const String bookA = "M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0m8 13 4-7 4 7 M0 0M9.1 11h5.7";
+  /// Lucide icon `book-audio` (24x24 stroke paths).
   static const String bookAudio = "M0 0M12 6v7 M0 0M16 8v3 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0M8 8v3";
+  /// Lucide icon `book-check` (24x24 stroke paths).
   static const String bookCheck = "M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0m9 9.5 2 2 4-4";
+  /// Lucide icon `book-copy` (24x24 stroke paths).
   static const String bookCopy = "M0 0M2 16V4a2 2 0 0 1 2-2h11 M0 0M22 18H11a2 2 0 1 0 0 4h10.5a.5.5 0 0 0 .5-.5v-15a.5.5 0 0 0-.5-.5H11a2 2 0 0 0-2 2v12 M0 0M5 14H4a2 2 0 1 0 0 4h1";
+  /// Lucide icon `book-dashed` (24x24 stroke paths).
   static const String bookDashed = "M0 0M12 17h1.5 M0 0M12 22h1.5 M0 0M12 2h1.5 M0 0M17.5 22H19a1 1 0 0 0 1-1 M0 0M17.5 2H19a1 1 0 0 1 1 1v1.5 M0 0M20 14v3h-2.5 M0 0M20 8.5V10 M0 0M4 10V8.5 M0 0M4 19.5V14 M0 0M4 4.5A2.5 2.5 0 0 1 6.5 2H8 M0 0M8 22H6.5a1 1 0 0 1 0-5H8";
+  /// Lucide icon `book-down` (24x24 stroke paths).
   static const String bookDown = "M0 0M12 13V7 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0m9 10 3 3 3-3";
+  /// Lucide icon `book-headphones` (24x24 stroke paths).
   static const String bookHeadphones = "M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0M8 12v-2a4 4 0 0 1 8 0v2 M0 0M14 12A1 1 0 1 0 16 12A1 1 0 1 0 14 12 M0 0M8 12A1 1 0 1 0 10 12A1 1 0 1 0 8 12";
+  /// Lucide icon `book-heart` (24x24 stroke paths).
   static const String bookHeart = "M0 0M16 8.2A2.22 2.22 0 0 0 13.8 6c-.8 0-1.4.3-1.8.9-.4-.6-1-.9-1.8-.9A2.22 2.22 0 0 0 8 8.2c0 .6.3 1.2.7 1.6A226.652 226.652 0 0 0 12 13a404 404 0 0 0 3.3-3.1 2.413 2.413 0 0 0 .7-1.7 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20";
+  /// Lucide icon `book-image` (24x24 stroke paths).
   static const String bookImage = "M0 0m20 13.7-2.1-2.1a2 2 0 0 0-2.8 0L9.7 17 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0M8 8A2 2 0 1 0 12 8A2 2 0 1 0 8 8";
+  /// Lucide icon `book-key` (24x24 stroke paths).
   static const String bookKey = "M0 0m19 3 1 1 M0 0m20 2-4.5 4.5 M0 0M20 8v13a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H14 M0 0M12 8A2 2 0 1 0 16 8A2 2 0 1 0 12 8";
+  /// Lucide icon `book-lock` (24x24 stroke paths).
   static const String bookLock = "M0 0M18 6V4a2 2 0 1 0-4 0v2 M0 0M20 15v6a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H10 M0 0M13 6h6a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `book-marked` (24x24 stroke paths).
   static const String bookMarked = "M0 0M10 2v8l3-3 3 3V2 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20";
+  /// Lucide icon `book-minus` (24x24 stroke paths).
   static const String bookMinus = "M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0M9 10h6";
+  /// Lucide icon `book-open-check` (24x24 stroke paths).
   static const String bookOpenCheck = "M0 0M12 21V7 M0 0m16 12 2 2 4-4 M0 0M22 6V4a1 1 0 0 0-1-1h-5a4 4 0 0 0-4 4 4 4 0 0 0-4-4H3a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h6a3 3 0 0 1 3 3 3 3 0 0 1 3-3h6a1 1 0 0 0 1-1v-1.3";
+  /// Lucide icon `book-open-text` (24x24 stroke paths).
   static const String bookOpenText = "M0 0M12 7v14 M0 0M16 12h2 M0 0M16 8h2 M0 0M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z M0 0M6 12h2 M0 0M6 8h2";
+  /// Lucide icon `book-open` (24x24 stroke paths).
   static const String bookOpen = "M0 0M12 7v14 M0 0M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z";
+  /// Lucide icon `book-plus` (24x24 stroke paths).
   static const String bookPlus = "M0 0M12 7v6 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0M9 10h6";
+  /// Lucide icon `book-text` (24x24 stroke paths).
   static const String bookText = "M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0M8 11h8 M0 0M8 7h6";
+  /// Lucide icon `book-type` (24x24 stroke paths).
   static const String bookType = "M0 0M10 13h4 M0 0M12 6v7 M0 0M16 8V6H8v2 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20";
+  /// Lucide icon `book-up-2` (24x24 stroke paths).
   static const String bookUp2 = "M0 0M12 13V7 M0 0M18 2h1a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2 M0 0m9 10 3-3 3 3 M0 0m9 5 3-3 3 3";
+  /// Lucide icon `book-up` (24x24 stroke paths).
   static const String bookUp = "M0 0M12 13V7 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0m9 10 3-3 3 3";
+  /// Lucide icon `book-user` (24x24 stroke paths).
   static const String bookUser = "M0 0M15 13a3 3 0 1 0-6 0 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0M10 8A2 2 0 1 0 14 8A2 2 0 1 0 10 8";
+  /// Lucide icon `book-x` (24x24 stroke paths).
   static const String bookX = "M0 0m14.5 7-5 5 M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20 M0 0m9.5 7 5 5";
+  /// Lucide icon `book` (24x24 stroke paths).
   static const String book = "M0 0M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20";
+  /// Lucide icon `bookmark-check` (24x24 stroke paths).
   static const String bookmarkCheck = "M0 0m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z M0 0m9 10 2 2 4-4";
+  /// Lucide icon `bookmark-minus` (24x24 stroke paths).
   static const String bookmarkMinus = "M0 0m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z M0 0M15 10L9 10";
+  /// Lucide icon `bookmark-plus` (24x24 stroke paths).
   static const String bookmarkPlus = "M0 0m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z M0 0M12 7L12 13 M0 0M15 10L9 10";
+  /// Lucide icon `bookmark-x` (24x24 stroke paths).
   static const String bookmarkX = "M0 0m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z M0 0m14.5 7.5-5 5 M0 0m9.5 7.5 5 5";
+  /// Lucide icon `bookmark` (24x24 stroke paths).
   static const String bookmark = "M0 0m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z";
+  /// Lucide icon `boom-box` (24x24 stroke paths).
   static const String boomBox = "M0 0M4 9V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4 M0 0M8 8v1 M0 0M12 8v1 M0 0M16 8v1 M0 0M4 9h16a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z M0 0M6 15A2 2 0 1 0 10 15A2 2 0 1 0 6 15 M0 0M14 15A2 2 0 1 0 18 15A2 2 0 1 0 14 15";
+  /// Lucide icon `bot-message-square` (24x24 stroke paths).
   static const String botMessageSquare = "M0 0M12 6V2H8 M0 0m8 18-4 4V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2Z M0 0M2 12h2 M0 0M9 11v2 M0 0M15 11v2 M0 0M20 12h2";
+  /// Lucide icon `bot-off` (24x24 stroke paths).
   static const String botOff = "M0 0M13.67 8H18a2 2 0 0 1 2 2v4.33 M0 0M2 14h2 M0 0M20 14h2 M0 0M22 22 2 2 M0 0M8 8H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 1.414-.586 M0 0M9 13v2 M0 0M9.67 4H12v2.33";
+  /// Lucide icon `bot` (24x24 stroke paths).
   static const String bot = "M0 0M12 8V4H8 M0 0M6 8h12a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z M0 0M2 14h2 M0 0M20 14h2 M0 0M15 13v2 M0 0M9 13v2";
+  /// Lucide icon `box` (24x24 stroke paths).
   static const String box = "M0 0M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z M0 0m3.3 7 8.7 5 8.7-5 M0 0M12 22V12";
+  /// Lucide icon `boxes` (24x24 stroke paths).
   static const String boxes = "M0 0M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z M0 0m7 16.5-4.74-2.85 M0 0m7 16.5 5-3 M0 0M7 16.5v5.17 M0 0M12 13.5V19l3.97 2.38a2 2 0 0 0 2.06 0l3-1.8a2 2 0 0 0 .97-1.71v-3.24a2 2 0 0 0-.97-1.71L17 10.5l-5 3Z M0 0m17 16.5-5-3 M0 0m17 16.5 4.74-2.85 M0 0M17 16.5v5.17 M0 0M7.97 4.42A2 2 0 0 0 7 6.13v4.37l5 3 5-3V6.13a2 2 0 0 0-.97-1.71l-3-1.8a2 2 0 0 0-2.06 0l-3 1.8Z M0 0M12 8 7.26 5.15 M0 0m12 8 4.74-2.85 M0 0M12 13.5V8";
+  /// Lucide icon `braces` (24x24 stroke paths).
   static const String braces = "M0 0M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1 M0 0M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1";
+  /// Lucide icon `brackets` (24x24 stroke paths).
   static const String brackets = "M0 0M16 3h2a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1h-2 M0 0M8 21H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2";
+  /// Lucide icon `brain-circuit` (24x24 stroke paths).
   static const String brainCircuit = "M0 0M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z M0 0M9 13a4.5 4.5 0 0 0 3-4 M0 0M6.003 5.125A3 3 0 0 0 6.401 6.5 M0 0M3.477 10.896a4 4 0 0 1 .585-.396 M0 0M6 18a4 4 0 0 1-1.967-.516 M0 0M12 13h4 M0 0M12 18h6a2 2 0 0 1 2 2v1 M0 0M12 8h8 M0 0M16 8V5a2 2 0 0 1 2-2 M0 0M15.5 13A0.5 0.5 0 1 0 16.5 13A0.5 0.5 0 1 0 15.5 13 M0 0M17.5 3A0.5 0.5 0 1 0 18.5 3A0.5 0.5 0 1 0 17.5 3 M0 0M19.5 21A0.5 0.5 0 1 0 20.5 21A0.5 0.5 0 1 0 19.5 21 M0 0M19.5 8A0.5 0.5 0 1 0 20.5 8A0.5 0.5 0 1 0 19.5 8";
+  /// Lucide icon `brain-cog` (24x24 stroke paths).
   static const String brainCog = "M0 0M12 5a3 3 0 1 0-5.997.142 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588 4 4 0 0 0 7.636 2.106 3.2 3.2 0 0 0 .164-.546c.028-.13.306-.13.335 0a3.2 3.2 0 0 0 .163.546 4 4 0 0 0 7.636-2.106 4 4 0 0 0 .556-6.588 4 4 0 0 0-2.526-5.77A3 3 0 1 0 12 5 M0 0M17.599 6.5a3 3 0 0 0 .399-1.375 M0 0M6.003 5.125A3 3 0 0 0 6.401 6.5 M0 0M3.477 10.896a4 4 0 0 1 .585-.396 M0 0M19.938 10.5a4 4 0 0 1 .585.396 M0 0M6 18a4 4 0 0 1-1.967-.516 M0 0M19.967 17.484A4 4 0 0 1 18 18 M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12 M0 0m15.7 10.4-.9.4 M0 0m9.2 13.2-.9.4 M0 0m13.6 15.7-.4-.9 M0 0m10.8 9.2-.4-.9 M0 0m15.7 13.5-.9-.4 M0 0m9.2 10.9-.9-.4 M0 0m10.5 15.7.4-.9 M0 0m13.1 9.2.4-.9";
+  /// Lucide icon `brain` (24x24 stroke paths).
   static const String brain = "M0 0M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z M0 0M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z M0 0M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4 M0 0M17.599 6.5a3 3 0 0 0 .399-1.375 M0 0M6.003 5.125A3 3 0 0 0 6.401 6.5 M0 0M3.477 10.896a4 4 0 0 1 .585-.396 M0 0M19.938 10.5a4 4 0 0 1 .585.396 M0 0M6 18a4 4 0 0 1-1.967-.516 M0 0M19.967 17.484A4 4 0 0 1 18 18";
+  /// Lucide icon `brick-wall` (24x24 stroke paths).
   static const String brickWall = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M12 9v6 M0 0M16 15v6 M0 0M16 3v6 M0 0M3 15h18 M0 0M3 9h18 M0 0M8 15v6 M0 0M8 3v6";
+  /// Lucide icon `briefcase-business` (24x24 stroke paths).
   static const String briefcaseBusiness = "M0 0M12 12h.01 M0 0M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2 M0 0M22 13a18.15 18.15 0 0 1-20 0 M0 0M4 6h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `briefcase-conveyor-belt` (24x24 stroke paths).
   static const String briefcaseConveyorBelt = "M0 0M10 20v2 M0 0M14 20v2 M0 0M18 20v2 M0 0M21 20H3 M0 0M6 20v2 M0 0M8 16V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v12 M0 0M6 6h12a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `briefcase-medical` (24x24 stroke paths).
   static const String briefcaseMedical = "M0 0M12 11v4 M0 0M14 13h-4 M0 0M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2 M0 0M18 6v14 M0 0M6 6v14 M0 0M4 6h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `briefcase` (24x24 stroke paths).
   static const String briefcase = "M0 0M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16 M0 0M4 6h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `bring-to-front` (24x24 stroke paths).
   static const String bringToFront = "M0 0M10 8h4a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M4 10a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2 M0 0M14 20a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2";
+  /// Lucide icon `brush` (24x24 stroke paths).
   static const String brush = "M0 0m9.06 11.9 8.07-8.06a2.85 2.85 0 1 1 4.03 4.03l-8.06 8.08 M0 0M7.07 14.94c-1.66 0-3 1.35-3 3.02 0 1.33-2.5 1.52-2 2.02 1.08 1.1 2.49 2.02 4 2.02 2.2 0 4-1.8 4-4.04a3.01 3.01 0 0 0-3-3.02z";
+  /// Lucide icon `bug-off` (24x24 stroke paths).
   static const String bugOff = "M0 0M15 7.13V6a3 3 0 0 0-5.14-2.1L8 2 M0 0M14.12 3.88 16 2 M0 0M22 13h-4v-2a4 4 0 0 0-4-4h-1.3 M0 0M20.97 5c0 2.1-1.6 3.8-3.5 4 M0 0m2 2 20 20 M0 0M7.7 7.7A4 4 0 0 0 6 11v3a6 6 0 0 0 11.13 3.13 M0 0M12 20v-8 M0 0M6 13H2 M0 0M3 21c0-2.1 1.7-3.9 3.8-4";
+  /// Lucide icon `bug-play` (24x24 stroke paths).
   static const String bugPlay = "M0 0M12.765 21.522a.5.5 0 0 1-.765-.424v-8.196a.5.5 0 0 1 .765-.424l5.878 3.674a1 1 0 0 1 0 1.696z M0 0M14.12 3.88 16 2 M0 0M18 11a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4v3a6.1 6.1 0 0 0 2 4.5 M0 0M20.97 5c0 2.1-1.6 3.8-3.5 4 M0 0M3 21c0-2.1 1.7-3.9 3.8-4 M0 0M6 13H2 M0 0M6.53 9C4.6 8.8 3 7.1 3 5 M0 0m8 2 1.88 1.88 M0 0M9 7.13v-1a3.003 3.003 0 1 1 6 0v1";
+  /// Lucide icon `bug` (24x24 stroke paths).
   static const String bug = "M0 0m8 2 1.88 1.88 M0 0M14.12 3.88 16 2 M0 0M9 7.13v-1a3.003 3.003 0 1 1 6 0v1 M0 0M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6 M0 0M12 20v-9 M0 0M6.53 9C4.6 8.8 3 7.1 3 5 M0 0M6 13H2 M0 0M3 21c0-2.1 1.7-3.9 3.8-4 M0 0M20.97 5c0 2.1-1.6 3.8-3.5 4 M0 0M22 13h-4 M0 0M17.2 17c2.1.1 3.8 1.9 3.8 4";
+  /// Lucide icon `building-2` (24x24 stroke paths).
   static const String building2 = "M0 0M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z M0 0M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2 M0 0M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2 M0 0M10 6h4 M0 0M10 10h4 M0 0M10 14h4 M0 0M10 18h4";
+  /// Lucide icon `building` (24x24 stroke paths).
   static const String building = "M0 0M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M9 22v-4h6v4 M0 0M8 6h.01 M0 0M16 6h.01 M0 0M12 6h.01 M0 0M12 10h.01 M0 0M12 14h.01 M0 0M16 10h.01 M0 0M16 14h.01 M0 0M8 10h.01 M0 0M8 14h.01";
+  /// Lucide icon `bus-front` (24x24 stroke paths).
   static const String busFront = "M0 0M4 6 2 7 M0 0M10 6h4 M0 0m22 7-2-1 M0 0M6 3h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M4 11h16 M0 0M8 15h.01 M0 0M16 15h.01 M0 0M6 19v2 M0 0M18 21v-2";
+  /// Lucide icon `bus` (24x24 stroke paths).
   static const String bus = "M0 0M8 6v6 M0 0M15 6v6 M0 0M2 12h19.6 M0 0M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2 0-.4-.1-.8-.2-1.2l-1.4-5C20.1 6.8 19.1 6 18 6H4a2 2 0 0 0-2 2v10h3 M0 0M5 18A2 2 0 1 0 9 18A2 2 0 1 0 5 18 M0 0M9 18h5 M0 0M14 18A2 2 0 1 0 18 18A2 2 0 1 0 14 18";
+  /// Lucide icon `cable-car` (24x24 stroke paths).
   static const String cableCar = "M0 0M10 3h.01 M0 0M14 2h.01 M0 0m2 9 20-5 M0 0M12 12V6.5 M0 0M7 12h10a3 3 0 0 1 3 3v4a3 3 0 0 1 -3 3h-10a3 3 0 0 1 -3 -3v-4a3 3 0 0 1 3 -3Z M0 0M9 12v5 M0 0M15 12v5 M0 0M4 17h16";
+  /// Lucide icon `cable` (24x24 stroke paths).
   static const String cable = "M0 0M17 21v-2a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1 M0 0M19 15V6.5a1 1 0 0 0-7 0v11a1 1 0 0 1-7 0V9 M0 0M21 21v-2h-4 M0 0M3 5h4V3 M0 0M7 5a1 1 0 0 1 1 1v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1V3";
+  /// Lucide icon `cake-slice` (24x24 stroke paths).
   static const String cakeSlice = "M0 0M7 7A2 2 0 1 0 11 7A2 2 0 1 0 7 7 M0 0M7.2 7.9 3 11v9c0 .6.4 1 1 1h16c.6 0 1-.4 1-1v-9c0-2-3-6-7-8l-3.6 2.6 M0 0M16 13H3 M0 0M16 17H3";
+  /// Lucide icon `cake` (24x24 stroke paths).
   static const String cake = "M0 0M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8 M0 0M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1 M0 0M2 21h20 M0 0M7 8v3 M0 0M12 8v3 M0 0M17 8v3 M0 0M7 4h.01 M0 0M12 4h.01 M0 0M17 4h.01";
+  /// Lucide icon `calculator` (24x24 stroke paths).
   static const String calculator = "M0 0M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M8 6L16 6 M0 0M16 14L16 18 M0 0M16 10h.01 M0 0M12 10h.01 M0 0M8 10h.01 M0 0M12 14h.01 M0 0M8 14h.01 M0 0M12 18h.01 M0 0M8 18h.01";
+  /// Lucide icon `calendar-1` (24x24 stroke paths).
   static const String calendar1 = "M0 0M11 14h1v4 M0 0M16 2v4 M0 0M3 10h18 M0 0M8 2v4 M0 0M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `calendar-arrow-down` (24x24 stroke paths).
   static const String calendarArrowDown = "M0 0m14 18 4 4 4-4 M0 0M16 2v4 M0 0M18 14v8 M0 0M21 11.354V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7.343 M0 0M3 10h18 M0 0M8 2v4";
+  /// Lucide icon `calendar-arrow-up` (24x24 stroke paths).
   static const String calendarArrowUp = "M0 0m14 18 4-4 4 4 M0 0M16 2v4 M0 0M18 22v-8 M0 0M21 11.343V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h9 M0 0M3 10h18 M0 0M8 2v4";
+  /// Lucide icon `calendar-check-2` (24x24 stroke paths).
   static const String calendarCheck2 = "M0 0M8 2v4 M0 0M16 2v4 M0 0M21 14V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8 M0 0M3 10h18 M0 0m16 20 2 2 4-4";
+  /// Lucide icon `calendar-check` (24x24 stroke paths).
   static const String calendarCheck = "M0 0M8 2v4 M0 0M16 2v4 M0 0M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 10h18 M0 0m9 16 2 2 4-4";
+  /// Lucide icon `calendar-clock` (24x24 stroke paths).
   static const String calendarClock = "M0 0M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5 M0 0M16 2v4 M0 0M8 2v4 M0 0M3 10h5 M0 0M17.5 17.5 16 16.3V14 M0 0M10 16A6 6 0 1 0 22 16A6 6 0 1 0 10 16";
+  /// Lucide icon `calendar-cog` (24x24 stroke paths).
   static const String calendarCog = "M0 0m15.2 16.9-.9-.4 M0 0m15.2 19.1-.9.4 M0 0M16 2v4 M0 0m16.9 15.2-.4-.9 M0 0m16.9 20.8-.4.9 M0 0m19.5 14.3-.4.9 M0 0m19.5 21.7-.4-.9 M0 0M21 10.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6 M0 0m21.7 16.5-.9.4 M0 0m21.7 19.5-.9-.4 M0 0M3 10h18 M0 0M8 2v4 M0 0M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18";
+  /// Lucide icon `calendar-days` (24x24 stroke paths).
   static const String calendarDays = "M0 0M8 2v4 M0 0M16 2v4 M0 0M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 10h18 M0 0M8 14h.01 M0 0M12 14h.01 M0 0M16 14h.01 M0 0M8 18h.01 M0 0M12 18h.01 M0 0M16 18h.01";
+  /// Lucide icon `calendar-fold` (24x24 stroke paths).
   static const String calendarFold = "M0 0M8 2v4 M0 0M16 2v4 M0 0M21 17V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11Z M0 0M3 10h18 M0 0M15 22v-4a2 2 0 0 1 2-2h4";
+  /// Lucide icon `calendar-heart` (24x24 stroke paths).
   static const String calendarHeart = "M0 0M3 10h18V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7 M0 0M8 2v4 M0 0M16 2v4 M0 0M21.29 14.7a2.43 2.43 0 0 0-2.65-.52c-.3.12-.57.3-.8.53l-.34.34-.35-.34a2.43 2.43 0 0 0-2.65-.53c-.3.12-.56.3-.79.53-.95.94-1 2.53.2 3.74L17.5 22l3.6-3.55c1.2-1.21 1.14-2.8.19-3.74Z";
+  /// Lucide icon `calendar-minus-2` (24x24 stroke paths).
   static const String calendarMinus2 = "M0 0M8 2v4 M0 0M16 2v4 M0 0M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 10h18 M0 0M10 16h4";
+  /// Lucide icon `calendar-minus` (24x24 stroke paths).
   static const String calendarMinus = "M0 0M16 19h6 M0 0M16 2v4 M0 0M21 15V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8.5 M0 0M3 10h18 M0 0M8 2v4";
+  /// Lucide icon `calendar-off` (24x24 stroke paths).
   static const String calendarOff = "M0 0M4.2 4.2A2 2 0 0 0 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 1.82-1.18 M0 0M21 15.5V6a2 2 0 0 0-2-2H9.5 M0 0M16 2v4 M0 0M3 10h7 M0 0M21 10h-5.5 M0 0m2 2 20 20";
+  /// Lucide icon `calendar-plus-2` (24x24 stroke paths).
   static const String calendarPlus2 = "M0 0M8 2v4 M0 0M16 2v4 M0 0M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 10h18 M0 0M10 16h4 M0 0M12 14v4";
+  /// Lucide icon `calendar-plus` (24x24 stroke paths).
   static const String calendarPlus = "M0 0M8 2v4 M0 0M16 2v4 M0 0M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8 M0 0M3 10h18 M0 0M16 19h6 M0 0M19 16v6";
+  /// Lucide icon `calendar-range` (24x24 stroke paths).
   static const String calendarRange = "M0 0M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M16 2v4 M0 0M3 10h18 M0 0M8 2v4 M0 0M17 14h-6 M0 0M13 18H7 M0 0M7 14h.01 M0 0M17 18h.01";
+  /// Lucide icon `calendar-search` (24x24 stroke paths).
   static const String calendarSearch = "M0 0M16 2v4 M0 0M21 11.75V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7.25 M0 0m22 22-1.875-1.875 M0 0M3 10h18 M0 0M8 2v4 M0 0M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18";
+  /// Lucide icon `calendar-sync` (24x24 stroke paths).
   static const String calendarSync = "M0 0M11 10v4h4 M0 0m11 14 1.535-1.605a5 5 0 0 1 8 1.5 M0 0M16 2v4 M0 0m21 18-1.535 1.605a5 5 0 0 1-8-1.5 M0 0M21 22v-4h-4 M0 0M21 8.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4.3 M0 0M3 10h4 M0 0M8 2v4";
+  /// Lucide icon `calendar-x-2` (24x24 stroke paths).
   static const String calendarX2 = "M0 0M8 2v4 M0 0M16 2v4 M0 0M21 13V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8 M0 0M3 10h18 M0 0m17 22 5-5 M0 0m17 17 5 5";
+  /// Lucide icon `calendar-x` (24x24 stroke paths).
   static const String calendarX = "M0 0M8 2v4 M0 0M16 2v4 M0 0M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 10h18 M0 0m14 14-4 4 M0 0m10 14 4 4";
+  /// Lucide icon `calendar` (24x24 stroke paths).
   static const String calendar = "M0 0M8 2v4 M0 0M16 2v4 M0 0M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 10h18";
+  /// Lucide icon `camera-off` (24x24 stroke paths).
   static const String cameraOff = "M0 0M2 2L22 22 M0 0M7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16 M0 0M9.5 4h5L17 7h3a2 2 0 0 1 2 2v7.5 M0 0M14.121 15.121A3 3 0 1 1 9.88 10.88";
+  /// Lucide icon `camera` (24x24 stroke paths).
   static const String camera = "M0 0M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z M0 0M9 13A3 3 0 1 0 15 13A3 3 0 1 0 9 13";
+  /// Lucide icon `candy-cane` (24x24 stroke paths).
   static const String candyCane = "M0 0M5.7 21a2 2 0 0 1-3.5-2l8.6-14a6 6 0 0 1 10.4 6 2 2 0 1 1-3.464-2 2 2 0 1 0-3.464-2Z M0 0M17.75 7 15 2.1 M0 0M10.9 4.8 13 9 M0 0m7.9 9.7 2 4.4 M0 0M4.9 14.7 7 18.9";
+  /// Lucide icon `candy-off` (24x24 stroke paths).
   static const String candyOff = "M0 0M10 10v7.9 M0 0M11.802 6.145a5 5 0 0 1 6.053 6.053 M0 0M14 6.1v2.243 M0 0m15.5 15.571-.964.964a5 5 0 0 1-7.071 0 5 5 0 0 1 0-7.07l.964-.965 M0 0M16 7V3a1 1 0 0 1 1.707-.707 2.5 2.5 0 0 0 2.152.717 1 1 0 0 1 1.131 1.131 2.5 2.5 0 0 0 .717 2.152A1 1 0 0 1 21 8h-4 M0 0m2 2 20 20 M0 0M8 17v4a1 1 0 0 1-1.707.707 2.5 2.5 0 0 0-2.152-.717 1 1 0 0 1-1.131-1.131 2.5 2.5 0 0 0-.717-2.152A1 1 0 0 1 3 16h4";
+  /// Lucide icon `candy` (24x24 stroke paths).
   static const String candy = "M0 0M10 7v10.9 M0 0M14 6.1V17 M0 0M16 7V3a1 1 0 0 1 1.707-.707 2.5 2.5 0 0 0 2.152.717 1 1 0 0 1 1.131 1.131 2.5 2.5 0 0 0 .717 2.152A1 1 0 0 1 21 8h-4 M0 0M16.536 7.465a5 5 0 0 0-7.072 0l-2 2a5 5 0 0 0 0 7.07 5 5 0 0 0 7.072 0l2-2a5 5 0 0 0 0-7.07 M0 0M8 17v4a1 1 0 0 1-1.707.707 2.5 2.5 0 0 0-2.152-.717 1 1 0 0 1-1.131-1.131 2.5 2.5 0 0 0-.717-2.152A1 1 0 0 1 3 16h4";
+  /// Lucide icon `cannabis` (24x24 stroke paths).
   static const String cannabis = "M0 0M12 22v-4 M0 0M7 12c-1.5 0-4.5 1.5-5 3 3.5 1.5 6 1 6 1-1.5 1.5-2 3.5-2 5 2.5 0 4.5-1.5 6-3 1.5 1.5 3.5 3 6 3 0-1.5-.5-3.5-2-5 0 0 2.5.5 6-1-.5-1.5-3.5-3-5-3 1.5-1 4-4 4-6-2.5 0-5.5 1.5-7 3 0-2.5-.5-5-2-7-1.5 2-2 4.5-2 7-1.5-1.5-4.5-3-7-3 0 2 2.5 5 4 6";
+  /// Lucide icon `captions-off` (24x24 stroke paths).
   static const String captionsOff = "M0 0M10.5 5H19a2 2 0 0 1 2 2v8.5 M0 0M17 11h-.5 M0 0M19 19H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2 M0 0m2 2 20 20 M0 0M7 11h4 M0 0M7 15h2.5";
+  /// Lucide icon `captions` (24x24 stroke paths).
   static const String captions = "M0 0M5 5h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M7 15h4M15 15h2M7 11h2M13 11h4";
+  /// Lucide icon `car-front` (24x24 stroke paths).
   static const String carFront = "M0 0m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8 M0 0M7 14h.01 M0 0M17 14h.01 M0 0M5 10h14a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M5 18v2 M0 0M19 18v2";
+  /// Lucide icon `car-taxi-front` (24x24 stroke paths).
   static const String carTaxiFront = "M0 0M10 2h4 M0 0m21 8-2 2-1.5-3.7A2 2 0 0 0 15.646 5H8.4a2 2 0 0 0-1.903 1.257L5 10 3 8 M0 0M7 14h.01 M0 0M17 14h.01 M0 0M5 10h14a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M5 18v2 M0 0M19 18v2";
+  /// Lucide icon `car` (24x24 stroke paths).
   static const String car = "M0 0M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2 M0 0M5 17A2 2 0 1 0 9 17A2 2 0 1 0 5 17 M0 0M9 17h6 M0 0M15 17A2 2 0 1 0 19 17A2 2 0 1 0 15 17";
+  /// Lucide icon `caravan` (24x24 stroke paths).
   static const String caravan = "M0 0M18 19V9a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v8a2 2 0 0 0 2 2h2 M0 0M2 9h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2 M0 0M22 17v1a1 1 0 0 1-1 1H10v-9a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v9 M0 0M6 19A2 2 0 1 0 10 19A2 2 0 1 0 6 19";
+  /// Lucide icon `carrot` (24x24 stroke paths).
   static const String carrot = "M0 0M2.27 21.7s9.87-3.5 12.73-6.36a4.5 4.5 0 0 0-6.36-6.37C5.77 11.84 2.27 21.7 2.27 21.7zM8.64 14l-2.05-2.04M15.34 15l-2.46-2.46 M0 0M22 9s-1.33-2-3.5-2C16.86 7 15 9 15 9s1.33 2 3.5 2S22 9 22 9z M0 0M15 2s-2 1.33-2 3.5S15 9 15 9s2-1.84 2-3.5C17 3.33 15 2 15 2z";
+  /// Lucide icon `case-lower` (24x24 stroke paths).
   static const String caseLower = "M0 0M4 12A3 3 0 1 0 10 12A3 3 0 1 0 4 12 M0 0M10 9v6 M0 0M14 12A3 3 0 1 0 20 12A3 3 0 1 0 14 12 M0 0M14 7v8";
+  /// Lucide icon `case-sensitive` (24x24 stroke paths).
   static const String caseSensitive = "M0 0m3 15 4-8 4 8 M0 0M4 13h6 M0 0M15 12A3 3 0 1 0 21 12A3 3 0 1 0 15 12 M0 0M21 9v6";
+  /// Lucide icon `case-upper` (24x24 stroke paths).
   static const String caseUpper = "M0 0m3 15 4-8 4 8 M0 0M4 13h6 M0 0M15 11h4.5a2 2 0 0 1 0 4H15V7h4a2 2 0 0 1 0 4";
+  /// Lucide icon `cassette-tape` (24x24 stroke paths).
   static const String cassetteTape = "M0 0M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M6 10A2 2 0 1 0 10 10A2 2 0 1 0 6 10 M0 0M8 12h8 M0 0M14 10A2 2 0 1 0 18 10A2 2 0 1 0 14 10 M0 0m6 20 .7-2.9A1.4 1.4 0 0 1 8.1 16h7.8a1.4 1.4 0 0 1 1.4 1l.7 3";
+  /// Lucide icon `cast` (24x24 stroke paths).
   static const String cast = "M0 0M2 8V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-6 M0 0M2 12a9 9 0 0 1 8 8 M0 0M2 16a5 5 0 0 1 4 4 M0 0M2 20L2.01 20";
+  /// Lucide icon `castle` (24x24 stroke paths).
   static const String castle = "M0 0M22 20v-9H2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2Z M0 0M18 11V4H6v7 M0 0M15 22v-4a3 3 0 0 0-3-3a3 3 0 0 0-3 3v4 M0 0M22 11V9 M0 0M2 11V9 M0 0M6 4V2 M0 0M18 4V2 M0 0M10 4V2 M0 0M14 4V2";
+  /// Lucide icon `cat` (24x24 stroke paths).
   static const String cat = "M0 0M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z M0 0M8 14v.5 M0 0M16 14v.5 M0 0M11.25 16.25h1.5L12 17l-.75-.75Z";
+  /// Lucide icon `cctv` (24x24 stroke paths).
   static const String cctv = "M0 0M16.75 12h3.632a1 1 0 0 1 .894 1.447l-2.034 4.069a1 1 0 0 1-1.708.134l-2.124-2.97 M0 0M17.106 9.053a1 1 0 0 1 .447 1.341l-3.106 6.211a1 1 0 0 1-1.342.447L3.61 12.3a2.92 2.92 0 0 1-1.3-3.91L3.69 5.6a2.92 2.92 0 0 1 3.92-1.3z M0 0M2 19h3.76a2 2 0 0 0 1.8-1.1L9 15 M0 0M2 21v-4 M0 0M7 9h.01";
+  /// Lucide icon `chart-area` (24x24 stroke paths).
   static const String chartArea = "M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M7 11.207a.5.5 0 0 1 .146-.353l2-2a.5.5 0 0 1 .708 0l3.292 3.292a.5.5 0 0 0 .708 0l4.292-4.292a.5.5 0 0 1 .854.353V16a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1z";
+  /// Lucide icon `chart-bar-big` (24x24 stroke paths).
   static const String chartBarBig = "M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M8 13h7a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-7a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M8 5h10a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `chart-bar-decreasing` (24x24 stroke paths).
   static const String chartBarDecreasing = "M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M7 11h8 M0 0M7 16h3 M0 0M7 6h12";
+  /// Lucide icon `chart-bar-increasing` (24x24 stroke paths).
   static const String chartBarIncreasing = "M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M7 11h8 M0 0M7 16h12 M0 0M7 6h3";
+  /// Lucide icon `chart-bar-stacked` (24x24 stroke paths).
   static const String chartBarStacked = "M0 0M11 13v4 M0 0M15 5v4 M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M8 13h7a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-7a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M8 5h10a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `chart-bar` (24x24 stroke paths).
   static const String chartBar = "M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M7 16h8 M0 0M7 11h12 M0 0M7 6h3";
+  /// Lucide icon `chart-candlestick` (24x24 stroke paths).
   static const String chartCandlestick = "M0 0M9 5v4 M0 0M8 9h2a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z M0 0M9 15v2 M0 0M17 3v2 M0 0M16 5h2a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1Z M0 0M17 13v3 M0 0M3 3v16a2 2 0 0 0 2 2h16";
+  /// Lucide icon `chart-column-big` (24x24 stroke paths).
   static const String chartColumnBig = "M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M16 5h2a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-10a1 1 0 0 1 1 -1Z M0 0M8 8h2a1 1 0 0 1 1 1v7a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `chart-column-decreasing` (24x24 stroke paths).
   static const String chartColumnDecreasing = "M0 0M13 17V9 M0 0M18 17v-3 M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M8 17V5";
+  /// Lucide icon `chart-column-increasing` (24x24 stroke paths).
   static const String chartColumnIncreasing = "M0 0M13 17V9 M0 0M18 17V5 M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M8 17v-3";
+  /// Lucide icon `chart-column-stacked` (24x24 stroke paths).
   static const String chartColumnStacked = "M0 0M11 13H7 M0 0M19 9h-4 M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M16 5h2a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-10a1 1 0 0 1 1 -1Z M0 0M8 8h2a1 1 0 0 1 1 1v7a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `chart-column` (24x24 stroke paths).
   static const String chartColumn = "M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M18 17V9 M0 0M13 17V5 M0 0M8 17v-3";
+  /// Lucide icon `chart-gantt` (24x24 stroke paths).
   static const String chartGantt = "M0 0M10 6h8 M0 0M12 16h6 M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M8 11h7";
+  /// Lucide icon `chart-line` (24x24 stroke paths).
   static const String chartLine = "M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0m19 9-5 5-4-4-3 3";
+  /// Lucide icon `chart-network` (24x24 stroke paths).
   static const String chartNetwork = "M0 0m13.11 7.664 1.78 2.672 M0 0m14.162 12.788-3.324 1.424 M0 0m20 4-6.06 1.515 M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M10 6A2 2 0 1 0 14 6A2 2 0 1 0 10 6 M0 0M14 12A2 2 0 1 0 18 12A2 2 0 1 0 14 12 M0 0M7 15A2 2 0 1 0 11 15A2 2 0 1 0 7 15";
+  /// Lucide icon `chart-no-axes-column-decreasing` (24x24 stroke paths).
   static const String chartNoAxesColumnDecreasing = "M0 0M12 20V10 M0 0M18 20v-4 M0 0M6 20V4";
+  /// Lucide icon `chart-no-axes-column-increasing` (24x24 stroke paths).
   static const String chartNoAxesColumnIncreasing = "M0 0M12 20L12 10 M0 0M18 20L18 4 M0 0M6 20L6 16";
+  /// Lucide icon `chart-no-axes-column` (24x24 stroke paths).
   static const String chartNoAxesColumn = "M0 0M18 20L18 10 M0 0M12 20L12 4 M0 0M6 20L6 14";
+  /// Lucide icon `chart-no-axes-combined` (24x24 stroke paths).
   static const String chartNoAxesCombined = "M0 0M12 16v5 M0 0M16 14v7 M0 0M20 10v11 M0 0m22 3-8.646 8.646a.5.5 0 0 1-.708 0L9.354 8.354a.5.5 0 0 0-.707 0L2 15 M0 0M4 18v3 M0 0M8 14v7";
+  /// Lucide icon `chart-no-axes-gantt` (24x24 stroke paths).
   static const String chartNoAxesGantt = "M0 0M8 6h10 M0 0M6 12h9 M0 0M11 18h7";
+  /// Lucide icon `chart-pie` (24x24 stroke paths).
   static const String chartPie = "M0 0M21 12c.552 0 1.005-.449.95-.998a10 10 0 0 0-8.953-8.951c-.55-.055-.998.398-.998.95v8a1 1 0 0 0 1 1z M0 0M21.21 15.89A10 10 0 1 1 8 2.83";
+  /// Lucide icon `chart-scatter` (24x24 stroke paths).
   static const String chartScatter = "M0 0M7 7.5A0.5 0.5 0 1 0 8 7.5A0.5 0.5 0 1 0 7 7.5 M0 0M18 5.5A0.5 0.5 0 1 0 19 5.5A0.5 0.5 0 1 0 18 5.5 M0 0M11 11.5A0.5 0.5 0 1 0 12 11.5A0.5 0.5 0 1 0 11 11.5 M0 0M7 16.5A0.5 0.5 0 1 0 8 16.5A0.5 0.5 0 1 0 7 16.5 M0 0M17 14.5A0.5 0.5 0 1 0 18 14.5A0.5 0.5 0 1 0 17 14.5 M0 0M3 3v16a2 2 0 0 0 2 2h16";
+  /// Lucide icon `chart-spline` (24x24 stroke paths).
   static const String chartSpline = "M0 0M3 3v16a2 2 0 0 0 2 2h16 M0 0M7 16c.5-2 1.5-7 4-7 2 0 2 3 4 3 2.5 0 4.5-5 5-7";
+  /// Lucide icon `check-check` (24x24 stroke paths).
   static const String checkCheck = "M0 0M18 6 7 17l-5-5 M0 0m22 10-7.5 7.5L13 16";
+  /// Lucide icon `check` (24x24 stroke paths).
   static const String check = "M0 0M20 6 9 17l-5-5";
+  /// Lucide icon `chef-hat` (24x24 stroke paths).
   static const String chefHat = "M0 0M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z M0 0M6 17h12";
+  /// Lucide icon `cherry` (24x24 stroke paths).
   static const String cherry = "M0 0M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z M0 0M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z M0 0M7 14c3.22-2.91 4.29-8.75 5-12 1.66 2.38 4.94 9 5 12 M0 0M22 9c-4.29 0-7.14-2.33-10-7 5.71 0 10 4.67 10 7Z";
+  /// Lucide icon `chevron-down` (24x24 stroke paths).
   static const String chevronDown = "M0 0m6 9 6 6 6-6";
+  /// Lucide icon `chevron-first` (24x24 stroke paths).
   static const String chevronFirst = "M0 0m17 18-6-6 6-6 M0 0M7 6v12";
+  /// Lucide icon `chevron-last` (24x24 stroke paths).
   static const String chevronLast = "M0 0m7 18 6-6-6-6 M0 0M17 6v12";
+  /// Lucide icon `chevron-left` (24x24 stroke paths).
   static const String chevronLeft = "M0 0m15 18-6-6 6-6";
+  /// Lucide icon `chevron-right` (24x24 stroke paths).
   static const String chevronRight = "M0 0m9 18 6-6-6-6";
+  /// Lucide icon `chevron-up` (24x24 stroke paths).
   static const String chevronUp = "M0 0m18 15-6-6-6 6";
+  /// Lucide icon `chevrons-down-up` (24x24 stroke paths).
   static const String chevronsDownUp = "M0 0m7 20 5-5 5 5 M0 0m7 4 5 5 5-5";
+  /// Lucide icon `chevrons-down` (24x24 stroke paths).
   static const String chevronsDown = "M0 0m7 6 5 5 5-5 M0 0m7 13 5 5 5-5";
+  /// Lucide icon `chevrons-left-right-ellipsis` (24x24 stroke paths).
   static const String chevronsLeftRightEllipsis = "M0 0m18 8 4 4-4 4 M0 0m6 8-4 4 4 4 M0 0M8 12h.01 M0 0M12 12h.01 M0 0M16 12h.01";
+  /// Lucide icon `chevrons-left-right` (24x24 stroke paths).
   static const String chevronsLeftRight = "M0 0m9 7-5 5 5 5 M0 0m15 7 5 5-5 5";
+  /// Lucide icon `chevrons-left` (24x24 stroke paths).
   static const String chevronsLeft = "M0 0m11 17-5-5 5-5 M0 0m18 17-5-5 5-5";
+  /// Lucide icon `chevrons-right-left` (24x24 stroke paths).
   static const String chevronsRightLeft = "M0 0m20 17-5-5 5-5 M0 0m4 17 5-5-5-5";
+  /// Lucide icon `chevrons-right` (24x24 stroke paths).
   static const String chevronsRight = "M0 0m6 17 5-5-5-5 M0 0m13 17 5-5-5-5";
+  /// Lucide icon `chevrons-up-down` (24x24 stroke paths).
   static const String chevronsUpDown = "M0 0m7 15 5 5 5-5 M0 0m7 9 5-5 5 5";
+  /// Lucide icon `chevrons-up` (24x24 stroke paths).
   static const String chevronsUp = "M0 0m17 11-5-5-5 5 M0 0m17 18-5-5-5 5";
+  /// Lucide icon `chrome` (24x24 stroke paths).
   static const String chrome = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12 M0 0M21.17 8L12 8 M0 0M3.95 6.06L8.54 14 M0 0M10.88 21.94L15.46 14";
+  /// Lucide icon `church` (24x24 stroke paths).
   static const String church = "M0 0M10 9h4 M0 0M12 7v5 M0 0M14 22v-4a2 2 0 0 0-4 0v4 M0 0M18 22V5.618a1 1 0 0 0-.553-.894l-4.553-2.277a2 2 0 0 0-1.788 0L6.553 4.724A1 1 0 0 0 6 5.618V22 M0 0m18 7 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.618a1 1 0 0 1 .553-.894L6 7";
+  /// Lucide icon `cigarette-off` (24x24 stroke paths).
   static const String cigaretteOff = "M0 0M12 12H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h13 M0 0M18 8c0-2.5-2-2.5-2-5 M0 0m2 2 20 20 M0 0M21 12a1 1 0 0 1 1 1v2a1 1 0 0 1-.5.866 M0 0M22 8c0-2.5-2-2.5-2-5 M0 0M7 12v4";
+  /// Lucide icon `cigarette` (24x24 stroke paths).
   static const String cigarette = "M0 0M17 12H3a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h14 M0 0M18 8c0-2.5-2-2.5-2-5 M0 0M21 16a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1 M0 0M22 8c0-2.5-2-2.5-2-5 M0 0M7 12v4";
+  /// Lucide icon `circle-alert` (24x24 stroke paths).
   static const String circleAlert = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 8L12 12 M0 0M12 16L12.01 16";
+  /// Lucide icon `circle-arrow-down` (24x24 stroke paths).
   static const String circleArrowDown = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 8v8 M0 0m8 12 4 4 4-4";
+  /// Lucide icon `circle-arrow-left` (24x24 stroke paths).
   static const String circleArrowLeft = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M16 12H8 M0 0m12 8-4 4 4 4";
+  /// Lucide icon `circle-arrow-out-down-left` (24x24 stroke paths).
   static const String circleArrowOutDownLeft = "M0 0M2 12a10 10 0 1 1 10 10 M0 0m2 22 10-10 M0 0M8 22H2v-6";
+  /// Lucide icon `circle-arrow-out-down-right` (24x24 stroke paths).
   static const String circleArrowOutDownRight = "M0 0M12 22a10 10 0 1 1 10-10 M0 0M22 22 12 12 M0 0M22 16v6h-6";
+  /// Lucide icon `circle-arrow-out-up-left` (24x24 stroke paths).
   static const String circleArrowOutUpLeft = "M0 0M2 8V2h6 M0 0m2 2 10 10 M0 0M12 2A10 10 0 1 1 2 12";
+  /// Lucide icon `circle-arrow-out-up-right` (24x24 stroke paths).
   static const String circleArrowOutUpRight = "M0 0M22 12A10 10 0 1 1 12 2 M0 0M22 2 12 12 M0 0M16 2h6v6";
+  /// Lucide icon `circle-arrow-right` (24x24 stroke paths).
   static const String circleArrowRight = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M8 12h8 M0 0m12 16 4-4-4-4";
+  /// Lucide icon `circle-arrow-up` (24x24 stroke paths).
   static const String circleArrowUp = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0m16 12-4-4-4 4 M0 0M12 16V8";
+  /// Lucide icon `circle-check-big` (24x24 stroke paths).
   static const String circleCheckBig = "M0 0M21.801 10A10 10 0 1 1 17 3.335 M0 0m9 11 3 3L22 4";
+  /// Lucide icon `circle-check` (24x24 stroke paths).
   static const String circleCheck = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0m9 12 2 2 4-4";
+  /// Lucide icon `circle-chevron-down` (24x24 stroke paths).
   static const String circleChevronDown = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0m16 10-4 4-4-4";
+  /// Lucide icon `circle-chevron-left` (24x24 stroke paths).
   static const String circleChevronLeft = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0m14 16-4-4 4-4";
+  /// Lucide icon `circle-chevron-right` (24x24 stroke paths).
   static const String circleChevronRight = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0m10 8 4 4-4 4";
+  /// Lucide icon `circle-chevron-up` (24x24 stroke paths).
   static const String circleChevronUp = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0m8 14 4-4 4 4";
+  /// Lucide icon `circle-dashed` (24x24 stroke paths).
   static const String circleDashed = "M0 0M10.1 2.182a10 10 0 0 1 3.8 0 M0 0M13.9 21.818a10 10 0 0 1-3.8 0 M0 0M17.609 3.721a10 10 0 0 1 2.69 2.7 M0 0M2.182 13.9a10 10 0 0 1 0-3.8 M0 0M20.279 17.609a10 10 0 0 1-2.7 2.69 M0 0M21.818 10.1a10 10 0 0 1 0 3.8 M0 0M3.721 6.391a10 10 0 0 1 2.7-2.69 M0 0M6.391 20.279a10 10 0 0 1-2.69-2.7";
+  /// Lucide icon `circle-divide` (24x24 stroke paths).
   static const String circleDivide = "M0 0M8 12L16 12 M0 0M12 16L12 16 M0 0M12 8L12 8 M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12";
+  /// Lucide icon `circle-dollar-sign` (24x24 stroke paths).
   static const String circleDollarSign = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8 M0 0M12 18V6";
+  /// Lucide icon `circle-dot-dashed` (24x24 stroke paths).
   static const String circleDotDashed = "M0 0M10.1 2.18a9.93 9.93 0 0 1 3.8 0 M0 0M17.6 3.71a9.95 9.95 0 0 1 2.69 2.7 M0 0M21.82 10.1a9.93 9.93 0 0 1 0 3.8 M0 0M20.29 17.6a9.95 9.95 0 0 1-2.7 2.69 M0 0M13.9 21.82a9.94 9.94 0 0 1-3.8 0 M0 0M6.4 20.29a9.95 9.95 0 0 1-2.69-2.7 M0 0M2.18 13.9a9.93 9.93 0 0 1 0-3.8 M0 0M3.71 6.4a9.95 9.95 0 0 1 2.7-2.69 M0 0M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12";
+  /// Lucide icon `circle-dot` (24x24 stroke paths).
   static const String circleDot = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12";
+  /// Lucide icon `circle-ellipsis` (24x24 stroke paths).
   static const String circleEllipsis = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M17 12h.01 M0 0M12 12h.01 M0 0M7 12h.01";
+  /// Lucide icon `circle-equal` (24x24 stroke paths).
   static const String circleEqual = "M0 0M7 10h10 M0 0M7 14h10 M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12";
+  /// Lucide icon `circle-fading-arrow-up` (24x24 stroke paths).
   static const String circleFadingArrowUp = "M0 0M12 2a10 10 0 0 1 7.38 16.75 M0 0m16 12-4-4-4 4 M0 0M12 16V8 M0 0M2.5 8.875a10 10 0 0 0-.5 3 M0 0M2.83 16a10 10 0 0 0 2.43 3.4 M0 0M4.636 5.235a10 10 0 0 1 .891-.857 M0 0M8.644 21.42a10 10 0 0 0 7.631-.38";
+  /// Lucide icon `circle-fading-plus` (24x24 stroke paths).
   static const String circleFadingPlus = "M0 0M12 2a10 10 0 0 1 7.38 16.75 M0 0M12 8v8 M0 0M16 12H8 M0 0M2.5 8.875a10 10 0 0 0-.5 3 M0 0M2.83 16a10 10 0 0 0 2.43 3.4 M0 0M4.636 5.235a10 10 0 0 1 .891-.857 M0 0M8.644 21.42a10 10 0 0 0 7.631-.38";
+  /// Lucide icon `circle-gauge` (24x24 stroke paths).
   static const String circleGauge = "M0 0M15.6 2.7a10 10 0 1 0 5.7 5.7 M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12 M0 0M13.4 10.6 19 5";
+  /// Lucide icon `circle-help` (24x24 stroke paths).
   static const String circleHelp = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3 M0 0M12 17h.01";
+  /// Lucide icon `circle-minus` (24x24 stroke paths).
   static const String circleMinus = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M8 12h8";
+  /// Lucide icon `circle-off` (24x24 stroke paths).
   static const String circleOff = "M0 0m2 2 20 20 M0 0M8.35 2.69A10 10 0 0 1 21.3 15.65 M0 0M19.08 19.08A10 10 0 1 1 4.92 4.92";
+  /// Lucide icon `circle-parking-off` (24x24 stroke paths).
   static const String circleParkingOff = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0m5 5 14 14 M0 0M13 13a3 3 0 1 0 0-6H9v2 M0 0M9 17v-2.34";
+  /// Lucide icon `circle-parking` (24x24 stroke paths).
   static const String circleParking = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M9 17V7h4a3 3 0 0 1 0 6H9";
+  /// Lucide icon `circle-pause` (24x24 stroke paths).
   static const String circlePause = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M10 15L10 9 M0 0M14 15L14 9";
+  /// Lucide icon `circle-percent` (24x24 stroke paths).
   static const String circlePercent = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0m15 9-6 6 M0 0M9 9h.01 M0 0M15 15h.01";
+  /// Lucide icon `circle-play` (24x24 stroke paths).
   static const String circlePlay = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M10 8L16 12L10 16L10 8Z";
+  /// Lucide icon `circle-plus` (24x24 stroke paths).
   static const String circlePlus = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M8 12h8 M0 0M12 8v8";
+  /// Lucide icon `circle-power` (24x24 stroke paths).
   static const String circlePower = "M0 0M12 7v4 M0 0M7.998 9.003a5 5 0 1 0 8-.005 M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12";
+  /// Lucide icon `circle-slash-2` (24x24 stroke paths).
   static const String circleSlash2 = "M0 0M22 2 2 22 M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12";
+  /// Lucide icon `circle-slash` (24x24 stroke paths).
   static const String circleSlash = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M9 15L15 9";
+  /// Lucide icon `circle-small` (24x24 stroke paths).
   static const String circleSmall = "M0 0M6 12A6 6 0 1 0 18 12A6 6 0 1 0 6 12";
+  /// Lucide icon `circle-stop` (24x24 stroke paths).
   static const String circleStop = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M10 9h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `circle-user-round` (24x24 stroke paths).
   static const String circleUserRound = "M0 0M18 20a6 6 0 0 0-12 0 M0 0M8 10A4 4 0 1 0 16 10A4 4 0 1 0 8 10 M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12";
+  /// Lucide icon `circle-user` (24x24 stroke paths).
   static const String circleUser = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10 M0 0M7 20.662V19a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v1.662";
+  /// Lucide icon `circle-x` (24x24 stroke paths).
   static const String circleX = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0m15 9-6 6 M0 0m9 9 6 6";
+  /// Lucide icon `circle` (24x24 stroke paths).
   static const String circle = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12";
+  /// Lucide icon `circuit-board` (24x24 stroke paths).
   static const String circuitBoard = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M11 9h4a2 2 0 0 0 2-2V3 M0 0M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9 M0 0M7 21v-4a2 2 0 0 1 2-2h4 M0 0M13 15A2 2 0 1 0 17 15A2 2 0 1 0 13 15";
+  /// Lucide icon `citrus` (24x24 stroke paths).
   static const String citrus = "M0 0M21.66 17.67a1.08 1.08 0 0 1-.04 1.6A12 12 0 0 1 4.73 2.38a1.1 1.1 0 0 1 1.61-.04z M0 0M19.65 15.66A8 8 0 0 1 8.35 4.34 M0 0m14 10-5.5 5.5 M0 0M14 17.85V10H6.15";
+  /// Lucide icon `clapperboard` (24x24 stroke paths).
   static const String clapperboard = "M0 0M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z M0 0m6.2 5.3 3.1 3.9 M0 0m12.4 3.4 3.1 4 M0 0M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z";
+  /// Lucide icon `clipboard-check` (24x24 stroke paths).
   static const String clipboardCheck = "M0 0M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2 M0 0m9 14 2 2 4-4";
+  /// Lucide icon `clipboard-copy` (24x24 stroke paths).
   static const String clipboardCopy = "M0 0M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2 M0 0M16 4h2a2 2 0 0 1 2 2v4 M0 0M21 14H11 M0 0m15 10-4 4 4 4";
+  /// Lucide icon `clipboard-list` (24x24 stroke paths).
   static const String clipboardList = "M0 0M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2 M0 0M12 11h4 M0 0M12 16h4 M0 0M8 11h.01 M0 0M8 16h.01";
+  /// Lucide icon `clipboard-minus` (24x24 stroke paths).
   static const String clipboardMinus = "M0 0M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2 M0 0M9 14h6";
+  /// Lucide icon `clipboard-paste` (24x24 stroke paths).
   static const String clipboardPaste = "M0 0M15 2H9a1 1 0 0 0-1 1v2c0 .6.4 1 1 1h6c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1Z M0 0M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2M16 4h2a2 2 0 0 1 2 2v2M11 14h10 M0 0m17 10 4 4-4 4";
+  /// Lucide icon `clipboard-pen-line` (24x24 stroke paths).
   static const String clipboardPenLine = "M0 0M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-.5 M0 0M16 4h2a2 2 0 0 1 1.73 1 M0 0M8 18h1 M0 0M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z";
+  /// Lucide icon `clipboard-pen` (24x24 stroke paths).
   static const String clipboardPen = "M0 0M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5.5 M0 0M4 13.5V6a2 2 0 0 1 2-2h2 M0 0M13.378 15.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z";
+  /// Lucide icon `clipboard-plus` (24x24 stroke paths).
   static const String clipboardPlus = "M0 0M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2 M0 0M9 14h6 M0 0M12 17v-6";
+  /// Lucide icon `clipboard-type` (24x24 stroke paths).
   static const String clipboardType = "M0 0M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2 M0 0M9 12v-1h6v1 M0 0M11 17h2 M0 0M12 11v6";
+  /// Lucide icon `clipboard-x` (24x24 stroke paths).
   static const String clipboardX = "M0 0M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2 M0 0m15 11-6 6 M0 0m9 11 6 6";
+  /// Lucide icon `clipboard` (24x24 stroke paths).
   static const String clipboard = "M0 0M9 2h6a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2";
+  /// Lucide icon `clock-1` (24x24 stroke paths).
   static const String clock1 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12L14.5 8";
+  /// Lucide icon `clock-10` (24x24 stroke paths).
   static const String clock10 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12L8 10";
+  /// Lucide icon `clock-11` (24x24 stroke paths).
   static const String clock11 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12L9.5 8";
+  /// Lucide icon `clock-12` (24x24 stroke paths).
   static const String clock12 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12";
+  /// Lucide icon `clock-2` (24x24 stroke paths).
   static const String clock2 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12L16 10";
+  /// Lucide icon `clock-3` (24x24 stroke paths).
   static const String clock3 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12L16.5 12";
+  /// Lucide icon `clock-4` (24x24 stroke paths).
   static const String clock4 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12L16 14";
+  /// Lucide icon `clock-5` (24x24 stroke paths).
   static const String clock5 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12L14.5 16";
+  /// Lucide icon `clock-6` (24x24 stroke paths).
   static const String clock6 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12L12 16.5";
+  /// Lucide icon `clock-7` (24x24 stroke paths).
   static const String clock7 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12L9.5 16";
+  /// Lucide icon `clock-8` (24x24 stroke paths).
   static const String clock8 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12L8 14";
+  /// Lucide icon `clock-9` (24x24 stroke paths).
   static const String clock9 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12L7.5 12";
+  /// Lucide icon `clock-alert` (24x24 stroke paths).
   static const String clockAlert = "M0 0M12 6v6l4 2 M0 0M16 21.16a10 10 0 1 1 5-13.516 M0 0M20 11.5v6 M0 0M20 21.5h.01";
+  /// Lucide icon `clock-arrow-down` (24x24 stroke paths).
   static const String clockArrowDown = "M0 0M12.338 21.994A10 10 0 1 1 21.925 13.227 M0 0M12 6v6l2 1 M0 0m14 18 4 4 4-4 M0 0M18 14v8";
+  /// Lucide icon `clock-arrow-up` (24x24 stroke paths).
   static const String clockArrowUp = "M0 0M13.228 21.925A10 10 0 1 1 21.994 12.338 M0 0M12 6v6l1.562.781 M0 0m14 18 4-4 4 4 M0 0M18 22v-8";
+  /// Lucide icon `clock-fading` (24x24 stroke paths).
   static const String clockFading = "M0 0M12 2a10 10 0 0 1 7.38 16.75 M0 0M12 6v6l4 2 M0 0M2.5 8.875a10 10 0 0 0-.5 3 M0 0M2.83 16a10 10 0 0 0 2.43 3.4 M0 0M4.636 5.235a10 10 0 0 1 .891-.857 M0 0M8.644 21.42a10 10 0 0 0 7.631-.38";
+  /// Lucide icon `clock` (24x24 stroke paths).
   static const String clock = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 6L12 12L16 14";
+  /// Lucide icon `cloud-alert` (24x24 stroke paths).
   static const String cloudAlert = "M0 0M12 12v4 M0 0M12 20h.01 M0 0M17 18h.5a1 1 0 0 0 0-9h-1.79A7 7 0 1 0 7 17.708";
+  /// Lucide icon `cloud-cog` (24x24 stroke paths).
   static const String cloudCog = "M0 0M9 17A3 3 0 1 0 15 17A3 3 0 1 0 9 17 M0 0M4.2 15.1A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.2 M0 0m15.7 18.4-.9-.3 M0 0m9.2 15.9-.9-.3 M0 0m10.6 20.7.3-.9 M0 0m13.1 14.2.3-.9 M0 0m13.6 20.7-.4-1 M0 0m10.8 14.3-.4-1 M0 0m8.3 18.6 1-.4 M0 0m14.7 15.8 1-.4";
+  /// Lucide icon `cloud-download` (24x24 stroke paths).
   static const String cloudDownload = "M0 0M12 13v8l-4-4 M0 0m12 21 4-4 M0 0M4.393 15.269A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.436 8.284";
+  /// Lucide icon `cloud-drizzle` (24x24 stroke paths).
   static const String cloudDrizzle = "M0 0M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242 M0 0M8 19v1 M0 0M8 14v1 M0 0M16 19v1 M0 0M16 14v1 M0 0M12 21v1 M0 0M12 16v1";
+  /// Lucide icon `cloud-fog` (24x24 stroke paths).
   static const String cloudFog = "M0 0M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242 M0 0M16 17H7 M0 0M17 21H9";
+  /// Lucide icon `cloud-hail` (24x24 stroke paths).
   static const String cloudHail = "M0 0M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242 M0 0M16 14v2 M0 0M8 14v2 M0 0M16 20h.01 M0 0M8 20h.01 M0 0M12 16v2 M0 0M12 22h.01";
+  /// Lucide icon `cloud-lightning` (24x24 stroke paths).
   static const String cloudLightning = "M0 0M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973 M0 0m13 12-3 5h4l-3 5";
+  /// Lucide icon `cloud-moon-rain` (24x24 stroke paths).
   static const String cloudMoonRain = "M0 0M10.188 8.5A6 6 0 0 1 16 4a1 1 0 0 0 6 6 6 6 0 0 1-3 5.197 M0 0M11 20v2 M0 0M3 20a5 5 0 1 1 8.9-4H13a3 3 0 0 1 2 5.24 M0 0M7 19v2";
+  /// Lucide icon `cloud-moon` (24x24 stroke paths).
   static const String cloudMoon = "M0 0M10.188 8.5A6 6 0 0 1 16 4a1 1 0 0 0 6 6 6 6 0 0 1-3 5.197 M0 0M13 16a3 3 0 1 1 0 6H7a5 5 0 1 1 4.9-6Z";
+  /// Lucide icon `cloud-off` (24x24 stroke paths).
   static const String cloudOff = "M0 0m2 2 20 20 M0 0M5.782 5.782A7 7 0 0 0 9 19h8.5a4.5 4.5 0 0 0 1.307-.193 M0 0M21.532 16.5A4.5 4.5 0 0 0 17.5 10h-1.79A7.008 7.008 0 0 0 10 5.07";
+  /// Lucide icon `cloud-rain-wind` (24x24 stroke paths).
   static const String cloudRainWind = "M0 0M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242 M0 0m9.2 22 3-7 M0 0m9 13-3 7 M0 0m17 13-3 7";
+  /// Lucide icon `cloud-rain` (24x24 stroke paths).
   static const String cloudRain = "M0 0M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242 M0 0M16 14v6 M0 0M8 14v6 M0 0M12 16v6";
+  /// Lucide icon `cloud-snow` (24x24 stroke paths).
   static const String cloudSnow = "M0 0M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242 M0 0M8 15h.01 M0 0M8 19h.01 M0 0M12 17h.01 M0 0M12 21h.01 M0 0M16 15h.01 M0 0M16 19h.01";
+  /// Lucide icon `cloud-sun-rain` (24x24 stroke paths).
   static const String cloudSunRain = "M0 0M12 2v2 M0 0m4.93 4.93 1.41 1.41 M0 0M20 12h2 M0 0m19.07 4.93-1.41 1.41 M0 0M15.947 12.65a4 4 0 0 0-5.925-4.128 M0 0M3 20a5 5 0 1 1 8.9-4H13a3 3 0 0 1 2 5.24 M0 0M11 20v2 M0 0M7 19v2";
+  /// Lucide icon `cloud-sun` (24x24 stroke paths).
   static const String cloudSun = "M0 0M12 2v2 M0 0m4.93 4.93 1.41 1.41 M0 0M20 12h2 M0 0m19.07 4.93-1.41 1.41 M0 0M15.947 12.65a4 4 0 0 0-5.925-4.128 M0 0M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z";
+  /// Lucide icon `cloud-upload` (24x24 stroke paths).
   static const String cloudUpload = "M0 0M12 13v8 M0 0M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242 M0 0m8 17 4-4 4 4";
+  /// Lucide icon `cloud` (24x24 stroke paths).
   static const String cloud = "M0 0M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z";
+  /// Lucide icon `cloudy` (24x24 stroke paths).
   static const String cloudy = "M0 0M17.5 21H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z M0 0M22 10a3 3 0 0 0-3-3h-2.207a5.502 5.502 0 0 0-10.702.5";
+  /// Lucide icon `clover` (24x24 stroke paths).
   static const String clover = "M0 0M16.17 7.83 2 22 M0 0M4.02 12a2.827 2.827 0 1 1 3.81-4.17A2.827 2.827 0 1 1 12 4.02a2.827 2.827 0 1 1 4.17 3.81A2.827 2.827 0 1 1 19.98 12a2.827 2.827 0 1 1-3.81 4.17A2.827 2.827 0 1 1 12 19.98a2.827 2.827 0 1 1-4.17-3.81A1 1 0 1 1 4 12 M0 0m7.83 7.83 8.34 8.34";
+  /// Lucide icon `club` (24x24 stroke paths).
   static const String club = "M0 0M17.28 9.05a5.5 5.5 0 1 0-10.56 0A5.5 5.5 0 1 0 12 17.66a5.5 5.5 0 1 0 5.28-8.6Z M0 0M12 17.66L12 22";
+  /// Lucide icon `code-xml` (24x24 stroke paths).
   static const String codeXml = "M0 0m18 16 4-4-4-4 M0 0m6 8-4 4 4 4 M0 0m14.5 4-5 16";
+  /// Lucide icon `code` (24x24 stroke paths).
   static const String code = "M0 0M16 18L22 12L16 6 M0 0M8 6L2 12L8 18";
+  /// Lucide icon `codepen` (24x24 stroke paths).
   static const String codepen = "M0 0M12 2L22 8.5L22 15.5L12 22L2 15.5L2 8.5L12 2Z M0 0M12 22L12 15.5 M0 0M22 8.5L12 15.5L2 8.5 M0 0M2 15.5L12 8.5L22 15.5 M0 0M12 2L12 8.5";
+  /// Lucide icon `codesandbox` (24x24 stroke paths).
   static const String codesandbox = "M0 0M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z M0 0M7.5 4.21L12 6.81L16.5 4.21 M0 0M7.5 19.79L7.5 14.6L3 12 M0 0M21 12L16.5 14.6L16.5 19.79 M0 0M3.27 6.96L12 12.01L20.73 6.96 M0 0M12 22.08L12 12";
+  /// Lucide icon `coffee` (24x24 stroke paths).
   static const String coffee = "M0 0M10 2v2 M0 0M14 2v2 M0 0M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1 M0 0M6 2v2";
+  /// Lucide icon `cog` (24x24 stroke paths).
   static const String cog = "M0 0M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z M0 0M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z M0 0M12 2v2 M0 0M12 22v-2 M0 0m17 20.66-1-1.73 M0 0M11 10.27 7 3.34 M0 0m20.66 17-1.73-1 M0 0m3.34 7 1.73 1 M0 0M14 12h8 M0 0M2 12h2 M0 0m20.66 7-1.73 1 M0 0m3.34 17 1.73-1 M0 0m17 3.34-1 1.73 M0 0m11 13.73-4 6.93";
+  /// Lucide icon `coins` (24x24 stroke paths).
   static const String coins = "M0 0M2 8A6 6 0 1 0 14 8A6 6 0 1 0 2 8 M0 0M18.09 10.37A6 6 0 1 1 10.34 18 M0 0M7 6h1v4 M0 0m16.71 13.88.7.71-2.82 2.82";
+  /// Lucide icon `columns-2` (24x24 stroke paths).
   static const String columns2 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M12 3v18";
+  /// Lucide icon `columns-3` (24x24 stroke paths).
   static const String columns3 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M9 3v18 M0 0M15 3v18";
+  /// Lucide icon `columns-4` (24x24 stroke paths).
   static const String columns4 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M7.5 3v18 M0 0M12 3v18 M0 0M16.5 3v18";
+  /// Lucide icon `combine` (24x24 stroke paths).
   static const String combine = "M0 0M10 18H5a3 3 0 0 1-3-3v-1 M0 0M14 2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2 M0 0M20 2a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2 M0 0m7 21 3-3-3-3 M0 0M16 14h4a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M4 2h4a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `command` (24x24 stroke paths).
   static const String command = "M0 0M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3";
+  /// Lucide icon `compass` (24x24 stroke paths).
   static const String compass = "M0 0m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12";
+  /// Lucide icon `component` (24x24 stroke paths).
   static const String component = "M0 0M15.536 11.293a1 1 0 0 0 0 1.414l2.376 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z M0 0M2.297 11.293a1 1 0 0 0 0 1.414l2.377 2.377a1 1 0 0 0 1.414 0l2.377-2.377a1 1 0 0 0 0-1.414L6.088 8.916a1 1 0 0 0-1.414 0z M0 0M8.916 17.912a1 1 0 0 0 0 1.415l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.415l-2.377-2.376a1 1 0 0 0-1.414 0z M0 0M8.916 4.674a1 1 0 0 0 0 1.414l2.377 2.376a1 1 0 0 0 1.414 0l2.377-2.376a1 1 0 0 0 0-1.414l-2.377-2.377a1 1 0 0 0-1.414 0z";
+  /// Lucide icon `computer` (24x24 stroke paths).
   static const String computer = "M0 0M7 2h10a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M4 14h16a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M6 18h2 M0 0M12 18h6";
+  /// Lucide icon `concierge-bell` (24x24 stroke paths).
   static const String conciergeBell = "M0 0M3 20a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1Z M0 0M20 16a8 8 0 1 0-16 0 M0 0M12 4v4 M0 0M10 4h4";
+  /// Lucide icon `cone` (24x24 stroke paths).
   static const String cone = "M0 0m20.9 18.55-8-15.98a1 1 0 0 0-1.8 0l-8 15.98 M0 0M3 19A9 3 0 1 0 21 19A9 3 0 1 0 3 19";
+  /// Lucide icon `construction` (24x24 stroke paths).
   static const String construction = "M0 0M3 6h18a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1Z M0 0M17 14v7 M0 0M7 14v7 M0 0M17 3v3 M0 0M7 3v3 M0 0M10 14 2.3 6.3 M0 0m14 6 7.7 7.7 M0 0m8 6 8 8";
+  /// Lucide icon `contact-round` (24x24 stroke paths).
   static const String contactRound = "M0 0M16 2v2 M0 0M17.915 22a6 6 0 0 0-12 0 M0 0M8 2v2 M0 0M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12 M0 0M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `contact` (24x24 stroke paths).
   static const String contact = "M0 0M16 2v2 M0 0M7 22v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2 M0 0M8 2v2 M0 0M9 11A3 3 0 1 0 15 11A3 3 0 1 0 9 11 M0 0M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `container` (24x24 stroke paths).
   static const String container = "M0 0M22 7.7c0-.6-.4-1.2-.8-1.5l-6.3-3.9a1.72 1.72 0 0 0-1.7 0l-10.3 6c-.5.2-.9.8-.9 1.4v6.6c0 .5.4 1.2.8 1.5l6.3 3.9a1.72 1.72 0 0 0 1.7 0l10.3-6c.5-.3.9-1 .9-1.5Z M0 0M10 21.9V14L2.1 9.1 M0 0m10 14 11.9-6.9 M0 0M14 19.8v-8.1 M0 0M18 17.5V9.4";
+  /// Lucide icon `contrast` (24x24 stroke paths).
   static const String contrast = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 18a6 6 0 0 0 0-12v12z";
+  /// Lucide icon `cookie` (24x24 stroke paths).
   static const String cookie = "M0 0M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5 M0 0M8.5 8.5v.01 M0 0M16 15.5v.01 M0 0M12 12v.01 M0 0M11 17v.01 M0 0M7 14v.01";
+  /// Lucide icon `cooking-pot` (24x24 stroke paths).
   static const String cookingPot = "M0 0M2 12h20 M0 0M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8 M0 0m4 8 16-4 M0 0m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8";
+  /// Lucide icon `copy-check` (24x24 stroke paths).
   static const String copyCheck = "M0 0m12 15 2 2 4-4 M0 0M10 8h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2";
+  /// Lucide icon `copy-minus` (24x24 stroke paths).
   static const String copyMinus = "M0 0M12 15L18 15 M0 0M10 8h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2";
+  /// Lucide icon `copy-plus` (24x24 stroke paths).
   static const String copyPlus = "M0 0M15 12L15 18 M0 0M12 15L18 15 M0 0M10 8h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2";
+  /// Lucide icon `copy-slash` (24x24 stroke paths).
   static const String copySlash = "M0 0M12 18L18 12 M0 0M10 8h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2";
+  /// Lucide icon `copy-x` (24x24 stroke paths).
   static const String copyX = "M0 0M12 12L18 18 M0 0M12 18L18 12 M0 0M10 8h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2";
+  /// Lucide icon `copy` (24x24 stroke paths).
   static const String copy = "M0 0M10 8h10a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2";
+  /// Lucide icon `copyleft` (24x24 stroke paths).
   static const String copyleft = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M9.17 14.83a4 4 0 1 0 0-5.66";
+  /// Lucide icon `copyright` (24x24 stroke paths).
   static const String copyright = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M14.83 14.83a4 4 0 1 1 0-5.66";
+  /// Lucide icon `corner-down-left` (24x24 stroke paths).
   static const String cornerDownLeft = "M0 0M9 10L4 15L9 20 M0 0M20 4v7a4 4 0 0 1-4 4H4";
+  /// Lucide icon `corner-down-right` (24x24 stroke paths).
   static const String cornerDownRight = "M0 0M15 10L20 15L15 20 M0 0M4 4v7a4 4 0 0 0 4 4h12";
+  /// Lucide icon `corner-left-down` (24x24 stroke paths).
   static const String cornerLeftDown = "M0 0M14 15L9 20L4 15 M0 0M20 4h-7a4 4 0 0 0-4 4v12";
+  /// Lucide icon `corner-left-up` (24x24 stroke paths).
   static const String cornerLeftUp = "M0 0M14 9L9 4L4 9 M0 0M20 20h-7a4 4 0 0 1-4-4V4";
+  /// Lucide icon `corner-right-down` (24x24 stroke paths).
   static const String cornerRightDown = "M0 0M10 15L15 20L20 15 M0 0M4 4h7a4 4 0 0 1 4 4v12";
+  /// Lucide icon `corner-right-up` (24x24 stroke paths).
   static const String cornerRightUp = "M0 0M10 9L15 4L20 9 M0 0M4 20h7a4 4 0 0 0 4-4V4";
+  /// Lucide icon `corner-up-left` (24x24 stroke paths).
   static const String cornerUpLeft = "M0 0M9 14L4 9L9 4 M0 0M20 20v-7a4 4 0 0 0-4-4H4";
+  /// Lucide icon `corner-up-right` (24x24 stroke paths).
   static const String cornerUpRight = "M0 0M15 14L20 9L15 4 M0 0M4 20v-7a4 4 0 0 1 4-4h12";
+  /// Lucide icon `cpu` (24x24 stroke paths).
   static const String cpu = "M0 0M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M10 9h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z M0 0M15 2v2 M0 0M15 20v2 M0 0M2 15h2 M0 0M2 9h2 M0 0M20 15h2 M0 0M20 9h2 M0 0M9 2v2 M0 0M9 20v2";
+  /// Lucide icon `creative-commons` (24x24 stroke paths).
   static const String creativeCommons = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M10 9.3a2.8 2.8 0 0 0-3.5 1 3.1 3.1 0 0 0 0 3.4 2.7 2.7 0 0 0 3.5 1 M0 0M17 9.3a2.8 2.8 0 0 0-3.5 1 3.1 3.1 0 0 0 0 3.4 2.7 2.7 0 0 0 3.5 1";
+  /// Lucide icon `credit-card` (24x24 stroke paths).
   static const String creditCard = "M0 0M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M2 10L22 10";
+  /// Lucide icon `croissant` (24x24 stroke paths).
   static const String croissant = "M0 0m4.6 13.11 5.79-3.21c1.89-1.05 4.79 1.78 3.71 3.71l-3.22 5.81C8.8 23.16.79 15.23 4.6 13.11Z M0 0m10.5 9.5-1-2.29C9.2 6.48 8.8 6 8 6H4.5C2.79 6 2 6.5 2 8.5a7.71 7.71 0 0 0 2 4.83 M0 0M8 6c0-1.55.24-4-2-4-2 0-2.5 2.17-2.5 4 M0 0m14.5 13.5 2.29 1c.73.3 1.21.7 1.21 1.5v3.5c0 1.71-.5 2.5-2.5 2.5a7.71 7.71 0 0 1-4.83-2 M0 0M18 16c1.55 0 4-.24 4 2 0 2-2.17 2.5-4 2.5";
+  /// Lucide icon `crop` (24x24 stroke paths).
   static const String crop = "M0 0M6 2v14a2 2 0 0 0 2 2h14 M0 0M18 22V8a2 2 0 0 0-2-2H2";
+  /// Lucide icon `cross` (24x24 stroke paths).
   static const String cross = "M0 0M4 9a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h4a1 1 0 0 1 1 1v4a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-4a1 1 0 0 1 1-1h4a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-4a1 1 0 0 1-1-1V4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4a1 1 0 0 1-1 1z";
+  /// Lucide icon `crosshair` (24x24 stroke paths).
   static const String crosshair = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M22 12L18 12 M0 0M6 12L2 12 M0 0M12 6L12 2 M0 0M12 22L12 18";
+  /// Lucide icon `crown` (24x24 stroke paths).
   static const String crown = "M0 0M11.562 3.266a.5.5 0 0 1 .876 0L15.39 8.87a1 1 0 0 0 1.516.294L21.183 5.5a.5.5 0 0 1 .798.519l-2.834 10.246a1 1 0 0 1-.956.734H5.81a1 1 0 0 1-.957-.734L2.02 6.02a.5.5 0 0 1 .798-.519l4.276 3.664a1 1 0 0 0 1.516-.294z M0 0M5 21h14";
+  /// Lucide icon `cuboid` (24x24 stroke paths).
   static const String cuboid = "M0 0m21.12 6.4-6.05-4.06a2 2 0 0 0-2.17-.05L2.95 8.41a2 2 0 0 0-.95 1.7v5.82a2 2 0 0 0 .88 1.66l6.05 4.07a2 2 0 0 0 2.17.05l9.95-6.12a2 2 0 0 0 .95-1.7V8.06a2 2 0 0 0-.88-1.66Z M0 0M10 22v-8L2.25 9.15 M0 0m10 14 11.77-6.87";
+  /// Lucide icon `cup-soda` (24x24 stroke paths).
   static const String cupSoda = "M0 0m6 8 1.75 12.28a2 2 0 0 0 2 1.72h4.54a2 2 0 0 0 2-1.72L18 8 M0 0M5 8h14 M0 0M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0 M0 0m12 8 1-6h2";
+  /// Lucide icon `currency` (24x24 stroke paths).
   static const String currency = "M0 0M4 12A8 8 0 1 0 20 12A8 8 0 1 0 4 12 M0 0M3 3L6 6 M0 0M21 3L18 6 M0 0M3 21L6 18 M0 0M21 21L18 18";
+  /// Lucide icon `cylinder` (24x24 stroke paths).
   static const String cylinder = "M0 0M3 5A9 3 0 1 0 21 5A9 3 0 1 0 3 5 M0 0M3 5v14a9 3 0 0 0 18 0V5";
+  /// Lucide icon `dam` (24x24 stroke paths).
   static const String dam = "M0 0M11 11.31c1.17.56 1.54 1.69 3.5 1.69 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 M0 0M11.75 18c.35.5 1.45 1 2.75 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 M0 0M2 10h4 M0 0M2 14h4 M0 0M2 18h4 M0 0M2 6h4 M0 0M7 3a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1L10 4a1 1 0 0 0-1-1z";
+  /// Lucide icon `database-backup` (24x24 stroke paths).
   static const String databaseBackup = "M0 0M3 5A9 3 0 1 0 21 5A9 3 0 1 0 3 5 M0 0M3 12a9 3 0 0 0 5 2.69 M0 0M21 9.3V5 M0 0M3 5v14a9 3 0 0 0 6.47 2.88 M0 0M12 12v4h4 M0 0M13 20a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L12 16";
+  /// Lucide icon `database-zap` (24x24 stroke paths).
   static const String databaseZap = "M0 0M3 5A9 3 0 1 0 21 5A9 3 0 1 0 3 5 M0 0M3 5V19A9 3 0 0 0 15 21.84 M0 0M21 5V8 M0 0M21 12L18 17H22L19 22 M0 0M3 12A9 3 0 0 0 14.59 14.87";
+  /// Lucide icon `database` (24x24 stroke paths).
   static const String database = "M0 0M3 5A9 3 0 1 0 21 5A9 3 0 1 0 3 5 M0 0M3 5V19A9 3 0 0 0 21 19V5 M0 0M3 12A9 3 0 0 0 21 12";
+  /// Lucide icon `delete` (24x24 stroke paths).
   static const String delete = "M0 0M10 5a2 2 0 0 0-1.344.519l-6.328 5.74a1 1 0 0 0 0 1.481l6.328 5.741A2 2 0 0 0 10 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2z M0 0m12 9 6 6 M0 0m18 9-6 6";
+  /// Lucide icon `dessert` (24x24 stroke paths).
   static const String dessert = "M0 0M10 4A2 2 0 1 0 14 4A2 2 0 1 0 10 4 M0 0M10.2 3.2C5.5 4 2 8.1 2 13a2 2 0 0 0 4 0v-1a2 2 0 0 1 4 0v4a2 2 0 0 0 4 0v-4a2 2 0 0 1 4 0v1a2 2 0 0 0 4 0c0-4.9-3.5-9-8.2-9.8 M0 0M3.2 14.8a9 9 0 0 0 17.6 0";
+  /// Lucide icon `diameter` (24x24 stroke paths).
   static const String diameter = "M0 0M17 19A2 2 0 1 0 21 19A2 2 0 1 0 17 19 M0 0M3 5A2 2 0 1 0 7 5A2 2 0 1 0 3 5 M0 0M6.48 3.66a10 10 0 0 1 13.86 13.86 M0 0m6.41 6.41 11.18 11.18 M0 0M3.66 6.48a10 10 0 0 0 13.86 13.86";
+  /// Lucide icon `diamond-minus` (24x24 stroke paths).
   static const String diamondMinus = "M0 0M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41L13.7 2.71a2.41 2.41 0 0 0-3.41 0z M0 0M8 12h8";
+  /// Lucide icon `diamond-percent` (24x24 stroke paths).
   static const String diamondPercent = "M0 0M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41L13.7 2.71a2.41 2.41 0 0 0-3.41 0Z M0 0M9.2 9.2h.01 M0 0m14.5 9.5-5 5 M0 0M14.7 14.8h.01";
+  /// Lucide icon `diamond-plus` (24x24 stroke paths).
   static const String diamondPlus = "M0 0M12 8v8 M0 0M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41L13.7 2.71a2.41 2.41 0 0 0-3.41 0z M0 0M8 12h8";
+  /// Lucide icon `diamond` (24x24 stroke paths).
   static const String diamond = "M0 0M2.7 10.3a2.41 2.41 0 0 0 0 3.41l7.59 7.59a2.41 2.41 0 0 0 3.41 0l7.59-7.59a2.41 2.41 0 0 0 0-3.41l-7.59-7.59a2.41 2.41 0 0 0-3.41 0Z";
+  /// Lucide icon `dice-1` (24x24 stroke paths).
   static const String dice1 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M12 12h.01";
+  /// Lucide icon `dice-2` (24x24 stroke paths).
   static const String dice2 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M15 9h.01 M0 0M9 15h.01";
+  /// Lucide icon `dice-3` (24x24 stroke paths).
   static const String dice3 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M16 8h.01 M0 0M12 12h.01 M0 0M8 16h.01";
+  /// Lucide icon `dice-4` (24x24 stroke paths).
   static const String dice4 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M16 8h.01 M0 0M8 8h.01 M0 0M8 16h.01 M0 0M16 16h.01";
+  /// Lucide icon `dice-5` (24x24 stroke paths).
   static const String dice5 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M16 8h.01 M0 0M8 8h.01 M0 0M8 16h.01 M0 0M16 16h.01 M0 0M12 12h.01";
+  /// Lucide icon `dice-6` (24x24 stroke paths).
   static const String dice6 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M16 8h.01 M0 0M16 12h.01 M0 0M16 16h.01 M0 0M8 8h.01 M0 0M8 12h.01 M0 0M8 16h.01";
+  /// Lucide icon `dices` (24x24 stroke paths).
   static const String dices = "M0 0M4 10h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z M0 0m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6 M0 0M6 18h.01 M0 0M10 14h.01 M0 0M15 6h.01 M0 0M18 9h.01";
+  /// Lucide icon `diff` (24x24 stroke paths).
   static const String diff = "M0 0M12 3v14 M0 0M5 10h14 M0 0M5 21h14";
+  /// Lucide icon `disc-2` (24x24 stroke paths).
   static const String disc2 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12 M0 0M12 12h.01";
+  /// Lucide icon `disc-3` (24x24 stroke paths).
   static const String disc3 = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M6 12c0-1.7.7-3.2 1.8-4.2 M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12 M0 0M18 12c0 1.7-.7 3.2-1.8 4.2";
+  /// Lucide icon `disc-album` (24x24 stroke paths).
   static const String discAlbum = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M7 12A5 5 0 1 0 17 12A5 5 0 1 0 7 12 M0 0M12 12h.01";
+  /// Lucide icon `disc` (24x24 stroke paths).
   static const String disc = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12";
+  /// Lucide icon `divide` (24x24 stroke paths).
   static const String divide = "M0 0M11 6A1 1 0 1 0 13 6A1 1 0 1 0 11 6 M0 0M5 12L19 12 M0 0M11 18A1 1 0 1 0 13 18A1 1 0 1 0 11 18";
+  /// Lucide icon `dna-off` (24x24 stroke paths).
   static const String dnaOff = "M0 0M15 2c-1.35 1.5-2.092 3-2.5 4.5L14 8 M0 0m17 6-2.891-2.891 M0 0M2 15c3.333-3 6.667-3 10-3 M0 0m2 2 20 20 M0 0m20 9 .891.891 M0 0M22 9c-1.5 1.35-3 2.092-4.5 2.5l-1-1 M0 0M3.109 14.109 4 15 M0 0m6.5 12.5 1 1 M0 0m7 18 2.891 2.891 M0 0M9 22c1.35-1.5 2.092-3 2.5-4.5L10 16";
+  /// Lucide icon `dna` (24x24 stroke paths).
   static const String dna = "M0 0m10 16 1.5 1.5 M0 0m14 8-1.5-1.5 M0 0M15 2c-1.798 1.998-2.518 3.995-2.807 5.993 M0 0m16.5 10.5 1 1 M0 0m17 6-2.891-2.891 M0 0M2 15c6.667-6 13.333 0 20-6 M0 0m20 9 .891.891 M0 0M3.109 14.109 4 15 M0 0m6.5 12.5 1 1 M0 0m7 18 2.891 2.891 M0 0M9 22c1.798-1.998 2.518-3.995 2.807-5.993";
+  /// Lucide icon `dock` (24x24 stroke paths).
   static const String dock = "M0 0M2 8h20 M0 0M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M6 16h12";
+  /// Lucide icon `dog` (24x24 stroke paths).
   static const String dog = "M0 0M11.25 16.25h1.5L12 17z M0 0M16 14v.5 M0 0M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309 M0 0M8 14v.5 M0 0M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5";
+  /// Lucide icon `dollar-sign` (24x24 stroke paths).
   static const String dollarSign = "M0 0M12 2L12 22 M0 0M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6";
+  /// Lucide icon `donut` (24x24 stroke paths).
   static const String donut = "M0 0M20.5 10a2.5 2.5 0 0 1-2.4-3H18a2.95 2.95 0 0 1-2.6-4.4 10 10 0 1 0 6.3 7.1c-.3.2-.8.3-1.2.3 M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12";
+  /// Lucide icon `door-closed` (24x24 stroke paths).
   static const String doorClosed = "M0 0M18 20V6a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v14 M0 0M2 20h20 M0 0M14 12v.01";
+  /// Lucide icon `door-open` (24x24 stroke paths).
   static const String doorOpen = "M0 0M13 4h3a2 2 0 0 1 2 2v14 M0 0M2 20h3 M0 0M13 20h9 M0 0M10 12v.01 M0 0M13 4.562v16.157a1 1 0 0 1-1.242.97L5 20V5.562a2 2 0 0 1 1.515-1.94l4-1A2 2 0 0 1 13 4.561Z";
+  /// Lucide icon `dot` (24x24 stroke paths).
   static const String dot = "M0 0M11.1 12.1A1 1 0 1 0 13.1 12.1A1 1 0 1 0 11.1 12.1";
+  /// Lucide icon `download` (24x24 stroke paths).
   static const String download = "M0 0M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4 M0 0M7 10L12 15L17 10 M0 0M12 15L12 3";
+  /// Lucide icon `drafting-compass` (24x24 stroke paths).
   static const String draftingCompass = "M0 0m12.99 6.74 1.93 3.44 M0 0M19.136 12a10 10 0 0 1-14.271 0 M0 0m21 21-2.16-3.84 M0 0m3 21 8.02-14.26 M0 0M10 5A2 2 0 1 0 14 5A2 2 0 1 0 10 5";
+  /// Lucide icon `drama` (24x24 stroke paths).
   static const String drama = "M0 0M10 11h.01 M0 0M14 6h.01 M0 0M18 6h.01 M0 0M6.5 13.1h.01 M0 0M22 5c0 9-4 12-6 12s-6-3-6-12c0-2 2-3 6-3s6 1 6 3 M0 0M17.4 9.9c-.8.8-2 .8-2.8 0 M0 0M10.1 7.1C9 7.2 7.7 7.7 6 8.6c-3.5 2-4.7 3.9-3.7 5.6 4.5 7.8 9.5 8.4 11.2 7.4.9-.5 1.9-2.1 1.9-4.7 M0 0M9.1 16.5c.3-1.1 1.4-1.7 2.4-1.4";
+  /// Lucide icon `dribbble` (24x24 stroke paths).
   static const String dribbble = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94 M0 0M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32 M0 0M8.56 2.75c4.37 6 6 9.42 8 17.72";
+  /// Lucide icon `drill` (24x24 stroke paths).
   static const String drill = "M0 0M10 18a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H5a3 3 0 0 1-3-3 1 1 0 0 1 1-1z M0 0M13 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1l-.81 3.242a1 1 0 0 1-.97.758H8 M0 0M14 4h3a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-3 M0 0M18 6h4 M0 0m5 10-2 8 M0 0m7 18 2-8";
+  /// Lucide icon `droplet-off` (24x24 stroke paths).
   static const String dropletOff = "M0 0M18.715 13.186C18.29 11.858 17.384 10.607 16 9.5c-2-1.6-3.5-4-4-6.5a10.7 10.7 0 0 1-.884 2.586 M0 0m2 2 20 20 M0 0M8.795 8.797A11 11 0 0 1 8 9.5C6 11.1 5 13 5 15a7 7 0 0 0 13.222 3.208";
+  /// Lucide icon `droplet` (24x24 stroke paths).
   static const String droplet = "M0 0M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z";
+  /// Lucide icon `droplets` (24x24 stroke paths).
   static const String droplets = "M0 0M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z M0 0M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97";
+  /// Lucide icon `drum` (24x24 stroke paths).
   static const String drum = "M0 0m2 2 8 8 M0 0m22 2-8 8 M0 0M2 9A10 5 0 1 0 22 9A10 5 0 1 0 2 9 M0 0M7 13.4v7.9 M0 0M12 14v8 M0 0M17 13.4v7.9 M0 0M2 9v8a10 5 0 0 0 20 0V9";
+  /// Lucide icon `drumstick` (24x24 stroke paths).
   static const String drumstick = "M0 0M15.4 15.63a7.875 6 135 1 1 6.23-6.23 4.5 3.43 135 0 0-6.23 6.23 M0 0m8.29 12.71-2.6 2.6a2.5 2.5 0 1 0-1.65 4.65A2.5 2.5 0 1 0 8.7 18.3l2.59-2.59";
+  /// Lucide icon `dumbbell` (24x24 stroke paths).
   static const String dumbbell = "M0 0M14.4 14.4 9.6 9.6 M0 0M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z M0 0m21.5 21.5-1.4-1.4 M0 0M3.9 3.9 2.5 2.5 M0 0M6.404 12.768a2 2 0 1 1-2.829-2.829l1.768-1.767a2 2 0 1 1-2.828-2.829l2.828-2.828a2 2 0 1 1 2.829 2.828l1.767-1.768a2 2 0 1 1 2.829 2.829z";
+  /// Lucide icon `ear-off` (24x24 stroke paths).
   static const String earOff = "M0 0M6 18.5a3.5 3.5 0 1 0 7 0c0-1.57.92-2.52 2.04-3.46 M0 0M6 8.5c0-.75.13-1.47.36-2.14 M0 0M8.8 3.15A6.5 6.5 0 0 1 19 8.5c0 1.63-.44 2.81-1.09 3.76 M0 0M12.5 6A2.5 2.5 0 0 1 15 8.5M10 13a2 2 0 0 0 1.82-1.18 M0 0M2 2L22 22";
+  /// Lucide icon `ear` (24x24 stroke paths).
   static const String ear = "M0 0M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0 M0 0M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4";
+  /// Lucide icon `earth-lock` (24x24 stroke paths).
   static const String earthLock = "M0 0M7 3.34V5a3 3 0 0 0 3 3 M0 0M11 21.95V18a2 2 0 0 0-2-2 2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05 M0 0M21.54 15H17a2 2 0 0 0-2 2v4.54 M0 0M12 2a10 10 0 1 0 9.54 13 M0 0M20 6V4a2 2 0 1 0-4 0v2 M0 0M15 6h6a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `earth` (24x24 stroke paths).
   static const String earth = "M0 0M21.54 15H17a2 2 0 0 0-2 2v4.54 M0 0M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17 M0 0M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05 M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12";
+  /// Lucide icon `eclipse` (24x24 stroke paths).
   static const String eclipse = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 2a7 7 0 1 0 10 10";
+  /// Lucide icon `egg-fried` (24x24 stroke paths).
   static const String eggFried = "M0 0M8 12.5A3.5 3.5 0 1 0 15 12.5A3.5 3.5 0 1 0 8 12.5 M0 0M3 8c0-3.5 2.5-6 6.5-6 5 0 4.83 3 7.5 5s5 2 5 6c0 4.5-2.5 6.5-7 6.5-2.5 0-2.5 2.5-6 2.5s-7-2-7-5.5c0-3 1.5-3 1.5-5C3.5 10 3 9 3 8Z";
+  /// Lucide icon `egg-off` (24x24 stroke paths).
   static const String eggOff = "M0 0M6.399 6.399C5.362 8.157 4.65 10.189 4.5 12c-.37 4.43 1.27 9.95 7.5 10 3.256-.026 5.259-1.547 6.375-3.625 M0 0M19.532 13.875A14.07 14.07 0 0 0 19.5 12c-.36-4.34-3.95-9.96-7.5-10-1.04.012-2.082.502-3.046 1.297 M0 0M2 2L22 22";
+  /// Lucide icon `egg` (24x24 stroke paths).
   static const String egg = "M0 0M12 22c6.23-.05 7.87-5.57 7.5-10-.36-4.34-3.95-9.96-7.5-10-3.55.04-7.14 5.66-7.5 10-.37 4.43 1.27 9.95 7.5 10z";
+  /// Lucide icon `ellipsis-vertical` (24x24 stroke paths).
   static const String ellipsisVertical = "M0 0M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12 M0 0M11 5A1 1 0 1 0 13 5A1 1 0 1 0 11 5 M0 0M11 19A1 1 0 1 0 13 19A1 1 0 1 0 11 19";
+  /// Lucide icon `ellipsis` (24x24 stroke paths).
   static const String ellipsis = "M0 0M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12 M0 0M18 12A1 1 0 1 0 20 12A1 1 0 1 0 18 12 M0 0M4 12A1 1 0 1 0 6 12A1 1 0 1 0 4 12";
+  /// Lucide icon `equal-approximately` (24x24 stroke paths).
   static const String equalApproximately = "M0 0M5 15a6.5 6.5 0 0 1 7 0 6.5 6.5 0 0 0 7 0 M0 0M5 9a6.5 6.5 0 0 1 7 0 6.5 6.5 0 0 0 7 0";
+  /// Lucide icon `equal-not` (24x24 stroke paths).
   static const String equalNot = "M0 0M5 9L19 9 M0 0M5 15L19 15 M0 0M19 5L5 19";
+  /// Lucide icon `equal` (24x24 stroke paths).
   static const String equal = "M0 0M5 9L19 9 M0 0M5 15L19 15";
+  /// Lucide icon `eraser` (24x24 stroke paths).
   static const String eraser = "M0 0m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21 M0 0M22 21H7 M0 0m5 11 9 9";
+  /// Lucide icon `ethernet-port` (24x24 stroke paths).
   static const String ethernetPort = "M0 0m15 20 3-3h2a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h2l3 3z M0 0M6 8v1 M0 0M10 8v1 M0 0M14 8v1 M0 0M18 8v1";
+  /// Lucide icon `euro` (24x24 stroke paths).
   static const String euro = "M0 0M4 10h12 M0 0M4 14h9 M0 0M19 6a7.7 7.7 0 0 0-5.2-2A7.9 7.9 0 0 0 6 12c0 4.4 3.5 8 7.8 8 2 0 3.8-.8 5.2-2";
+  /// Lucide icon `expand` (24x24 stroke paths).
   static const String expand = "M0 0m15 15 6 6 M0 0m15 9 6-6 M0 0M21 16.2V21h-4.8 M0 0M21 7.8V3h-4.8 M0 0M3 16.2V21h4.8 M0 0m3 21 6-6 M0 0M3 7.8V3h4.8 M0 0M9 9 3 3";
+  /// Lucide icon `external-link` (24x24 stroke paths).
   static const String externalLink = "M0 0M15 3h6v6 M0 0M10 14 21 3 M0 0M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6";
+  /// Lucide icon `eye-closed` (24x24 stroke paths).
   static const String eyeClosed = "M0 0m15 18-.722-3.25 M0 0M2 8a10.645 10.645 0 0 0 20 0 M0 0m20 15-1.726-2.05 M0 0m4 15 1.726-2.05 M0 0m9 18 .722-3.25";
+  /// Lucide icon `eye-off` (24x24 stroke paths).
   static const String eyeOff = "M0 0M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49 M0 0M14.084 14.158a3 3 0 0 1-4.242-4.242 M0 0M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143 M0 0m2 2 20 20";
+  /// Lucide icon `eye` (24x24 stroke paths).
   static const String eye = "M0 0M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0 M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12";
+  /// Lucide icon `facebook` (24x24 stroke paths).
   static const String facebook = "M0 0M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z";
+  /// Lucide icon `factory` (24x24 stroke paths).
   static const String factory = "M0 0M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z M0 0M17 18h1 M0 0M12 18h1 M0 0M7 18h1";
+  /// Lucide icon `fan` (24x24 stroke paths).
   static const String fan = "M0 0M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618l1.45-5.412Z M0 0M12 12v.01";
+  /// Lucide icon `fast-forward` (24x24 stroke paths).
   static const String fastForward = "M0 0M13 19L22 12L13 5L13 19Z M0 0M2 19L11 12L2 5L2 19Z";
+  /// Lucide icon `feather` (24x24 stroke paths).
   static const String feather = "M0 0M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z M0 0M16 8 2 22 M0 0M17.5 15H9";
+  /// Lucide icon `fence` (24x24 stroke paths).
   static const String fence = "M0 0M4 3 2 5v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z M0 0M6 8h4 M0 0M6 18h4 M0 0m12 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z M0 0M14 8h4 M0 0M14 18h4 M0 0m20 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z";
+  /// Lucide icon `ferris-wheel` (24x24 stroke paths).
   static const String ferrisWheel = "M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12 M0 0M12 2v4 M0 0m6.8 15-3.5 2 M0 0m20.7 7-3.5 2 M0 0M6.8 9 3.3 7 M0 0m20.7 17-3.5-2 M0 0m9 22 3-8 3 8 M0 0M8 22h8 M0 0M18 18.7a9 9 0 1 0-12 0";
+  /// Lucide icon `figma` (24x24 stroke paths).
   static const String figma = "M0 0M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z M0 0M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z M0 0M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z M0 0M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z M0 0M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z";
+  /// Lucide icon `file-archive` (24x24 stroke paths).
   static const String fileArchive = "M0 0M10 12v-1 M0 0M10 18v-2 M0 0M10 7V6 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M15.5 22H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v16a2 2 0 0 0 .274 1.01 M0 0M8 20A2 2 0 1 0 12 20A2 2 0 1 0 8 20";
+  /// Lucide icon `file-audio-2` (24x24 stroke paths).
   static const String fileAudio2 = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v2 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M2 17A1 1 0 1 0 4 17A1 1 0 1 0 2 17 M0 0M2 17v-3a4 4 0 0 1 8 0v3 M0 0M8 17A1 1 0 1 0 10 17A1 1 0 1 0 8 17";
+  /// Lucide icon `file-audio` (24x24 stroke paths).
   static const String fileAudio = "M0 0M17.5 22h.5a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M2 19a2 2 0 1 1 4 0v1a2 2 0 1 1-4 0v-4a6 6 0 0 1 12 0v4a2 2 0 1 1-4 0v-1a2 2 0 1 1 4 0";
+  /// Lucide icon `file-axis-3d` (24x24 stroke paths).
   static const String fileAxis3d = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0m8 18 4-4 M0 0M8 10v8h8";
+  /// Lucide icon `file-badge-2` (24x24 stroke paths).
   static const String fileBadge2 = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0m14 12.5 1 5.5-3-1-3 1 1-5.5";
+  /// Lucide icon `file-badge` (24x24 stroke paths).
   static const String fileBadge = "M0 0M12 22h6a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M5 17a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z M0 0M7 16.5 8 22l-3-1-3 1 1-5.5";
+  /// Lucide icon `file-box` (24x24 stroke paths).
   static const String fileBox = "M0 0M14.5 22H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M3 13.1a2 2 0 0 0-1 1.76v3.24a2 2 0 0 0 .97 1.78L6 21.7a2 2 0 0 0 2.03.01L11 19.9a2 2 0 0 0 1-1.76V14.9a2 2 0 0 0-.97-1.78L8 11.3a2 2 0 0 0-2.03-.01Z M0 0M7 17v5 M0 0M11.7 14.2 7 17l-4.7-2.8";
+  /// Lucide icon `file-chart-column-increasing` (24x24 stroke paths).
   static const String fileChartColumnIncreasing = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M8 18v-2 M0 0M12 18v-4 M0 0M16 18v-6";
+  /// Lucide icon `file-chart-column` (24x24 stroke paths).
   static const String fileChartColumn = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M8 18v-1 M0 0M12 18v-6 M0 0M16 18v-3";
+  /// Lucide icon `file-chart-line` (24x24 stroke paths).
   static const String fileChartLine = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0m16 13-3.5 3.5-2-2L8 17";
+  /// Lucide icon `file-chart-pie` (24x24 stroke paths).
   static const String fileChartPie = "M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M16 22h2a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3.5 M0 0M4.017 11.512a6 6 0 1 0 8.466 8.475 M0 0M9 16a1 1 0 0 1-1-1v-4c0-.552.45-1.008.995-.917a6 6 0 0 1 4.922 4.922c.091.544-.365.995-.917.995z";
+  /// Lucide icon `file-check-2` (24x24 stroke paths).
   static const String fileCheck2 = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0m3 15 2 2 4-4";
+  /// Lucide icon `file-check` (24x24 stroke paths).
   static const String fileCheck = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0m9 15 2 2 4-4";
+  /// Lucide icon `file-clock` (24x24 stroke paths).
   static const String fileClock = "M0 0M16 22h2a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M2 16A6 6 0 1 0 14 16A6 6 0 1 0 2 16 M0 0M9.5 17.5 8 16.25V14";
+  /// Lucide icon `file-code-2` (24x24 stroke paths).
   static const String fileCode2 = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0m5 12-3 3 3 3 M0 0m9 18 3-3-3-3";
+  /// Lucide icon `file-code` (24x24 stroke paths).
   static const String fileCode = "M0 0M10 12.5 8 15l2 2.5 M0 0m14 12.5 2 2.5-2 2.5 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z";
+  /// Lucide icon `file-cog` (24x24 stroke paths).
   static const String fileCog = "M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0m3.2 12.9-.9-.4 M0 0m3.2 15.1-.9.4 M0 0M4.677 21.5a2 2 0 0 0 1.313.5H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v2.5 M0 0m4.9 11.2-.4-.9 M0 0m4.9 16.8-.4.9 M0 0m7.5 10.3-.4.9 M0 0m7.5 17.7-.4-.9 M0 0m9.7 12.5-.9.4 M0 0m9.7 15.5-.9-.4 M0 0M3 14A3 3 0 1 0 9 14A3 3 0 1 0 3 14";
+  /// Lucide icon `file-diff` (24x24 stroke paths).
   static const String fileDiff = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M9 10h6 M0 0M12 13V7 M0 0M9 17h6";
+  /// Lucide icon `file-digit` (24x24 stroke paths).
   static const String fileDigit = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M4 12h0a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h0a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M10 12h2v6 M0 0M10 18h4";
+  /// Lucide icon `file-down` (24x24 stroke paths).
   static const String fileDown = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M12 18v-6 M0 0m9 15 3 3 3-3";
+  /// Lucide icon `file-heart` (24x24 stroke paths).
   static const String fileHeart = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v2 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M10.29 10.7a2.43 2.43 0 0 0-2.66-.52c-.29.12-.56.3-.78.53l-.35.34-.35-.34a2.43 2.43 0 0 0-2.65-.53c-.3.12-.56.3-.79.53-.95.94-1 2.53.2 3.74L6.5 18l3.6-3.55c1.2-1.21 1.14-2.8.19-3.74Z";
+  /// Lucide icon `file-image` (24x24 stroke paths).
   static const String fileImage = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M8 12A2 2 0 1 0 12 12A2 2 0 1 0 8 12 M0 0m20 17-1.296-1.296a2.41 2.41 0 0 0-3.408 0L9 22";
+  /// Lucide icon `file-input` (24x24 stroke paths).
   static const String fileInput = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M2 15h10 M0 0m9 18 3-3-3-3";
+  /// Lucide icon `file-json-2` (24x24 stroke paths).
   static const String fileJson2 = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M4 12a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1 1 1 0 0 1 1 1v1a1 1 0 0 0 1 1 M0 0M8 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1";
+  /// Lucide icon `file-json` (24x24 stroke paths).
   static const String fileJson = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M10 12a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1 1 1 0 0 1 1 1v1a1 1 0 0 0 1 1 M0 0M14 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1";
+  /// Lucide icon `file-key-2` (24x24 stroke paths).
   static const String fileKey2 = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v6 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M2 16A2 2 0 1 0 6 16A2 2 0 1 0 2 16 M0 0m10 10-4.5 4.5 M0 0m9 11 1 1";
+  /// Lucide icon `file-key` (24x24 stroke paths).
   static const String fileKey = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M8 16A2 2 0 1 0 12 16A2 2 0 1 0 8 16 M0 0m16 10-4.5 4.5 M0 0m15 11 1 1";
+  /// Lucide icon `file-lock-2` (24x24 stroke paths).
   static const String fileLock2 = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v1 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M3 13h6a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z M0 0M8 13v-2a2 2 0 1 0-4 0v2";
+  /// Lucide icon `file-lock` (24x24 stroke paths).
   static const String fileLock = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M9 12h6a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z M0 0M10 12v-2a2 2 0 1 1 4 0v2";
+  /// Lucide icon `file-minus-2` (24x24 stroke paths).
   static const String fileMinus2 = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M3 15h6";
+  /// Lucide icon `file-minus` (24x24 stroke paths).
   static const String fileMinus = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M9 15h6";
+  /// Lucide icon `file-music` (24x24 stroke paths).
   static const String fileMusic = "M0 0M10.5 22H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v8.4 M0 0M8 18v-7.7L16 9v7 M0 0M12 16A2 2 0 1 0 16 16A2 2 0 1 0 12 16 M0 0M4 18A2 2 0 1 0 8 18A2 2 0 1 0 4 18";
+  /// Lucide icon `file-output` (24x24 stroke paths).
   static const String fileOutput = "M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M4 7V4a2 2 0 0 1 2-2 2 2 0 0 0-2 2 M0 0M4.063 20.999a2 2 0 0 0 2 1L18 22a2 2 0 0 0 2-2V7l-5-5H6 M0 0m5 11-3 3 M0 0m5 17-3-3h10";
+  /// Lucide icon `file-pen-line` (24x24 stroke paths).
   static const String filePenLine = "M0 0m18 5-2.414-2.414A2 2 0 0 0 14.172 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2 M0 0M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z M0 0M8 18h1";
+  /// Lucide icon `file-pen` (24x24 stroke paths).
   static const String filePen = "M0 0M12.5 22H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v9.5 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M13.378 15.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z";
+  /// Lucide icon `file-plus-2` (24x24 stroke paths).
   static const String filePlus2 = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M3 15h6 M0 0M6 12v6";
+  /// Lucide icon `file-plus` (24x24 stroke paths).
   static const String filePlus = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M9 15h6 M0 0M12 18v-6";
+  /// Lucide icon `file-question` (24x24 stroke paths).
   static const String fileQuestion = "M0 0M12 17h.01 M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z M0 0M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3";
+  /// Lucide icon `file-scan` (24x24 stroke paths).
   static const String fileScan = "M0 0M20 10V7l-5-5H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M16 14a2 2 0 0 0-2 2 M0 0M20 14a2 2 0 0 1 2 2 M0 0M20 22a2 2 0 0 0 2-2 M0 0M16 22a2 2 0 0 1-2-2";
+  /// Lucide icon `file-search-2` (24x24 stroke paths).
   static const String fileSearch2 = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M9 14.5A2.5 2.5 0 1 0 14 14.5A2.5 2.5 0 1 0 9 14.5 M0 0M13.3 16.3 15 18";
+  /// Lucide icon `file-search` (24x24 stroke paths).
   static const String fileSearch = "M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M4.268 21a2 2 0 0 0 1.727 1H18a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v3 M0 0m9 18-1.5-1.5 M0 0M2 14A3 3 0 1 0 8 14A3 3 0 1 0 2 14";
+  /// Lucide icon `file-sliders` (24x24 stroke paths).
   static const String fileSliders = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M8 12h8 M0 0M10 11v2 M0 0M8 17h8 M0 0M14 16v2";
+  /// Lucide icon `file-spreadsheet` (24x24 stroke paths).
   static const String fileSpreadsheet = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M8 13h2 M0 0M14 13h2 M0 0M8 17h2 M0 0M14 17h2";
+  /// Lucide icon `file-stack` (24x24 stroke paths).
   static const String fileStack = "M0 0M21 7h-3a2 2 0 0 1-2-2V2 M0 0M21 6v6.5c0 .8-.7 1.5-1.5 1.5h-7c-.8 0-1.5-.7-1.5-1.5v-9c0-.8.7-1.5 1.5-1.5H17Z M0 0M7 8v8.8c0 .3.2.6.4.8.2.2.5.4.8.4H15 M0 0M3 12v8.8c0 .3.2.6.4.8.2.2.5.4.8.4H11";
+  /// Lucide icon `file-symlink` (24x24 stroke paths).
   static const String fileSymlink = "M0 0m10 18 3-3-3-3 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M4 11V4a2 2 0 0 1 2-2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h7";
+  /// Lucide icon `file-terminal` (24x24 stroke paths).
   static const String fileTerminal = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0m8 16 2-2-2-2 M0 0M12 18h4";
+  /// Lucide icon `file-text` (24x24 stroke paths).
   static const String fileText = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M10 9H8 M0 0M16 13H8 M0 0M16 17H8";
+  /// Lucide icon `file-type-2` (24x24 stroke paths).
   static const String fileType2 = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M2 13v-1h6v1 M0 0M5 12v6 M0 0M4 18h2";
+  /// Lucide icon `file-type` (24x24 stroke paths).
   static const String fileType = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M9 13v-1h6v1 M0 0M12 12v6 M0 0M11 18h2";
+  /// Lucide icon `file-up` (24x24 stroke paths).
   static const String fileUp = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M12 12v6 M0 0m15 15-3-3-3 3";
+  /// Lucide icon `file-user` (24x24 stroke paths).
   static const String fileUser = "M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M15 18a3 3 0 1 0-6 0 M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z M0 0M10 13A2 2 0 1 0 14 13A2 2 0 1 0 10 13";
+  /// Lucide icon `file-video-2` (24x24 stroke paths).
   static const String fileVideo2 = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M3 12h6a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z M0 0m10 15.5 4 2.5v-6l-4 2.5";
+  /// Lucide icon `file-video` (24x24 stroke paths).
   static const String fileVideo = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0m10 11 5 3-5 3v-6Z";
+  /// Lucide icon `file-volume-2` (24x24 stroke paths).
   static const String fileVolume2 = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M8 15h.01 M0 0M11.5 13.5a2.5 2.5 0 0 1 0 3 M0 0M15 12a5 5 0 0 1 0 6";
+  /// Lucide icon `file-volume` (24x24 stroke paths).
   static const String fileVolume = "M0 0M11 11a5 5 0 0 1 0 6 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0M4 6.765V4a2 2 0 0 1 2-2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-.93-.23 M0 0M7 10.51a.5.5 0 0 0-.826-.38l-1.893 1.628A1 1 0 0 1 3.63 12H2.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h1.129a1 1 0 0 1 .652.242l1.893 1.63a.5.5 0 0 0 .826-.38z";
+  /// Lucide icon `file-warning` (24x24 stroke paths).
   static const String fileWarning = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M12 9v4 M0 0M12 17h.01";
+  /// Lucide icon `file-x-2` (24x24 stroke paths).
   static const String fileX2 = "M0 0M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4 M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0m8 12.5-5 5 M0 0m3 12.5 5 5";
+  /// Lucide icon `file-x` (24x24 stroke paths).
   static const String fileX = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4 M0 0m14.5 12.5-5 5 M0 0m9.5 12.5 5 5";
+  /// Lucide icon `file` (24x24 stroke paths).
   static const String file = "M0 0M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z M0 0M14 2v4a2 2 0 0 0 2 2h4";
+  /// Lucide icon `files` (24x24 stroke paths).
   static const String files = "M0 0M20 7h-3a2 2 0 0 1-2-2V2 M0 0M9 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h7l4 4v10a2 2 0 0 1-2 2Z M0 0M3 7.6v12.8A1.6 1.6 0 0 0 4.6 22h9.8";
+  /// Lucide icon `film` (24x24 stroke paths).
   static const String film = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M7 3v18 M0 0M3 7.5h4 M0 0M3 12h18 M0 0M3 16.5h4 M0 0M17 3v18 M0 0M17 7.5h4 M0 0M17 16.5h4";
+  /// Lucide icon `fingerprint` (24x24 stroke paths).
   static const String fingerprint = "M0 0M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4 M0 0M14 13.12c0 2.38 0 6.38-1 8.88 M0 0M17.29 21.02c.12-.6.43-2.3.5-3.02 M0 0M2 12a10 10 0 0 1 18-6 M0 0M2 16h.01 M0 0M21.8 16c.2-2 .131-5.354 0-6 M0 0M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2 M0 0M8.65 22c.21-.66.45-1.32.57-2 M0 0M9 6.8a6 6 0 0 1 9 5.2v2";
+  /// Lucide icon `fire-extinguisher` (24x24 stroke paths).
   static const String fireExtinguisher = "M0 0M15 6.5V3a1 1 0 0 0-1-1h-2a1 1 0 0 0-1 1v3.5 M0 0M9 18h8 M0 0M18 3h-3 M0 0M11 3a6 6 0 0 0-6 6v11 M0 0M5 13h4 M0 0M17 10a4 4 0 0 0-8 0v10a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2Z";
+  /// Lucide icon `fish-off` (24x24 stroke paths).
   static const String fishOff = "M0 0M18 12.47v.03m0-.5v.47m-.475 5.056A6.744 6.744 0 0 1 15 18c-3.56 0-7.56-2.53-8.5-6 .348-1.28 1.114-2.433 2.121-3.38m3.444-2.088A8.802 8.802 0 0 1 15 6c3.56 0 6.06 2.54 7 6-.309 1.14-.786 2.177-1.413 3.058 M0 0M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33m7.48-4.372A9.77 9.77 0 0 1 16 6.07m0 11.86a9.77 9.77 0 0 1-1.728-3.618 M0 0m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98M8.53 3h5.27a2 2 0 0 1 1.98 1.67l.23 1.4M2 2l20 20";
+  /// Lucide icon `fish-symbol` (24x24 stroke paths).
   static const String fishSymbol = "M0 0M2 16s9-15 20-4C11 23 2 8 2 8";
+  /// Lucide icon `fish` (24x24 stroke paths).
   static const String fish = "M0 0M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z M0 0M18 12v.5 M0 0M16 17.93a9.77 9.77 0 0 1 0-11.86 M0 0M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33 M0 0M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4 M0 0m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98";
+  /// Lucide icon `flag-off` (24x24 stroke paths).
   static const String flagOff = "M0 0M8 2c3 0 5 2 8 2s4-1 4-1v11 M0 0M4 22V4 M0 0M4 15s1-1 4-1 5 2 8 2 M0 0M2 2L22 22";
+  /// Lucide icon `flag-triangle-left` (24x24 stroke paths).
   static const String flagTriangleLeft = "M0 0M17 22V2L7 7l10 5";
+  /// Lucide icon `flag-triangle-right` (24x24 stroke paths).
   static const String flagTriangleRight = "M0 0M7 22V2l10 5-10 5";
+  /// Lucide icon `flag` (24x24 stroke paths).
   static const String flag = "M0 0M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z M0 0M4 22L4 15";
+  /// Lucide icon `flame-kindling` (24x24 stroke paths).
   static const String flameKindling = "M0 0M12 2c1 3 2.5 3.5 3.5 4.5A5 5 0 0 1 17 10a5 5 0 1 1-10 0c0-.3 0-.6.1-.9a2 2 0 1 0 3.3-2C8 4.5 11 2 12 2Z M0 0m5 22 14-4 M0 0m5 18 14 4";
+  /// Lucide icon `flame` (24x24 stroke paths).
   static const String flame = "M0 0M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z";
+  /// Lucide icon `flashlight-off` (24x24 stroke paths).
   static const String flashlightOff = "M0 0M16 16v4a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V10c0-2-2-2-2-4 M0 0M7 2h11v4c0 2-2 2-2 4v1 M0 0M11 6L18 6 M0 0M2 2L22 22";
+  /// Lucide icon `flashlight` (24x24 stroke paths).
   static const String flashlight = "M0 0M18 6c0 2-2 2-2 4v10a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V10c0-2-2-2-2-4V2h12z M0 0M6 6L18 6 M0 0M12 12L12 12";
+  /// Lucide icon `flask-conical-off` (24x24 stroke paths).
   static const String flaskConicalOff = "M0 0M10 2v2.343 M0 0M14 2v6.343 M0 0m2 2 20 20 M0 0M20 20a2 2 0 0 1-2 2H6a2 2 0 0 1-1.755-2.96l5.227-9.563 M0 0M6.453 15H15 M0 0M8.5 2h7";
+  /// Lucide icon `flask-conical` (24x24 stroke paths).
   static const String flaskConical = "M0 0M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2 M0 0M6.453 15h11.094 M0 0M8.5 2h7";
+  /// Lucide icon `flask-round` (24x24 stroke paths).
   static const String flaskRound = "M0 0M10 2v6.292a7 7 0 1 0 4 0V2 M0 0M5 15h14 M0 0M8.5 2h7";
+  /// Lucide icon `flip-horizontal-2` (24x24 stroke paths).
   static const String flipHorizontal2 = "M0 0m3 7 5 5-5 5V7 M0 0m21 7-5 5 5 5V7 M0 0M12 20v2 M0 0M12 14v2 M0 0M12 8v2 M0 0M12 2v2";
+  /// Lucide icon `flip-horizontal` (24x24 stroke paths).
   static const String flipHorizontal = "M0 0M8 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h3 M0 0M16 3h3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-3 M0 0M12 20v2 M0 0M12 14v2 M0 0M12 8v2 M0 0M12 2v2";
+  /// Lucide icon `flip-vertical-2` (24x24 stroke paths).
   static const String flipVertical2 = "M0 0m17 3-5 5-5-5h10 M0 0m17 21-5-5-5 5h10 M0 0M4 12H2 M0 0M10 12H8 M0 0M16 12h-2 M0 0M22 12h-2";
+  /// Lucide icon `flip-vertical` (24x24 stroke paths).
   static const String flipVertical = "M0 0M21 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3 M0 0M21 16v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3 M0 0M4 12H2 M0 0M10 12H8 M0 0M16 12h-2 M0 0M22 12h-2";
+  /// Lucide icon `flower-2` (24x24 stroke paths).
   static const String flower2 = "M0 0M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1 M0 0M10 8A2 2 0 1 0 14 8A2 2 0 1 0 10 8 M0 0M12 10v12 M0 0M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z M0 0M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z";
+  /// Lucide icon `flower` (24x24 stroke paths).
   static const String flower = "M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12 M0 0M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5 M0 0M12 7.5V9 M0 0M7.5 12H9 M0 0M16.5 12H15 M0 0M12 16.5V15 M0 0m8 8 1.88 1.88 M0 0M14.12 9.88 16 8 M0 0m8 16 1.88-1.88 M0 0M14.12 14.12 16 16";
+  /// Lucide icon `focus` (24x24 stroke paths).
   static const String focus = "M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12 M0 0M3 7V5a2 2 0 0 1 2-2h2 M0 0M17 3h2a2 2 0 0 1 2 2v2 M0 0M21 17v2a2 2 0 0 1-2 2h-2 M0 0M7 21H5a2 2 0 0 1-2-2v-2";
+  /// Lucide icon `fold-horizontal` (24x24 stroke paths).
   static const String foldHorizontal = "M0 0M2 12h6 M0 0M22 12h-6 M0 0M12 2v2 M0 0M12 8v2 M0 0M12 14v2 M0 0M12 20v2 M0 0m19 9-3 3 3 3 M0 0m5 15 3-3-3-3";
+  /// Lucide icon `fold-vertical` (24x24 stroke paths).
   static const String foldVertical = "M0 0M12 22v-6 M0 0M12 8V2 M0 0M4 12H2 M0 0M10 12H8 M0 0M16 12h-2 M0 0M22 12h-2 M0 0m15 19-3-3-3 3 M0 0m15 5-3 3-3-3";
+  /// Lucide icon `folder-archive` (24x24 stroke paths).
   static const String folderArchive = "M0 0M13 19A2 2 0 1 0 17 19A2 2 0 1 0 13 19 M0 0M20.9 19.8A2 2 0 0 0 22 18V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h5.1 M0 0M15 11v-1 M0 0M15 17v-2";
+  /// Lucide icon `folder-check` (24x24 stroke paths).
   static const String folderCheck = "M0 0M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z M0 0m9 13 2 2 4-4";
+  /// Lucide icon `folder-clock` (24x24 stroke paths).
   static const String folderClock = "M0 0M10 16A6 6 0 1 0 22 16A6 6 0 1 0 10 16 M0 0M7 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2 M0 0M16 14v2l1 1";
+  /// Lucide icon `folder-closed` (24x24 stroke paths).
   static const String folderClosed = "M0 0M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z M0 0M2 10h20";
+  /// Lucide icon `folder-code` (24x24 stroke paths).
   static const String folderCode = "M0 0M10 10.5 8 13l2 2.5 M0 0m14 10.5 2 2.5-2 2.5 M0 0M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2z";
+  /// Lucide icon `folder-cog` (24x24 stroke paths).
   static const String folderCog = "M0 0M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18 M0 0M10.3 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v3.3 M0 0m21.7 19.4-.9-.3 M0 0m15.2 16.9-.9-.3 M0 0m16.6 21.7.3-.9 M0 0m19.1 15.2.3-.9 M0 0m19.6 21.7-.4-1 M0 0m16.8 15.3-.4-1 M0 0m14.3 19.6 1-.4 M0 0m20.7 16.8 1-.4";
+  /// Lucide icon `folder-dot` (24x24 stroke paths).
   static const String folderDot = "M0 0M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z M0 0M11 13A1 1 0 1 0 13 13A1 1 0 1 0 11 13";
+  /// Lucide icon `folder-down` (24x24 stroke paths).
   static const String folderDown = "M0 0M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z M0 0M12 10v6 M0 0m15 13-3 3-3-3";
+  /// Lucide icon `folder-git-2` (24x24 stroke paths).
   static const String folderGit2 = "M0 0M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5 M0 0M11 12A2 2 0 1 0 15 12A2 2 0 1 0 11 12 M0 0M18 19c-2.8 0-5-2.2-5-5v8 M0 0M18 19A2 2 0 1 0 22 19A2 2 0 1 0 18 19";
+  /// Lucide icon `folder-git` (24x24 stroke paths).
   static const String folderGit = "M0 0M10 13A2 2 0 1 0 14 13A2 2 0 1 0 10 13 M0 0M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z M0 0M14 13h3 M0 0M7 13h3";
+  /// Lucide icon `folder-heart` (24x24 stroke paths).
   static const String folderHeart = "M0 0M11 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v1.5 M0 0M13.9 17.45c-1.2-1.2-1.14-2.8-.2-3.73a2.43 2.43 0 0 1 3.44 0l.36.34.34-.34a2.43 2.43 0 0 1 3.45-.01c.95.95 1 2.53-.2 3.74L17.5 21Z";
+  /// Lucide icon `folder-input` (24x24 stroke paths).
   static const String folderInput = "M0 0M2 9V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-1 M0 0M2 13h10 M0 0m9 16 3-3-3-3";
+  /// Lucide icon `folder-kanban` (24x24 stroke paths).
   static const String folderKanban = "M0 0M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z M0 0M8 10v4 M0 0M12 10v2 M0 0M16 10v6";
+  /// Lucide icon `folder-key` (24x24 stroke paths).
   static const String folderKey = "M0 0M14 20A2 2 0 1 0 18 20A2 2 0 1 0 14 20 M0 0M10 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v2 M0 0m22 14-4.5 4.5 M0 0m21 15 1 1";
+  /// Lucide icon `folder-lock` (24x24 stroke paths).
   static const String folderLock = "M0 0M15 17h6a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z M0 0M10 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v2.5 M0 0M20 17v-2a2 2 0 1 0-4 0v2";
+  /// Lucide icon `folder-minus` (24x24 stroke paths).
   static const String folderMinus = "M0 0M9 13h6 M0 0M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z";
+  /// Lucide icon `folder-open-dot` (24x24 stroke paths).
   static const String folderOpenDot = "M0 0m6 14 1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6a2 2 0 0 1-1.94 1.5H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2 M0 0M13 15A1 1 0 1 0 15 15A1 1 0 1 0 13 15";
+  /// Lucide icon `folder-open` (24x24 stroke paths).
   static const String folderOpen = "M0 0m6 14 1.5-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.54 6a2 2 0 0 1-1.95 1.5H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H18a2 2 0 0 1 2 2v2";
+  /// Lucide icon `folder-output` (24x24 stroke paths).
   static const String folderOutput = "M0 0M2 7.5V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-1.5 M0 0M2 13h10 M0 0m5 10-3 3 3 3";
+  /// Lucide icon `folder-pen` (24x24 stroke paths).
   static const String folderPen = "M0 0M2 11.5V5a2 2 0 0 1 2-2h3.9c.7 0 1.3.3 1.7.9l.8 1.2c.4.6 1 .9 1.7.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-9.5 M0 0M11.378 13.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z";
+  /// Lucide icon `folder-plus` (24x24 stroke paths).
   static const String folderPlus = "M0 0M12 10v6 M0 0M9 13h6 M0 0M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z";
+  /// Lucide icon `folder-root` (24x24 stroke paths).
   static const String folderRoot = "M0 0M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z M0 0M10 13A2 2 0 1 0 14 13A2 2 0 1 0 10 13 M0 0M12 15v5";
+  /// Lucide icon `folder-search-2` (24x24 stroke paths).
   static const String folderSearch2 = "M0 0M9 12.5A2.5 2.5 0 1 0 14 12.5A2.5 2.5 0 1 0 9 12.5 M0 0M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z M0 0M13.3 14.3 15 16";
+  /// Lucide icon `folder-search` (24x24 stroke paths).
   static const String folderSearch = "M0 0M10.7 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v4.1 M0 0m21 21-1.9-1.9 M0 0M14 17A3 3 0 1 0 20 17A3 3 0 1 0 14 17";
+  /// Lucide icon `folder-symlink` (24x24 stroke paths).
   static const String folderSymlink = "M0 0M2 9V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h7 M0 0m8 16 3-3-3-3";
+  /// Lucide icon `folder-sync` (24x24 stroke paths).
   static const String folderSync = "M0 0M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v.5 M0 0M12 10v4h4 M0 0m12 14 1.535-1.605a5 5 0 0 1 8 1.5 M0 0M22 22v-4h-4 M0 0m22 18-1.535 1.605a5 5 0 0 1-8-1.5";
+  /// Lucide icon `folder-tree` (24x24 stroke paths).
   static const String folderTree = "M0 0M20 10a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1h-2.5a1 1 0 0 1-.8-.4l-.9-1.2A1 1 0 0 0 15 3h-2a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z M0 0M20 21a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-2.9a1 1 0 0 1-.88-.55l-.42-.85a1 1 0 0 0-.92-.6H13a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1Z M0 0M3 5a2 2 0 0 0 2 2h3 M0 0M3 3v13a2 2 0 0 0 2 2h3";
+  /// Lucide icon `folder-up` (24x24 stroke paths).
   static const String folderUp = "M0 0M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z M0 0M12 10v6 M0 0m9 13 3-3 3 3";
+  /// Lucide icon `folder-x` (24x24 stroke paths).
   static const String folderX = "M0 0M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z M0 0m9.5 10.5 5 5 M0 0m14.5 10.5-5 5";
+  /// Lucide icon `folder` (24x24 stroke paths).
   static const String folder = "M0 0M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z";
+  /// Lucide icon `folders` (24x24 stroke paths).
   static const String folders = "M0 0M20 17a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3.9a2 2 0 0 1-1.69-.9l-.81-1.2a2 2 0 0 0-1.67-.9H8a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2Z M0 0M2 8v11a2 2 0 0 0 2 2h14";
+  /// Lucide icon `footprints` (24x24 stroke paths).
   static const String footprints = "M0 0M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z M0 0M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z M0 0M16 17h4 M0 0M4 13h4";
+  /// Lucide icon `forklift` (24x24 stroke paths).
   static const String forklift = "M0 0M12 12H5a2 2 0 0 0-2 2v5 M0 0M11 19A2 2 0 1 0 15 19A2 2 0 1 0 11 19 M0 0M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19 M0 0M8 19h3m5-17v17h6M6 12V7c0-1.1.9-2 2-2h3l5 5";
+  /// Lucide icon `forward` (24x24 stroke paths).
   static const String forward = "M0 0M15 17L20 12L15 7 M0 0M4 18v-2a4 4 0 0 1 4-4h12";
+  /// Lucide icon `frame` (24x24 stroke paths).
   static const String frame = "M0 0M22 6L2 6 M0 0M22 18L2 18 M0 0M6 2L6 22 M0 0M18 2L18 22";
+  /// Lucide icon `framer` (24x24 stroke paths).
   static const String framer = "M0 0M5 16V9h14V2H5l14 14h-7m-7 0 7 7v-7m-7 0h7";
+  /// Lucide icon `frown` (24x24 stroke paths).
   static const String frown = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M16 16s-1.5-2-4-2-4 2-4 2 M0 0M9 9L9.01 9 M0 0M15 9L15.01 9";
+  /// Lucide icon `fuel` (24x24 stroke paths).
   static const String fuel = "M0 0M3 22L15 22 M0 0M4 9L14 9 M0 0M14 22V4a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v18 M0 0M14 13h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2a2 2 0 0 0 2-2V9.83a2 2 0 0 0-.59-1.42L18 5";
+  /// Lucide icon `fullscreen` (24x24 stroke paths).
   static const String fullscreen = "M0 0M3 7V5a2 2 0 0 1 2-2h2 M0 0M17 3h2a2 2 0 0 1 2 2v2 M0 0M21 17v2a2 2 0 0 1-2 2h-2 M0 0M7 21H5a2 2 0 0 1-2-2v-2 M0 0M8 8h8a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `funnel-plus` (24x24 stroke paths).
   static const String funnelPlus = "M0 0M13.354 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14v6a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341l1.218-1.348 M0 0M16 6h6 M0 0M19 3v6";
+  /// Lucide icon `funnel-x` (24x24 stroke paths).
   static const String funnelX = "M0 0M12.531 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14v6a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341l.427-.473 M0 0m16.5 3.5 5 5 M0 0m21.5 3.5-5 5";
+  /// Lucide icon `funnel` (24x24 stroke paths).
   static const String funnel = "M0 0M10 20a1 1 0 0 0 .553.895l2 1A1 1 0 0 0 14 21v-7a2 2 0 0 1 .517-1.341L21.74 4.67A1 1 0 0 0 21 3H3a1 1 0 0 0-.742 1.67l7.225 7.989A2 2 0 0 1 10 14z";
+  /// Lucide icon `gallery-horizontal-end` (24x24 stroke paths).
   static const String galleryHorizontalEnd = "M0 0M2 7v10 M0 0M6 5v14 M0 0M12 3h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `gallery-horizontal` (24x24 stroke paths).
   static const String galleryHorizontal = "M0 0M2 3v18 M0 0M8 3h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M22 3v18";
+  /// Lucide icon `gallery-thumbnails` (24x24 stroke paths).
   static const String galleryThumbnails = "M0 0M5 3h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M4 21h1 M0 0M9 21h1 M0 0M14 21h1 M0 0M19 21h1";
+  /// Lucide icon `gallery-vertical-end` (24x24 stroke paths).
   static const String galleryVerticalEnd = "M0 0M7 2h10 M0 0M5 6h14 M0 0M5 10h14a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `gallery-vertical` (24x24 stroke paths).
   static const String galleryVertical = "M0 0M3 2h18 M0 0M5 6h14a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z M0 0M3 22h18";
+  /// Lucide icon `gamepad-2` (24x24 stroke paths).
   static const String gamepad2 = "M0 0M6 11L10 11 M0 0M8 9L8 13 M0 0M15 12L15.01 12 M0 0M18 10L18.01 10 M0 0M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z";
+  /// Lucide icon `gamepad` (24x24 stroke paths).
   static const String gamepad = "M0 0M6 12L10 12 M0 0M8 10L8 14 M0 0M15 13L15.01 13 M0 0M18 11L18.01 11 M0 0M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `gauge` (24x24 stroke paths).
   static const String gauge = "M0 0m12 14 4-4 M0 0M3.34 19a10 10 0 1 1 17.32 0";
+  /// Lucide icon `gavel` (24x24 stroke paths).
   static const String gavel = "M0 0m14.5 12.5-8 8a2.119 2.119 0 1 1-3-3l8-8 M0 0m16 16 6-6 M0 0m8 8 6-6 M0 0m9 7 8 8 M0 0m21 11-8-8";
+  /// Lucide icon `gem` (24x24 stroke paths).
   static const String gem = "M0 0M6 3h12l4 6-10 13L2 9Z M0 0M11 3 8 9l4 13 4-13-3-6 M0 0M2 9h20";
+  /// Lucide icon `ghost` (24x24 stroke paths).
   static const String ghost = "M0 0M9 10h.01 M0 0M15 10h.01 M0 0M12 2a8 8 0 0 0-8 8v12l3-3 2.5 2.5L12 19l2.5 2.5L17 19l3 3V10a8 8 0 0 0-8-8z";
+  /// Lucide icon `gift` (24x24 stroke paths).
   static const String gift = "M0 0M4 8h16a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z M0 0M12 8v13 M0 0M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7 M0 0M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5";
+  /// Lucide icon `git-branch-plus` (24x24 stroke paths).
   static const String gitBranchPlus = "M0 0M6 3v12 M0 0M18 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6z M0 0M6 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6z M0 0M15 6a9 9 0 0 0-9 9 M0 0M18 15v6 M0 0M21 18h-6";
+  /// Lucide icon `git-branch` (24x24 stroke paths).
   static const String gitBranch = "M0 0M6 3L6 15 M0 0M15 6A3 3 0 1 0 21 6A3 3 0 1 0 15 6 M0 0M3 18A3 3 0 1 0 9 18A3 3 0 1 0 3 18 M0 0M18 9a9 9 0 0 1-9 9";
+  /// Lucide icon `git-commit-horizontal` (24x24 stroke paths).
   static const String gitCommitHorizontal = "M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12 M0 0M3 12L9 12 M0 0M15 12L21 12";
+  /// Lucide icon `git-commit-vertical` (24x24 stroke paths).
   static const String gitCommitVertical = "M0 0M12 3v6 M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12 M0 0M12 15v6";
+  /// Lucide icon `git-compare-arrows` (24x24 stroke paths).
   static const String gitCompareArrows = "M0 0M2 6A3 3 0 1 0 8 6A3 3 0 1 0 2 6 M0 0M12 6h5a2 2 0 0 1 2 2v7 M0 0m15 9-3-3 3-3 M0 0M16 18A3 3 0 1 0 22 18A3 3 0 1 0 16 18 M0 0M12 18H7a2 2 0 0 1-2-2V9 M0 0m9 15 3 3-3 3";
+  /// Lucide icon `git-compare` (24x24 stroke paths).
   static const String gitCompare = "M0 0M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18 M0 0M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6 M0 0M13 6h3a2 2 0 0 1 2 2v7 M0 0M11 18H8a2 2 0 0 1-2-2V9";
+  /// Lucide icon `git-fork` (24x24 stroke paths).
   static const String gitFork = "M0 0M9 18A3 3 0 1 0 15 18A3 3 0 1 0 9 18 M0 0M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6 M0 0M15 6A3 3 0 1 0 21 6A3 3 0 1 0 15 6 M0 0M18 9v2c0 .6-.4 1-1 1H7c-.6 0-1-.4-1-1V9 M0 0M12 12v3";
+  /// Lucide icon `git-graph` (24x24 stroke paths).
   static const String gitGraph = "M0 0M2 6A3 3 0 1 0 8 6A3 3 0 1 0 2 6 M0 0M5 9v6 M0 0M2 18A3 3 0 1 0 8 18A3 3 0 1 0 2 18 M0 0M12 3v18 M0 0M16 6A3 3 0 1 0 22 6A3 3 0 1 0 16 6 M0 0M16 15.7A9 9 0 0 0 19 9";
+  /// Lucide icon `git-merge` (24x24 stroke paths).
   static const String gitMerge = "M0 0M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18 M0 0M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6 M0 0M6 21V9a9 9 0 0 0 9 9";
+  /// Lucide icon `git-pull-request-arrow` (24x24 stroke paths).
   static const String gitPullRequestArrow = "M0 0M2 6A3 3 0 1 0 8 6A3 3 0 1 0 2 6 M0 0M5 9v12 M0 0M16 18A3 3 0 1 0 22 18A3 3 0 1 0 16 18 M0 0m15 9-3-3 3-3 M0 0M12 6h5a2 2 0 0 1 2 2v7";
+  /// Lucide icon `git-pull-request-closed` (24x24 stroke paths).
   static const String gitPullRequestClosed = "M0 0M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6 M0 0M6 9v12 M0 0m21 3-6 6 M0 0m21 9-6-6 M0 0M18 11.5V15 M0 0M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18";
+  /// Lucide icon `git-pull-request-create-arrow` (24x24 stroke paths).
   static const String gitPullRequestCreateArrow = "M0 0M2 6A3 3 0 1 0 8 6A3 3 0 1 0 2 6 M0 0M5 9v12 M0 0m15 9-3-3 3-3 M0 0M12 6h5a2 2 0 0 1 2 2v3 M0 0M19 15v6 M0 0M22 18h-6";
+  /// Lucide icon `git-pull-request-create` (24x24 stroke paths).
   static const String gitPullRequestCreate = "M0 0M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6 M0 0M6 9v12 M0 0M13 6h3a2 2 0 0 1 2 2v3 M0 0M18 15v6 M0 0M21 18h-6";
+  /// Lucide icon `git-pull-request-draft` (24x24 stroke paths).
   static const String gitPullRequestDraft = "M0 0M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18 M0 0M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6 M0 0M18 6V5 M0 0M18 11v-1 M0 0M6 9L6 21";
+  /// Lucide icon `git-pull-request` (24x24 stroke paths).
   static const String gitPullRequest = "M0 0M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18 M0 0M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6 M0 0M13 6h3a2 2 0 0 1 2 2v7 M0 0M6 9L6 21";
+  /// Lucide icon `github` (24x24 stroke paths).
   static const String github = "M0 0M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4 M0 0M9 18c-4.51 2-5-2-7-2";
+  /// Lucide icon `gitlab` (24x24 stroke paths).
   static const String gitlab = "M0 0m22 13.29-3.33-10a.42.42 0 0 0-.14-.18.38.38 0 0 0-.22-.11.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18l-2.26 6.67H8.32L6.1 3.26a.42.42 0 0 0-.1-.18.38.38 0 0 0-.26-.08.39.39 0 0 0-.23.07.42.42 0 0 0-.14.18L2 13.29a.74.74 0 0 0 .27.83L12 21l9.69-6.88a.71.71 0 0 0 .31-.83Z";
+  /// Lucide icon `glass-water` (24x24 stroke paths).
   static const String glassWater = "M0 0M5.116 4.104A1 1 0 0 1 6.11 3h11.78a1 1 0 0 1 .994 1.105L17.19 20.21A2 2 0 0 1 15.2 22H8.8a2 2 0 0 1-2-1.79z M0 0M6 12a5 5 0 0 1 6 0 5 5 0 0 0 6 0";
+  /// Lucide icon `glasses` (24x24 stroke paths).
   static const String glasses = "M0 0M2 15A4 4 0 1 0 10 15A4 4 0 1 0 2 15 M0 0M14 15A4 4 0 1 0 22 15A4 4 0 1 0 14 15 M0 0M14 15a2 2 0 0 0-2-2 2 2 0 0 0-2 2 M0 0M2.5 13 5 7c.7-1.3 1.4-2 3-2 M0 0M21.5 13 19 7c-.7-1.3-1.5-2-3-2";
+  /// Lucide icon `globe-lock` (24x24 stroke paths).
   static const String globeLock = "M0 0M15.686 15A14.5 14.5 0 0 1 12 22a14.5 14.5 0 0 1 0-20 10 10 0 1 0 9.542 13 M0 0M2 12h8.5 M0 0M20 6V4a2 2 0 1 0-4 0v2 M0 0M15 6h6a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `globe` (24x24 stroke paths).
   static const String globe = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20 M0 0M2 12h20";
+  /// Lucide icon `goal` (24x24 stroke paths).
   static const String goal = "M0 0M12 13V2l8 4-8 4 M0 0M20.561 10.222a9 9 0 1 1-12.55-5.29 M0 0M8.002 9.997a5 5 0 1 0 8.9 2.02";
+  /// Lucide icon `grab` (24x24 stroke paths).
   static const String grab = "M0 0M18 11.5V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1.4 M0 0M14 10V8a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2 M0 0M10 9.9V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v5 M0 0M6 14a2 2 0 0 0-2-2a2 2 0 0 0-2 2 M0 0M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-4a8 8 0 0 1-8-8 2 2 0 1 1 4 0";
+  /// Lucide icon `graduation-cap` (24x24 stroke paths).
   static const String graduationCap = "M0 0M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z M0 0M22 10v6 M0 0M6 12.5V16a6 3 0 0 0 12 0v-3.5";
+  /// Lucide icon `grape` (24x24 stroke paths).
   static const String grape = "M0 0M22 5V2l-5.89 5.89 M0 0M13.600000000000001 15.89A3 3 0 1 0 19.6 15.89A3 3 0 1 0 13.600000000000001 15.89 M0 0M5.109999999999999 7.4A3 3 0 1 0 11.11 7.4A3 3 0 1 0 5.109999999999999 7.4 M0 0M9.35 11.65A3 3 0 1 0 15.35 11.65A3 3 0 1 0 9.35 11.65 M0 0M10.91 5.85A3 3 0 1 0 16.91 5.85A3 3 0 1 0 10.91 5.85 M0 0M15.149999999999999 10.09A3 3 0 1 0 21.15 10.09A3 3 0 1 0 15.149999999999999 10.09 M0 0M3.5599999999999996 13.2A3 3 0 1 0 9.559999999999999 13.2A3 3 0 1 0 3.5599999999999996 13.2 M0 0M7.800000000000001 17.44A3 3 0 1 0 13.8 17.44A3 3 0 1 0 7.800000000000001 17.44 M0 0M2 19A3 3 0 1 0 8 19A3 3 0 1 0 2 19";
+  /// Lucide icon `grid-2x2-check` (24x24 stroke paths).
   static const String grid2x2Check = "M0 0M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3 M0 0m16 19 2 2 4-4";
+  /// Lucide icon `grid-2x2-plus` (24x24 stroke paths).
   static const String grid2x2Plus = "M0 0M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3 M0 0M16 19h6 M0 0M19 22v-6";
+  /// Lucide icon `grid-2x2-x` (24x24 stroke paths).
   static const String grid2x2X = "M0 0M12 3v17a1 1 0 0 1-1 1H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6a1 1 0 0 1-1 1H3 M0 0m16 16 5 5 M0 0m16 21 5-5";
+  /// Lucide icon `grid-2x2` (24x24 stroke paths).
   static const String grid2x2 = "M0 0M12 3v18 M0 0M3 12h18 M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `grid-3x3` (24x24 stroke paths).
   static const String grid3x3 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 9h18 M0 0M3 15h18 M0 0M9 3v18 M0 0M15 3v18";
+  /// Lucide icon `grip-horizontal` (24x24 stroke paths).
   static const String gripHorizontal = "M0 0M11 9A1 1 0 1 0 13 9A1 1 0 1 0 11 9 M0 0M18 9A1 1 0 1 0 20 9A1 1 0 1 0 18 9 M0 0M4 9A1 1 0 1 0 6 9A1 1 0 1 0 4 9 M0 0M11 15A1 1 0 1 0 13 15A1 1 0 1 0 11 15 M0 0M18 15A1 1 0 1 0 20 15A1 1 0 1 0 18 15 M0 0M4 15A1 1 0 1 0 6 15A1 1 0 1 0 4 15";
+  /// Lucide icon `grip-vertical` (24x24 stroke paths).
   static const String gripVertical = "M0 0M8 12A1 1 0 1 0 10 12A1 1 0 1 0 8 12 M0 0M8 5A1 1 0 1 0 10 5A1 1 0 1 0 8 5 M0 0M8 19A1 1 0 1 0 10 19A1 1 0 1 0 8 19 M0 0M14 12A1 1 0 1 0 16 12A1 1 0 1 0 14 12 M0 0M14 5A1 1 0 1 0 16 5A1 1 0 1 0 14 5 M0 0M14 19A1 1 0 1 0 16 19A1 1 0 1 0 14 19";
+  /// Lucide icon `grip` (24x24 stroke paths).
   static const String grip = "M0 0M11 5A1 1 0 1 0 13 5A1 1 0 1 0 11 5 M0 0M18 5A1 1 0 1 0 20 5A1 1 0 1 0 18 5 M0 0M4 5A1 1 0 1 0 6 5A1 1 0 1 0 4 5 M0 0M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12 M0 0M18 12A1 1 0 1 0 20 12A1 1 0 1 0 18 12 M0 0M4 12A1 1 0 1 0 6 12A1 1 0 1 0 4 12 M0 0M11 19A1 1 0 1 0 13 19A1 1 0 1 0 11 19 M0 0M18 19A1 1 0 1 0 20 19A1 1 0 1 0 18 19 M0 0M4 19A1 1 0 1 0 6 19A1 1 0 1 0 4 19";
+  /// Lucide icon `group` (24x24 stroke paths).
   static const String group = "M0 0M3 7V5c0-1.1.9-2 2-2h2 M0 0M17 3h2c1.1 0 2 .9 2 2v2 M0 0M21 17v2c0 1.1-.9 2-2 2h-2 M0 0M7 21H5c-1.1 0-2-.9-2-2v-2 M0 0M8 7h5a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z M0 0M11 12h5a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `guitar` (24x24 stroke paths).
   static const String guitar = "M0 0m11.9 12.1 4.514-4.514 M0 0M20.1 2.3a1 1 0 0 0-1.4 0l-1.114 1.114A2 2 0 0 0 17 4.828v1.344a2 2 0 0 1-.586 1.414A2 2 0 0 1 17.828 7h1.344a2 2 0 0 0 1.414-.586L21.7 5.3a1 1 0 0 0 0-1.4z M0 0m6 16 2 2 M0 0M8.2 9.9C8.7 8.8 9.8 8 11 8c2.8 0 5 2.2 5 5 0 1.2-.8 2.3-1.9 2.8l-.9.4A2 2 0 0 0 12 18a4 4 0 0 1-4 4c-3.3 0-6-2.7-6-6a4 4 0 0 1 4-4 2 2 0 0 0 1.8-1.2z M0 0M11 12.5A0.5 0.5 0 1 0 12 12.5A0.5 0.5 0 1 0 11 12.5";
+  /// Lucide icon `ham` (24x24 stroke paths).
   static const String ham = "M0 0M13.144 21.144A7.274 10.445 45 1 0 2.856 10.856 M0 0M13.144 21.144A7.274 4.365 45 0 0 2.856 10.856a7.274 4.365 45 0 0 10.288 10.288 M0 0M16.565 10.435 18.6 8.4a2.501 2.501 0 1 0 1.65-4.65 2.5 2.5 0 1 0-4.66 1.66l-2.024 2.025 M0 0m8.5 16.5-1-1";
+  /// Lucide icon `hammer` (24x24 stroke paths).
   static const String hammer = "M0 0m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9 M0 0m18 15 4-4 M0 0m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5";
+  /// Lucide icon `hand-coins` (24x24 stroke paths).
   static const String handCoins = "M0 0M11 15h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 17 M0 0m7 21 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9 M0 0m2 16 6 6 M0 0M13.1 9A2.9 2.9 0 1 0 18.9 9A2.9 2.9 0 1 0 13.1 9 M0 0M3 5A3 3 0 1 0 9 5A3 3 0 1 0 3 5";
+  /// Lucide icon `hand-heart` (24x24 stroke paths).
   static const String handHeart = "M0 0M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16 M0 0m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9 M0 0m2 15 6 6 M0 0M19.5 8.5c.7-.7 1.5-1.6 1.5-2.7A2.73 2.73 0 0 0 16 4a2.78 2.78 0 0 0-5 1.8c0 1.2.8 2 1.5 2.8L16 12Z";
+  /// Lucide icon `hand-helping` (24x24 stroke paths).
   static const String handHelping = "M0 0M11 12h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 14 M0 0m7 18 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9 M0 0m2 13 6 6";
+  /// Lucide icon `hand-metal` (24x24 stroke paths).
   static const String handMetal = "M0 0M18 12.5V10a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1.4 M0 0M14 11V9a2 2 0 1 0-4 0v2 M0 0M10 10.5V5a2 2 0 1 0-4 0v9 M0 0m7 15-1.76-1.76a2 2 0 0 0-2.83 2.82l3.6 3.6C7.5 21.14 9.2 22 12 22h2a8 8 0 0 0 8-8V7a2 2 0 1 0-4 0v5";
+  /// Lucide icon `hand-platter` (24x24 stroke paths).
   static const String handPlatter = "M0 0M12 3V2 M0 0m15.4 17.4 3.2-2.8a2 2 0 1 1 2.8 2.9l-3.6 3.3c-.7.8-1.7 1.2-2.8 1.2h-4c-1.1 0-2.1-.4-2.8-1.2l-1.302-1.464A1 1 0 0 0 6.151 19H5 M0 0M2 14h12a2 2 0 0 1 0 4h-2 M0 0M4 10h16 M0 0M5 10a7 7 0 0 1 14 0 M0 0M5 14v6a1 1 0 0 1-1 1H2";
+  /// Lucide icon `hand` (24x24 stroke paths).
   static const String hand = "M0 0M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2 M0 0M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2 M0 0M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8 M0 0M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15";
+  /// Lucide icon `handshake` (24x24 stroke paths).
   static const String handshake = "M0 0m11 17 2 2a1 1 0 1 0 3-3 M0 0m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4 M0 0m21 3 1 11h-2 M0 0M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3 M0 0M3 4h8";
+  /// Lucide icon `hard-drive-download` (24x24 stroke paths).
   static const String hardDriveDownload = "M0 0M12 2v8 M0 0m16 6-4 4-4-4 M0 0M4 14h16a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M6 18h.01 M0 0M10 18h.01";
+  /// Lucide icon `hard-drive-upload` (24x24 stroke paths).
   static const String hardDriveUpload = "M0 0m16 6-4-4-4 4 M0 0M12 2v8 M0 0M4 14h16a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M6 18h.01 M0 0M10 18h.01";
+  /// Lucide icon `hard-drive` (24x24 stroke paths).
   static const String hardDrive = "M0 0M22 12L2 12 M0 0M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z M0 0M6 16L6.01 16 M0 0M10 16L10.01 16";
+  /// Lucide icon `hard-hat` (24x24 stroke paths).
   static const String hardHat = "M0 0M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5 M0 0M14 6a6 6 0 0 1 6 6v3 M0 0M4 15v-3a6 6 0 0 1 6-6 M0 0M3 15h18a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `hash` (24x24 stroke paths).
   static const String hash = "M0 0M4 9L20 9 M0 0M4 15L20 15 M0 0M10 3L8 21 M0 0M16 3L14 21";
+  /// Lucide icon `haze` (24x24 stroke paths).
   static const String haze = "M0 0m5.2 6.2 1.4 1.4 M0 0M2 13h2 M0 0M20 13h2 M0 0m17.4 7.6 1.4-1.4 M0 0M22 17H2 M0 0M22 21H2 M0 0M16 13a4 4 0 0 0-8 0 M0 0M12 5V2.5";
+  /// Lucide icon `hdmi-port` (24x24 stroke paths).
   static const String hdmiPort = "M0 0M22 9a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h1l2 2h12l2-2h1a1 1 0 0 0 1-1Z M0 0M7.5 12h9";
+  /// Lucide icon `heading-1` (24x24 stroke paths).
   static const String heading1 = "M0 0M4 12h8 M0 0M4 18V6 M0 0M12 18V6 M0 0m17 12 3-2v8";
+  /// Lucide icon `heading-2` (24x24 stroke paths).
   static const String heading2 = "M0 0M4 12h8 M0 0M4 18V6 M0 0M12 18V6 M0 0M21 18h-4c0-4 4-3 4-6 0-1.5-2-2.5-4-1";
+  /// Lucide icon `heading-3` (24x24 stroke paths).
   static const String heading3 = "M0 0M4 12h8 M0 0M4 18V6 M0 0M12 18V6 M0 0M17.5 10.5c1.7-1 3.5 0 3.5 1.5a2 2 0 0 1-2 2 M0 0M17 17.5c2 1.5 4 .3 4-1.5a2 2 0 0 0-2-2";
+  /// Lucide icon `heading-4` (24x24 stroke paths).
   static const String heading4 = "M0 0M12 18V6 M0 0M17 10v3a1 1 0 0 0 1 1h3 M0 0M21 10v8 M0 0M4 12h8 M0 0M4 18V6";
+  /// Lucide icon `heading-5` (24x24 stroke paths).
   static const String heading5 = "M0 0M4 12h8 M0 0M4 18V6 M0 0M12 18V6 M0 0M17 13v-3h4 M0 0M17 17.7c.4.2.8.3 1.3.3 1.5 0 2.7-1.1 2.7-2.5S19.8 13 18.3 13H17";
+  /// Lucide icon `heading-6` (24x24 stroke paths).
   static const String heading6 = "M0 0M4 12h8 M0 0M4 18V6 M0 0M12 18V6 M0 0M17 16A2 2 0 1 0 21 16A2 2 0 1 0 17 16 M0 0M20 10c-2 2-3 3.5-3 6";
+  /// Lucide icon `heading` (24x24 stroke paths).
   static const String heading = "M0 0M6 12h12 M0 0M6 20V4 M0 0M18 20V4";
+  /// Lucide icon `headphone-off` (24x24 stroke paths).
   static const String headphoneOff = "M0 0M21 14h-1.343 M0 0M9.128 3.47A9 9 0 0 1 21 12v3.343 M0 0m2 2 20 20 M0 0M20.414 20.414A2 2 0 0 1 19 21h-1a2 2 0 0 1-2-2v-3 M0 0M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 2.636-6.364";
+  /// Lucide icon `headphones` (24x24 stroke paths).
   static const String headphones = "M0 0M3 14h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-7a9 9 0 0 1 18 0v7a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3";
+  /// Lucide icon `headset` (24x24 stroke paths).
   static const String headset = "M0 0M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z M0 0M21 16v2a4 4 0 0 1-4 4h-5";
+  /// Lucide icon `heart-crack` (24x24 stroke paths).
   static const String heartCrack = "M0 0M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z M0 0m12 13-1-1 2-2-3-3 2-2";
+  /// Lucide icon `heart-handshake` (24x24 stroke paths).
   static const String heartHandshake = "M0 0M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z M0 0M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66 M0 0m18 15-2-2 M0 0m15 18-2-2";
+  /// Lucide icon `heart-off` (24x24 stroke paths).
   static const String heartOff = "M0 0M2 2L22 22 M0 0M16.5 16.5 12 21l-7-7c-1.5-1.45-3-3.2-3-5.5a5.5 5.5 0 0 1 2.14-4.35 M0 0M8.76 3.1c1.15.22 2.13.78 3.24 1.9 1.5-1.5 2.74-2 4.5-2A5.5 5.5 0 0 1 22 8.5c0 2.12-1.3 3.78-2.67 5.17";
+  /// Lucide icon `heart-pulse` (24x24 stroke paths).
   static const String heartPulse = "M0 0M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z M0 0M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27";
+  /// Lucide icon `heart` (24x24 stroke paths).
   static const String heart = "M0 0M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z";
+  /// Lucide icon `heater` (24x24 stroke paths).
   static const String heater = "M0 0M11 8c2-3-2-3 0-6 M0 0M15.5 8c2-3-2-3 0-6 M0 0M6 10h.01 M0 0M6 14h.01 M0 0M10 16v-4 M0 0M14 16v-4 M0 0M18 16v-4 M0 0M20 6a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3 M0 0M5 20v2 M0 0M19 20v2";
+  /// Lucide icon `hexagon` (24x24 stroke paths).
   static const String hexagon = "M0 0M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z";
+  /// Lucide icon `highlighter` (24x24 stroke paths).
   static const String highlighter = "M0 0m9 11-6 6v3h9l3-3 M0 0m22 12-4.6 4.6a2 2 0 0 1-2.8 0l-5.2-5.2a2 2 0 0 1 0-2.8L14 4";
+  /// Lucide icon `history` (24x24 stroke paths).
   static const String history = "M0 0M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8 M0 0M3 3v5h5 M0 0M12 7v5l4 2";
+  /// Lucide icon `hop-off` (24x24 stroke paths).
   static const String hopOff = "M0 0M10.82 16.12c1.69.6 3.91.79 5.18.85.28.01.53-.09.7-.27 M0 0M11.14 20.57c.52.24 2.44 1.12 4.08 1.37.46.06.86-.25.9-.71.12-1.52-.3-3.43-.5-4.28 M0 0M16.13 21.05c1.65.63 3.68.84 4.87.91a.9.9 0 0 0 .7-.26 M0 0M17.99 5.52a20.83 20.83 0 0 1 3.15 4.5.8.8 0 0 1-.68 1.13c-1.17.1-2.5.02-3.9-.25 M0 0M20.57 11.14c.24.52 1.12 2.44 1.37 4.08.04.3-.08.59-.31.75 M0 0M4.93 4.93a10 10 0 0 0-.67 13.4c.35.43.96.4 1.17-.12.69-1.71 1.07-5.07 1.07-6.71 1.34.45 3.1.9 4.88.62a.85.85 0 0 0 .48-.24 M0 0M5.52 17.99c1.05.95 2.91 2.42 4.5 3.15a.8.8 0 0 0 1.13-.68c.2-2.34-.33-5.3-1.57-8.28 M0 0M8.35 2.68a10 10 0 0 1 9.98 1.58c.43.35.4.96-.12 1.17-1.5.6-4.3.98-6.07 1.05 M0 0m2 2 20 20";
+  /// Lucide icon `hop` (24x24 stroke paths).
   static const String hop = "M0 0M10.82 16.12c1.69.6 3.91.79 5.18.85.55.03 1-.42.97-.97-.06-1.27-.26-3.5-.85-5.18 M0 0M11.5 6.5c1.64 0 5-.38 6.71-1.07.52-.2.55-.82.12-1.17A10 10 0 0 0 4.26 18.33c.35.43.96.4 1.17-.12.69-1.71 1.07-5.07 1.07-6.71 1.34.45 3.1.9 4.88.62a.88.88 0 0 0 .73-.74c.3-2.14-.15-3.5-.61-4.88 M0 0M15.62 16.95c.2.85.62 2.76.5 4.28a.77.77 0 0 1-.9.7 16.64 16.64 0 0 1-4.08-1.36 M0 0M16.13 21.05c1.65.63 3.68.84 4.87.91a.9.9 0 0 0 .96-.96 17.68 17.68 0 0 0-.9-4.87 M0 0M16.94 15.62c.86.2 2.77.62 4.29.5a.77.77 0 0 0 .7-.9 16.64 16.64 0 0 0-1.36-4.08 M0 0M17.99 5.52a20.82 20.82 0 0 1 3.15 4.5.8.8 0 0 1-.68 1.13c-2.33.2-5.3-.32-8.27-1.57 M0 0M4.93 4.93 3 3a.7.7 0 0 1 0-1 M0 0M9.58 12.18c1.24 2.98 1.77 5.95 1.57 8.28a.8.8 0 0 1-1.13.68 20.82 20.82 0 0 1-4.5-3.15";
+  /// Lucide icon `hospital` (24x24 stroke paths).
   static const String hospital = "M0 0M12 6v4 M0 0M14 14h-4 M0 0M14 18h-4 M0 0M14 8h-4 M0 0M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2 M0 0M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18";
+  /// Lucide icon `hotel` (24x24 stroke paths).
   static const String hotel = "M0 0M10 22v-6.57 M0 0M12 11h.01 M0 0M12 7h.01 M0 0M14 15.43V22 M0 0M15 16a5 5 0 0 0-6 0 M0 0M16 11h.01 M0 0M16 7h.01 M0 0M8 11h.01 M0 0M8 7h.01 M0 0M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `hourglass` (24x24 stroke paths).
   static const String hourglass = "M0 0M5 22h14 M0 0M5 2h14 M0 0M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22 M0 0M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2";
+  /// Lucide icon `house-plug` (24x24 stroke paths).
   static const String housePlug = "M0 0M10 12V8.964 M0 0M14 12V8.964 M0 0M15 12a1 1 0 0 1 1 1v2a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2v-2a1 1 0 0 1 1-1z M0 0M8.5 21H5a2 2 0 0 1-2-2v-9a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2h-5a2 2 0 0 1-2-2v-2";
+  /// Lucide icon `house-plus` (24x24 stroke paths).
   static const String housePlus = "M0 0M13.22 2.416a2 2 0 0 0-2.511.057l-7 5.999A2 2 0 0 0 3 10v9a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7.354 M0 0M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8 M0 0M15 6h6 M0 0M18 3v6";
+  /// Lucide icon `house-wifi` (24x24 stroke paths).
   static const String houseWifi = "M0 0M9.5 13.866a4 4 0 0 1 5 .01 M0 0M12 17h.01 M0 0M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z M0 0M7 10.754a8 8 0 0 1 10 0";
+  /// Lucide icon `house` (24x24 stroke paths).
   static const String house = "M0 0M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8 M0 0M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z";
+  /// Lucide icon `ice-cream-bowl` (24x24 stroke paths).
   static const String iceCreamBowl = "M0 0M12 17c5 0 8-2.69 8-6H4c0 3.31 3 6 8 6m-4 4h8m-4-3v3M5.14 11a3.5 3.5 0 1 1 6.71 0 M0 0M12.14 11a3.5 3.5 0 1 1 6.71 0 M0 0M15.5 6.5a3.5 3.5 0 1 0-7 0";
+  /// Lucide icon `ice-cream-cone` (24x24 stroke paths).
   static const String iceCreamCone = "M0 0m7 11 4.08 10.35a1 1 0 0 0 1.84 0L17 11 M0 0M17 7A5 5 0 0 0 7 7 M0 0M17 7a2 2 0 0 1 0 4H7a2 2 0 0 1 0-4";
+  /// Lucide icon `id-card` (24x24 stroke paths).
   static const String idCard = "M0 0M16 10h2 M0 0M16 14h2 M0 0M6.17 15a3 3 0 0 1 5.66 0 M0 0M7 11A2 2 0 1 0 11 11A2 2 0 1 0 7 11 M0 0M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `image-down` (24x24 stroke paths).
   static const String imageDown = "M0 0M10.3 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10l-3.1-3.1a2 2 0 0 0-2.814.014L6 21 M0 0m14 19 3 3v-5.5 M0 0m17 22 3-3 M0 0M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9";
+  /// Lucide icon `image-minus` (24x24 stroke paths).
   static const String imageMinus = "M0 0M21 9v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7 M0 0M16 5L22 5 M0 0M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9 M0 0m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21";
+  /// Lucide icon `image-off` (24x24 stroke paths).
   static const String imageOff = "M0 0M2 2L22 22 M0 0M10.41 10.41a2 2 0 1 1-2.83-2.83 M0 0M13.5 13.5L6 21 M0 0M18 12L21 15 M0 0M3.59 3.59A1.99 1.99 0 0 0 3 5v14a2 2 0 0 0 2 2h14c.55 0 1.052-.22 1.41-.59 M0 0M21 15V5a2 2 0 0 0-2-2H9";
+  /// Lucide icon `image-play` (24x24 stroke paths).
   static const String imagePlay = "M0 0m11 16-5 5 M0 0M11 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6.5 M0 0M15.765 22a.5.5 0 0 1-.765-.424V13.38a.5.5 0 0 1 .765-.424l5.878 3.674a1 1 0 0 1 0 1.696z M0 0M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9";
+  /// Lucide icon `image-plus` (24x24 stroke paths).
   static const String imagePlus = "M0 0M16 5h6 M0 0M19 2v6 M0 0M21 11.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7.5 M0 0m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21 M0 0M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9";
+  /// Lucide icon `image-up` (24x24 stroke paths).
   static const String imageUp = "M0 0M10.3 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10l-3.1-3.1a2 2 0 0 0-2.814.014L6 21 M0 0m14 19.5 3-3 3 3 M0 0M17 22v-5.5 M0 0M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9";
+  /// Lucide icon `image-upscale` (24x24 stroke paths).
   static const String imageUpscale = "M0 0M16 3h5v5 M0 0M17 21h2a2 2 0 0 0 2-2 M0 0M21 12v3 M0 0m21 3-5 5 M0 0M3 7V5a2 2 0 0 1 2-2 M0 0m5 21 4.144-4.144a1.21 1.21 0 0 1 1.712 0L13 19 M0 0M9 3h3 M0 0M4 11h8a1 1 0 0 1 1 1v8a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-8a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `image` (24x24 stroke paths).
   static const String image = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M7 9A2 2 0 1 0 11 9A2 2 0 1 0 7 9 M0 0m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21";
+  /// Lucide icon `images` (24x24 stroke paths).
   static const String images = "M0 0M18 22H4a2 2 0 0 1-2-2V6 M0 0m22 13-1.296-1.296a2.41 2.41 0 0 0-3.408 0L11 18 M0 0M10 8A2 2 0 1 0 14 8A2 2 0 1 0 10 8 M0 0M8 2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `import` (24x24 stroke paths).
   static const String import = "M0 0M12 3v12 M0 0m8 11 4 4 4-4 M0 0M8 5H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-4";
+  /// Lucide icon `inbox` (24x24 stroke paths).
   static const String inbox = "M0 0M22 12L16 12L14 15L10 15L8 12L2 12 M0 0M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z";
+  /// Lucide icon `indent-decrease` (24x24 stroke paths).
   static const String indentDecrease = "M0 0M21 12H11 M0 0M21 18H11 M0 0M21 6H11 M0 0m7 8-4 4 4 4";
+  /// Lucide icon `indent-increase` (24x24 stroke paths).
   static const String indentIncrease = "M0 0M21 12H11 M0 0M21 18H11 M0 0M21 6H11 M0 0m3 8 4 4-4 4";
+  /// Lucide icon `indian-rupee` (24x24 stroke paths).
   static const String indianRupee = "M0 0M6 3h12 M0 0M6 8h12 M0 0m6 13 8.5 8 M0 0M6 13h3 M0 0M9 13c6.667 0 6.667-10 0-10";
+  /// Lucide icon `infinity` (24x24 stroke paths).
   static const String infinity = "M0 0M6 16c5 0 7-8 12-8a4 4 0 0 1 0 8c-5 0-7-8-12-8a4 4 0 1 0 0 8";
+  /// Lucide icon `info` (24x24 stroke paths).
   static const String info = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M12 16v-4 M0 0M12 8h.01";
+  /// Lucide icon `inspection-panel` (24x24 stroke paths).
   static const String inspectionPanel = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M7 7h.01 M0 0M17 7h.01 M0 0M7 17h.01 M0 0M17 17h.01";
+  /// Lucide icon `instagram` (24x24 stroke paths).
   static const String instagram = "M0 0M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1 -5 5h-10a5 5 0 0 1 -5 -5v-10a5 5 0 0 1 5 -5Z M0 0M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z M0 0M17.5 6.5L17.51 6.5";
+  /// Lucide icon `italic` (24x24 stroke paths).
   static const String italic = "M0 0M19 4L10 4 M0 0M14 20L5 20 M0 0M15 4L9 20";
+  /// Lucide icon `iteration-ccw` (24x24 stroke paths).
   static const String iterationCcw = "M0 0M20 10c0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8h8 M0 0M16 14L20 18L16 22";
+  /// Lucide icon `iteration-cw` (24x24 stroke paths).
   static const String iterationCw = "M0 0M4 10c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8H4 M0 0M8 22L4 18L8 14";
+  /// Lucide icon `japanese-yen` (24x24 stroke paths).
   static const String japaneseYen = "M0 0M12 9.5V21m0-11.5L6 3m6 6.5L18 3 M0 0M6 15h12 M0 0M6 11h12";
+  /// Lucide icon `joystick` (24x24 stroke paths).
   static const String joystick = "M0 0M21 17a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2Z M0 0M6 15v-2 M0 0M12 15V9 M0 0M9 6A3 3 0 1 0 15 6A3 3 0 1 0 9 6";
+  /// Lucide icon `kanban` (24x24 stroke paths).
   static const String kanban = "M0 0M6 5v11 M0 0M12 5v6 M0 0M18 5v14";
+  /// Lucide icon `key-round` (24x24 stroke paths).
   static const String keyRound = "M0 0M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z M0 0M16 7.5A0.5 0.5 0 1 0 17 7.5A0.5 0.5 0 1 0 16 7.5";
+  /// Lucide icon `key-square` (24x24 stroke paths).
   static const String keySquare = "M0 0M12.4 2.7a2.5 2.5 0 0 1 3.4 0l5.5 5.5a2.5 2.5 0 0 1 0 3.4l-3.7 3.7a2.5 2.5 0 0 1-3.4 0L8.7 9.8a2.5 2.5 0 0 1 0-3.4z M0 0m14 7 3 3 M0 0m9.4 10.6-6.814 6.814A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814";
+  /// Lucide icon `key` (24x24 stroke paths).
   static const String key = "M0 0m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.1-2.1a1 1 0 0 0 0-1.4L19 4 M0 0m21 2-9.6 9.6 M0 0M2 15.5A5.5 5.5 0 1 0 13 15.5A5.5 5.5 0 1 0 2 15.5";
+  /// Lucide icon `keyboard-music` (24x24 stroke paths).
   static const String keyboardMusic = "M0 0M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M6 8h4 M0 0M14 8h.01 M0 0M18 8h.01 M0 0M2 12h20 M0 0M6 12v4 M0 0M10 12v4 M0 0M14 12v4 M0 0M18 12v4";
+  /// Lucide icon `keyboard-off` (24x24 stroke paths).
   static const String keyboardOff = "M0 0M 20 4 A2 2 0 0 1 22 6 M0 0M 22 6 L 22 16.41 M0 0M 7 16 L 16 16 M0 0M 9.69 4 L 20 4 M0 0M14 8h.01 M0 0M18 8h.01 M0 0m2 2 20 20 M0 0M20 20H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2 M0 0M6 8h.01 M0 0M8 12h.01";
+  /// Lucide icon `keyboard` (24x24 stroke paths).
   static const String keyboard = "M0 0M10 8h.01 M0 0M12 12h.01 M0 0M14 8h.01 M0 0M16 12h.01 M0 0M18 8h.01 M0 0M6 8h.01 M0 0M7 16h10 M0 0M8 12h.01 M0 0M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `lamp-ceiling` (24x24 stroke paths).
   static const String lampCeiling = "M0 0M12 2v5 M0 0M6 7h12l4 9H2l4-9Z M0 0M9.17 16a3 3 0 1 0 5.66 0";
+  /// Lucide icon `lamp-desk` (24x24 stroke paths).
   static const String lampDesk = "M0 0m14 5-3 3 2 7 8-8-7-2Z M0 0m14 5-3 3-3-3 3-3 3 3Z M0 0M9.5 6.5 4 12l3 6 M0 0M3 22v-2c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v2H3Z";
+  /// Lucide icon `lamp-floor` (24x24 stroke paths).
   static const String lampFloor = "M0 0M9 2h6l3 7H6l3-7Z M0 0M12 9v13 M0 0M9 22h6";
+  /// Lucide icon `lamp-wall-down` (24x24 stroke paths).
   static const String lampWallDown = "M0 0M11 13h6l3 7H8l3-7Z M0 0M14 13V8a2 2 0 0 0-2-2H8 M0 0M4 9h2a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H4v6Z";
+  /// Lucide icon `lamp-wall-up` (24x24 stroke paths).
   static const String lampWallUp = "M0 0M11 4h6l3 7H8l3-7Z M0 0M14 11v5a2 2 0 0 1-2 2H8 M0 0M4 15h2a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H4v-6Z";
+  /// Lucide icon `lamp` (24x24 stroke paths).
   static const String lamp = "M0 0M8 2h8l4 10H4L8 2Z M0 0M12 12v6 M0 0M8 22v-2c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v2H8Z";
+  /// Lucide icon `land-plot` (24x24 stroke paths).
   static const String landPlot = "M0 0m12 8 6-3-6-3v10 M0 0m8 11.99-5.5 3.14a1 1 0 0 0 0 1.74l8.5 4.86a2 2 0 0 0 2 0l8.5-4.86a1 1 0 0 0 0-1.74L16 12 M0 0m6.49 12.85 11.02 6.3 M0 0M17.51 12.85 6.5 19.15";
+  /// Lucide icon `landmark` (24x24 stroke paths).
   static const String landmark = "M0 0M3 22L21 22 M0 0M6 18L6 11 M0 0M10 18L10 11 M0 0M14 18L14 11 M0 0M18 18L18 11 M0 0M12 2L20 7L4 7Z";
+  /// Lucide icon `languages` (24x24 stroke paths).
   static const String languages = "M0 0m5 8 6 6 M0 0m4 14 6-6 2-3 M0 0M2 5h12 M0 0M7 2h1 M0 0m22 22-5-10-5 10 M0 0M14 18h6";
+  /// Lucide icon `laptop-minimal-check` (24x24 stroke paths).
   static const String laptopMinimalCheck = "M0 0M2 20h20 M0 0m9 10 2 2 4-4 M0 0M5 4h14a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `laptop-minimal` (24x24 stroke paths).
   static const String laptopMinimal = "M0 0M5 4h14a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z M0 0M2 20L22 20";
+  /// Lucide icon `laptop` (24x24 stroke paths).
   static const String laptop = "M0 0M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16";
+  /// Lucide icon `lasso-select` (24x24 stroke paths).
   static const String lassoSelect = "M0 0M7 22a5 5 0 0 1-2-4 M0 0M7 16.93c.96.43 1.96.74 2.99.91 M0 0M3.34 14A6.8 6.8 0 0 1 2 10c0-4.42 4.48-8 10-8s10 3.58 10 8a7.19 7.19 0 0 1-.33 2 M0 0M5 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z M0 0M14.33 22h-.09a.35.35 0 0 1-.24-.32v-10a.34.34 0 0 1 .33-.34c.08 0 .15.03.21.08l7.34 6a.33.33 0 0 1-.21.59h-4.49l-2.57 3.85a.35.35 0 0 1-.28.14z";
+  /// Lucide icon `lasso` (24x24 stroke paths).
   static const String lasso = "M0 0M7 22a5 5 0 0 1-2-4 M0 0M3.3 14A6.8 6.8 0 0 1 2 10c0-4.4 4.5-8 10-8s10 3.6 10 8-4.5 8-10 8a12 12 0 0 1-5-1 M0 0M5 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z";
+  /// Lucide icon `laugh` (24x24 stroke paths).
   static const String laugh = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M18 13a6 6 0 0 1-6 5 6 6 0 0 1-6-5h12Z M0 0M9 9L9.01 9 M0 0M15 9L15.01 9";
+  /// Lucide icon `layers-2` (24x24 stroke paths).
   static const String layers2 = "M0 0m16.02 12 5.48 3.13a1 1 0 0 1 0 1.74L13 21.74a2 2 0 0 1-2 0l-8.5-4.87a1 1 0 0 1 0-1.74L7.98 12 M0 0M13 13.74a2 2 0 0 1-2 0L2.5 8.87a1 1 0 0 1 0-1.74L11 2.26a2 2 0 0 1 2 0l8.5 4.87a1 1 0 0 1 0 1.74Z";
+  /// Lucide icon `layers` (24x24 stroke paths).
   static const String layers = "M0 0M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z M0 0M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12 M0 0M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17";
+  /// Lucide icon `layout-dashboard` (24x24 stroke paths).
   static const String layoutDashboard = "M0 0M4 3h5a1 1 0 0 1 1 1v7a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1Z M0 0M15 3h5a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z M0 0M15 12h5a1 1 0 0 1 1 1v7a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-7a1 1 0 0 1 1 -1Z M0 0M4 16h5a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `layout-grid` (24x24 stroke paths).
   static const String layoutGrid = "M0 0M4 3h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M15 3h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M15 14h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M4 14h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `layout-list` (24x24 stroke paths).
   static const String layoutList = "M0 0M4 3h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M4 14h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M14 4h7 M0 0M14 9h7 M0 0M14 15h7 M0 0M14 20h7";
+  /// Lucide icon `layout-panel-left` (24x24 stroke paths).
   static const String layoutPanelLeft = "M0 0M4 3h5a1 1 0 0 1 1 1v16a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-16a1 1 0 0 1 1 -1Z M0 0M15 3h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M15 14h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `layout-panel-top` (24x24 stroke paths).
   static const String layoutPanelTop = "M0 0M4 3h16a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M4 14h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M15 14h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `layout-template` (24x24 stroke paths).
   static const String layoutTemplate = "M0 0M4 3h16a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M4 14h7a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-7a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M17 14h3a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `leaf` (24x24 stroke paths).
   static const String leaf = "M0 0M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z M0 0M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12";
+  /// Lucide icon `leafy-green` (24x24 stroke paths).
   static const String leafyGreen = "M0 0M2 22c1.25-.987 2.27-1.975 3.9-2.2a5.56 5.56 0 0 1 3.8 1.5 4 4 0 0 0 6.187-2.353 3.5 3.5 0 0 0 3.69-5.116A3.5 3.5 0 0 0 20.95 8 3.5 3.5 0 1 0 16 3.05a3.5 3.5 0 0 0-5.831 1.373 3.5 3.5 0 0 0-5.116 3.69 4 4 0 0 0-2.348 6.155C3.499 15.42 4.409 16.712 4.2 18.1 3.926 19.743 3.014 20.732 2 22 M0 0M2 22 17 7";
+  /// Lucide icon `lectern` (24x24 stroke paths).
   static const String lectern = "M0 0M16 12h3a2 2 0 0 0 1.902-1.38l1.056-3.333A1 1 0 0 0 21 6H3a1 1 0 0 0-.958 1.287l1.056 3.334A2 2 0 0 0 5 12h3 M0 0M18 6V3a1 1 0 0 0-1-1h-3 M0 0M9 10h6a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-10a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `letter-text` (24x24 stroke paths).
   static const String letterText = "M0 0M15 12h6 M0 0M15 6h6 M0 0m3 13 3.553-7.724a.5.5 0 0 1 .894 0L11 13 M0 0M3 18h18 M0 0M4 11h6";
+  /// Lucide icon `library-big` (24x24 stroke paths).
   static const String libraryBig = "M0 0M4 3h6a1 1 0 0 1 1 1v16a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-16a1 1 0 0 1 1 -1Z M0 0M7 3v18 M0 0M20.4 18.9c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z";
+  /// Lucide icon `library` (24x24 stroke paths).
   static const String library = "M0 0m16 6 4 14 M0 0M12 6v14 M0 0M8 8v12 M0 0M4 4v16";
+  /// Lucide icon `life-buoy` (24x24 stroke paths).
   static const String lifeBuoy = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0m4.93 4.93 4.24 4.24 M0 0m14.83 9.17 4.24-4.24 M0 0m14.83 14.83 4.24 4.24 M0 0m9.17 14.83-4.24 4.24 M0 0M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12";
+  /// Lucide icon `ligature` (24x24 stroke paths).
   static const String ligature = "M0 0M8 20V8c0-2.2 1.8-4 4-4 1.5 0 2.8.8 3.5 2 M0 0M6 12h4 M0 0M14 12h2v8 M0 0M6 20h4 M0 0M14 20h4";
+  /// Lucide icon `lightbulb-off` (24x24 stroke paths).
   static const String lightbulbOff = "M0 0M16.8 11.2c.8-.9 1.2-2 1.2-3.2a6 6 0 0 0-9.3-5 M0 0m2 2 20 20 M0 0M6.3 6.3a4.67 4.67 0 0 0 1.2 5.2c.7.7 1.3 1.5 1.5 2.5 M0 0M9 18h6 M0 0M10 22h4";
+  /// Lucide icon `lightbulb` (24x24 stroke paths).
   static const String lightbulb = "M0 0M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5 M0 0M9 18h6 M0 0M10 22h4";
+  /// Lucide icon `link-2-off` (24x24 stroke paths).
   static const String link2Off = "M0 0M9 17H7A5 5 0 0 1 7 7 M0 0M15 7h2a5 5 0 0 1 4 8 M0 0M8 12L12 12 M0 0M2 2L22 22";
+  /// Lucide icon `link-2` (24x24 stroke paths).
   static const String link2 = "M0 0M9 17H7A5 5 0 0 1 7 7h2 M0 0M15 7h2a5 5 0 1 1 0 10h-2 M0 0M8 12L16 12";
+  /// Lucide icon `link` (24x24 stroke paths).
   static const String link = "M0 0M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71 M0 0M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71";
+  /// Lucide icon `linkedin` (24x24 stroke paths).
   static const String linkedin = "M0 0M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z M0 0M2 9h4v12h-4Z M0 0M2 4A2 2 0 1 0 6 4A2 2 0 1 0 2 4";
+  /// Lucide icon `list-check` (24x24 stroke paths).
   static const String listCheck = "M0 0M11 18H3 M0 0m15 18 2 2 4-4 M0 0M16 12H3 M0 0M16 6H3";
+  /// Lucide icon `list-checks` (24x24 stroke paths).
   static const String listChecks = "M0 0m3 17 2 2 4-4 M0 0m3 7 2 2 4-4 M0 0M13 6h8 M0 0M13 12h8 M0 0M13 18h8";
+  /// Lucide icon `list-collapse` (24x24 stroke paths).
   static const String listCollapse = "M0 0m3 10 2.5-2.5L3 5 M0 0m3 19 2.5-2.5L3 14 M0 0M10 6h11 M0 0M10 12h11 M0 0M10 18h11";
+  /// Lucide icon `list-end` (24x24 stroke paths).
   static const String listEnd = "M0 0M16 12H3 M0 0M16 6H3 M0 0M10 18H3 M0 0M21 6v10a2 2 0 0 1-2 2h-5 M0 0m16 16-2 2 2 2";
+  /// Lucide icon `list-filter-plus` (24x24 stroke paths).
   static const String listFilterPlus = "M0 0M10 18h4 M0 0M11 6H3 M0 0M15 6h6 M0 0M18 9V3 M0 0M7 12h8";
+  /// Lucide icon `list-filter` (24x24 stroke paths).
   static const String listFilter = "M0 0M3 6h18 M0 0M7 12h10 M0 0M10 18h4";
+  /// Lucide icon `list-minus` (24x24 stroke paths).
   static const String listMinus = "M0 0M11 12H3 M0 0M16 6H3 M0 0M16 18H3 M0 0M21 12h-6";
+  /// Lucide icon `list-music` (24x24 stroke paths).
   static const String listMusic = "M0 0M21 15V6 M0 0M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z M0 0M12 12H3 M0 0M16 6H3 M0 0M12 18H3";
+  /// Lucide icon `list-ordered` (24x24 stroke paths).
   static const String listOrdered = "M0 0M10 12h11 M0 0M10 18h11 M0 0M10 6h11 M0 0M4 10h2 M0 0M4 6h1v4 M0 0M6 18H4c0-1 2-2 2-3s-1-1.5-2-1";
+  /// Lucide icon `list-plus` (24x24 stroke paths).
   static const String listPlus = "M0 0M11 12H3 M0 0M16 6H3 M0 0M16 18H3 M0 0M18 9v6 M0 0M21 12h-6";
+  /// Lucide icon `list-restart` (24x24 stroke paths).
   static const String listRestart = "M0 0M21 6H3 M0 0M7 12H3 M0 0M7 18H3 M0 0M12 18a5 5 0 0 0 9-3 4.5 4.5 0 0 0-4.5-4.5c-1.33 0-2.54.54-3.41 1.41L11 14 M0 0M11 10v4h4";
+  /// Lucide icon `list-start` (24x24 stroke paths).
   static const String listStart = "M0 0M16 12H3 M0 0M16 18H3 M0 0M10 6H3 M0 0M21 18V8a2 2 0 0 0-2-2h-5 M0 0m16 8-2-2 2-2";
+  /// Lucide icon `list-todo` (24x24 stroke paths).
   static const String listTodo = "M0 0M4 5h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z M0 0m3 17 2 2 4-4 M0 0M13 6h8 M0 0M13 12h8 M0 0M13 18h8";
+  /// Lucide icon `list-tree` (24x24 stroke paths).
   static const String listTree = "M0 0M21 12h-8 M0 0M21 6H8 M0 0M21 18h-8 M0 0M3 6v4c0 1.1.9 2 2 2h3 M0 0M3 10v6c0 1.1.9 2 2 2h3";
+  /// Lucide icon `list-video` (24x24 stroke paths).
   static const String listVideo = "M0 0M12 12H3 M0 0M16 6H3 M0 0M12 18H3 M0 0m16 12 5 3-5 3v-6Z";
+  /// Lucide icon `list-x` (24x24 stroke paths).
   static const String listX = "M0 0M11 12H3 M0 0M16 6H3 M0 0M16 18H3 M0 0m19 10-4 4 M0 0m15 10 4 4";
+  /// Lucide icon `list` (24x24 stroke paths).
   static const String list = "M0 0M3 12h.01 M0 0M3 18h.01 M0 0M3 6h.01 M0 0M8 12h13 M0 0M8 18h13 M0 0M8 6h13";
+  /// Lucide icon `loader-circle` (24x24 stroke paths).
   static const String loaderCircle = "M0 0M21 12a9 9 0 1 1-6.219-8.56";
+  /// Lucide icon `loader-pinwheel` (24x24 stroke paths).
   static const String loaderPinwheel = "M0 0M22 12a1 1 0 0 1-10 0 1 1 0 0 0-10 0 M0 0M7 20.7a1 1 0 1 1 5-8.7 1 1 0 1 0 5-8.6 M0 0M7 3.3a1 1 0 1 1 5 8.6 1 1 0 1 0 5 8.6 M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12";
+  /// Lucide icon `loader` (24x24 stroke paths).
   static const String loader = "M0 0M12 2v4 M0 0m16.2 7.8 2.9-2.9 M0 0M18 12h4 M0 0m16.2 16.2 2.9 2.9 M0 0M12 18v4 M0 0m4.9 19.1 2.9-2.9 M0 0M2 12h4 M0 0m4.9 4.9 2.9 2.9";
+  /// Lucide icon `locate-fixed` (24x24 stroke paths).
   static const String locateFixed = "M0 0M2 12L5 12 M0 0M19 12L22 12 M0 0M12 2L12 5 M0 0M12 19L12 22 M0 0M5 12A7 7 0 1 0 19 12A7 7 0 1 0 5 12 M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12";
+  /// Lucide icon `locate-off` (24x24 stroke paths).
   static const String locateOff = "M0 0M2 12L5 12 M0 0M19 12L22 12 M0 0M12 2L12 5 M0 0M12 19L12 22 M0 0M7.11 7.11C5.83 8.39 5 10.1 5 12c0 3.87 3.13 7 7 7 1.9 0 3.61-.83 4.89-2.11 M0 0M18.71 13.96c.19-.63.29-1.29.29-1.96 0-3.87-3.13-7-7-7-.67 0-1.33.1-1.96.29 M0 0M2 2L22 22";
+  /// Lucide icon `locate` (24x24 stroke paths).
   static const String locate = "M0 0M2 12L5 12 M0 0M19 12L22 12 M0 0M12 2L12 5 M0 0M12 19L12 22 M0 0M5 12A7 7 0 1 0 19 12A7 7 0 1 0 5 12";
+  /// Lucide icon `lock-keyhole-open` (24x24 stroke paths).
   static const String lockKeyholeOpen = "M0 0M11 16A1 1 0 1 0 13 16A1 1 0 1 0 11 16 M0 0M5 10h14a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z M0 0M7 10V7a5 5 0 0 1 9.33-2.5";
+  /// Lucide icon `lock-keyhole` (24x24 stroke paths).
   static const String lockKeyhole = "M0 0M11 16A1 1 0 1 0 13 16A1 1 0 1 0 11 16 M0 0M5 10h14a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z M0 0M7 10V7a5 5 0 0 1 10 0v3";
+  /// Lucide icon `lock-open` (24x24 stroke paths).
   static const String lockOpen = "M0 0M5 11h14a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-7a2 2 0 0 1 2 -2Z M0 0M7 11V7a5 5 0 0 1 9.9-1";
+  /// Lucide icon `lock` (24x24 stroke paths).
   static const String lock = "M0 0M5 11h14a2 2 0 0 1 2 2v7a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-7a2 2 0 0 1 2 -2Z M0 0M7 11V7a5 5 0 0 1 10 0v4";
+  /// Lucide icon `log-in` (24x24 stroke paths).
   static const String logIn = "M0 0M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4 M0 0M10 17L15 12L10 7 M0 0M15 12L3 12";
+  /// Lucide icon `log-out` (24x24 stroke paths).
   static const String logOut = "M0 0M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4 M0 0M16 17L21 12L16 7 M0 0M21 12L9 12";
+  /// Lucide icon `logs` (24x24 stroke paths).
   static const String logs = "M0 0M13 12h8 M0 0M13 18h8 M0 0M13 6h8 M0 0M3 12h1 M0 0M3 18h1 M0 0M3 6h1 M0 0M8 12h1 M0 0M8 18h1 M0 0M8 6h1";
+  /// Lucide icon `lollipop` (24x24 stroke paths).
   static const String lollipop = "M0 0M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11 M0 0m21 21-4.3-4.3 M0 0M11 11a2 2 0 0 0 4 0 4 4 0 0 0-8 0 6 6 0 0 0 12 0";
+  /// Lucide icon `luggage` (24x24 stroke paths).
   static const String luggage = "M0 0M6 20a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 M0 0M8 18V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14 M0 0M10 20h4 M0 0M14 20A2 2 0 1 0 18 20A2 2 0 1 0 14 20 M0 0M6 20A2 2 0 1 0 10 20A2 2 0 1 0 6 20";
+  /// Lucide icon `magnet` (24x24 stroke paths).
   static const String magnet = "M0 0m6 15-4-4 6.75-6.77a7.79 7.79 0 0 1 11 11L13 22l-4-4 6.39-6.36a2.14 2.14 0 0 0-3-3L6 15 M0 0m5 8 4 4 M0 0m12 15 4 4";
+  /// Lucide icon `mail-check` (24x24 stroke paths).
   static const String mailCheck = "M0 0M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8 M0 0m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7 M0 0m16 19 2 2 4-4";
+  /// Lucide icon `mail-minus` (24x24 stroke paths).
   static const String mailMinus = "M0 0M22 15V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8 M0 0m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7 M0 0M16 19h6";
+  /// Lucide icon `mail-open` (24x24 stroke paths).
   static const String mailOpen = "M0 0M21.2 8.4c.5.38.8.97.8 1.6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V10a2 2 0 0 1 .8-1.6l8-6a2 2 0 0 1 2.4 0l8 6Z M0 0m22 10-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 10";
+  /// Lucide icon `mail-plus` (24x24 stroke paths).
   static const String mailPlus = "M0 0M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8 M0 0m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7 M0 0M19 16v6 M0 0M16 19h6";
+  /// Lucide icon `mail-question` (24x24 stroke paths).
   static const String mailQuestion = "M0 0M22 10.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12.5 M0 0m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7 M0 0M18 15.28c.2-.4.5-.8.9-1a2.1 2.1 0 0 1 2.6.4c.3.4.5.8.5 1.3 0 1.3-2 2-2 2 M0 0M20 22v.01";
+  /// Lucide icon `mail-search` (24x24 stroke paths).
   static const String mailSearch = "M0 0M22 12.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h7.5 M0 0m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7 M0 0M18 21a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z M0 0M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18 M0 0m22 22-1.5-1.5";
+  /// Lucide icon `mail-warning` (24x24 stroke paths).
   static const String mailWarning = "M0 0M22 10.5V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h12.5 M0 0m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7 M0 0M20 14v4 M0 0M20 22v.01";
+  /// Lucide icon `mail-x` (24x24 stroke paths).
   static const String mailX = "M0 0M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h9 M0 0m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7 M0 0m17 17 4 4 M0 0m21 17-4 4";
+  /// Lucide icon `mail` (24x24 stroke paths).
   static const String mail = "M0 0M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7";
+  /// Lucide icon `mailbox` (24x24 stroke paths).
   static const String mailbox = "M0 0M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 6.5 5H18c2.2 0 4 1.8 4 4v8Z M0 0M15 9L18 9L18 11 M0 0M6.5 5C9 5 11 7 11 9.5V17a2 2 0 0 1-2 2 M0 0M6 10L7 10";
+  /// Lucide icon `mails` (24x24 stroke paths).
   static const String mails = "M0 0M8 4h12a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2Z M0 0m22 7-7.1 3.78c-.57.3-1.23.3-1.8 0L6 7 M0 0M2 8v11c0 1.1.9 2 2 2h14";
+  /// Lucide icon `map-pin-check-inside` (24x24 stroke paths).
   static const String mapPinCheckInside = "M0 0M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0 M0 0m9 10 2 2 4-4";
+  /// Lucide icon `map-pin-check` (24x24 stroke paths).
   static const String mapPinCheck = "M0 0M19.43 12.935c.357-.967.57-1.955.57-2.935a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 1.202 0 32.197 32.197 0 0 0 .813-.728 M0 0M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10 M0 0m16 18 2 2 4-4";
+  /// Lucide icon `map-pin-house` (24x24 stroke paths).
   static const String mapPinHouse = "M0 0M15 22a1 1 0 0 1-1-1v-4a1 1 0 0 1 .445-.832l3-2a1 1 0 0 1 1.11 0l3 2A1 1 0 0 1 22 17v4a1 1 0 0 1-1 1z M0 0M18 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 .601.2 M0 0M18 22v-3 M0 0M7 10A3 3 0 1 0 13 10A3 3 0 1 0 7 10";
+  /// Lucide icon `map-pin-minus-inside` (24x24 stroke paths).
   static const String mapPinMinusInside = "M0 0M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0 M0 0M9 10h6";
+  /// Lucide icon `map-pin-minus` (24x24 stroke paths).
   static const String mapPinMinus = "M0 0M18.977 14C19.6 12.701 20 11.343 20 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 1.202 0 32 32 0 0 0 .824-.738 M0 0M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10 M0 0M16 18h6";
+  /// Lucide icon `map-pin-off` (24x24 stroke paths).
   static const String mapPinOff = "M0 0M12.75 7.09a3 3 0 0 1 2.16 2.16 M0 0M17.072 17.072c-1.634 2.17-3.527 3.912-4.471 4.727a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 1.432-4.568 M0 0m2 2 20 20 M0 0M8.475 2.818A8 8 0 0 1 20 10c0 1.183-.31 2.377-.81 3.533 M0 0M9.13 9.13a3 3 0 0 0 3.74 3.74";
+  /// Lucide icon `map-pin-plus-inside` (24x24 stroke paths).
   static const String mapPinPlusInside = "M0 0M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0 M0 0M12 7v6 M0 0M9 10h6";
+  /// Lucide icon `map-pin-plus` (24x24 stroke paths).
   static const String mapPinPlus = "M0 0M19.914 11.105A7.298 7.298 0 0 0 20 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 1.202 0 32 32 0 0 0 .824-.738 M0 0M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10 M0 0M16 18h6 M0 0M19 15v6";
+  /// Lucide icon `map-pin-x-inside` (24x24 stroke paths).
   static const String mapPinXInside = "M0 0M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0 M0 0m14.5 7.5-5 5 M0 0m9.5 7.5 5 5";
+  /// Lucide icon `map-pin-x` (24x24 stroke paths).
   static const String mapPinX = "M0 0M19.752 11.901A7.78 7.78 0 0 0 20 10a8 8 0 0 0-16 0c0 4.993 5.539 10.193 7.399 11.799a1 1 0 0 0 1.202 0 19 19 0 0 0 .09-.077 M0 0M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10 M0 0m21.5 15.5-5 5 M0 0m21.5 20.5-5-5";
+  /// Lucide icon `map-pin` (24x24 stroke paths).
   static const String mapPin = "M0 0M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0 M0 0M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10";
+  /// Lucide icon `map-pinned` (24x24 stroke paths).
   static const String mapPinned = "M0 0M18 8c0 3.613-3.869 7.429-5.393 8.795a1 1 0 0 1-1.214 0C9.87 15.429 6 11.613 6 8a6 6 0 0 1 12 0 M0 0M10 8A2 2 0 1 0 14 8A2 2 0 1 0 10 8 M0 0M8.714 14h-3.71a1 1 0 0 0-.948.683l-2.004 6A1 1 0 0 0 3 22h18a1 1 0 0 0 .948-1.316l-2-6a1 1 0 0 0-.949-.684h-3.712";
+  /// Lucide icon `map-plus` (24x24 stroke paths).
   static const String mapPlus = "M0 0m11 19-1.106-.552a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0l4.212 2.106a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619V12 M0 0M15 5.764V12 M0 0M18 15v6 M0 0M21 18h-6 M0 0M9 3.236v15";
+  /// Lucide icon `map` (24x24 stroke paths).
   static const String map = "M0 0M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z M0 0M15 5.764v15 M0 0M9 3.236v15";
+  /// Lucide icon `mars-stroke` (24x24 stroke paths).
   static const String marsStroke = "M0 0m14 6 4 4 M0 0M17 3h4v4 M0 0m21 3-7.75 7.75 M0 0M3 15A6 6 0 1 0 15 15A6 6 0 1 0 3 15";
+  /// Lucide icon `mars` (24x24 stroke paths).
   static const String mars = "M0 0M16 3h5v5 M0 0m21 3-6.75 6.75 M0 0M4 14A6 6 0 1 0 16 14A6 6 0 1 0 4 14";
+  /// Lucide icon `martini` (24x24 stroke paths).
   static const String martini = "M0 0M8 22h8 M0 0M12 11v11 M0 0m19 3-7 8-7-8Z";
+  /// Lucide icon `maximize-2` (24x24 stroke paths).
   static const String maximize2 = "M0 0M15 3L21 3L21 9 M0 0M9 21L3 21L3 15 M0 0M21 3L14 10 M0 0M3 21L10 14";
+  /// Lucide icon `maximize` (24x24 stroke paths).
   static const String maximize = "M0 0M8 3H5a2 2 0 0 0-2 2v3 M0 0M21 8V5a2 2 0 0 0-2-2h-3 M0 0M3 16v3a2 2 0 0 0 2 2h3 M0 0M16 21h3a2 2 0 0 0 2-2v-3";
+  /// Lucide icon `medal` (24x24 stroke paths).
   static const String medal = "M0 0M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15 M0 0M11 12 5.12 2.2 M0 0m13 12 5.88-9.8 M0 0M8 7h8 M0 0M7 17A5 5 0 1 0 17 17A5 5 0 1 0 7 17 M0 0M12 18v-2h-.5";
+  /// Lucide icon `megaphone-off` (24x24 stroke paths).
   static const String megaphoneOff = "M0 0M9.26 9.26 3 11v3l14.14 3.14 M0 0M21 15.34V6l-7.31 2.03 M0 0M11.6 16.8a3 3 0 1 1-5.8-1.6 M0 0M2 2L22 22";
+  /// Lucide icon `megaphone` (24x24 stroke paths).
   static const String megaphone = "M0 0m3 11 18-5v12L3 14v-3z M0 0M11.6 16.8a3 3 0 1 1-5.8-1.6";
+  /// Lucide icon `meh` (24x24 stroke paths).
   static const String meh = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M8 15L16 15 M0 0M9 9L9.01 9 M0 0M15 9L15.01 9";
+  /// Lucide icon `memory-stick` (24x24 stroke paths).
   static const String memoryStick = "M0 0M6 19v-3 M0 0M10 19v-3 M0 0M14 19v-3 M0 0M18 19v-3 M0 0M8 11V9 M0 0M16 11V9 M0 0M12 11V9 M0 0M2 15h20 M0 0M2 7a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v1.1a2 2 0 0 0 0 3.837V17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-5.1a2 2 0 0 0 0-3.837Z";
+  /// Lucide icon `menu` (24x24 stroke paths).
   static const String menu = "M0 0M4 12L20 12 M0 0M4 6L20 6 M0 0M4 18L20 18";
+  /// Lucide icon `merge` (24x24 stroke paths).
   static const String merge = "M0 0m8 6 4-4 4 4 M0 0M12 2v10.3a4 4 0 0 1-1.172 2.872L4 22 M0 0m20 22-5-5";
+  /// Lucide icon `message-circle-code` (24x24 stroke paths).
   static const String messageCircleCode = "M0 0M10 9.5 8 12l2 2.5 M0 0m14 9.5 2 2.5-2 2.5 M0 0M7.9 20A9 9 0 1 0 4 16.1L2 22z";
+  /// Lucide icon `message-circle-dashed` (24x24 stroke paths).
   static const String messageCircleDashed = "M0 0M13.5 3.1c-.5 0-1-.1-1.5-.1s-1 .1-1.5.1 M0 0M19.3 6.8a10.45 10.45 0 0 0-2.1-2.1 M0 0M20.9 13.5c.1-.5.1-1 .1-1.5s-.1-1-.1-1.5 M0 0M17.2 19.3a10.45 10.45 0 0 0 2.1-2.1 M0 0M10.5 20.9c.5.1 1 .1 1.5.1s1-.1 1.5-.1 M0 0M3.5 17.5 2 22l4.5-1.5 M0 0M3.1 10.5c0 .5-.1 1-.1 1.5s.1 1 .1 1.5 M0 0M6.8 4.7a10.45 10.45 0 0 0-2.1 2.1";
+  /// Lucide icon `message-circle-heart` (24x24 stroke paths).
   static const String messageCircleHeart = "M0 0M7.9 20A9 9 0 1 0 4 16.1L2 22Z M0 0M15.8 9.2a2.5 2.5 0 0 0-3.5 0l-.3.4-.35-.3a2.42 2.42 0 1 0-3.2 3.6l3.6 3.5 3.6-3.5c1.2-1.2 1.1-2.7.2-3.7";
+  /// Lucide icon `message-circle-more` (24x24 stroke paths).
   static const String messageCircleMore = "M0 0M7.9 20A9 9 0 1 0 4 16.1L2 22Z M0 0M8 12h.01 M0 0M12 12h.01 M0 0M16 12h.01";
+  /// Lucide icon `message-circle-off` (24x24 stroke paths).
   static const String messageCircleOff = "M0 0M20.5 14.9A9 9 0 0 0 9.1 3.5 M0 0m2 2 20 20 M0 0M5.6 5.6C3 8.3 2.2 12.5 4 16l-2 6 6-2c3.4 1.8 7.6 1.1 10.3-1.7";
+  /// Lucide icon `message-circle-plus` (24x24 stroke paths).
   static const String messageCirclePlus = "M0 0M7.9 20A9 9 0 1 0 4 16.1L2 22Z M0 0M8 12h8 M0 0M12 8v8";
+  /// Lucide icon `message-circle-question` (24x24 stroke paths).
   static const String messageCircleQuestion = "M0 0M7.9 20A9 9 0 1 0 4 16.1L2 22Z M0 0M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3 M0 0M12 17h.01";
+  /// Lucide icon `message-circle-reply` (24x24 stroke paths).
   static const String messageCircleReply = "M0 0M7.9 20A9 9 0 1 0 4 16.1L2 22Z M0 0m10 15-3-3 3-3 M0 0M7 12h7a2 2 0 0 1 2 2v1";
+  /// Lucide icon `message-circle-warning` (24x24 stroke paths).
   static const String messageCircleWarning = "M0 0M7.9 20A9 9 0 1 0 4 16.1L2 22Z M0 0M12 8v4 M0 0M12 16h.01";
+  /// Lucide icon `message-circle-x` (24x24 stroke paths).
   static const String messageCircleX = "M0 0M7.9 20A9 9 0 1 0 4 16.1L2 22Z M0 0m15 9-6 6 M0 0m9 9 6 6";
+  /// Lucide icon `message-circle` (24x24 stroke paths).
   static const String messageCircle = "M0 0M7.9 20A9 9 0 1 0 4 16.1L2 22Z";
+  /// Lucide icon `message-square-code` (24x24 stroke paths).
   static const String messageSquareCode = "M0 0M10 7.5 8 10l2 2.5 M0 0m14 7.5 2 2.5-2 2.5 M0 0M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z";
+  /// Lucide icon `message-square-dashed` (24x24 stroke paths).
   static const String messageSquareDashed = "M0 0M10 17H7l-4 4v-7 M0 0M14 17h1 M0 0M14 3h1 M0 0M19 3a2 2 0 0 1 2 2 M0 0M21 14v1a2 2 0 0 1-2 2 M0 0M21 9v1 M0 0M3 9v1 M0 0M5 3a2 2 0 0 0-2 2 M0 0M9 3h1";
+  /// Lucide icon `message-square-diff` (24x24 stroke paths).
   static const String messageSquareDiff = "M0 0m5 19-2 2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2 M0 0M9 10h6 M0 0M12 7v6 M0 0M9 17h6";
+  /// Lucide icon `message-square-dot` (24x24 stroke paths).
   static const String messageSquareDot = "M0 0M11.7 3H5a2 2 0 0 0-2 2v16l4-4h12a2 2 0 0 0 2-2v-2.7 M0 0M15 6A3 3 0 1 0 21 6A3 3 0 1 0 15 6";
+  /// Lucide icon `message-square-heart` (24x24 stroke paths).
   static const String messageSquareHeart = "M0 0M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z M0 0M14.8 7.5a1.84 1.84 0 0 0-2.6 0l-.2.3-.3-.3a1.84 1.84 0 1 0-2.4 2.8L12 13l2.7-2.7c.9-.9.8-2.1.1-2.8";
+  /// Lucide icon `message-square-lock` (24x24 stroke paths).
   static const String messageSquareLock = "M0 0M19 15v-2a2 2 0 1 0-4 0v2 M0 0M9 17H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3.5 M0 0M14 15h6a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `message-square-more` (24x24 stroke paths).
   static const String messageSquareMore = "M0 0M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z M0 0M8 10h.01 M0 0M12 10h.01 M0 0M16 10h.01";
+  /// Lucide icon `message-square-off` (24x24 stroke paths).
   static const String messageSquareOff = "M0 0M21 15V5a2 2 0 0 0-2-2H9 M0 0m2 2 20 20 M0 0M3.6 3.6c-.4.3-.6.8-.6 1.4v16l4-4h10";
+  /// Lucide icon `message-square-plus` (24x24 stroke paths).
   static const String messageSquarePlus = "M0 0M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z M0 0M12 7v6 M0 0M9 10h6";
+  /// Lucide icon `message-square-quote` (24x24 stroke paths).
   static const String messageSquareQuote = "M0 0M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z M0 0M8 12a2 2 0 0 0 2-2V8H8 M0 0M14 12a2 2 0 0 0 2-2V8h-2";
+  /// Lucide icon `message-square-reply` (24x24 stroke paths).
   static const String messageSquareReply = "M0 0M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z M0 0m10 7-3 3 3 3 M0 0M17 13v-1a2 2 0 0 0-2-2H7";
+  /// Lucide icon `message-square-share` (24x24 stroke paths).
   static const String messageSquareShare = "M0 0M21 12v3a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h7 M0 0M16 3h5v5 M0 0m16 8 5-5";
+  /// Lucide icon `message-square-text` (24x24 stroke paths).
   static const String messageSquareText = "M0 0M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z M0 0M13 8H7 M0 0M17 12H7";
+  /// Lucide icon `message-square-warning` (24x24 stroke paths).
   static const String messageSquareWarning = "M0 0M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z M0 0M12 7v2 M0 0M12 13h.01";
+  /// Lucide icon `message-square-x` (24x24 stroke paths).
   static const String messageSquareX = "M0 0M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z M0 0m14.5 7.5-5 5 M0 0m9.5 7.5 5 5";
+  /// Lucide icon `message-square` (24x24 stroke paths).
   static const String messageSquare = "M0 0M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z";
+  /// Lucide icon `messages-square` (24x24 stroke paths).
   static const String messagesSquare = "M0 0M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z M0 0M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1";
+  /// Lucide icon `mic-off` (24x24 stroke paths).
   static const String micOff = "M0 0M2 2L22 22 M0 0M18.89 13.23A7.12 7.12 0 0 0 19 12v-2 M0 0M5 10v2a7 7 0 0 0 12 5 M0 0M15 9.34V5a3 3 0 0 0-5.68-1.33 M0 0M9 9v3a3 3 0 0 0 5.12 2.12 M0 0M12 19L12 22";
+  /// Lucide icon `mic-vocal` (24x24 stroke paths).
   static const String micVocal = "M0 0m11 7.601-5.994 8.19a1 1 0 0 0 .1 1.298l.817.818a1 1 0 0 0 1.314.087L15.09 12 M0 0M16.5 21.174C15.5 20.5 14.372 20 13 20c-2.058 0-3.928 2.356-6 2-2.072-.356-2.775-3.369-1.5-4.5 M0 0M11 7A5 5 0 1 0 21 7A5 5 0 1 0 11 7";
+  /// Lucide icon `mic` (24x24 stroke paths).
   static const String mic = "M0 0M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z M0 0M19 10v2a7 7 0 0 1-14 0v-2 M0 0M12 19L12 22";
+  /// Lucide icon `microchip` (24x24 stroke paths).
   static const String microchip = "M0 0M18 12h2 M0 0M18 16h2 M0 0M18 20h2 M0 0M18 4h2 M0 0M18 8h2 M0 0M4 12h2 M0 0M4 16h2 M0 0M4 20h2 M0 0M4 4h2 M0 0M4 8h2 M0 0M8 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-1.5c-.276 0-.494.227-.562.495a2 2 0 0 1-3.876 0C9.994 2.227 9.776 2 9.5 2z";
+  /// Lucide icon `microscope` (24x24 stroke paths).
   static const String microscope = "M0 0M6 18h8 M0 0M3 22h18 M0 0M14 22a7 7 0 1 0 0-14h-1 M0 0M9 14h2 M0 0M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z M0 0M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3";
+  /// Lucide icon `microwave` (24x24 stroke paths).
   static const String microwave = "M0 0M4 4h16a2 2 0 0 1 2 2v11a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2Z M0 0M7 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M18 8v7 M0 0M6 19v2 M0 0M18 19v2";
+  /// Lucide icon `milestone` (24x24 stroke paths).
   static const String milestone = "M0 0M12 13v8 M0 0M12 3v3 M0 0M4 6a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h13a2 2 0 0 0 1.152-.365l3.424-2.317a1 1 0 0 0 0-1.635l-3.424-2.318A2 2 0 0 0 17 6z";
+  /// Lucide icon `milk-off` (24x24 stroke paths).
   static const String milkOff = "M0 0M8 2h8 M0 0M9 2v1.343M15 2v2.789a4 4 0 0 0 .672 2.219l.656.984a4 4 0 0 1 .672 2.22v1.131M7.8 7.8l-.128.192A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-3 M0 0M7 15a6.47 6.47 0 0 1 5 0 6.472 6.472 0 0 0 3.435.435 M0 0M2 2L22 22";
+  /// Lucide icon `milk` (24x24 stroke paths).
   static const String milk = "M0 0M8 2h8 M0 0M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2 M0 0M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0";
+  /// Lucide icon `minimize-2` (24x24 stroke paths).
   static const String minimize2 = "M0 0M4 14L10 14L10 20 M0 0M20 10L14 10L14 4 M0 0M14 10L21 3 M0 0M3 21L10 14";
+  /// Lucide icon `minimize` (24x24 stroke paths).
   static const String minimize = "M0 0M8 3v3a2 2 0 0 1-2 2H3 M0 0M21 8h-3a2 2 0 0 1-2-2V3 M0 0M3 16h3a2 2 0 0 1 2 2v3 M0 0M16 21v-3a2 2 0 0 1 2-2h3";
+  /// Lucide icon `minus` (24x24 stroke paths).
   static const String minus = "M0 0M5 12h14";
+  /// Lucide icon `monitor-check` (24x24 stroke paths).
   static const String monitorCheck = "M0 0m9 10 2 2 4-4 M0 0M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M12 17v4 M0 0M8 21h8";
+  /// Lucide icon `monitor-cog` (24x24 stroke paths).
   static const String monitorCog = "M0 0M12 17v4 M0 0m15.2 4.9-.9-.4 M0 0m15.2 7.1-.9.4 M0 0m16.9 3.2-.4-.9 M0 0m16.9 8.8-.4.9 M0 0m19.5 2.3-.4.9 M0 0m19.5 9.7-.4-.9 M0 0m21.7 4.5-.9.4 M0 0m21.7 7.5-.9-.4 M0 0M22 13v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7 M0 0M8 21h8 M0 0M15 6A3 3 0 1 0 21 6A3 3 0 1 0 15 6";
+  /// Lucide icon `monitor-dot` (24x24 stroke paths).
   static const String monitorDot = "M0 0M16 6A3 3 0 1 0 22 6A3 3 0 1 0 16 6 M0 0M22 12v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9 M0 0M12 17v4 M0 0M8 21h8";
+  /// Lucide icon `monitor-down` (24x24 stroke paths).
   static const String monitorDown = "M0 0M12 13V7 M0 0m15 10-3 3-3-3 M0 0M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M12 17v4 M0 0M8 21h8";
+  /// Lucide icon `monitor-off` (24x24 stroke paths).
   static const String monitorOff = "M0 0M17 17H4a2 2 0 0 1-2-2V5c0-1.5 1-2 1-2 M0 0M22 15V5a2 2 0 0 0-2-2H9 M0 0M8 21h8 M0 0M12 17v4 M0 0m2 2 20 20";
+  /// Lucide icon `monitor-pause` (24x24 stroke paths).
   static const String monitorPause = "M0 0M10 13V7 M0 0M14 13V7 M0 0M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M12 17v4 M0 0M8 21h8";
+  /// Lucide icon `monitor-play` (24x24 stroke paths).
   static const String monitorPlay = "M0 0M10 7.75a.75.75 0 0 1 1.142-.638l3.664 2.249a.75.75 0 0 1 0 1.278l-3.664 2.25a.75.75 0 0 1-1.142-.64z M0 0M12 17v4 M0 0M8 21h8 M0 0M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `monitor-smartphone` (24x24 stroke paths).
   static const String monitorSmartphone = "M0 0M18 8V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h8 M0 0M10 19v-3.96 3.15 M0 0M7 19h5 M0 0M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-6a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `monitor-speaker` (24x24 stroke paths).
   static const String monitorSpeaker = "M0 0M5.5 20H8 M0 0M17 9h.01 M0 0M14 4h6a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M8 6H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4 M0 0M16 15A1 1 0 1 0 18 15A1 1 0 1 0 16 15";
+  /// Lucide icon `monitor-stop` (24x24 stroke paths).
   static const String monitorStop = "M0 0M12 17v4 M0 0M8 21h8 M0 0M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M10 7h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `monitor-up` (24x24 stroke paths).
   static const String monitorUp = "M0 0m9 10 3-3 3 3 M0 0M12 13V7 M0 0M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M12 17v4 M0 0M8 21h8";
+  /// Lucide icon `monitor-x` (24x24 stroke paths).
   static const String monitorX = "M0 0m14.5 12.5-5-5 M0 0m9.5 12.5 5-5 M0 0M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M12 17v4 M0 0M8 21h8";
+  /// Lucide icon `monitor` (24x24 stroke paths).
   static const String monitor = "M0 0M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M8 21L16 21 M0 0M12 17L12 21";
+  /// Lucide icon `moon-star` (24x24 stroke paths).
   static const String moonStar = "M0 0M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9 M0 0M20 3v4 M0 0M22 5h-4";
+  /// Lucide icon `moon` (24x24 stroke paths).
   static const String moon = "M0 0M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z";
+  /// Lucide icon `mountain-snow` (24x24 stroke paths).
   static const String mountainSnow = "M0 0m8 3 4 8 5-5 5 15H2L8 3z M0 0M4.14 15.08c2.62-1.57 5.24-1.43 7.86.42 2.74 1.94 5.49 2 8.23.19";
+  /// Lucide icon `mountain` (24x24 stroke paths).
   static const String mountain = "M0 0m8 3 4 8 5-5 5 15H2L8 3z";
+  /// Lucide icon `mouse-off` (24x24 stroke paths).
   static const String mouseOff = "M0 0M12 6v.343 M0 0M18.218 18.218A7 7 0 0 1 5 15V9a7 7 0 0 1 .782-3.218 M0 0M19 13.343V9A7 7 0 0 0 8.56 2.902 M0 0M22 22 2 2";
+  /// Lucide icon `mouse-pointer-2` (24x24 stroke paths).
   static const String mousePointer2 = "M0 0M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z";
+  /// Lucide icon `mouse-pointer-ban` (24x24 stroke paths).
   static const String mousePointerBan = "M0 0M2.034 2.681a.498.498 0 0 1 .647-.647l9 3.5a.5.5 0 0 1-.033.944L8.204 7.545a1 1 0 0 0-.66.66l-1.066 3.443a.5.5 0 0 1-.944.033z M0 0M10 16A6 6 0 1 0 22 16A6 6 0 1 0 10 16 M0 0m11.8 11.8 8.4 8.4";
+  /// Lucide icon `mouse-pointer-click` (24x24 stroke paths).
   static const String mousePointerClick = "M0 0M14 4.1 12 6 M0 0m5.1 8-2.9-.8 M0 0m6 12-1.9 2 M0 0M7.2 2.2 8 5.1 M0 0M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z";
+  /// Lucide icon `mouse-pointer` (24x24 stroke paths).
   static const String mousePointer = "M0 0M12.586 12.586 19 19 M0 0M3.688 3.037a.497.497 0 0 0-.651.651l6.5 15.999a.501.501 0 0 0 .947-.062l1.569-6.083a2 2 0 0 1 1.448-1.479l6.124-1.579a.5.5 0 0 0 .063-.947z";
+  /// Lucide icon `mouse` (24x24 stroke paths).
   static const String mouse = "M0 0M12 2h0a7 7 0 0 1 7 7v6a7 7 0 0 1 -7 7h0a7 7 0 0 1 -7 -7v-6a7 7 0 0 1 7 -7Z M0 0M12 6v4";
+  /// Lucide icon `move-3d` (24x24 stroke paths).
   static const String move3d = "M0 0M5 3v16h16 M0 0m5 19 6-6 M0 0m2 6 3-3 3 3 M0 0m18 16 3 3-3 3";
+  /// Lucide icon `move-diagonal-2` (24x24 stroke paths).
   static const String moveDiagonal2 = "M0 0M19 13v6h-6 M0 0M5 11V5h6 M0 0m5 5 14 14";
+  /// Lucide icon `move-diagonal` (24x24 stroke paths).
   static const String moveDiagonal = "M0 0M11 19H5v-6 M0 0M13 5h6v6 M0 0M19 5 5 19";
+  /// Lucide icon `move-down-left` (24x24 stroke paths).
   static const String moveDownLeft = "M0 0M11 19H5V13 M0 0M19 5L5 19";
+  /// Lucide icon `move-down-right` (24x24 stroke paths).
   static const String moveDownRight = "M0 0M19 13V19H13 M0 0M5 5L19 19";
+  /// Lucide icon `move-down` (24x24 stroke paths).
   static const String moveDown = "M0 0M8 18L12 22L16 18 M0 0M12 2V22";
+  /// Lucide icon `move-horizontal` (24x24 stroke paths).
   static const String moveHorizontal = "M0 0m18 8 4 4-4 4 M0 0M2 12h20 M0 0m6 8-4 4 4 4";
+  /// Lucide icon `move-left` (24x24 stroke paths).
   static const String moveLeft = "M0 0M6 8L2 12L6 16 M0 0M2 12H22";
+  /// Lucide icon `move-right` (24x24 stroke paths).
   static const String moveRight = "M0 0M18 8L22 12L18 16 M0 0M2 12H22";
+  /// Lucide icon `move-up-left` (24x24 stroke paths).
   static const String moveUpLeft = "M0 0M5 11V5H11 M0 0M5 5L19 19";
+  /// Lucide icon `move-up-right` (24x24 stroke paths).
   static const String moveUpRight = "M0 0M13 5H19V11 M0 0M19 5L5 19";
+  /// Lucide icon `move-up` (24x24 stroke paths).
   static const String moveUp = "M0 0M8 6L12 2L16 6 M0 0M12 2V22";
+  /// Lucide icon `move-vertical` (24x24 stroke paths).
   static const String moveVertical = "M0 0M12 2v20 M0 0m8 18 4 4 4-4 M0 0m8 6 4-4 4 4";
+  /// Lucide icon `move` (24x24 stroke paths).
   static const String move = "M0 0M12 2v20 M0 0m15 19-3 3-3-3 M0 0m19 9 3 3-3 3 M0 0M2 12h20 M0 0m5 9-3 3 3 3 M0 0m9 5 3-3 3 3";
+  /// Lucide icon `music-2` (24x24 stroke paths).
   static const String music2 = "M0 0M4 18A4 4 0 1 0 12 18A4 4 0 1 0 4 18 M0 0M12 18V2l7 4";
+  /// Lucide icon `music-3` (24x24 stroke paths).
   static const String music3 = "M0 0M8 18A4 4 0 1 0 16 18A4 4 0 1 0 8 18 M0 0M16 18V2";
+  /// Lucide icon `music-4` (24x24 stroke paths).
   static const String music4 = "M0 0M9 18V5l12-2v13 M0 0m9 9 12-2 M0 0M3 18A3 3 0 1 0 9 18A3 3 0 1 0 3 18 M0 0M15 16A3 3 0 1 0 21 16A3 3 0 1 0 15 16";
+  /// Lucide icon `music` (24x24 stroke paths).
   static const String music = "M0 0M9 18V5l12-2v13 M0 0M3 18A3 3 0 1 0 9 18A3 3 0 1 0 3 18 M0 0M15 16A3 3 0 1 0 21 16A3 3 0 1 0 15 16";
+  /// Lucide icon `navigation-2-off` (24x24 stroke paths).
   static const String navigation2Off = "M0 0M9.31 9.31 5 21l7-4 7 4-1.17-3.17 M0 0M14.53 8.88 12 2l-1.17 3.17 M0 0M2 2L22 22";
+  /// Lucide icon `navigation-2` (24x24 stroke paths).
   static const String navigation2 = "M0 0M12 2L19 21L12 17L5 21L12 2Z";
+  /// Lucide icon `navigation-off` (24x24 stroke paths).
   static const String navigationOff = "M0 0M8.43 8.43 3 11l8 2 2 8 2.57-5.43 M0 0M17.39 11.73 22 2l-9.73 4.61 M0 0M2 2L22 22";
+  /// Lucide icon `navigation` (24x24 stroke paths).
   static const String navigation = "M0 0M3 11L22 2L13 21L11 13L3 11Z";
+  /// Lucide icon `network` (24x24 stroke paths).
   static const String network = "M0 0M17 16h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z M0 0M3 16h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z M0 0M10 2h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z M0 0M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3 M0 0M12 12V8";
+  /// Lucide icon `newspaper` (24x24 stroke paths).
   static const String newspaper = "M0 0M15 18h-5 M0 0M18 14h-8 M0 0M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2 M0 0M11 6h6a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `nfc` (24x24 stroke paths).
   static const String nfc = "M0 0M6 8.32a7.43 7.43 0 0 1 0 7.36 M0 0M9.46 6.21a11.76 11.76 0 0 1 0 11.58 M0 0M12.91 4.1a15.91 15.91 0 0 1 .01 15.8 M0 0M16.37 2a20.16 20.16 0 0 1 0 20";
+  /// Lucide icon `non-binary` (24x24 stroke paths).
   static const String nonBinary = "M0 0M12 2v10 M0 0m9 4 6 4 M0 0m9 8 6-4 M0 0M7 17A5 5 0 1 0 17 17A5 5 0 1 0 7 17";
+  /// Lucide icon `notebook-pen` (24x24 stroke paths).
   static const String notebookPen = "M0 0M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4 M0 0M2 6h4 M0 0M2 10h4 M0 0M2 14h4 M0 0M2 18h4 M0 0M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z";
+  /// Lucide icon `notebook-tabs` (24x24 stroke paths).
   static const String notebookTabs = "M0 0M2 6h4 M0 0M2 10h4 M0 0M2 14h4 M0 0M2 18h4 M0 0M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M15 2v20 M0 0M15 7h5 M0 0M15 12h5 M0 0M15 17h5";
+  /// Lucide icon `notebook-text` (24x24 stroke paths).
   static const String notebookText = "M0 0M2 6h4 M0 0M2 10h4 M0 0M2 14h4 M0 0M2 18h4 M0 0M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M9.5 8h5 M0 0M9.5 12H16 M0 0M9.5 16H14";
+  /// Lucide icon `notebook` (24x24 stroke paths).
   static const String notebook = "M0 0M2 6h4 M0 0M2 10h4 M0 0M2 14h4 M0 0M2 18h4 M0 0M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M16 2v20";
+  /// Lucide icon `notepad-text-dashed` (24x24 stroke paths).
   static const String notepadTextDashed = "M0 0M8 2v4 M0 0M12 2v4 M0 0M16 2v4 M0 0M16 4h2a2 2 0 0 1 2 2v2 M0 0M20 12v2 M0 0M20 18v2a2 2 0 0 1-2 2h-1 M0 0M13 22h-2 M0 0M7 22H6a2 2 0 0 1-2-2v-2 M0 0M4 14v-2 M0 0M4 8V6a2 2 0 0 1 2-2h2 M0 0M8 10h6 M0 0M8 14h8 M0 0M8 18h5";
+  /// Lucide icon `notepad-text` (24x24 stroke paths).
   static const String notepadText = "M0 0M8 2v4 M0 0M12 2v4 M0 0M16 2v4 M0 0M6 4h12a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M8 10h6 M0 0M8 14h8 M0 0M8 18h5";
+  /// Lucide icon `nut-off` (24x24 stroke paths).
   static const String nutOff = "M0 0M12 4V2 M0 0M5 10v4a7.004 7.004 0 0 0 5.277 6.787c.412.104.802.292 1.102.592L12 22l.621-.621c.3-.3.69-.488 1.102-.592a7.01 7.01 0 0 0 4.125-2.939 M0 0M19 10v3.343 M0 0M12 12c-1.349-.573-1.905-1.005-2.5-2-.546.902-1.048 1.353-2.5 2-1.018-.644-1.46-1.08-2-2-1.028.71-1.69.918-3 1 1.081-1.048 1.757-2.03 2-3 .194-.776.84-1.551 1.79-2.21m11.654 5.997c.887-.457 1.28-.891 1.556-1.787 1.032.916 1.683 1.157 3 1-1.297-1.036-1.758-2.03-2-3-.5-2-4-4-8-4-.74 0-1.461.068-2.15.192 M0 0M2 2L22 22";
+  /// Lucide icon `nut` (24x24 stroke paths).
   static const String nut = "M0 0M12 4V2 M0 0M5 10v4a7.004 7.004 0 0 0 5.277 6.787c.412.104.802.292 1.102.592L12 22l.621-.621c.3-.3.69-.488 1.102-.592A7.003 7.003 0 0 0 19 14v-4 M0 0M12 4C8 4 4.5 6 4 8c-.243.97-.919 1.952-2 3 1.31-.082 1.972-.29 3-1 .54.92.982 1.356 2 2 1.452-.647 1.954-1.098 2.5-2 .595.995 1.151 1.427 2.5 2 1.31-.621 1.862-1.058 2.5-2 .629.977 1.162 1.423 2.5 2 1.209-.548 1.68-.967 2-2 1.032.916 1.683 1.157 3 1-1.297-1.036-1.758-2.03-2-3-.5-2-4-4-8-4Z";
+  /// Lucide icon `octagon-alert` (24x24 stroke paths).
   static const String octagonAlert = "M0 0M12 16h.01 M0 0M12 8v4 M0 0M15.312 2a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586l-4.688-4.688A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2z";
+  /// Lucide icon `octagon-minus` (24x24 stroke paths).
   static const String octagonMinus = "M0 0M2.586 16.726A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2h6.624a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586z M0 0M8 12h8";
+  /// Lucide icon `octagon-pause` (24x24 stroke paths).
   static const String octagonPause = "M0 0M10 15V9 M0 0M14 15V9 M0 0M2.586 16.726A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2h6.624a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586z";
+  /// Lucide icon `octagon-x` (24x24 stroke paths).
   static const String octagonX = "M0 0m15 9-6 6 M0 0M2.586 16.726A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2h6.624a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586z M0 0m9 9 6 6";
+  /// Lucide icon `octagon` (24x24 stroke paths).
   static const String octagon = "M0 0M2.586 16.726A2 2 0 0 1 2 15.312V8.688a2 2 0 0 1 .586-1.414l4.688-4.688A2 2 0 0 1 8.688 2h6.624a2 2 0 0 1 1.414.586l4.688 4.688A2 2 0 0 1 22 8.688v6.624a2 2 0 0 1-.586 1.414l-4.688 4.688a2 2 0 0 1-1.414.586H8.688a2 2 0 0 1-1.414-.586z";
+  /// Lucide icon `omega` (24x24 stroke paths).
   static const String omega = "M0 0M3 20h4.5a.5.5 0 0 0 .5-.5v-.282a.52.52 0 0 0-.247-.437 8 8 0 1 1 8.494-.001.52.52 0 0 0-.247.438v.282a.5.5 0 0 0 .5.5H21";
+  /// Lucide icon `option` (24x24 stroke paths).
   static const String option = "M0 0M3 3h6l6 18h6 M0 0M14 3h7";
+  /// Lucide icon `orbit` (24x24 stroke paths).
   static const String orbit = "M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12 M0 0M17 5A2 2 0 1 0 21 5A2 2 0 1 0 17 5 M0 0M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19 M0 0M10.4 21.9a10 10 0 0 0 9.941-15.416 M0 0M13.5 2.1a10 10 0 0 0-9.841 15.416";
+  /// Lucide icon `origami` (24x24 stroke paths).
   static const String origami = "M0 0M12 12V4a1 1 0 0 1 1-1h6.297a1 1 0 0 1 .651 1.759l-4.696 4.025 M0 0m12 21-7.414-7.414A2 2 0 0 1 4 12.172V6.415a1.002 1.002 0 0 1 1.707-.707L20 20.009 M0 0m12.214 3.381 8.414 14.966a1 1 0 0 1-.167 1.199l-1.168 1.163a1 1 0 0 1-.706.291H6.351a1 1 0 0 1-.625-.219L3.25 18.8a1 1 0 0 1 .631-1.781l4.165.027";
+  /// Lucide icon `package-2` (24x24 stroke paths).
   static const String package2 = "M0 0M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z M0 0m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9 M0 0M12 3v6";
+  /// Lucide icon `package-check` (24x24 stroke paths).
   static const String packageCheck = "M0 0m16 16 2 2 4-4 M0 0M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14 M0 0m7.5 4.27 9 5.15 M0 0M3.29 7L12 12L20.71 7 M0 0M12 22L12 12";
+  /// Lucide icon `package-minus` (24x24 stroke paths).
   static const String packageMinus = "M0 0M16 16h6 M0 0M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14 M0 0m7.5 4.27 9 5.15 M0 0M3.29 7L12 12L20.71 7 M0 0M12 22L12 12";
+  /// Lucide icon `package-open` (24x24 stroke paths).
   static const String packageOpen = "M0 0M12 22v-9 M0 0M15.17 2.21a1.67 1.67 0 0 1 1.63 0L21 4.57a1.93 1.93 0 0 1 0 3.36L8.82 14.79a1.655 1.655 0 0 1-1.64 0L3 12.43a1.93 1.93 0 0 1 0-3.36z M0 0M20 13v3.87a2.06 2.06 0 0 1-1.11 1.83l-6 3.08a1.93 1.93 0 0 1-1.78 0l-6-3.08A2.06 2.06 0 0 1 4 16.87V13 M0 0M21 12.43a1.93 1.93 0 0 0 0-3.36L8.83 2.2a1.64 1.64 0 0 0-1.63 0L3 4.57a1.93 1.93 0 0 0 0 3.36l12.18 6.86a1.636 1.636 0 0 0 1.63 0z";
+  /// Lucide icon `package-plus` (24x24 stroke paths).
   static const String packagePlus = "M0 0M16 16h6 M0 0M19 13v6 M0 0M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14 M0 0m7.5 4.27 9 5.15 M0 0M3.29 7L12 12L20.71 7 M0 0M12 22L12 12";
+  /// Lucide icon `package-search` (24x24 stroke paths).
   static const String packageSearch = "M0 0M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14 M0 0m7.5 4.27 9 5.15 M0 0M3.29 7L12 12L20.71 7 M0 0M12 22L12 12 M0 0M16 15.5A2.5 2.5 0 1 0 21 15.5A2.5 2.5 0 1 0 16 15.5 M0 0M20.27 17.27 22 19";
+  /// Lucide icon `package-x` (24x24 stroke paths).
   static const String packageX = "M0 0M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14 M0 0m7.5 4.27 9 5.15 M0 0M3.29 7L12 12L20.71 7 M0 0M12 22L12 12 M0 0m17 13 5 5m-5 0 5-5";
+  /// Lucide icon `package` (24x24 stroke paths).
   static const String package = "M0 0M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z M0 0M12 22V12 M0 0M3.29 7L12 12L20.71 7 M0 0m7.5 4.27 9 5.15";
+  /// Lucide icon `paint-bucket` (24x24 stroke paths).
   static const String paintBucket = "M0 0m19 11-8-8-8.6 8.6a2 2 0 0 0 0 2.8l5.2 5.2c.8.8 2 .8 2.8 0L19 11Z M0 0m5 2 5 5 M0 0M2 13h15 M0 0M22 20a2 2 0 1 1-4 0c0-1.6 1.7-2.4 2-4 .3 1.6 2 2.4 2 4Z";
+  /// Lucide icon `paint-roller` (24x24 stroke paths).
   static const String paintRoller = "M0 0M4 2h12a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2 M0 0M9 16h2a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `paintbrush-vertical` (24x24 stroke paths).
   static const String paintbrushVertical = "M0 0M10 2v2 M0 0M14 2v4 M0 0M17 2a1 1 0 0 1 1 1v9H6V3a1 1 0 0 1 1-1z M0 0M6 12a1 1 0 0 0-1 1v1a2 2 0 0 0 2 2h2a1 1 0 0 1 1 1v2.9a2 2 0 1 0 4 0V17a1 1 0 0 1 1-1h2a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1";
+  /// Lucide icon `paintbrush` (24x24 stroke paths).
   static const String paintbrush = "M0 0m14.622 17.897-10.68-2.913 M0 0M18.376 2.622a1 1 0 1 1 3.002 3.002L17.36 9.643a.5.5 0 0 0 0 .707l.944.944a2.41 2.41 0 0 1 0 3.408l-.944.944a.5.5 0 0 1-.707 0L8.354 7.348a.5.5 0 0 1 0-.707l.944-.944a2.41 2.41 0 0 1 3.408 0l.944.944a.5.5 0 0 0 .707 0z M0 0M9 8c-1.804 2.71-3.97 3.46-6.583 3.948a.507.507 0 0 0-.302.819l7.32 8.883a1 1 0 0 0 1.185.204C12.735 20.405 16 16.792 16 15";
+  /// Lucide icon `palette` (24x24 stroke paths).
   static const String palette = "M0 0M13 6.5A0.5 0.5 0 1 0 14 6.5A0.5 0.5 0 1 0 13 6.5 M0 0M17 10.5A0.5 0.5 0 1 0 18 10.5A0.5 0.5 0 1 0 17 10.5 M0 0M8 7.5A0.5 0.5 0 1 0 9 7.5A0.5 0.5 0 1 0 8 7.5 M0 0M6 12.5A0.5 0.5 0 1 0 7 12.5A0.5 0.5 0 1 0 6 12.5 M0 0M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z";
+  /// Lucide icon `panel-bottom-close` (24x24 stroke paths).
   static const String panelBottomClose = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 15h18 M0 0m15 8-3 3-3-3";
+  /// Lucide icon `panel-bottom-dashed` (24x24 stroke paths).
   static const String panelBottomDashed = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M14 15h1 M0 0M19 15h2 M0 0M3 15h2 M0 0M9 15h1";
+  /// Lucide icon `panel-bottom-open` (24x24 stroke paths).
   static const String panelBottomOpen = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 15h18 M0 0m9 10 3-3 3 3";
+  /// Lucide icon `panel-bottom` (24x24 stroke paths).
   static const String panelBottom = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 15h18";
+  /// Lucide icon `panel-left-close` (24x24 stroke paths).
   static const String panelLeftClose = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M9 3v18 M0 0m16 15-3-3 3-3";
+  /// Lucide icon `panel-left-dashed` (24x24 stroke paths).
   static const String panelLeftDashed = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M9 14v1 M0 0M9 19v2 M0 0M9 3v2 M0 0M9 9v1";
+  /// Lucide icon `panel-left-open` (24x24 stroke paths).
   static const String panelLeftOpen = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M9 3v18 M0 0m14 9 3 3-3 3";
+  /// Lucide icon `panel-left` (24x24 stroke paths).
   static const String panelLeft = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M9 3v18";
+  /// Lucide icon `panel-right-close` (24x24 stroke paths).
   static const String panelRightClose = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M15 3v18 M0 0m8 9 3 3-3 3";
+  /// Lucide icon `panel-right-dashed` (24x24 stroke paths).
   static const String panelRightDashed = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M15 14v1 M0 0M15 19v2 M0 0M15 3v2 M0 0M15 9v1";
+  /// Lucide icon `panel-right-open` (24x24 stroke paths).
   static const String panelRightOpen = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M15 3v18 M0 0m10 15-3-3 3-3";
+  /// Lucide icon `panel-right` (24x24 stroke paths).
   static const String panelRight = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M15 3v18";
+  /// Lucide icon `panel-top-close` (24x24 stroke paths).
   static const String panelTopClose = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 9h18 M0 0m9 16 3-3 3 3";
+  /// Lucide icon `panel-top-dashed` (24x24 stroke paths).
   static const String panelTopDashed = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M14 9h1 M0 0M19 9h2 M0 0M3 9h2 M0 0M9 9h1";
+  /// Lucide icon `panel-top-open` (24x24 stroke paths).
   static const String panelTopOpen = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 9h18 M0 0m15 14-3 3-3-3";
+  /// Lucide icon `panel-top` (24x24 stroke paths).
   static const String panelTop = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 9h18";
+  /// Lucide icon `panels-left-bottom` (24x24 stroke paths).
   static const String panelsLeftBottom = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M9 3v18 M0 0M9 15h12";
+  /// Lucide icon `panels-right-bottom` (24x24 stroke paths).
   static const String panelsRightBottom = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 15h12 M0 0M15 3v18";
+  /// Lucide icon `panels-top-left` (24x24 stroke paths).
   static const String panelsTopLeft = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 9h18 M0 0M9 21V9";
+  /// Lucide icon `paperclip` (24x24 stroke paths).
   static const String paperclip = "M0 0M13.234 20.252 21 12.3 M0 0m16 6-8.414 8.586a2 2 0 0 0 0 2.828 2 2 0 0 0 2.828 0l8.414-8.586a4 4 0 0 0 0-5.656 4 4 0 0 0-5.656 0l-8.415 8.585a6 6 0 1 0 8.486 8.486";
+  /// Lucide icon `parentheses` (24x24 stroke paths).
   static const String parentheses = "M0 0M8 21s-4-3-4-9 4-9 4-9 M0 0M16 3s4 3 4 9-4 9-4 9";
+  /// Lucide icon `parking-meter` (24x24 stroke paths).
   static const String parkingMeter = "M0 0M11 15h2 M0 0M12 12v3 M0 0M12 19v3 M0 0M15.282 19a1 1 0 0 0 .948-.68l2.37-6.988a7 7 0 1 0-13.2 0l2.37 6.988a1 1 0 0 0 .948.68z M0 0M9 9a3 3 0 1 1 6 0";
+  /// Lucide icon `party-popper` (24x24 stroke paths).
   static const String partyPopper = "M0 0M5.8 11.3 2 22l10.7-3.79 M0 0M4 3h.01 M0 0M22 8h.01 M0 0M15 2h.01 M0 0M22 20h.01 M0 0m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10 M0 0m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17 M0 0m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7 M0 0M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z";
+  /// Lucide icon `pause` (24x24 stroke paths).
   static const String pause = "M0 0M15 4h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1Z M0 0M7 4h2a1 1 0 0 1 1 1v14a1 1 0 0 1 -1 1h-2a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `paw-print` (24x24 stroke paths).
   static const String pawPrint = "M0 0M9 4A2 2 0 1 0 13 4A2 2 0 1 0 9 4 M0 0M16 8A2 2 0 1 0 20 8A2 2 0 1 0 16 8 M0 0M18 16A2 2 0 1 0 22 16A2 2 0 1 0 18 16 M0 0M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z";
+  /// Lucide icon `pc-case` (24x24 stroke paths).
   static const String pcCase = "M0 0M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M15 14h.01 M0 0M9 6h6 M0 0M9 10h6";
+  /// Lucide icon `pen-line` (24x24 stroke paths).
   static const String penLine = "M0 0M12 20h9 M0 0M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z";
+  /// Lucide icon `pen-off` (24x24 stroke paths).
   static const String penOff = "M0 0m10 10-6.157 6.162a2 2 0 0 0-.5.833l-1.322 4.36a.5.5 0 0 0 .622.624l4.358-1.323a2 2 0 0 0 .83-.5L14 13.982 M0 0m12.829 7.172 4.359-4.346a1 1 0 1 1 3.986 3.986l-4.353 4.353 M0 0m2 2 20 20";
+  /// Lucide icon `pen-tool` (24x24 stroke paths).
   static const String penTool = "M0 0M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z M0 0m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18 M0 0m2.3 2.3 7.286 7.286 M0 0M9 11A2 2 0 1 0 13 11A2 2 0 1 0 9 11";
+  /// Lucide icon `pen` (24x24 stroke paths).
   static const String pen = "M0 0M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z";
+  /// Lucide icon `pencil-line` (24x24 stroke paths).
   static const String pencilLine = "M0 0M12 20h9 M0 0M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z M0 0m15 5 3 3";
+  /// Lucide icon `pencil-off` (24x24 stroke paths).
   static const String pencilOff = "M0 0m10 10-6.157 6.162a2 2 0 0 0-.5.833l-1.322 4.36a.5.5 0 0 0 .622.624l4.358-1.323a2 2 0 0 0 .83-.5L14 13.982 M0 0m12.829 7.172 4.359-4.346a1 1 0 1 1 3.986 3.986l-4.353 4.353 M0 0m15 5 4 4 M0 0m2 2 20 20";
+  /// Lucide icon `pencil-ruler` (24x24 stroke paths).
   static const String pencilRuler = "M0 0M13 7 8.7 2.7a2.41 2.41 0 0 0-3.4 0L2.7 5.3a2.41 2.41 0 0 0 0 3.4L7 13 M0 0m8 6 2-2 M0 0m18 16 2-2 M0 0m17 11 4.3 4.3c.94.94.94 2.46 0 3.4l-2.6 2.6c-.94.94-2.46.94-3.4 0L11 17 M0 0M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z M0 0m15 5 4 4";
+  /// Lucide icon `pencil` (24x24 stroke paths).
   static const String pencil = "M0 0M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z M0 0m15 5 4 4";
+  /// Lucide icon `pentagon` (24x24 stroke paths).
   static const String pentagon = "M0 0M10.83 2.38a2 2 0 0 1 2.34 0l8 5.74a2 2 0 0 1 .73 2.25l-3.04 9.26a2 2 0 0 1-1.9 1.37H7.04a2 2 0 0 1-1.9-1.37L2.1 10.37a2 2 0 0 1 .73-2.25z";
+  /// Lucide icon `percent` (24x24 stroke paths).
   static const String percent = "M0 0M19 5L5 19 M0 0M4 6.5A2.5 2.5 0 1 0 9 6.5A2.5 2.5 0 1 0 4 6.5 M0 0M15 17.5A2.5 2.5 0 1 0 20 17.5A2.5 2.5 0 1 0 15 17.5";
+  /// Lucide icon `person-standing` (24x24 stroke paths).
   static const String personStanding = "M0 0M11 5A1 1 0 1 0 13 5A1 1 0 1 0 11 5 M0 0m9 20 3-6 3 6 M0 0m6 8 6 2 6-2 M0 0M12 10v4";
+  /// Lucide icon `philippine-peso` (24x24 stroke paths).
   static const String philippinePeso = "M0 0M20 11H4 M0 0M20 7H4 M0 0M7 21V4a1 1 0 0 1 1-1h4a1 1 0 0 1 0 12H7";
+  /// Lucide icon `phone-call` (24x24 stroke paths).
   static const String phoneCall = "M0 0M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z M0 0M14.05 2a9 9 0 0 1 8 7.94 M0 0M14.05 6A5 5 0 0 1 18 10";
+  /// Lucide icon `phone-forwarded` (24x24 stroke paths).
   static const String phoneForwarded = "M0 0M18 2L22 6L18 10 M0 0M14 6L22 6 M0 0M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z";
+  /// Lucide icon `phone-incoming` (24x24 stroke paths).
   static const String phoneIncoming = "M0 0M16 2L16 8L22 8 M0 0M22 2L16 8 M0 0M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z";
+  /// Lucide icon `phone-missed` (24x24 stroke paths).
   static const String phoneMissed = "M0 0M22 2L16 8 M0 0M16 2L22 8 M0 0M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z";
+  /// Lucide icon `phone-off` (24x24 stroke paths).
   static const String phoneOff = "M0 0M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.42 19.42 0 0 1-3.33-2.67m-2.67-3.34a19.79 19.79 0 0 1-3.07-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91 M0 0M22 2L2 22";
+  /// Lucide icon `phone-outgoing` (24x24 stroke paths).
   static const String phoneOutgoing = "M0 0M22 8L22 2L16 2 M0 0M16 8L22 2 M0 0M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z";
+  /// Lucide icon `phone` (24x24 stroke paths).
   static const String phone = "M0 0M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z";
+  /// Lucide icon `pi` (24x24 stroke paths).
   static const String pi = "M0 0M9 4L9 20 M0 0M4 7c0-1.7 1.3-3 3-3h13 M0 0M18 20c-1.7 0-3-1.3-3-3V4";
+  /// Lucide icon `piano` (24x24 stroke paths).
   static const String piano = "M0 0M18.5 8c-1.4 0-2.6-.8-3.2-2A6.87 6.87 0 0 0 2 9v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8.5C22 9.6 20.4 8 18.5 8 M0 0M2 14h20 M0 0M6 14v4 M0 0M10 14v4 M0 0M14 14v4 M0 0M18 14v4";
+  /// Lucide icon `pickaxe` (24x24 stroke paths).
   static const String pickaxe = "M0 0M14.531 12.469 6.619 20.38a1 1 0 1 1-3-3l7.912-7.912 M0 0M15.686 4.314A12.5 12.5 0 0 0 5.461 2.958 1 1 0 0 0 5.58 4.71a22 22 0 0 1 6.318 3.393 M0 0M17.7 3.7a1 1 0 0 0-1.4 0l-4.6 4.6a1 1 0 0 0 0 1.4l2.6 2.6a1 1 0 0 0 1.4 0l4.6-4.6a1 1 0 0 0 0-1.4z M0 0M19.686 8.314a12.501 12.501 0 0 1 1.356 10.225 1 1 0 0 1-1.751-.119 22 22 0 0 0-3.393-6.319";
+  /// Lucide icon `picture-in-picture-2` (24x24 stroke paths).
   static const String pictureInPicture2 = "M0 0M21 9V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10c0 1.1.9 2 2 2h4 M0 0M14 13h6a2 2 0 0 1 2 2v3a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-3a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `picture-in-picture` (24x24 stroke paths).
   static const String pictureInPicture = "M0 0M2 10h6V4 M0 0m2 4 6 6 M0 0M21 10V7a2 2 0 0 0-2-2h-7 M0 0M3 14v2a2 2 0 0 0 2 2h3 M0 0M13 14h8a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `piggy-bank` (24x24 stroke paths).
   static const String piggyBank = "M0 0M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8 0 3 2 4.5V20h4v-2h3v2h4v-4c1-.5 1.7-1 2-2h2v-4h-2c0-1-.5-1.5-1-2V5z M0 0M2 9v1c0 1.1.9 2 2 2h1 M0 0M16 11h.01";
+  /// Lucide icon `pilcrow-left` (24x24 stroke paths).
   static const String pilcrowLeft = "M0 0M14 3v11 M0 0M14 9h-3a3 3 0 0 1 0-6h9 M0 0M18 3v11 M0 0M22 18H2l4-4 M0 0m6 22-4-4";
+  /// Lucide icon `pilcrow-right` (24x24 stroke paths).
   static const String pilcrowRight = "M0 0M10 3v11 M0 0M10 9H7a1 1 0 0 1 0-6h8 M0 0M14 3v11 M0 0m18 14 4 4H2 M0 0m22 18-4 4";
+  /// Lucide icon `pilcrow` (24x24 stroke paths).
   static const String pilcrow = "M0 0M13 4v16 M0 0M17 4v16 M0 0M19 4H9.5a4.5 4.5 0 0 0 0 9H13";
+  /// Lucide icon `pill-bottle` (24x24 stroke paths).
   static const String pillBottle = "M0 0M18 11h-4a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h4 M0 0M6 7v13a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7 M0 0M5 2h14a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-14a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `pill` (24x24 stroke paths).
   static const String pill = "M0 0m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z M0 0m8.5 8.5 7 7";
+  /// Lucide icon `pin-off` (24x24 stroke paths).
   static const String pinOff = "M0 0M12 17v5 M0 0M15 9.34V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H7.89 M0 0m2 2 20 20 M0 0M9 9v1.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h11";
+  /// Lucide icon `pin` (24x24 stroke paths).
   static const String pin = "M0 0M12 17v5 M0 0M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z";
+  /// Lucide icon `pipette` (24x24 stroke paths).
   static const String pipette = "M0 0m2 22 1-1h3l9-9 M0 0M3 21v-3l9-9 M0 0m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.4.4a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.4.4Z";
+  /// Lucide icon `pizza` (24x24 stroke paths).
   static const String pizza = "M0 0m12 14-1 1 M0 0m13.75 18.25-1.25 1.42 M0 0M17.775 5.654a15.68 15.68 0 0 0-12.121 12.12 M0 0M18.8 9.3a1 1 0 0 0 2.1 7.7 M0 0M21.964 20.732a1 1 0 0 1-1.232 1.232l-18-5a1 1 0 0 1-.695-1.232A19.68 19.68 0 0 1 15.732 2.037a1 1 0 0 1 1.232.695z";
+  /// Lucide icon `plane-landing` (24x24 stroke paths).
   static const String planeLanding = "M0 0M2 22h20 M0 0M3.77 10.77 2 9l2-4.5 1.1.55c.55.28.9.84.9 1.45s.35 1.17.9 1.45L8 8.5l3-6 1.05.53a2 2 0 0 1 1.09 1.52l.72 5.4a2 2 0 0 0 1.09 1.52l4.4 2.2c.42.22.78.55 1.01.96l.6 1.03c.49.88-.06 1.98-1.06 2.1l-1.18.15c-.47.06-.95-.02-1.37-.24L4.29 11.15a2 2 0 0 1-.52-.38Z";
+  /// Lucide icon `plane-takeoff` (24x24 stroke paths).
   static const String planeTakeoff = "M0 0M2 22h20 M0 0M6.36 17.4 4 17l-2-4 1.1-.55a2 2 0 0 1 1.8 0l.17.1a2 2 0 0 0 1.8 0L8 12 5 6l.9-.45a2 2 0 0 1 2.09.2l4.02 3a2 2 0 0 0 2.1.2l4.19-2.06a2.41 2.41 0 0 1 1.73-.17L21 7a1.4 1.4 0 0 1 .87 1.99l-.38.76c-.23.46-.6.84-1.07 1.08L7.58 17.2a2 2 0 0 1-1.22.18Z";
+  /// Lucide icon `plane` (24x24 stroke paths).
   static const String plane = "M0 0M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z";
+  /// Lucide icon `play` (24x24 stroke paths).
   static const String play = "M0 0M6 3L20 12L6 21L6 3Z";
+  /// Lucide icon `plug-2` (24x24 stroke paths).
   static const String plug2 = "M0 0M9 2v6 M0 0M15 2v6 M0 0M12 17v5 M0 0M5 8h14 M0 0M6 11V8h12v3a6 6 0 1 1-12 0Z";
+  /// Lucide icon `plug-zap` (24x24 stroke paths).
   static const String plugZap = "M0 0M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z M0 0m2 22 3-3 M0 0M7.5 13.5 10 11 M0 0M10.5 16.5 13 14 M0 0m18 3-4 4h6l-4 4";
+  /// Lucide icon `plug` (24x24 stroke paths).
   static const String plug = "M0 0M12 22v-5 M0 0M9 8V2 M0 0M15 8V2 M0 0M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z";
+  /// Lucide icon `plus` (24x24 stroke paths).
   static const String plus = "M0 0M5 12h14 M0 0M12 5v14";
+  /// Lucide icon `pocket-knife` (24x24 stroke paths).
   static const String pocketKnife = "M0 0M3 2v1c0 1 2 1 2 2S3 6 3 7s2 1 2 2-2 1-2 2 2 1 2 2 M0 0M18 6h.01 M0 0M6 18h.01 M0 0M20.83 8.83a4 4 0 0 0-5.66-5.66l-12 12a4 4 0 1 0 5.66 5.66Z M0 0M18 11.66V22a4 4 0 0 0 4-4V6";
+  /// Lucide icon `pocket` (24x24 stroke paths).
   static const String pocket = "M0 0M4 3h16a2 2 0 0 1 2 2v6a10 10 0 0 1-10 10A10 10 0 0 1 2 11V5a2 2 0 0 1 2-2z M0 0M8 10L12 14L16 10";
+  /// Lucide icon `podcast` (24x24 stroke paths).
   static const String podcast = "M0 0M16.85 18.58a9 9 0 1 0-9.7 0 M0 0M8 14a5 5 0 1 1 8 0 M0 0M11 11A1 1 0 1 0 13 11A1 1 0 1 0 11 11 M0 0M13 17a1 1 0 1 0-2 0l.5 4.5a.5.5 0 1 0 1 0Z";
+  /// Lucide icon `pointer-off` (24x24 stroke paths).
   static const String pointerOff = "M0 0M10 4.5V4a2 2 0 0 0-2.41-1.957 M0 0M13.9 8.4a2 2 0 0 0-1.26-1.295 M0 0M21.7 16.2A8 8 0 0 0 22 14v-3a2 2 0 1 0-4 0v-1a2 2 0 0 0-3.63-1.158 M0 0m7 15-1.8-1.8a2 2 0 0 0-2.79 2.86L6 19.7a7.74 7.74 0 0 0 6 2.3h2a8 8 0 0 0 5.657-2.343 M0 0M6 6v8 M0 0m2 2 20 20";
+  /// Lucide icon `pointer` (24x24 stroke paths).
   static const String pointer = "M0 0M22 14a8 8 0 0 1-8 8 M0 0M18 11v-1a2 2 0 0 0-2-2a2 2 0 0 0-2 2 M0 0M14 10V9a2 2 0 0 0-2-2a2 2 0 0 0-2 2v1 M0 0M10 9.5V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v10 M0 0M18 11a2 2 0 1 1 4 0v3a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15";
+  /// Lucide icon `popcorn` (24x24 stroke paths).
   static const String popcorn = "M0 0M18 8a2 2 0 0 0 0-4 2 2 0 0 0-4 0 2 2 0 0 0-4 0 2 2 0 0 0-4 0 2 2 0 0 0 0 4 M0 0M10 22 9 8 M0 0m14 22 1-14 M0 0M20 8c.5 0 .9.4.8 1l-2.6 12c-.1.5-.7 1-1.2 1H7c-.6 0-1.1-.4-1.2-1L3.2 9c-.1-.6.3-1 .8-1Z";
+  /// Lucide icon `popsicle` (24x24 stroke paths).
   static const String popsicle = "M0 0M18.6 14.4c.8-.8.8-2 0-2.8l-8.1-8.1a4.95 4.95 0 1 0-7.1 7.1l8.1 8.1c.9.7 2.1.7 2.9-.1Z M0 0m22 22-5.5-5.5";
+  /// Lucide icon `pound-sterling` (24x24 stroke paths).
   static const String poundSterling = "M0 0M18 7c0-5.333-8-5.333-8 0 M0 0M10 7v14 M0 0M6 21h12 M0 0M6 13h10";
+  /// Lucide icon `power-off` (24x24 stroke paths).
   static const String powerOff = "M0 0M18.36 6.64A9 9 0 0 1 20.77 15 M0 0M6.16 6.16a9 9 0 1 0 12.68 12.68 M0 0M12 2v4 M0 0m2 2 20 20";
+  /// Lucide icon `power` (24x24 stroke paths).
   static const String power = "M0 0M12 2v10 M0 0M18.4 6.6a9 9 0 1 1-12.77.04";
+  /// Lucide icon `presentation` (24x24 stroke paths).
   static const String presentation = "M0 0M2 3h20 M0 0M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3 M0 0m7 21 5-5 5 5";
+  /// Lucide icon `printer-check` (24x24 stroke paths).
   static const String printerCheck = "M0 0M13.5 22H7a1 1 0 0 1-1-1v-6a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v.5 M0 0m16 19 2 2 4-4 M0 0M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2 M0 0M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6";
+  /// Lucide icon `printer` (24x24 stroke paths).
   static const String printer = "M0 0M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2 M0 0M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6 M0 0M7 14h10a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `projector` (24x24 stroke paths).
   static const String projector = "M0 0M5 7 3 5 M0 0M9 6V3 M0 0m13 7 2-2 M0 0M6 13A3 3 0 1 0 12 13A3 3 0 1 0 6 13 M0 0M11.83 12H20a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2.17 M0 0M16 16h2";
+  /// Lucide icon `proportions` (24x24 stroke paths).
   static const String proportions = "M0 0M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M12 9v11 M0 0M2 9h13a2 2 0 0 1 2 2v9";
+  /// Lucide icon `puzzle` (24x24 stroke paths).
   static const String puzzle = "M0 0M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z";
+  /// Lucide icon `pyramid` (24x24 stroke paths).
   static const String pyramid = "M0 0M2.5 16.88a1 1 0 0 1-.32-1.43l9-13.02a1 1 0 0 1 1.64 0l9 13.01a1 1 0 0 1-.32 1.44l-8.51 4.86a2 2 0 0 1-1.98 0Z M0 0M12 2v20";
+  /// Lucide icon `qr-code` (24x24 stroke paths).
   static const String qrCode = "M0 0M4 3h3a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z M0 0M17 3h3a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z M0 0M4 16h3a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z M0 0M21 16h-3a2 2 0 0 0-2 2v3 M0 0M21 21v.01 M0 0M12 7v3a2 2 0 0 1-2 2H7 M0 0M3 12h.01 M0 0M12 3h.01 M0 0M12 16v.01 M0 0M16 12h1 M0 0M21 12v.01 M0 0M12 21v-1";
+  /// Lucide icon `quote` (24x24 stroke paths).
   static const String quote = "M0 0M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z M0 0M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z";
+  /// Lucide icon `rabbit` (24x24 stroke paths).
   static const String rabbit = "M0 0M13 16a3 3 0 0 1 2.24 5 M0 0M18 12h.01 M0 0M18 21h-8a4 4 0 0 1-4-4 7 7 0 0 1 7-7h.2L9.6 6.4a1 1 0 1 1 2.8-2.8L15.8 7h.2c3.3 0 6 2.7 6 6v1a2 2 0 0 1-2 2h-1a3 3 0 0 0-3 3 M0 0M20 8.54V4a2 2 0 1 0-4 0v3 M0 0M7.612 12.524a3 3 0 1 0-1.6 4.3";
+  /// Lucide icon `radar` (24x24 stroke paths).
   static const String radar = "M0 0M19.07 4.93A10 10 0 0 0 6.99 3.34 M0 0M4 6h.01 M0 0M2.29 9.62A10 10 0 1 0 21.31 8.35 M0 0M16.24 7.76A6 6 0 1 0 8.23 16.67 M0 0M12 18h.01 M0 0M17.99 11.66A6 6 0 0 1 15.77 16.67 M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12 M0 0m13.41 10.59 5.66-5.66";
+  /// Lucide icon `radiation` (24x24 stroke paths).
   static const String radiation = "M0 0M12 12h.01 M0 0M7.5 4.2c-.3-.5-.9-.7-1.3-.4C3.9 5.5 2.3 8.1 2 11c-.1.5.4 1 1 1h5c0-1.5.8-2.8 2-3.4-1.1-1.9-2-3.5-2.5-4.4z M0 0M21 12c.6 0 1-.4 1-1-.3-2.9-1.8-5.5-4.1-7.1-.4-.3-1.1-.2-1.3.3-.6.9-1.5 2.5-2.6 4.3 1.2.7 2 2 2 3.5h5z M0 0M7.5 19.8c-.3.5-.1 1.1.4 1.3 2.6 1.2 5.6 1.2 8.2 0 .5-.2.7-.8.4-1.3-.5-.9-1.4-2.5-2.5-4.3-1.2.7-2.8.7-4 0-1.1 1.8-2 3.4-2.5 4.3z";
+  /// Lucide icon `radical` (24x24 stroke paths).
   static const String radical = "M0 0M3 12h3.28a1 1 0 0 1 .948.684l2.298 7.934a.5.5 0 0 0 .96-.044L13.82 4.771A1 1 0 0 1 14.792 4H21";
+  /// Lucide icon `radio-receiver` (24x24 stroke paths).
   static const String radioReceiver = "M0 0M5 16v2 M0 0M19 16v2 M0 0M4 8h16a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M18 12h.01";
+  /// Lucide icon `radio-tower` (24x24 stroke paths).
   static const String radioTower = "M0 0M4.9 16.1C1 12.2 1 5.8 4.9 1.9 M0 0M7.8 4.7a6.14 6.14 0 0 0-.8 7.5 M0 0M10 9A2 2 0 1 0 14 9A2 2 0 1 0 10 9 M0 0M16.2 4.8c2 2 2.26 5.11.8 7.47 M0 0M19.1 1.9a9.96 9.96 0 0 1 0 14.1 M0 0M9.5 18h5 M0 0m8 22 4-11 4 11";
+  /// Lucide icon `radio` (24x24 stroke paths).
   static const String radio = "M0 0M4.9 19.1C1 15.2 1 8.8 4.9 4.9 M0 0M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5 M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12 M0 0M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5 M0 0M19.1 4.9C23 8.8 23 15.1 19.1 19";
+  /// Lucide icon `radius` (24x24 stroke paths).
   static const String radius = "M0 0M20.34 17.52a10 10 0 1 0-2.82 2.82 M0 0M17 19A2 2 0 1 0 21 19A2 2 0 1 0 17 19 M0 0m13.41 13.41 4.18 4.18 M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12";
+  /// Lucide icon `rail-symbol` (24x24 stroke paths).
   static const String railSymbol = "M0 0M5 15h14 M0 0M5 9h14 M0 0m14 20-5-5 6-6-5-5";
+  /// Lucide icon `rainbow` (24x24 stroke paths).
   static const String rainbow = "M0 0M22 17a10 10 0 0 0-20 0 M0 0M6 17a6 6 0 0 1 12 0 M0 0M10 17a2 2 0 0 1 4 0";
+  /// Lucide icon `rat` (24x24 stroke paths).
   static const String rat = "M0 0M13 22H4a2 2 0 0 1 0-4h12 M0 0M13.236 18a3 3 0 0 0-2.2-5 M0 0M16 9h.01 M0 0M16.82 3.94a3 3 0 1 1 3.237 4.868l1.815 2.587a1.5 1.5 0 0 1-1.5 2.1l-2.872-.453a3 3 0 0 0-3.5 3 M0 0M17 4.988a3 3 0 1 0-5.2 2.052A7 7 0 0 0 4 14.015 4 4 0 0 0 8 18";
+  /// Lucide icon `ratio` (24x24 stroke paths).
   static const String ratio = "M0 0M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `receipt-cent` (24x24 stroke paths).
   static const String receiptCent = "M0 0M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z M0 0M12 6.5v11 M0 0M15 9.4a4 4 0 1 0 0 5.2";
+  /// Lucide icon `receipt-euro` (24x24 stroke paths).
   static const String receiptEuro = "M0 0M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z M0 0M8 12h5 M0 0M16 9.5a4 4 0 1 0 0 5.2";
+  /// Lucide icon `receipt-indian-rupee` (24x24 stroke paths).
   static const String receiptIndianRupee = "M0 0M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z M0 0M8 7h8 M0 0M12 17.5 8 15h1a4 4 0 0 0 0-8 M0 0M8 11h8";
+  /// Lucide icon `receipt-japanese-yen` (24x24 stroke paths).
   static const String receiptJapaneseYen = "M0 0M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z M0 0m12 10 3-3 M0 0m9 7 3 3v7.5 M0 0M9 11h6 M0 0M9 15h6";
+  /// Lucide icon `receipt-pound-sterling` (24x24 stroke paths).
   static const String receiptPoundSterling = "M0 0M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z M0 0M8 13h5 M0 0M10 17V9.5a2.5 2.5 0 0 1 5 0 M0 0M8 17h7";
+  /// Lucide icon `receipt-russian-ruble` (24x24 stroke paths).
   static const String receiptRussianRuble = "M0 0M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z M0 0M8 15h5 M0 0M8 11h5a2 2 0 1 0 0-4h-3v10";
+  /// Lucide icon `receipt-swiss-franc` (24x24 stroke paths).
   static const String receiptSwissFranc = "M0 0M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z M0 0M10 17V7h5 M0 0M10 11h4 M0 0M8 15h5";
+  /// Lucide icon `receipt-text` (24x24 stroke paths).
   static const String receiptText = "M0 0M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z M0 0M14 8H8 M0 0M16 12H8 M0 0M13 16H8";
+  /// Lucide icon `receipt` (24x24 stroke paths).
   static const String receipt = "M0 0M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z M0 0M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8 M0 0M12 17.5v-11";
+  /// Lucide icon `rectangle-ellipsis` (24x24 stroke paths).
   static const String rectangleEllipsis = "M0 0M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z M0 0M12 12h.01 M0 0M17 12h.01 M0 0M7 12h.01";
+  /// Lucide icon `rectangle-horizontal` (24x24 stroke paths).
   static const String rectangleHorizontal = "M0 0M4 6h16a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `rectangle-vertical` (24x24 stroke paths).
   static const String rectangleVertical = "M0 0M8 2h8a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `recycle` (24x24 stroke paths).
   static const String recycle = "M0 0M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5 M0 0M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12 M0 0m14 16-3 3 3 3 M0 0M8.293 13.596 7.196 9.5 3.1 10.598 M0 0m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843 M0 0m13.378 9.633 4.096 1.098 1.097-4.096";
+  /// Lucide icon `redo-2` (24x24 stroke paths).
   static const String redo2 = "M0 0m15 14 5-5-5-5 M0 0M20 9H9.5A5.5 5.5 0 0 0 4 14.5A5.5 5.5 0 0 0 9.5 20H13";
+  /// Lucide icon `redo-dot` (24x24 stroke paths).
   static const String redoDot = "M0 0M11 17A1 1 0 1 0 13 17A1 1 0 1 0 11 17 M0 0M21 7v6h-6 M0 0M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7";
+  /// Lucide icon `redo` (24x24 stroke paths).
   static const String redo = "M0 0M21 7v6h-6 M0 0M3 17a9 9 0 0 1 9-9 9 9 0 0 1 6 2.3l3 2.7";
+  /// Lucide icon `refresh-ccw-dot` (24x24 stroke paths).
   static const String refreshCcwDot = "M0 0M3 2v6h6 M0 0M21 12A9 9 0 0 0 6 5.3L3 8 M0 0M21 22v-6h-6 M0 0M3 12a9 9 0 0 0 15 6.7l3-2.7 M0 0M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12";
+  /// Lucide icon `refresh-ccw` (24x24 stroke paths).
   static const String refreshCcw = "M0 0M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8 M0 0M3 3v5h5 M0 0M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16 M0 0M16 16h5v5";
+  /// Lucide icon `refresh-cw-off` (24x24 stroke paths).
   static const String refreshCwOff = "M0 0M21 8L18.74 5.74A9.75 9.75 0 0 0 12 3C11 3 10.03 3.16 9.13 3.47 M0 0M8 16H3v5 M0 0M3 12C3 9.51 4 7.26 5.64 5.64 M0 0m3 16 2.26 2.26A9.75 9.75 0 0 0 12 21c2.49 0 4.74-1 6.36-2.64 M0 0M21 12c0 1-.16 1.97-.47 2.87 M0 0M21 3v5h-5 M0 0M22 22 2 2";
+  /// Lucide icon `refresh-cw` (24x24 stroke paths).
   static const String refreshCw = "M0 0M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8 M0 0M21 3v5h-5 M0 0M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16 M0 0M8 16H3v5";
+  /// Lucide icon `refrigerator` (24x24 stroke paths).
   static const String refrigerator = "M0 0M5 6a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6Z M0 0M5 10h14 M0 0M15 7v6";
+  /// Lucide icon `regex` (24x24 stroke paths).
   static const String regex = "M0 0M17 3v10 M0 0m12.67 5.5 8.66 5 M0 0m12.67 10.5 8.66-5 M0 0M9 17a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2v-2z";
+  /// Lucide icon `remove-formatting` (24x24 stroke paths).
   static const String removeFormatting = "M0 0M4 7V4h16v3 M0 0M5 20h6 M0 0M13 4 8 20 M0 0m15 15 5 5 M0 0m20 15-5 5";
+  /// Lucide icon `repeat-1` (24x24 stroke paths).
   static const String repeat1 = "M0 0m17 2 4 4-4 4 M0 0M3 11v-1a4 4 0 0 1 4-4h14 M0 0m7 22-4-4 4-4 M0 0M21 13v1a4 4 0 0 1-4 4H3 M0 0M11 10h1v4";
+  /// Lucide icon `repeat-2` (24x24 stroke paths).
   static const String repeat2 = "M0 0m2 9 3-3 3 3 M0 0M13 18H7a2 2 0 0 1-2-2V6 M0 0m22 15-3 3-3-3 M0 0M11 6h6a2 2 0 0 1 2 2v10";
+  /// Lucide icon `repeat` (24x24 stroke paths).
   static const String repeat = "M0 0m17 2 4 4-4 4 M0 0M3 11v-1a4 4 0 0 1 4-4h14 M0 0m7 22-4-4 4-4 M0 0M21 13v1a4 4 0 0 1-4 4H3";
+  /// Lucide icon `replace-all` (24x24 stroke paths).
   static const String replaceAll = "M0 0M14 14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2 M0 0M14 4a2 2 0 0 1 2-2 M0 0M16 10a2 2 0 0 1-2-2 M0 0M20 14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2 M0 0M20 2a2 2 0 0 1 2 2 M0 0M22 8a2 2 0 0 1-2 2 M0 0m3 7 3 3 3-3 M0 0M6 10V5a 3 3 0 0 1 3-3h1 M0 0M4 14h4a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `replace` (24x24 stroke paths).
   static const String replace = "M0 0M14 4a2 2 0 0 1 2-2 M0 0M16 10a2 2 0 0 1-2-2 M0 0M20 2a2 2 0 0 1 2 2 M0 0M22 8a2 2 0 0 1-2 2 M0 0m3 7 3 3 3-3 M0 0M6 10V5a3 3 0 0 1 3-3h1 M0 0M4 14h4a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `reply-all` (24x24 stroke paths).
   static const String replyAll = "M0 0M7 17L2 12L7 7 M0 0M12 17L7 12L12 7 M0 0M22 18v-2a4 4 0 0 0-4-4H7";
+  /// Lucide icon `reply` (24x24 stroke paths).
   static const String reply = "M0 0M9 17L4 12L9 7 M0 0M20 18v-2a4 4 0 0 0-4-4H4";
+  /// Lucide icon `rewind` (24x24 stroke paths).
   static const String rewind = "M0 0M11 19L2 12L11 5L11 19Z M0 0M22 19L13 12L22 5L22 19Z";
+  /// Lucide icon `ribbon` (24x24 stroke paths).
   static const String ribbon = "M0 0M12 11.22C11 9.997 10 9 10 8a2 2 0 0 1 4 0c0 1-.998 2.002-2.01 3.22 M0 0m12 18 2.57-3.5 M0 0M6.243 9.016a7 7 0 0 1 11.507-.009 M0 0M9.35 14.53 12 11.22 M0 0M9.35 14.53C7.728 12.246 6 10.221 6 7a6 5 0 0 1 12 0c-.005 3.22-1.778 5.235-3.43 7.5l3.557 4.527a1 1 0 0 1-.203 1.43l-1.894 1.36a1 1 0 0 1-1.384-.215L12 18l-2.679 3.593a1 1 0 0 1-1.39.213l-1.865-1.353a1 1 0 0 1-.203-1.422z";
+  /// Lucide icon `rocket` (24x24 stroke paths).
   static const String rocket = "M0 0M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z M0 0m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z M0 0M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0 M0 0M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5";
+  /// Lucide icon `rocking-chair` (24x24 stroke paths).
   static const String rockingChair = "M0 0M3.5 2L6.5 12.5L18 12.5 M0 0M9.5 12.5L5.5 20 M0 0M15 12.5L18.5 20 M0 0M2.75 18a13 13 0 0 0 18.5 0";
+  /// Lucide icon `roller-coaster` (24x24 stroke paths).
   static const String rollerCoaster = "M0 0M6 19V5 M0 0M10 19V6.8 M0 0M14 19v-7.8 M0 0M18 5v4 M0 0M18 19v-6 M0 0M22 19V9 M0 0M2 19V9a4 4 0 0 1 4-4c2 0 4 1.33 6 4s4 4 6 4a4 4 0 1 0-3-6.65";
+  /// Lucide icon `rotate-3d` (24x24 stroke paths).
   static const String rotate3d = "M0 0M16.466 7.5C15.643 4.237 13.952 2 12 2 9.239 2 7 6.477 7 12s2.239 10 5 10c.342 0 .677-.069 1-.2 M0 0m15.194 13.707 3.814 1.86-1.86 3.814 M0 0M19 15.57c-1.804.885-4.274 1.43-7 1.43-5.523 0-10-2.239-10-5s4.477-5 10-5c4.838 0 8.873 1.718 9.8 4";
+  /// Lucide icon `rotate-ccw-square` (24x24 stroke paths).
   static const String rotateCcwSquare = "M0 0M20 9V7a2 2 0 0 0-2-2h-6 M0 0m15 2-3 3 3 3 M0 0M20 13v5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2";
+  /// Lucide icon `rotate-ccw` (24x24 stroke paths).
   static const String rotateCcw = "M0 0M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8 M0 0M3 3v5h5";
+  /// Lucide icon `rotate-cw-square` (24x24 stroke paths).
   static const String rotateCwSquare = "M0 0M12 5H6a2 2 0 0 0-2 2v3 M0 0m9 8 3-3-3-3 M0 0M4 14v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2";
+  /// Lucide icon `rotate-cw` (24x24 stroke paths).
   static const String rotateCw = "M0 0M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8 M0 0M21 3v5h-5";
+  /// Lucide icon `route-off` (24x24 stroke paths).
   static const String routeOff = "M0 0M3 19A3 3 0 1 0 9 19A3 3 0 1 0 3 19 M0 0M9 19h8.5c.4 0 .9-.1 1.3-.2 M0 0M5.2 5.2A3.5 3.53 0 0 0 6.5 12H12 M0 0m2 2 20 20 M0 0M21 15.3a3.5 3.5 0 0 0-3.3-3.3 M0 0M15 5h-4.3 M0 0M15 5A3 3 0 1 0 21 5A3 3 0 1 0 15 5";
+  /// Lucide icon `route` (24x24 stroke paths).
   static const String route = "M0 0M3 19A3 3 0 1 0 9 19A3 3 0 1 0 3 19 M0 0M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15 M0 0M15 5A3 3 0 1 0 21 5A3 3 0 1 0 15 5";
+  /// Lucide icon `router` (24x24 stroke paths).
   static const String router = "M0 0M4 14h16a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M6.01 18H6 M0 0M10.01 18H10 M0 0M15 10v4 M0 0M17.84 7.17a4 4 0 0 0-5.66 0 M0 0M20.66 4.34a8 8 0 0 0-11.31 0";
+  /// Lucide icon `rows-2` (24x24 stroke paths).
   static const String rows2 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 12h18";
+  /// Lucide icon `rows-3` (24x24 stroke paths).
   static const String rows3 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M21 9H3 M0 0M21 15H3";
+  /// Lucide icon `rows-4` (24x24 stroke paths).
   static const String rows4 = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M21 7.5H3 M0 0M21 12H3 M0 0M21 16.5H3";
+  /// Lucide icon `rss` (24x24 stroke paths).
   static const String rss = "M0 0M4 11a9 9 0 0 1 9 9 M0 0M4 4a16 16 0 0 1 16 16 M0 0M4 19A1 1 0 1 0 6 19A1 1 0 1 0 4 19";
+  /// Lucide icon `ruler` (24x24 stroke paths).
   static const String ruler = "M0 0M21.3 15.3a2.4 2.4 0 0 1 0 3.4l-2.6 2.6a2.4 2.4 0 0 1-3.4 0L2.7 8.7a2.41 2.41 0 0 1 0-3.4l2.6-2.6a2.41 2.41 0 0 1 3.4 0Z M0 0m14.5 12.5 2-2 M0 0m11.5 9.5 2-2 M0 0m8.5 6.5 2-2 M0 0m17.5 15.5 2-2";
+  /// Lucide icon `russian-ruble` (24x24 stroke paths).
   static const String russianRuble = "M0 0M6 11h8a4 4 0 0 0 0-8H9v18 M0 0M6 15h8";
+  /// Lucide icon `sailboat` (24x24 stroke paths).
   static const String sailboat = "M0 0M22 18H2a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4Z M0 0M21 14 10 2 3 14h18Z M0 0M10 2v16";
+  /// Lucide icon `salad` (24x24 stroke paths).
   static const String salad = "M0 0M7 21h10 M0 0M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z M0 0M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1 M0 0m13 12 4-4 M0 0M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2";
+  /// Lucide icon `sandwich` (24x24 stroke paths).
   static const String sandwich = "M0 0m2.37 11.223 8.372-6.777a2 2 0 0 1 2.516 0l8.371 6.777 M0 0M21 15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-5.25 M0 0M3 15a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h9 M0 0m6.67 15 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2 M0 0M3 11h18a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-18a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `satellite-dish` (24x24 stroke paths).
   static const String satelliteDish = "M0 0M4 10a7.31 7.31 0 0 0 10 10Z M0 0m9 15 3-3 M0 0M17 13a6 6 0 0 0-6-6 M0 0M21 13A10 10 0 0 0 11 3";
+  /// Lucide icon `satellite` (24x24 stroke paths).
   static const String satellite = "M0 0M13 7 9 3 5 7l4 4 M0 0m17 11 4 4-4 4-4-4 M0 0m8 12 4 4 6-6-4-4Z M0 0m16 8 3-3 M0 0M9 21a6 6 0 0 0-6-6";
+  /// Lucide icon `saudi-riyal` (24x24 stroke paths).
   static const String saudiRiyal = "M0 0m20 19.5-5.5 1.2 M0 0M14.5 4v11.22a1 1 0 0 0 1.242.97L20 15.2 M0 0m2.978 19.351 5.549-1.363A2 2 0 0 0 10 16V2 M0 0M20 10 4 13.5";
+  /// Lucide icon `save-all` (24x24 stroke paths).
   static const String saveAll = "M0 0M10 2v3a1 1 0 0 0 1 1h5 M0 0M18 18v-6a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6 M0 0M18 22H4a2 2 0 0 1-2-2V6 M0 0M8 18a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9.172a2 2 0 0 1 1.414.586l2.828 2.828A2 2 0 0 1 22 6.828V16a2 2 0 0 1-2.01 2z";
+  /// Lucide icon `save-off` (24x24 stroke paths).
   static const String saveOff = "M0 0M13 13H8a1 1 0 0 0-1 1v7 M0 0M14 8h1 M0 0M17 21v-4 M0 0m2 2 20 20 M0 0M20.41 20.41A2 2 0 0 1 19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 .59-1.41 M0 0M29.5 11.5s5 5 4 5 M0 0M9 3h6.2a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V15";
+  /// Lucide icon `save` (24x24 stroke paths).
   static const String save = "M0 0M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z M0 0M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7 M0 0M7 3v4a1 1 0 0 0 1 1h7";
+  /// Lucide icon `scale-3d` (24x24 stroke paths).
   static const String scale3d = "M0 0M5 7v11a1 1 0 0 0 1 1h11 M0 0M5.293 18.707 11 13 M0 0M17 19A2 2 0 1 0 21 19A2 2 0 1 0 17 19 M0 0M3 5A2 2 0 1 0 7 5A2 2 0 1 0 3 5";
+  /// Lucide icon `scale` (24x24 stroke paths).
   static const String scale = "M0 0m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z M0 0m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z M0 0M7 21h10 M0 0M12 3v18 M0 0M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2";
+  /// Lucide icon `scaling` (24x24 stroke paths).
   static const String scaling = "M0 0M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7 M0 0M14 15H9v-5 M0 0M16 3h5v5 M0 0M21 3 9 15";
+  /// Lucide icon `scan-barcode` (24x24 stroke paths).
   static const String scanBarcode = "M0 0M3 7V5a2 2 0 0 1 2-2h2 M0 0M17 3h2a2 2 0 0 1 2 2v2 M0 0M21 17v2a2 2 0 0 1-2 2h-2 M0 0M7 21H5a2 2 0 0 1-2-2v-2 M0 0M8 7v10 M0 0M12 7v10 M0 0M17 7v10";
+  /// Lucide icon `scan-eye` (24x24 stroke paths).
   static const String scanEye = "M0 0M3 7V5a2 2 0 0 1 2-2h2 M0 0M17 3h2a2 2 0 0 1 2 2v2 M0 0M21 17v2a2 2 0 0 1-2 2h-2 M0 0M7 21H5a2 2 0 0 1-2-2v-2 M0 0M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12 M0 0M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0";
+  /// Lucide icon `scan-face` (24x24 stroke paths).
   static const String scanFace = "M0 0M3 7V5a2 2 0 0 1 2-2h2 M0 0M17 3h2a2 2 0 0 1 2 2v2 M0 0M21 17v2a2 2 0 0 1-2 2h-2 M0 0M7 21H5a2 2 0 0 1-2-2v-2 M0 0M8 14s1.5 2 4 2 4-2 4-2 M0 0M9 9h.01 M0 0M15 9h.01";
+  /// Lucide icon `scan-heart` (24x24 stroke paths).
   static const String scanHeart = "M0 0M11.246 16.657a1 1 0 0 0 1.508 0l3.57-4.101A2.75 2.75 0 1 0 12 9.168a2.75 2.75 0 1 0-4.324 3.388z M0 0M17 3h2a2 2 0 0 1 2 2v2 M0 0M21 17v2a2 2 0 0 1-2 2h-2 M0 0M3 7V5a2 2 0 0 1 2-2h2 M0 0M7 21H5a2 2 0 0 1-2-2v-2";
+  /// Lucide icon `scan-line` (24x24 stroke paths).
   static const String scanLine = "M0 0M3 7V5a2 2 0 0 1 2-2h2 M0 0M17 3h2a2 2 0 0 1 2 2v2 M0 0M21 17v2a2 2 0 0 1-2 2h-2 M0 0M7 21H5a2 2 0 0 1-2-2v-2 M0 0M7 12h10";
+  /// Lucide icon `scan-qr-code` (24x24 stroke paths).
   static const String scanQrCode = "M0 0M17 12v4a1 1 0 0 1-1 1h-4 M0 0M17 3h2a2 2 0 0 1 2 2v2 M0 0M17 8V7 M0 0M21 17v2a2 2 0 0 1-2 2h-2 M0 0M3 7V5a2 2 0 0 1 2-2h2 M0 0M7 17h.01 M0 0M7 21H5a2 2 0 0 1-2-2v-2 M0 0M8 7h3a1 1 0 0 1 1 1v3a1 1 0 0 1 -1 1h-3a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `scan-search` (24x24 stroke paths).
   static const String scanSearch = "M0 0M3 7V5a2 2 0 0 1 2-2h2 M0 0M17 3h2a2 2 0 0 1 2 2v2 M0 0M21 17v2a2 2 0 0 1-2 2h-2 M0 0M7 21H5a2 2 0 0 1-2-2v-2 M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12 M0 0m16 16-1.9-1.9";
+  /// Lucide icon `scan-text` (24x24 stroke paths).
   static const String scanText = "M0 0M3 7V5a2 2 0 0 1 2-2h2 M0 0M17 3h2a2 2 0 0 1 2 2v2 M0 0M21 17v2a2 2 0 0 1-2 2h-2 M0 0M7 21H5a2 2 0 0 1-2-2v-2 M0 0M7 8h8 M0 0M7 12h10 M0 0M7 16h6";
+  /// Lucide icon `scan` (24x24 stroke paths).
   static const String scan = "M0 0M3 7V5a2 2 0 0 1 2-2h2 M0 0M17 3h2a2 2 0 0 1 2 2v2 M0 0M21 17v2a2 2 0 0 1-2 2h-2 M0 0M7 21H5a2 2 0 0 1-2-2v-2";
+  /// Lucide icon `school` (24x24 stroke paths).
   static const String school = "M0 0M14 22v-4a2 2 0 1 0-4 0v4 M0 0m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10 M0 0M18 5v17 M0 0m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6 M0 0M6 5v17 M0 0M10 9A2 2 0 1 0 14 9A2 2 0 1 0 10 9";
+  /// Lucide icon `scissors-line-dashed` (24x24 stroke paths).
   static const String scissorsLineDashed = "M0 0M5.42 9.42 8 12 M0 0M2 8A2 2 0 1 0 6 8A2 2 0 1 0 2 8 M0 0m14 6-8.58 8.58 M0 0M2 16A2 2 0 1 0 6 16A2 2 0 1 0 2 16 M0 0M10.8 14.8 14 18 M0 0M16 12h-2 M0 0M22 12h-2";
+  /// Lucide icon `scissors` (24x24 stroke paths).
   static const String scissors = "M0 0M3 6A3 3 0 1 0 9 6A3 3 0 1 0 3 6 M0 0M8.12 8.12 12 12 M0 0M20 4 8.12 15.88 M0 0M3 18A3 3 0 1 0 9 18A3 3 0 1 0 3 18 M0 0M14.8 14.8 20 20";
+  /// Lucide icon `screen-share-off` (24x24 stroke paths).
   static const String screenShareOff = "M0 0M13 3H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3 M0 0M8 21h8 M0 0M12 17v4 M0 0m22 3-5 5 M0 0m17 3 5 5";
+  /// Lucide icon `screen-share` (24x24 stroke paths).
   static const String screenShare = "M0 0M13 3H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-3 M0 0M8 21h8 M0 0M12 17v4 M0 0m17 8 5-5 M0 0M17 3h5v5";
+  /// Lucide icon `scroll-text` (24x24 stroke paths).
   static const String scrollText = "M0 0M15 12h-5 M0 0M15 8h-5 M0 0M19 17V5a2 2 0 0 0-2-2H4 M0 0M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3";
+  /// Lucide icon `scroll` (24x24 stroke paths).
   static const String scroll = "M0 0M19 17V5a2 2 0 0 0-2-2H4 M0 0M8 21h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1H11a1 1 0 0 0-1 1v1a2 2 0 1 1-4 0V5a2 2 0 1 0-4 0v2a1 1 0 0 0 1 1h3";
+  /// Lucide icon `search-check` (24x24 stroke paths).
   static const String searchCheck = "M0 0m8 11 2 2 4-4 M0 0M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11 M0 0m21 21-4.3-4.3";
+  /// Lucide icon `search-code` (24x24 stroke paths).
   static const String searchCode = "M0 0m13 13.5 2-2.5-2-2.5 M0 0m21 21-4.3-4.3 M0 0M9 8.5 7 11l2 2.5 M0 0M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11";
+  /// Lucide icon `search-slash` (24x24 stroke paths).
   static const String searchSlash = "M0 0m13.5 8.5-5 5 M0 0M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11 M0 0m21 21-4.3-4.3";
+  /// Lucide icon `search-x` (24x24 stroke paths).
   static const String searchX = "M0 0m13.5 8.5-5 5 M0 0m8.5 8.5 5 5 M0 0M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11 M0 0m21 21-4.3-4.3";
+  /// Lucide icon `search` (24x24 stroke paths).
   static const String search = "M0 0M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11 M0 0m21 21-4.3-4.3";
+  /// Lucide icon `section` (24x24 stroke paths).
   static const String section = "M0 0M16 5a4 3 0 0 0-8 0c0 4 8 3 8 7a4 3 0 0 1-8 0 M0 0M8 19a4 3 0 0 0 8 0c0-4-8-3-8-7a4 3 0 0 1 8 0";
+  /// Lucide icon `send-horizontal` (24x24 stroke paths).
   static const String sendHorizontal = "M0 0M3.714 3.048a.498.498 0 0 0-.683.627l2.843 7.627a2 2 0 0 1 0 1.396l-2.842 7.627a.498.498 0 0 0 .682.627l18-8.5a.5.5 0 0 0 0-.904z M0 0M6 12h16";
+  /// Lucide icon `send-to-back` (24x24 stroke paths).
   static const String sendToBack = "M0 0M16 14h4a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M4 2h4a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M7 14v1a2 2 0 0 0 2 2h1 M0 0M14 7h1a2 2 0 0 1 2 2v1";
+  /// Lucide icon `send` (24x24 stroke paths).
   static const String send = "M0 0M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z M0 0m21.854 2.147-10.94 10.939";
+  /// Lucide icon `separator-horizontal` (24x24 stroke paths).
   static const String separatorHorizontal = "M0 0M3 12L21 12 M0 0M8 8L12 4L16 8 M0 0M16 16L12 20L8 16";
+  /// Lucide icon `separator-vertical` (24x24 stroke paths).
   static const String separatorVertical = "M0 0M12 3L12 21 M0 0M8 8L4 12L8 16 M0 0M16 16L20 12L16 8";
+  /// Lucide icon `server-cog` (24x24 stroke paths).
   static const String serverCog = "M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12 M0 0M4.5 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-.5 M0 0M4.5 14H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-.5 M0 0M6 6h.01 M0 0M6 18h.01 M0 0m15.7 13.4-.9-.3 M0 0m9.2 10.9-.9-.3 M0 0m10.6 15.7.3-.9 M0 0m13.6 15.7-.4-1 M0 0m10.8 9.3-.4-1 M0 0m8.3 13.6 1-.4 M0 0m14.7 10.8 1-.4 M0 0m13.4 8.3-.3.9";
+  /// Lucide icon `server-crash` (24x24 stroke paths).
   static const String serverCrash = "M0 0M6 10H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2 M0 0M6 14H4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-4a2 2 0 0 0-2-2h-2 M0 0M6 6h.01 M0 0M6 18h.01 M0 0m13 6-4 6h6l-4 6";
+  /// Lucide icon `server-off` (24x24 stroke paths).
   static const String serverOff = "M0 0M7 2h13a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-5 M0 0M10 10 2.5 2.5C2 2 2 2.5 2 5v3a2 2 0 0 0 2 2h6z M0 0M22 17v-1a2 2 0 0 0-2-2h-1 M0 0M4 14a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h16.5l1-.5.5.5-8-8H4z M0 0M6 18h.01 M0 0m2 2 20 20";
+  /// Lucide icon `server` (24x24 stroke paths).
   static const String server = "M0 0M4 2h16a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M4 14h16a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M6 6L6.01 6 M0 0M6 18L6.01 18";
+  /// Lucide icon `settings-2` (24x24 stroke paths).
   static const String settings2 = "M0 0M20 7h-9 M0 0M14 17H5 M0 0M14 17A3 3 0 1 0 20 17A3 3 0 1 0 14 17 M0 0M4 7A3 3 0 1 0 10 7A3 3 0 1 0 4 7";
+  /// Lucide icon `settings` (24x24 stroke paths).
   static const String settings = "M0 0M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12";
+  /// Lucide icon `shapes` (24x24 stroke paths).
   static const String shapes = "M0 0M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z M0 0M4 14h5a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-5a1 1 0 0 1 1 -1Z M0 0M14 17.5A3.5 3.5 0 1 0 21 17.5A3.5 3.5 0 1 0 14 17.5";
+  /// Lucide icon `share-2` (24x24 stroke paths).
   static const String share2 = "M0 0M15 5A3 3 0 1 0 21 5A3 3 0 1 0 15 5 M0 0M3 12A3 3 0 1 0 9 12A3 3 0 1 0 3 12 M0 0M15 19A3 3 0 1 0 21 19A3 3 0 1 0 15 19 M0 0M8.59 13.51L15.42 17.49 M0 0M15.41 6.51L8.59 10.49";
+  /// Lucide icon `share` (24x24 stroke paths).
   static const String share = "M0 0M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8 M0 0M16 6L12 2L8 6 M0 0M12 2L12 15";
+  /// Lucide icon `sheet` (24x24 stroke paths).
   static const String sheet = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 9L21 9 M0 0M3 15L21 15 M0 0M9 9L9 21 M0 0M15 9L15 21";
+  /// Lucide icon `shell` (24x24 stroke paths).
   static const String shell = "M0 0M14 11a2 2 0 1 1-4 0 4 4 0 0 1 8 0 6 6 0 0 1-12 0 8 8 0 0 1 16 0 10 10 0 1 1-20 0 11.93 11.93 0 0 1 2.42-7.22 2 2 0 1 1 3.16 2.44";
+  /// Lucide icon `shield-alert` (24x24 stroke paths).
   static const String shieldAlert = "M0 0M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z M0 0M12 8v4 M0 0M12 16h.01";
+  /// Lucide icon `shield-ban` (24x24 stroke paths).
   static const String shieldBan = "M0 0M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z M0 0m4.243 5.21 14.39 12.472";
+  /// Lucide icon `shield-check` (24x24 stroke paths).
   static const String shieldCheck = "M0 0M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z M0 0m9 12 2 2 4-4";
+  /// Lucide icon `shield-ellipsis` (24x24 stroke paths).
   static const String shieldEllipsis = "M0 0M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z M0 0M8 12h.01 M0 0M12 12h.01 M0 0M16 12h.01";
+  /// Lucide icon `shield-half` (24x24 stroke paths).
   static const String shieldHalf = "M0 0M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z M0 0M12 22V2";
+  /// Lucide icon `shield-minus` (24x24 stroke paths).
   static const String shieldMinus = "M0 0M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z M0 0M9 12h6";
+  /// Lucide icon `shield-off` (24x24 stroke paths).
   static const String shieldOff = "M0 0m2 2 20 20 M0 0M5 5a1 1 0 0 0-1 1v7c0 5 3.5 7.5 7.67 8.94a1 1 0 0 0 .67.01c2.35-.82 4.48-1.97 5.9-3.71 M0 0M9.309 3.652A12.252 12.252 0 0 0 11.24 2.28a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1v7a9.784 9.784 0 0 1-.08 1.264";
+  /// Lucide icon `shield-plus` (24x24 stroke paths).
   static const String shieldPlus = "M0 0M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z M0 0M9 12h6 M0 0M12 9v6";
+  /// Lucide icon `shield-question` (24x24 stroke paths).
   static const String shieldQuestion = "M0 0M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z M0 0M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3 M0 0M12 17h.01";
+  /// Lucide icon `shield-user` (24x24 stroke paths).
   static const String shieldUser = "M0 0M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z M0 0M6.376 18.91a6 6 0 0 1 11.249.003 M0 0M8 11A4 4 0 1 0 16 11A4 4 0 1 0 8 11";
+  /// Lucide icon `shield-x` (24x24 stroke paths).
   static const String shieldX = "M0 0M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z M0 0m14.5 9.5-5 5 M0 0m9.5 9.5 5 5";
+  /// Lucide icon `shield` (24x24 stroke paths).
   static const String shield = "M0 0M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z";
+  /// Lucide icon `ship-wheel` (24x24 stroke paths).
   static const String shipWheel = "M0 0M4 12A8 8 0 1 0 20 12A8 8 0 1 0 4 12 M0 0M12 2v7.5 M0 0m19 5-5.23 5.23 M0 0M22 12h-7.5 M0 0m19 19-5.23-5.23 M0 0M12 14.5V22 M0 0M10.23 13.77 5 19 M0 0M9.5 12H2 M0 0M10.23 10.23 5 5 M0 0M9.5 12A2.5 2.5 0 1 0 14.5 12A2.5 2.5 0 1 0 9.5 12";
+  /// Lucide icon `ship` (24x24 stroke paths).
   static const String ship = "M0 0M12 10.189V14 M0 0M12 2v3 M0 0M19 13V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v6 M0 0M19.38 20A11.6 11.6 0 0 0 21 14l-8.188-3.639a2 2 0 0 0-1.624 0L3 14a11.6 11.6 0 0 0 2.81 7.76 M0 0M2 21c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1s1.2 1 2.5 1c2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1";
+  /// Lucide icon `shirt` (24x24 stroke paths).
   static const String shirt = "M0 0M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z";
+  /// Lucide icon `shopping-bag` (24x24 stroke paths).
   static const String shoppingBag = "M0 0M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z M0 0M3 6h18 M0 0M16 10a4 4 0 0 1-8 0";
+  /// Lucide icon `shopping-basket` (24x24 stroke paths).
   static const String shoppingBasket = "M0 0m15 11-1 9 M0 0m19 11-4-7 M0 0M2 11h20 M0 0m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4 M0 0M4.5 15.5h15 M0 0m5 11 4-7 M0 0m9 11 1 9";
+  /// Lucide icon `shopping-cart` (24x24 stroke paths).
   static const String shoppingCart = "M0 0M7 21A1 1 0 1 0 9 21A1 1 0 1 0 7 21 M0 0M18 21A1 1 0 1 0 20 21A1 1 0 1 0 18 21 M0 0M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12";
+  /// Lucide icon `shovel` (24x24 stroke paths).
   static const String shovel = "M0 0M2 22v-5l5-5 5 5-5 5z M0 0M9.5 14.5 16 8 M0 0m17 2 5 5-.5.5a3.53 3.53 0 0 1-5 0s0 0 0 0a3.53 3.53 0 0 1 0-5L17 2";
+  /// Lucide icon `shower-head` (24x24 stroke paths).
   static const String showerHead = "M0 0m4 4 2.5 2.5 M0 0M13.5 6.5a4.95 4.95 0 0 0-7 7 M0 0M15 5 5 15 M0 0M14 17v.01 M0 0M10 16v.01 M0 0M13 13v.01 M0 0M16 10v.01 M0 0M11 20v.01 M0 0M17 14v.01 M0 0M20 11v.01";
+  /// Lucide icon `shrimp` (24x24 stroke paths).
   static const String shrimp = "M0 0M11 12h.01 M0 0M13 22c.5-.5 1.12-1 2.5-1-1.38 0-2-.5-2.5-1 M0 0M14 2a3.28 3.28 0 0 1-3.227 1.798l-6.17-.561A2.387 2.387 0 1 0 4.387 8H15.5a1 1 0 0 1 0 13 1 1 0 0 0 0-5H12a7 7 0 0 1-7-7V8 M0 0M14 8a8.5 8.5 0 0 1 0 8 M0 0M16 16c2 0 4.5-4 4-6";
+  /// Lucide icon `shrink` (24x24 stroke paths).
   static const String shrink = "M0 0m15 15 6 6m-6-6v4.8m0-4.8h4.8 M0 0M9 19.8V15m0 0H4.2M9 15l-6 6 M0 0M15 4.2V9m0 0h4.8M15 9l6-6 M0 0M9 4.2V9m0 0H4.2M9 9 3 3";
+  /// Lucide icon `shrub` (24x24 stroke paths).
   static const String shrub = "M0 0M12 22v-7l-2-2 M0 0M17 8v.8A6 6 0 0 1 13.8 20H10A6.5 6.5 0 0 1 7 8a5 5 0 0 1 10 0Z M0 0m14 14-2 2";
+  /// Lucide icon `shuffle` (24x24 stroke paths).
   static const String shuffle = "M0 0m18 14 4 4-4 4 M0 0m18 2 4 4-4 4 M0 0M2 18h1.973a4 4 0 0 0 3.3-1.7l5.454-8.6a4 4 0 0 1 3.3-1.7H22 M0 0M2 6h1.972a4 4 0 0 1 3.6 2.2 M0 0M22 18h-6.041a4 4 0 0 1-3.3-1.8l-.359-.45";
+  /// Lucide icon `sigma` (24x24 stroke paths).
   static const String sigma = "M0 0M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2";
+  /// Lucide icon `signal-high` (24x24 stroke paths).
   static const String signalHigh = "M0 0M2 20h.01 M0 0M7 20v-4 M0 0M12 20v-8 M0 0M17 20V8";
+  /// Lucide icon `signal-low` (24x24 stroke paths).
   static const String signalLow = "M0 0M2 20h.01 M0 0M7 20v-4";
+  /// Lucide icon `signal-medium` (24x24 stroke paths).
   static const String signalMedium = "M0 0M2 20h.01 M0 0M7 20v-4 M0 0M12 20v-8";
+  /// Lucide icon `signal-zero` (24x24 stroke paths).
   static const String signalZero = "M0 0M2 20h.01";
+  /// Lucide icon `signal` (24x24 stroke paths).
   static const String signal = "M0 0M2 20h.01 M0 0M7 20v-4 M0 0M12 20v-8 M0 0M17 20V8 M0 0M22 4v16";
+  /// Lucide icon `signature` (24x24 stroke paths).
   static const String signature = "M0 0m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284 M0 0M3 21h18";
+  /// Lucide icon `signpost-big` (24x24 stroke paths).
   static const String signpostBig = "M0 0M10 9H4L2 7l2-2h6 M0 0M14 5h6l2 2-2 2h-6 M0 0M10 22V4a2 2 0 1 1 4 0v18 M0 0M8 22h8";
+  /// Lucide icon `signpost` (24x24 stroke paths).
   static const String signpost = "M0 0M12 13v8 M0 0M12 3v3 M0 0M18 6a2 2 0 0 1 1.387.56l2.307 2.22a1 1 0 0 1 0 1.44l-2.307 2.22A2 2 0 0 1 18 13H6a2 2 0 0 1-1.387-.56l-2.306-2.22a1 1 0 0 1 0-1.44l2.306-2.22A2 2 0 0 1 6 6z";
+  /// Lucide icon `siren` (24x24 stroke paths).
   static const String siren = "M0 0M7 18v-6a5 5 0 1 1 10 0v6 M0 0M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2z M0 0M21 12h1 M0 0M18.5 4.5 18 5 M0 0M2 12h1 M0 0M12 2v1 M0 0m4.929 4.929.707.707 M0 0M12 12v6";
+  /// Lucide icon `skip-back` (24x24 stroke paths).
   static const String skipBack = "M0 0M19 20L9 12L19 4L19 20Z M0 0M5 19L5 5";
+  /// Lucide icon `skip-forward` (24x24 stroke paths).
   static const String skipForward = "M0 0M5 4L15 12L5 20L5 4Z M0 0M19 5L19 19";
+  /// Lucide icon `skull` (24x24 stroke paths).
   static const String skull = "M0 0m12.5 17-.5-1-.5 1h1z M0 0M15 22a1 1 0 0 0 1-1v-1a2 2 0 0 0 1.56-3.25 8 8 0 1 0-11.12 0A2 2 0 0 0 8 20v1a1 1 0 0 0 1 1z M0 0M14 12A1 1 0 1 0 16 12A1 1 0 1 0 14 12 M0 0M8 12A1 1 0 1 0 10 12A1 1 0 1 0 8 12";
+  /// Lucide icon `slack` (24x24 stroke paths).
   static const String slack = "M0 0M14.5 2h0a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1 -1.5 1.5h0a1.5 1.5 0 0 1 -1.5 -1.5v-5a1.5 1.5 0 0 1 1.5 -1.5Z M0 0M19 8.5V10h1.5A1.5 1.5 0 1 0 19 8.5 M0 0M9.5 14h0a1.5 1.5 0 0 1 1.5 1.5v5a1.5 1.5 0 0 1 -1.5 1.5h0a1.5 1.5 0 0 1 -1.5 -1.5v-5a1.5 1.5 0 0 1 1.5 -1.5Z M0 0M5 15.5V14H3.5A1.5 1.5 0 1 0 5 15.5 M0 0M15.5 13h5a1.5 1.5 0 0 1 1.5 1.5v0a1.5 1.5 0 0 1 -1.5 1.5h-5a1.5 1.5 0 0 1 -1.5 -1.5v0a1.5 1.5 0 0 1 1.5 -1.5Z M0 0M15.5 19H14v1.5a1.5 1.5 0 1 0 1.5-1.5 M0 0M3.5 8h5a1.5 1.5 0 0 1 1.5 1.5v0a1.5 1.5 0 0 1 -1.5 1.5h-5a1.5 1.5 0 0 1 -1.5 -1.5v0a1.5 1.5 0 0 1 1.5 -1.5Z M0 0M8.5 5H10V3.5A1.5 1.5 0 1 0 8.5 5";
+  /// Lucide icon `slash` (24x24 stroke paths).
   static const String slash = "M0 0M22 2 2 22";
+  /// Lucide icon `slice` (24x24 stroke paths).
   static const String slice = "M0 0M11 16.586V19a1 1 0 0 1-1 1H2L18.37 3.63a1 1 0 1 1 3 3l-9.663 9.663a1 1 0 0 1-1.414 0L8 14";
+  /// Lucide icon `sliders-horizontal` (24x24 stroke paths).
   static const String slidersHorizontal = "M0 0M21 4L14 4 M0 0M10 4L3 4 M0 0M21 12L12 12 M0 0M8 12L3 12 M0 0M21 20L16 20 M0 0M12 20L3 20 M0 0M14 2L14 6 M0 0M8 10L8 14 M0 0M16 18L16 22";
+  /// Lucide icon `sliders-vertical` (24x24 stroke paths).
   static const String slidersVertical = "M0 0M4 21L4 14 M0 0M4 10L4 3 M0 0M12 21L12 12 M0 0M12 8L12 3 M0 0M20 21L20 16 M0 0M20 12L20 3 M0 0M2 14L6 14 M0 0M10 8L14 8 M0 0M18 16L22 16";
+  /// Lucide icon `smartphone-charging` (24x24 stroke paths).
   static const String smartphoneCharging = "M0 0M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M12.667 8 10 12h4l-2.667 4";
+  /// Lucide icon `smartphone-nfc` (24x24 stroke paths).
   static const String smartphoneNfc = "M0 0M3 6h5a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-10a1 1 0 0 1 1 -1Z M0 0M13 8.32a7.43 7.43 0 0 1 0 7.36 M0 0M16.46 6.21a11.76 11.76 0 0 1 0 11.58 M0 0M19.91 4.1a15.91 15.91 0 0 1 .01 15.8";
+  /// Lucide icon `smartphone` (24x24 stroke paths).
   static const String smartphone = "M0 0M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M12 18h.01";
+  /// Lucide icon `smile-plus` (24x24 stroke paths).
   static const String smilePlus = "M0 0M22 11v1a10 10 0 1 1-9-10 M0 0M8 14s1.5 2 4 2 4-2 4-2 M0 0M9 9L9.01 9 M0 0M15 9L15.01 9 M0 0M16 5h6 M0 0M19 2v6";
+  /// Lucide icon `smile` (24x24 stroke paths).
   static const String smile = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M8 14s1.5 2 4 2 4-2 4-2 M0 0M9 9L9.01 9 M0 0M15 9L15.01 9";
+  /// Lucide icon `snail` (24x24 stroke paths).
   static const String snail = "M0 0M2 13a6 6 0 1 0 12 0 4 4 0 1 0-8 0 2 2 0 0 0 4 0 M0 0M2 13A8 8 0 1 0 18 13A8 8 0 1 0 2 13 M0 0M2 21h12c4.4 0 8-3.6 8-8V7a2 2 0 1 0-4 0v6 M0 0M18 3 19.1 5.2 M0 0M22 3 20.9 5.2";
+  /// Lucide icon `snowflake` (24x24 stroke paths).
   static const String snowflake = "M0 0m10 20-1.25-2.5L6 18 M0 0M10 4 8.75 6.5 6 6 M0 0m14 20 1.25-2.5L18 18 M0 0m14 4 1.25 2.5L18 6 M0 0m17 21-3-6h-4 M0 0m17 3-3 6 1.5 3 M0 0M2 12h6.5L10 9 M0 0m20 10-1.5 2 1.5 2 M0 0M22 12h-6.5L14 15 M0 0m4 10 1.5 2L4 14 M0 0m7 21 3-6-1.5-3 M0 0m7 3 3 6h4";
+  /// Lucide icon `sofa` (24x24 stroke paths).
   static const String sofa = "M0 0M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3 M0 0M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z M0 0M4 18v2 M0 0M20 18v2 M0 0M12 4v9";
+  /// Lucide icon `soup` (24x24 stroke paths).
   static const String soup = "M0 0M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z M0 0M7 21h10 M0 0M19.5 12 22 6 M0 0M16.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.73 1.62 M0 0M11.25 3c.27.1.8.53.74 1.36-.05.83-.93 1.2-.98 2.02-.06.78.33 1.24.72 1.62 M0 0M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62";
+  /// Lucide icon `space` (24x24 stroke paths).
   static const String space = "M0 0M22 17v1c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1";
+  /// Lucide icon `spade` (24x24 stroke paths).
   static const String spade = "M0 0M5 9c-1.5 1.5-3 3.2-3 5.5A5.5 5.5 0 0 0 7.5 20c1.8 0 3-.5 4.5-2 1.5 1.5 2.7 2 4.5 2a5.5 5.5 0 0 0 5.5-5.5c0-2.3-1.5-4-3-5.5l-7-7-7 7Z M0 0M12 18v4";
+  /// Lucide icon `sparkle` (24x24 stroke paths).
   static const String sparkle = "M0 0M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z";
+  /// Lucide icon `sparkles` (24x24 stroke paths).
   static const String sparkles = "M0 0M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z M0 0M20 3v4 M0 0M22 5h-4 M0 0M4 17v2 M0 0M5 18H3";
+  /// Lucide icon `speaker` (24x24 stroke paths).
   static const String speaker = "M0 0M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M12 6h.01 M0 0M8 14A4 4 0 1 0 16 14A4 4 0 1 0 8 14 M0 0M12 14h.01";
+  /// Lucide icon `speech` (24x24 stroke paths).
   static const String speech = "M0 0M8.8 20v-4.1l1.9.2a2.3 2.3 0 0 0 2.164-2.1V8.3A5.37 5.37 0 0 0 2 8.25c0 2.8.656 3.054 1 4.55a5.77 5.77 0 0 1 .029 2.758L2 20 M0 0M19.8 17.8a7.5 7.5 0 0 0 .003-10.603 M0 0M17 15a3.5 3.5 0 0 0-.025-4.975";
+  /// Lucide icon `spell-check-2` (24x24 stroke paths).
   static const String spellCheck2 = "M0 0m6 16 6-12 6 12 M0 0M8 12h8 M0 0M4 21c1.1 0 1.1-1 2.3-1s1.1 1 2.3 1c1.1 0 1.1-1 2.3-1 1.1 0 1.1 1 2.3 1 1.1 0 1.1-1 2.3-1 1.1 0 1.1 1 2.3 1 1.1 0 1.1-1 2.3-1";
+  /// Lucide icon `spell-check` (24x24 stroke paths).
   static const String spellCheck = "M0 0m6 16 6-12 6 12 M0 0M8 12h8 M0 0m16 20 2 2 4-4";
+  /// Lucide icon `spline-pointer` (24x24 stroke paths).
   static const String splinePointer = "M0 0M12.034 12.681a.498.498 0 0 1 .647-.647l9 3.5a.5.5 0 0 1-.033.943l-3.444 1.068a1 1 0 0 0-.66.66l-1.067 3.443a.5.5 0 0 1-.943.033z M0 0M5 17A12 12 0 0 1 17 5 M0 0M17 5A2 2 0 1 0 21 5A2 2 0 1 0 17 5 M0 0M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19";
+  /// Lucide icon `spline` (24x24 stroke paths).
   static const String spline = "M0 0M17 5A2 2 0 1 0 21 5A2 2 0 1 0 17 5 M0 0M3 19A2 2 0 1 0 7 19A2 2 0 1 0 3 19 M0 0M5 17A12 12 0 0 1 17 5";
+  /// Lucide icon `split` (24x24 stroke paths).
   static const String split = "M0 0M16 3h5v5 M0 0M8 3H3v5 M0 0M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3 M0 0m15 9 6-6";
+  /// Lucide icon `spray-can` (24x24 stroke paths).
   static const String sprayCan = "M0 0M3 3h.01 M0 0M7 5h.01 M0 0M11 7h.01 M0 0M3 7h.01 M0 0M7 9h.01 M0 0M3 11h.01 M0 0M15 5h4v4h-4Z M0 0m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2 M0 0m13 14 8-2 M0 0m13 19 8-2";
+  /// Lucide icon `sprout` (24x24 stroke paths).
   static const String sprout = "M0 0M7 20h10 M0 0M10 20c5.5-2.5.8-6.4 3-10 M0 0M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z M0 0M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z";
+  /// Lucide icon `square-activity` (24x24 stroke paths).
   static const String squareActivity = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M17 12h-2l-2 5-2-10-2 5H7";
+  /// Lucide icon `square-arrow-down-left` (24x24 stroke paths).
   static const String squareArrowDownLeft = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0m16 8-8 8 M0 0M16 16H8V8";
+  /// Lucide icon `square-arrow-down-right` (24x24 stroke paths).
   static const String squareArrowDownRight = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0m8 8 8 8 M0 0M16 8v8H8";
+  /// Lucide icon `square-arrow-down` (24x24 stroke paths).
   static const String squareArrowDown = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M12 8v8 M0 0m8 12 4 4 4-4";
+  /// Lucide icon `square-arrow-left` (24x24 stroke paths).
   static const String squareArrowLeft = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0m12 8-4 4 4 4 M0 0M16 12H8";
+  /// Lucide icon `square-arrow-out-down-left` (24x24 stroke paths).
   static const String squareArrowOutDownLeft = "M0 0M13 21h6a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6 M0 0m3 21 9-9 M0 0M9 21H3v-6";
+  /// Lucide icon `square-arrow-out-down-right` (24x24 stroke paths).
   static const String squareArrowOutDownRight = "M0 0M21 11V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6 M0 0m21 21-9-9 M0 0M21 15v6h-6";
+  /// Lucide icon `square-arrow-out-up-left` (24x24 stroke paths).
   static const String squareArrowOutUpLeft = "M0 0M13 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6 M0 0m3 3 9 9 M0 0M3 9V3h6";
+  /// Lucide icon `square-arrow-out-up-right` (24x24 stroke paths).
   static const String squareArrowOutUpRight = "M0 0M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6 M0 0m21 3-9 9 M0 0M15 3h6v6";
+  /// Lucide icon `square-arrow-right` (24x24 stroke paths).
   static const String squareArrowRight = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M8 12h8 M0 0m12 16 4-4-4-4";
+  /// Lucide icon `square-arrow-up-left` (24x24 stroke paths).
   static const String squareArrowUpLeft = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M8 16V8h8 M0 0M16 16 8 8";
+  /// Lucide icon `square-arrow-up-right` (24x24 stroke paths).
   static const String squareArrowUpRight = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M8 8h8v8 M0 0m8 16 8-8";
+  /// Lucide icon `square-arrow-up` (24x24 stroke paths).
   static const String squareArrowUp = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0m16 12-4-4-4 4 M0 0M12 16V8";
+  /// Lucide icon `square-asterisk` (24x24 stroke paths).
   static const String squareAsterisk = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M12 8v8 M0 0m8.5 14 7-4 M0 0m8.5 10 7 4";
+  /// Lucide icon `square-bottom-dashed-scissors` (24x24 stroke paths).
   static const String squareBottomDashedScissors = "M0 0M4 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2 M0 0M10 22H8 M0 0M16 22h-2 M0 0M6 8A2 2 0 1 0 10 8A2 2 0 1 0 6 8 M0 0M9.414 9.414 12 12 M0 0M14.8 14.8 18 18 M0 0M6 16A2 2 0 1 0 10 16A2 2 0 1 0 6 16 M0 0m18 6-8.586 8.586";
+  /// Lucide icon `square-chart-gantt` (24x24 stroke paths).
   static const String squareChartGantt = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M9 8h7 M0 0M8 12h6 M0 0M11 16h5";
+  /// Lucide icon `square-check-big` (24x24 stroke paths).
   static const String squareCheckBig = "M0 0M21 10.5V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.5 M0 0m9 11 3 3L22 4";
+  /// Lucide icon `square-check` (24x24 stroke paths).
   static const String squareCheck = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0m9 12 2 2 4-4";
+  /// Lucide icon `square-chevron-down` (24x24 stroke paths).
   static const String squareChevronDown = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0m16 10-4 4-4-4";
+  /// Lucide icon `square-chevron-left` (24x24 stroke paths).
   static const String squareChevronLeft = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0m14 16-4-4 4-4";
+  /// Lucide icon `square-chevron-right` (24x24 stroke paths).
   static const String squareChevronRight = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0m10 8 4 4-4 4";
+  /// Lucide icon `square-chevron-up` (24x24 stroke paths).
   static const String squareChevronUp = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0m8 14 4-4 4 4";
+  /// Lucide icon `square-code` (24x24 stroke paths).
   static const String squareCode = "M0 0M10 9.5 8 12l2 2.5 M0 0m14 9.5 2 2.5-2 2.5 M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `square-dashed-bottom-code` (24x24 stroke paths).
   static const String squareDashedBottomCode = "M0 0M10 9.5 8 12l2 2.5 M0 0M14 21h1 M0 0m14 9.5 2 2.5-2 2.5 M0 0M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2 M0 0M9 21h1";
+  /// Lucide icon `square-dashed-bottom` (24x24 stroke paths).
   static const String squareDashedBottom = "M0 0M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2 M0 0M9 21h1 M0 0M14 21h1";
+  /// Lucide icon `square-dashed-kanban` (24x24 stroke paths).
   static const String squareDashedKanban = "M0 0M8 7v7 M0 0M12 7v4 M0 0M16 7v9 M0 0M5 3a2 2 0 0 0-2 2 M0 0M9 3h1 M0 0M14 3h1 M0 0M19 3a2 2 0 0 1 2 2 M0 0M21 9v1 M0 0M21 14v1 M0 0M21 19a2 2 0 0 1-2 2 M0 0M14 21h1 M0 0M9 21h1 M0 0M5 21a2 2 0 0 1-2-2 M0 0M3 14v1 M0 0M3 9v1";
+  /// Lucide icon `square-dashed-mouse-pointer` (24x24 stroke paths).
   static const String squareDashedMousePointer = "M0 0M12.034 12.681a.498.498 0 0 1 .647-.647l9 3.5a.5.5 0 0 1-.033.943l-3.444 1.068a1 1 0 0 0-.66.66l-1.067 3.443a.5.5 0 0 1-.943.033z M0 0M5 3a2 2 0 0 0-2 2 M0 0M19 3a2 2 0 0 1 2 2 M0 0M5 21a2 2 0 0 1-2-2 M0 0M9 3h1 M0 0M9 21h2 M0 0M14 3h1 M0 0M3 9v1 M0 0M21 9v2 M0 0M3 14v1";
+  /// Lucide icon `square-dashed` (24x24 stroke paths).
   static const String squareDashed = "M0 0M5 3a2 2 0 0 0-2 2 M0 0M19 3a2 2 0 0 1 2 2 M0 0M21 19a2 2 0 0 1-2 2 M0 0M5 21a2 2 0 0 1-2-2 M0 0M9 3h1 M0 0M9 21h1 M0 0M14 3h1 M0 0M14 21h1 M0 0M3 9v1 M0 0M21 9v1 M0 0M3 14v1 M0 0M21 14v1";
+  /// Lucide icon `square-divide` (24x24 stroke paths).
   static const String squareDivide = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M8 12L16 12 M0 0M12 16L12 16 M0 0M12 8L12 8";
+  /// Lucide icon `square-dot` (24x24 stroke paths).
   static const String squareDot = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12";
+  /// Lucide icon `square-equal` (24x24 stroke paths).
   static const String squareEqual = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M7 10h10 M0 0M7 14h10";
+  /// Lucide icon `square-function` (24x24 stroke paths).
   static const String squareFunction = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M9 17c2 0 2.8-1 2.8-2.8V10c0-2 1-3.3 3.2-3 M0 0M9 11.2h5.7";
+  /// Lucide icon `square-kanban` (24x24 stroke paths).
   static const String squareKanban = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M8 7v7 M0 0M12 7v4 M0 0M16 7v9";
+  /// Lucide icon `square-library` (24x24 stroke paths).
   static const String squareLibrary = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M7 7v10 M0 0M11 7v10 M0 0m15 7 2 10";
+  /// Lucide icon `square-m` (24x24 stroke paths).
   static const String squareM = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M8 16V8l4 4 4-4v8";
+  /// Lucide icon `square-menu` (24x24 stroke paths).
   static const String squareMenu = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M7 8h10 M0 0M7 12h10 M0 0M7 16h10";
+  /// Lucide icon `square-minus` (24x24 stroke paths).
   static const String squareMinus = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M8 12h8";
+  /// Lucide icon `square-mouse-pointer` (24x24 stroke paths).
   static const String squareMousePointer = "M0 0M12.034 12.681a.498.498 0 0 1 .647-.647l9 3.5a.5.5 0 0 1-.033.943l-3.444 1.068a1 1 0 0 0-.66.66l-1.067 3.443a.5.5 0 0 1-.943.033z M0 0M21 11V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h6";
+  /// Lucide icon `square-parking-off` (24x24 stroke paths).
   static const String squareParkingOff = "M0 0M3.6 3.6A2 2 0 0 1 5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-.59 1.41 M0 0M3 8.7V19a2 2 0 0 0 2 2h10.3 M0 0m2 2 20 20 M0 0M13 13a3 3 0 1 0 0-6H9v2 M0 0M9 17v-2.3";
+  /// Lucide icon `square-parking` (24x24 stroke paths).
   static const String squareParking = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M9 17V7h4a3 3 0 0 1 0 6H9";
+  /// Lucide icon `square-pen` (24x24 stroke paths).
   static const String squarePen = "M0 0M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7 M0 0M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z";
+  /// Lucide icon `square-percent` (24x24 stroke paths).
   static const String squarePercent = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0m15 9-6 6 M0 0M9 9h.01 M0 0M15 15h.01";
+  /// Lucide icon `square-pi` (24x24 stroke paths).
   static const String squarePi = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M7 7h10 M0 0M10 7v10 M0 0M16 17a2 2 0 0 1-2-2V7";
+  /// Lucide icon `square-pilcrow` (24x24 stroke paths).
   static const String squarePilcrow = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M12 12H9.5a2.5 2.5 0 0 1 0-5H17 M0 0M12 7v10 M0 0M16 7v10";
+  /// Lucide icon `square-play` (24x24 stroke paths).
   static const String squarePlay = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0m9 8 6 4-6 4Z";
+  /// Lucide icon `square-plus` (24x24 stroke paths).
   static const String squarePlus = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M8 12h8 M0 0M12 8v8";
+  /// Lucide icon `square-power` (24x24 stroke paths).
   static const String squarePower = "M0 0M12 7v4 M0 0M7.998 9.003a5 5 0 1 0 8-.005 M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `square-radical` (24x24 stroke paths).
   static const String squareRadical = "M0 0M7 12h2l2 5 2-10h4 M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `square-round-corner` (24x24 stroke paths).
   static const String squareRoundCorner = "M0 0M21 11a8 8 0 0 0-8-8 M0 0M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4";
+  /// Lucide icon `square-scissors` (24x24 stroke paths).
   static const String squareScissors = "M0 0M4 2h16a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M6 8A2 2 0 1 0 10 8A2 2 0 1 0 6 8 M0 0M9.414 9.414 12 12 M0 0M14.8 14.8 18 18 M0 0M6 16A2 2 0 1 0 10 16A2 2 0 1 0 6 16 M0 0m18 6-8.586 8.586";
+  /// Lucide icon `square-sigma` (24x24 stroke paths).
   static const String squareSigma = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M16 8.9V7H8l4 5-4 5h8v-1.9";
+  /// Lucide icon `square-slash` (24x24 stroke paths).
   static const String squareSlash = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M9 15L15 9";
+  /// Lucide icon `square-split-horizontal` (24x24 stroke paths).
   static const String squareSplitHorizontal = "M0 0M8 19H5c-1 0-2-1-2-2V7c0-1 1-2 2-2h3 M0 0M16 5h3c1 0 2 1 2 2v10c0 1-1 2-2 2h-3 M0 0M12 4L12 20";
+  /// Lucide icon `square-split-vertical` (24x24 stroke paths).
   static const String squareSplitVertical = "M0 0M5 8V5c0-1 1-2 2-2h10c1 0 2 1 2 2v3 M0 0M19 16v3c0 1-1 2-2 2H7c-1 0-2-1-2-2v-3 M0 0M4 12L20 12";
+  /// Lucide icon `square-square` (24x24 stroke paths).
   static const String squareSquare = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M9 8h6a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `square-stack` (24x24 stroke paths).
   static const String squareStack = "M0 0M4 10c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2 M0 0M10 16c-1.1 0-2-.9-2-2v-4c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2 M0 0M16 14h4a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `square-terminal` (24x24 stroke paths).
   static const String squareTerminal = "M0 0m7 11 2-2-2-2 M0 0M11 13h4 M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `square-user-round` (24x24 stroke paths).
   static const String squareUserRound = "M0 0M18 21a6 6 0 0 0-12 0 M0 0M8 11A4 4 0 1 0 16 11A4 4 0 1 0 8 11 M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `square-user` (24x24 stroke paths).
   static const String squareUser = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10 M0 0M7 21v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2";
+  /// Lucide icon `square-x` (24x24 stroke paths).
   static const String squareX = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0m15 9-6 6 M0 0m9 9 6 6";
+  /// Lucide icon `square` (24x24 stroke paths).
   static const String square = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `squircle` (24x24 stroke paths).
   static const String squircle = "M0 0M12 3c7.2 0 9 1.8 9 9s-1.8 9-9 9-9-1.8-9-9 1.8-9 9-9";
+  /// Lucide icon `squirrel` (24x24 stroke paths).
   static const String squirrel = "M0 0M15.236 22a3 3 0 0 0-2.2-5 M0 0M16 20a3 3 0 0 1 3-3h1a2 2 0 0 0 2-2v-2a4 4 0 0 0-4-4V4 M0 0M18 13h.01 M0 0M18 6a4 4 0 0 0-4 4 7 7 0 0 0-7 7c0-5 4-5 4-10.5a4.5 4.5 0 1 0-9 0 2.5 2.5 0 0 0 5 0C7 10 3 11 3 17c0 2.8 2.2 5 5 5h10";
+  /// Lucide icon `stamp` (24x24 stroke paths).
   static const String stamp = "M0 0M5 22h14 M0 0M19.27 13.73A2.5 2.5 0 0 0 17.5 13h-11A2.5 2.5 0 0 0 4 15.5V17a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-1.5c0-.66-.26-1.3-.73-1.77Z M0 0M14 13V8.5C14 7 15 7 15 5a3 3 0 0 0-3-3c-1.66 0-3 1-3 3s1 2 1 3.5V13";
+  /// Lucide icon `star-half` (24x24 stroke paths).
   static const String starHalf = "M0 0M12 18.338a2.1 2.1 0 0 0-.987.244L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.12 2.12 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.12 2.12 0 0 0 1.597-1.16l2.309-4.679A.53.53 0 0 1 12 2";
+  /// Lucide icon `star-off` (24x24 stroke paths).
   static const String starOff = "M0 0M8.34 8.34 2 9.27l5 4.87L5.82 21 12 17.77 18.18 21l-.59-3.43 M0 0M18.42 12.76 22 9.27l-6.91-1L12 2l-1.44 2.91 M0 0M2 2L22 22";
+  /// Lucide icon `star` (24x24 stroke paths).
   static const String star = "M0 0M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z";
+  /// Lucide icon `step-back` (24x24 stroke paths).
   static const String stepBack = "M0 0M18 20L18 4 M0 0M14 20L4 12L14 4Z";
+  /// Lucide icon `step-forward` (24x24 stroke paths).
   static const String stepForward = "M0 0M6 4L6 20 M0 0M10 4L20 12L10 20Z";
+  /// Lucide icon `stethoscope` (24x24 stroke paths).
   static const String stethoscope = "M0 0M11 2v2 M0 0M5 2v2 M0 0M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1 M0 0M8 15a6 6 0 0 0 12 0v-3 M0 0M18 10A2 2 0 1 0 22 10A2 2 0 1 0 18 10";
+  /// Lucide icon `sticker` (24x24 stroke paths).
   static const String sticker = "M0 0M15.5 3H5a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h14a2 2 0 0 0 2-2V8.5L15.5 3Z M0 0M14 3v4a2 2 0 0 0 2 2h4 M0 0M8 13h.01 M0 0M16 13h.01 M0 0M10 16s.8 1 2 1c1.3 0 2-1 2-1";
+  /// Lucide icon `sticky-note` (24x24 stroke paths).
   static const String stickyNote = "M0 0M16 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8Z M0 0M15 3v4a2 2 0 0 0 2 2h4";
+  /// Lucide icon `store` (24x24 stroke paths).
   static const String store = "M0 0m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7 M0 0M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8 M0 0M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4 M0 0M2 7h20 M0 0M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7";
+  /// Lucide icon `stretch-horizontal` (24x24 stroke paths).
   static const String stretchHorizontal = "M0 0M4 4h16a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z M0 0M4 14h16a2 2 0 0 1 2 2v2a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-2a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `stretch-vertical` (24x24 stroke paths).
   static const String stretchVertical = "M0 0M6 2h2a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M16 2h2a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `strikethrough` (24x24 stroke paths).
   static const String strikethrough = "M0 0M16 4H9a3 3 0 0 0-2.83 4 M0 0M14 12a4 4 0 0 1 0 8H6 M0 0M4 12L20 12";
+  /// Lucide icon `subscript` (24x24 stroke paths).
   static const String subscript = "M0 0m4 5 8 8 M0 0m12 5-8 8 M0 0M20 19h-4c0-1.5.44-2 1.5-2.5S20 15.33 20 14c0-.47-.17-.93-.48-1.29a2.11 2.11 0 0 0-2.62-.44c-.42.24-.74.62-.9 1.07";
+  /// Lucide icon `sun-dim` (24x24 stroke paths).
   static const String sunDim = "M0 0M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12 M0 0M12 4h.01 M0 0M20 12h.01 M0 0M12 20h.01 M0 0M4 12h.01 M0 0M17.657 6.343h.01 M0 0M17.657 17.657h.01 M0 0M6.343 17.657h.01 M0 0M6.343 6.343h.01";
+  /// Lucide icon `sun-medium` (24x24 stroke paths).
   static const String sunMedium = "M0 0M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12 M0 0M12 3v1 M0 0M12 20v1 M0 0M3 12h1 M0 0M20 12h1 M0 0m18.364 5.636-.707.707 M0 0m6.343 17.657-.707.707 M0 0m5.636 5.636.707.707 M0 0m17.657 17.657.707.707";
+  /// Lucide icon `sun-moon` (24x24 stroke paths).
   static const String sunMoon = "M0 0M12 8a2.83 2.83 0 0 0 4 4 4 4 0 1 1-4-4 M0 0M12 2v2 M0 0M12 20v2 M0 0m4.9 4.9 1.4 1.4 M0 0m17.7 17.7 1.4 1.4 M0 0M2 12h2 M0 0M20 12h2 M0 0m6.3 17.7-1.4 1.4 M0 0m19.1 4.9-1.4 1.4";
+  /// Lucide icon `sun-snow` (24x24 stroke paths).
   static const String sunSnow = "M0 0M10 21v-1 M0 0M10 4V3 M0 0M10 9a3 3 0 0 0 0 6 M0 0m14 20 1.25-2.5L18 18 M0 0m14 4 1.25 2.5L18 6 M0 0m17 21-3-6 1.5-3H22 M0 0m17 3-3 6 1.5 3 M0 0M2 12h1 M0 0m20 10-1.5 2 1.5 2 M0 0m3.64 18.36.7-.7 M0 0m4.34 6.34-.7-.7";
+  /// Lucide icon `sun` (24x24 stroke paths).
   static const String sun = "M0 0M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12 M0 0M12 2v2 M0 0M12 20v2 M0 0m4.93 4.93 1.41 1.41 M0 0m17.66 17.66 1.41 1.41 M0 0M2 12h2 M0 0M20 12h2 M0 0m6.34 17.66-1.41 1.41 M0 0m19.07 4.93-1.41 1.41";
+  /// Lucide icon `sunrise` (24x24 stroke paths).
   static const String sunrise = "M0 0M12 2v8 M0 0m4.93 10.93 1.41 1.41 M0 0M2 18h2 M0 0M20 18h2 M0 0m19.07 10.93-1.41 1.41 M0 0M22 22H2 M0 0m8 6 4-4 4 4 M0 0M16 18a4 4 0 0 0-8 0";
+  /// Lucide icon `sunset` (24x24 stroke paths).
   static const String sunset = "M0 0M12 10V2 M0 0m4.93 10.93 1.41 1.41 M0 0M2 18h2 M0 0M20 18h2 M0 0m19.07 10.93-1.41 1.41 M0 0M22 22H2 M0 0m16 6-4 4-4-4 M0 0M16 18a4 4 0 0 0-8 0";
+  /// Lucide icon `superscript` (24x24 stroke paths).
   static const String superscript = "M0 0m4 19 8-8 M0 0m12 19-8-8 M0 0M20 12h-4c0-1.5.442-2 1.5-2.5S20 8.334 20 7.002c0-.472-.17-.93-.484-1.29a2.105 2.105 0 0 0-2.617-.436c-.42.239-.738.614-.899 1.06";
+  /// Lucide icon `swatch-book` (24x24 stroke paths).
   static const String swatchBook = "M0 0M11 17a4 4 0 0 1-8 0V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2Z M0 0M16.7 13H19a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H7 M0 0M 7 17h.01 M0 0m11 8 2.3-2.3a2.4 2.4 0 0 1 3.404.004L18.6 7.6a2.4 2.4 0 0 1 .026 3.434L9.9 19.8";
+  /// Lucide icon `swiss-franc` (24x24 stroke paths).
   static const String swissFranc = "M0 0M10 21V3h8 M0 0M6 16h9 M0 0M10 9.5h7";
+  /// Lucide icon `switch-camera` (24x24 stroke paths).
   static const String switchCamera = "M0 0M11 19H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5 M0 0M13 5h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-5 M0 0M9 12A3 3 0 1 0 15 12A3 3 0 1 0 9 12 M0 0m18 22-3-3 3-3 M0 0m6 2 3 3-3 3";
+  /// Lucide icon `sword` (24x24 stroke paths).
   static const String sword = "M0 0M14.5 17.5L3 6L3 3L6 3L17.5 14.5 M0 0M13 19L19 13 M0 0M16 16L20 20 M0 0M19 21L21 19";
+  /// Lucide icon `swords` (24x24 stroke paths).
   static const String swords = "M0 0M14.5 17.5L3 6L3 3L6 3L17.5 14.5 M0 0M13 19L19 13 M0 0M16 16L20 20 M0 0M19 21L21 19 M0 0M14.5 6.5L18 3L21 3L21 6L17.5 9.5 M0 0M5 14L9 18 M0 0M7 17L4 20 M0 0M3 19L5 21";
+  /// Lucide icon `syringe` (24x24 stroke paths).
   static const String syringe = "M0 0m18 2 4 4 M0 0m17 7 3-3 M0 0M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5 M0 0m9 11 4 4 M0 0m5 19-3 3 M0 0m14 4 6 6";
+  /// Lucide icon `table-2` (24x24 stroke paths).
   static const String table2 = "M0 0M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18";
+  /// Lucide icon `table-cells-merge` (24x24 stroke paths).
   static const String tableCellsMerge = "M0 0M12 21v-6 M0 0M12 9V3 M0 0M3 15h18 M0 0M3 9h18 M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `table-cells-split` (24x24 stroke paths).
   static const String tableCellsSplit = "M0 0M12 15V9 M0 0M3 15h18 M0 0M3 9h18 M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `table-columns-split` (24x24 stroke paths).
   static const String tableColumnsSplit = "M0 0M14 14v2 M0 0M14 20v2 M0 0M14 2v2 M0 0M14 8v2 M0 0M2 15h8 M0 0M2 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H2 M0 0M2 9h8 M0 0M22 15h-4 M0 0M22 3h-2a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h2 M0 0M22 9h-4 M0 0M5 3v18";
+  /// Lucide icon `table-of-contents` (24x24 stroke paths).
   static const String tableOfContents = "M0 0M16 12H3 M0 0M16 18H3 M0 0M16 6H3 M0 0M21 12h.01 M0 0M21 18h.01 M0 0M21 6h.01";
+  /// Lucide icon `table-properties` (24x24 stroke paths).
   static const String tableProperties = "M0 0M15 3v18 M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M21 9H3 M0 0M21 15H3";
+  /// Lucide icon `table-rows-split` (24x24 stroke paths).
   static const String tableRowsSplit = "M0 0M14 10h2 M0 0M15 22v-8 M0 0M15 2v4 M0 0M2 10h2 M0 0M20 10h2 M0 0M3 19h18 M0 0M3 22v-6a2 2 135 0 1 2-2h14a2 2 45 0 1 2 2v6 M0 0M3 2v2a2 2 45 0 0 2 2h14a2 2 135 0 0 2-2V2 M0 0M8 10h2 M0 0M9 22v-8 M0 0M9 2v4";
+  /// Lucide icon `table` (24x24 stroke paths).
   static const String table = "M0 0M12 3v18 M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 9h18 M0 0M3 15h18";
+  /// Lucide icon `tablet-smartphone` (24x24 stroke paths).
   static const String tabletSmartphone = "M0 0M5 8h6a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-6a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z M0 0M5 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2h-2.4 M0 0M8 18h.01";
+  /// Lucide icon `tablet` (24x24 stroke paths).
   static const String tablet = "M0 0M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M12 18L12.01 18";
+  /// Lucide icon `tablets` (24x24 stroke paths).
   static const String tablets = "M0 0M2 7A5 5 0 1 0 12 7A5 5 0 1 0 2 7 M0 0M12 17A5 5 0 1 0 22 17A5 5 0 1 0 12 17 M0 0M12 17h10 M0 0m3.46 10.54 7.08-7.08";
+  /// Lucide icon `tag` (24x24 stroke paths).
   static const String tag = "M0 0M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z M0 0M7 7.5A0.5 0.5 0 1 0 8 7.5A0.5 0.5 0 1 0 7 7.5";
+  /// Lucide icon `tags` (24x24 stroke paths).
   static const String tags = "M0 0m15 5 6.3 6.3a2.4 2.4 0 0 1 0 3.4L17 19 M0 0M9.586 5.586A2 2 0 0 0 8.172 5H3a1 1 0 0 0-1 1v5.172a2 2 0 0 0 .586 1.414L8.29 18.29a2.426 2.426 0 0 0 3.42 0l3.58-3.58a2.426 2.426 0 0 0 0-3.42z M0 0M6 9.5A0.5 0.5 0 1 0 7 9.5A0.5 0.5 0 1 0 6 9.5";
+  /// Lucide icon `tally-1` (24x24 stroke paths).
   static const String tally1 = "M0 0M4 4v16";
+  /// Lucide icon `tally-2` (24x24 stroke paths).
   static const String tally2 = "M0 0M4 4v16 M0 0M9 4v16";
+  /// Lucide icon `tally-3` (24x24 stroke paths).
   static const String tally3 = "M0 0M4 4v16 M0 0M9 4v16 M0 0M14 4v16";
+  /// Lucide icon `tally-4` (24x24 stroke paths).
   static const String tally4 = "M0 0M4 4v16 M0 0M9 4v16 M0 0M14 4v16 M0 0M19 4v16";
+  /// Lucide icon `tally-5` (24x24 stroke paths).
   static const String tally5 = "M0 0M4 4v16 M0 0M9 4v16 M0 0M14 4v16 M0 0M19 4v16 M0 0M22 6 2 18";
+  /// Lucide icon `tangent` (24x24 stroke paths).
   static const String tangent = "M0 0M15 4A2 2 0 1 0 19 4A2 2 0 1 0 15 4 M0 0M15.59 5.41 5.41 15.59 M0 0M2 17A2 2 0 1 0 6 17A2 2 0 1 0 2 17 M0 0M12 22s-4-9-1.5-11.5S22 12 22 12";
+  /// Lucide icon `target` (24x24 stroke paths).
   static const String target = "M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12 M0 0M6 12A6 6 0 1 0 18 12A6 6 0 1 0 6 12 M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12";
+  /// Lucide icon `telescope` (24x24 stroke paths).
   static const String telescope = "M0 0m10.065 12.493-6.18 1.318a.934.934 0 0 1-1.108-.702l-.537-2.15a1.07 1.07 0 0 1 .691-1.265l13.504-4.44 M0 0m13.56 11.747 4.332-.924 M0 0m16 21-3.105-6.21 M0 0M16.485 5.94a2 2 0 0 1 1.455-2.425l1.09-.272a1 1 0 0 1 1.212.727l1.515 6.06a1 1 0 0 1-.727 1.213l-1.09.272a2 2 0 0 1-2.425-1.455z M0 0m6.158 8.633 1.114 4.456 M0 0m8 21 3.105-6.21 M0 0M10 13A2 2 0 1 0 14 13A2 2 0 1 0 10 13";
+  /// Lucide icon `tent-tree` (24x24 stroke paths).
   static const String tentTree = "M0 0M2 4A2 2 0 1 0 6 4A2 2 0 1 0 2 4 M0 0m14 5 3-3 3 3 M0 0m14 10 3-3 3 3 M0 0M17 14V2 M0 0M17 14H7l-5 8h20Z M0 0M8 14v8 M0 0m9 14 5 8";
+  /// Lucide icon `tent` (24x24 stroke paths).
   static const String tent = "M0 0M3.5 21 14 3 M0 0M20.5 21 10 3 M0 0M15.5 21 12 15l-3.5 6 M0 0M2 21h20";
+  /// Lucide icon `terminal` (24x24 stroke paths).
   static const String terminal = "M0 0M4 17L10 11L4 5 M0 0M12 19L20 19";
+  /// Lucide icon `test-tube-diagonal` (24x24 stroke paths).
   static const String testTubeDiagonal = "M0 0M21 7 6.82 21.18a2.83 2.83 0 0 1-3.99-.01a2.83 2.83 0 0 1 0-4L17 3 M0 0m16 2 6 6 M0 0M12 16H4";
+  /// Lucide icon `test-tube` (24x24 stroke paths).
   static const String testTube = "M0 0M14.5 2v17.5c0 1.4-1.1 2.5-2.5 2.5c-1.4 0-2.5-1.1-2.5-2.5V2 M0 0M8.5 2h7 M0 0M14.5 16h-5";
+  /// Lucide icon `test-tubes` (24x24 stroke paths).
   static const String testTubes = "M0 0M9 2v17.5A2.5 2.5 0 0 1 6.5 22A2.5 2.5 0 0 1 4 19.5V2 M0 0M20 2v17.5a2.5 2.5 0 0 1-2.5 2.5a2.5 2.5 0 0 1-2.5-2.5V2 M0 0M3 2h7 M0 0M14 2h7 M0 0M9 16H4 M0 0M20 16h-5";
+  /// Lucide icon `text-cursor-input` (24x24 stroke paths).
   static const String textCursorInput = "M0 0M5 4h1a3 3 0 0 1 3 3 3 3 0 0 1 3-3h1 M0 0M13 20h-1a3 3 0 0 1-3-3 3 3 0 0 1-3 3H5 M0 0M5 16H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h1 M0 0M13 8h7a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-7 M0 0M9 7v10";
+  /// Lucide icon `text-cursor` (24x24 stroke paths).
   static const String textCursor = "M0 0M17 22h-1a4 4 0 0 1-4-4V6a4 4 0 0 1 4-4h1 M0 0M7 22h1a4 4 0 0 0 4-4v-1 M0 0M7 2h1a4 4 0 0 1 4 4v1";
+  /// Lucide icon `text-quote` (24x24 stroke paths).
   static const String textQuote = "M0 0M17 6H3 M0 0M21 12H8 M0 0M21 18H8 M0 0M3 12v6";
+  /// Lucide icon `text-search` (24x24 stroke paths).
   static const String textSearch = "M0 0M21 6H3 M0 0M10 12H3 M0 0M10 18H3 M0 0M14 15A3 3 0 1 0 20 15A3 3 0 1 0 14 15 M0 0m21 19-1.9-1.9";
+  /// Lucide icon `text-select` (24x24 stroke paths).
   static const String textSelect = "M0 0M5 3a2 2 0 0 0-2 2 M0 0M19 3a2 2 0 0 1 2 2 M0 0M21 19a2 2 0 0 1-2 2 M0 0M5 21a2 2 0 0 1-2-2 M0 0M9 3h1 M0 0M9 21h1 M0 0M14 3h1 M0 0M14 21h1 M0 0M3 9v1 M0 0M21 9v1 M0 0M3 14v1 M0 0M21 14v1 M0 0M7 8L15 8 M0 0M7 12L17 12 M0 0M7 16L13 16";
+  /// Lucide icon `text` (24x24 stroke paths).
   static const String text = "M0 0M17 6.1H3 M0 0M21 12.1H3 M0 0M15.1 18H3";
+  /// Lucide icon `theater` (24x24 stroke paths).
   static const String theater = "M0 0M2 10s3-3 3-8 M0 0M22 10s-3-3-3-8 M0 0M10 2c0 4.4-3.6 8-8 8 M0 0M14 2c0 4.4 3.6 8 8 8 M0 0M2 10s2 2 2 5 M0 0M22 10s-2 2-2 5 M0 0M8 15h8 M0 0M2 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1 M0 0M14 22v-1a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1";
+  /// Lucide icon `thermometer-snowflake` (24x24 stroke paths).
   static const String thermometerSnowflake = "M0 0m10 20-1.25-2.5L6 18 M0 0M10 4 8.75 6.5 6 6 M0 0M10.585 15H10 M0 0M2 12h6.5L10 9 M0 0M20 14.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0z M0 0m4 10 1.5 2L4 14 M0 0m7 21 3-6-1.5-3 M0 0m7 3 3 6h2";
+  /// Lucide icon `thermometer-sun` (24x24 stroke paths).
   static const String thermometerSun = "M0 0M12 9a4 4 0 0 0-2 7.5 M0 0M12 3v2 M0 0m6.6 18.4-1.4 1.4 M0 0M20 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z M0 0M4 13H2 M0 0M6.34 7.34 4.93 5.93";
+  /// Lucide icon `thermometer` (24x24 stroke paths).
   static const String thermometer = "M0 0M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z";
+  /// Lucide icon `thumbs-down` (24x24 stroke paths).
   static const String thumbsDown = "M0 0M17 14V2 M0 0M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z";
+  /// Lucide icon `thumbs-up` (24x24 stroke paths).
   static const String thumbsUp = "M0 0M7 10v12 M0 0M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z";
+  /// Lucide icon `ticket-check` (24x24 stroke paths).
   static const String ticketCheck = "M0 0M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z M0 0m9 12 2 2 4-4";
+  /// Lucide icon `ticket-minus` (24x24 stroke paths).
   static const String ticketMinus = "M0 0M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z M0 0M9 12h6";
+  /// Lucide icon `ticket-percent` (24x24 stroke paths).
   static const String ticketPercent = "M0 0M2 9a3 3 0 1 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 1 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z M0 0M9 9h.01 M0 0m15 9-6 6 M0 0M15 15h.01";
+  /// Lucide icon `ticket-plus` (24x24 stroke paths).
   static const String ticketPlus = "M0 0M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z M0 0M9 12h6 M0 0M12 9v6";
+  /// Lucide icon `ticket-slash` (24x24 stroke paths).
   static const String ticketSlash = "M0 0M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z M0 0m9.5 14.5 5-5";
+  /// Lucide icon `ticket-x` (24x24 stroke paths).
   static const String ticketX = "M0 0M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z M0 0m9.5 14.5 5-5 M0 0m9.5 9.5 5 5";
+  /// Lucide icon `ticket` (24x24 stroke paths).
   static const String ticket = "M0 0M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z M0 0M13 5v2 M0 0M13 17v2 M0 0M13 11v2";
+  /// Lucide icon `tickets-plane` (24x24 stroke paths).
   static const String ticketsPlane = "M0 0M10.5 17h1.227a2 2 0 0 0 1.345-.52L18 12 M0 0m12 13.5 3.75.5 M0 0m4.5 8 10.58-5.06a1 1 0 0 1 1.342.488L18.5 8 M0 0M6 10V8 M0 0M6 14v1 M0 0M6 19v2 M0 0M4 8h16a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `tickets` (24x24 stroke paths).
   static const String tickets = "M0 0m4.5 8 10.58-5.06a1 1 0 0 1 1.342.488L18.5 8 M0 0M6 10V8 M0 0M6 14v1 M0 0M6 19v2 M0 0M4 8h16a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-9a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `timer-off` (24x24 stroke paths).
   static const String timerOff = "M0 0M10 2h4 M0 0M4.6 11a8 8 0 0 0 1.7 8.7 8 8 0 0 0 8.7 1.7 M0 0M7.4 7.4a8 8 0 0 1 10.3 1 8 8 0 0 1 .9 10.2 M0 0m2 2 20 20 M0 0M12 12v-2";
+  /// Lucide icon `timer-reset` (24x24 stroke paths).
   static const String timerReset = "M0 0M10 2h4 M0 0M12 14v-4 M0 0M4 13a8 8 0 0 1 8-7 8 8 0 1 1-5.3 14L4 17.6 M0 0M9 17H4v5";
+  /// Lucide icon `timer` (24x24 stroke paths).
   static const String timer = "M0 0M10 2L14 2 M0 0M12 14L15 11 M0 0M4 14A8 8 0 1 0 20 14A8 8 0 1 0 4 14";
+  /// Lucide icon `toggle-left` (24x24 stroke paths).
   static const String toggleLeft = "M0 0M8 6h8a6 6 0 0 1 6 6v0a6 6 0 0 1 -6 6h-8a6 6 0 0 1 -6 -6v0a6 6 0 0 1 6 -6Z M0 0M6 12A2 2 0 1 0 10 12A2 2 0 1 0 6 12";
+  /// Lucide icon `toggle-right` (24x24 stroke paths).
   static const String toggleRight = "M0 0M8 6h8a6 6 0 0 1 6 6v0a6 6 0 0 1 -6 6h-8a6 6 0 0 1 -6 -6v0a6 6 0 0 1 6 -6Z M0 0M14 12A2 2 0 1 0 18 12A2 2 0 1 0 14 12";
+  /// Lucide icon `toilet` (24x24 stroke paths).
   static const String toilet = "M0 0M7 12h13a1 1 0 0 1 1 1 5 5 0 0 1-5 5h-.598a.5.5 0 0 0-.424.765l1.544 2.47a.5.5 0 0 1-.424.765H5.402a.5.5 0 0 1-.424-.765L7 18 M0 0M8 18a5 5 0 0 1-5-5V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8";
+  /// Lucide icon `tornado` (24x24 stroke paths).
   static const String tornado = "M0 0M21 4H3 M0 0M18 8H6 M0 0M19 12H9 M0 0M16 16h-6 M0 0M11 20H9";
+  /// Lucide icon `torus` (24x24 stroke paths).
   static const String torus = "M0 0M9 11A3 2 0 1 0 15 11A3 2 0 1 0 9 11 M0 0M2 12.5A10 8.5 0 1 0 22 12.5A10 8.5 0 1 0 2 12.5";
+  /// Lucide icon `touchpad-off` (24x24 stroke paths).
   static const String touchpadOff = "M0 0M4 4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16 M0 0M2 14h12 M0 0M22 14h-2 M0 0M12 20v-6 M0 0m2 2 20 20 M0 0M22 16V6a2 2 0 0 0-2-2H10";
+  /// Lucide icon `touchpad` (24x24 stroke paths).
   static const String touchpad = "M0 0M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M2 14h20 M0 0M12 20v-6";
+  /// Lucide icon `tower-control` (24x24 stroke paths).
   static const String towerControl = "M0 0M18.2 12.27 20 6H4l1.8 6.27a1 1 0 0 0 .95.73h10.5a1 1 0 0 0 .96-.73Z M0 0M8 13v9 M0 0M16 22v-9 M0 0m9 6 1 7 M0 0m15 6-1 7 M0 0M12 6V2 M0 0M13 2h-2";
+  /// Lucide icon `toy-brick` (24x24 stroke paths).
   static const String toyBrick = "M0 0M4 8h16a1 1 0 0 1 1 1v10a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-10a1 1 0 0 1 1 -1Z M0 0M10 8V5c0-.6-.4-1-1-1H6a1 1 0 0 0-1 1v3 M0 0M19 8V5c0-.6-.4-1-1-1h-3a1 1 0 0 0-1 1v3";
+  /// Lucide icon `tractor` (24x24 stroke paths).
   static const String tractor = "M0 0m10 11 11 .9a1 1 0 0 1 .8 1.1l-.665 4.158a1 1 0 0 1-.988.842H20 M0 0M16 18h-5 M0 0M18 5a1 1 0 0 0-1 1v5.573 M0 0M3 4h8.129a1 1 0 0 1 .99.863L13 11.246 M0 0M4 11V4 M0 0M7 15h.01 M0 0M8 10.1V4 M0 0M16 18A2 2 0 1 0 20 18A2 2 0 1 0 16 18 M0 0M2 15A5 5 0 1 0 12 15A5 5 0 1 0 2 15";
+  /// Lucide icon `traffic-cone` (24x24 stroke paths).
   static const String trafficCone = "M0 0M9.3 6.2a4.55 4.55 0 0 0 5.4 0 M0 0M7.9 10.7c.9.8 2.4 1.3 4.1 1.3s3.2-.5 4.1-1.3 M0 0M13.9 3.5a1.93 1.93 0 0 0-3.8-.1l-3 10c-.1.2-.1.4-.1.6 0 1.7 2.2 3 5 3s5-1.3 5-3c0-.2 0-.4-.1-.5Z M0 0m7.5 12.2-4.7 2.7c-.5.3-.8.7-.8 1.1s.3.8.8 1.1l7.6 4.5c.9.5 2.1.5 3 0l7.6-4.5c.7-.3 1-.7 1-1.1s-.3-.8-.8-1.1l-4.7-2.8";
+  /// Lucide icon `train-front-tunnel` (24x24 stroke paths).
   static const String trainFrontTunnel = "M0 0M2 22V12a10 10 0 1 1 20 0v10 M0 0M15 6.8v1.4a3 2.8 0 1 1-6 0V6.8 M0 0M10 15h.01 M0 0M14 15h.01 M0 0M10 19a4 4 0 0 1-4-4v-3a6 6 0 1 1 12 0v3a4 4 0 0 1-4 4Z M0 0m9 19-2 3 M0 0m15 19 2 3";
+  /// Lucide icon `train-front` (24x24 stroke paths).
   static const String trainFront = "M0 0M8 3.1V7a4 4 0 0 0 8 0V3.1 M0 0m9 15-1-1 M0 0m15 15 1-1 M0 0M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z M0 0m8 19-2 3 M0 0m16 19 2 3";
+  /// Lucide icon `train-track` (24x24 stroke paths).
   static const String trainTrack = "M0 0M2 17 17 2 M0 0m2 14 8 8 M0 0m5 11 8 8 M0 0m8 8 8 8 M0 0m11 5 8 8 M0 0m14 2 8 8 M0 0M7 22 22 7";
+  /// Lucide icon `tram-front` (24x24 stroke paths).
   static const String tramFront = "M0 0M6 3h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M4 11h16 M0 0M12 3v8 M0 0m8 19-2 3 M0 0m18 22-2-3 M0 0M8 15h.01 M0 0M16 15h.01";
+  /// Lucide icon `transgender` (24x24 stroke paths).
   static const String transgender = "M0 0M12 16v6 M0 0M14 20h-4 M0 0M18 2h4v4 M0 0m2 2 7.17 7.17 M0 0M2 5.355V2h3.357 M0 0m22 2-7.17 7.17 M0 0M8 5 5 8 M0 0M8 12A4 4 0 1 0 16 12A4 4 0 1 0 8 12";
+  /// Lucide icon `trash-2` (24x24 stroke paths).
   static const String trash2 = "M0 0M3 6h18 M0 0M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6 M0 0M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2 M0 0M10 11L10 17 M0 0M14 11L14 17";
+  /// Lucide icon `trash` (24x24 stroke paths).
   static const String trash = "M0 0M3 6h18 M0 0M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6 M0 0M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2";
+  /// Lucide icon `tree-deciduous` (24x24 stroke paths).
   static const String treeDeciduous = "M0 0M8 19a4 4 0 0 1-2.24-7.32A3.5 3.5 0 0 1 9 6.03V6a3 3 0 1 1 6 0v.04a3.5 3.5 0 0 1 3.24 5.65A4 4 0 0 1 16 19Z M0 0M12 19v3";
+  /// Lucide icon `tree-palm` (24x24 stroke paths).
   static const String treePalm = "M0 0M13 8c0-2.76-2.46-5-5.5-5S2 5.24 2 8h2l1-1 1 1h4 M0 0M13 7.14A5.82 5.82 0 0 1 16.5 6c3.04 0 5.5 2.24 5.5 5h-3l-1-1-1 1h-3 M0 0M5.89 9.71c-2.15 2.15-2.3 5.47-.35 7.43l4.24-4.25.7-.7.71-.71 2.12-2.12c-1.95-1.96-5.27-1.8-7.42.35 M0 0M11 15.5c.5 2.5-.17 4.5-1 6.5h4c2-5.5-.5-12-1-14";
+  /// Lucide icon `tree-pine` (24x24 stroke paths).
   static const String treePine = "M0 0m17 14 3 3.3a1 1 0 0 1-.7 1.7H4.7a1 1 0 0 1-.7-1.7L7 14h-.3a1 1 0 0 1-.7-1.7L9 9h-.2A1 1 0 0 1 8 7.3L12 3l4 4.3a1 1 0 0 1-.8 1.7H15l3 3.3a1 1 0 0 1-.7 1.7H17Z M0 0M12 22v-3";
+  /// Lucide icon `trees` (24x24 stroke paths).
   static const String trees = "M0 0M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z M0 0M7 16v6 M0 0M13 19v3 M0 0M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5";
+  /// Lucide icon `trello` (24x24 stroke paths).
   static const String trello = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M7 7h3v9h-3Z M0 0M14 7h3v5h-3Z";
+  /// Lucide icon `trending-down` (24x24 stroke paths).
   static const String trendingDown = "M0 0M22 17L13.5 8.5L8.5 13.5L2 7 M0 0M16 17L22 17L22 11";
+  /// Lucide icon `trending-up-down` (24x24 stroke paths).
   static const String trendingUpDown = "M0 0M14.828 14.828 21 21 M0 0M21 16v5h-5 M0 0m21 3-9 9-4-4-6 6 M0 0M21 8V3h-5";
+  /// Lucide icon `trending-up` (24x24 stroke paths).
   static const String trendingUp = "M0 0M22 7L13.5 15.5L8.5 10.5L2 17 M0 0M16 7L22 7L22 13";
+  /// Lucide icon `triangle-alert` (24x24 stroke paths).
   static const String triangleAlert = "M0 0m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3 M0 0M12 9v4 M0 0M12 17h.01";
+  /// Lucide icon `triangle-dashed` (24x24 stroke paths).
   static const String triangleDashed = "M0 0M10.17 4.193a2 2 0 0 1 3.666.013 M0 0M14 21h2 M0 0m15.874 7.743 1 1.732 M0 0m18.849 12.952 1 1.732 M0 0M21.824 18.18a2 2 0 0 1-1.835 2.824 M0 0M4.024 21a2 2 0 0 1-1.839-2.839 M0 0m5.136 12.952-1 1.732 M0 0M8 21h2 M0 0m8.102 7.743-1 1.732";
+  /// Lucide icon `triangle-right` (24x24 stroke paths).
   static const String triangleRight = "M0 0M22 18a2 2 0 0 1-2 2H3c-1.1 0-1.3-.6-.4-1.3L20.4 4.3c.9-.7 1.6-.4 1.6.7Z";
+  /// Lucide icon `triangle` (24x24 stroke paths).
   static const String triangle = "M0 0M13.73 4a2 2 0 0 0-3.46 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z";
+  /// Lucide icon `trophy` (24x24 stroke paths).
   static const String trophy = "M0 0M6 9H4.5a2.5 2.5 0 0 1 0-5H6 M0 0M18 9h1.5a2.5 2.5 0 0 0 0-5H18 M0 0M4 22h16 M0 0M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22 M0 0M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22 M0 0M18 2H6v7a6 6 0 0 0 12 0V2Z";
+  /// Lucide icon `truck` (24x24 stroke paths).
   static const String truck = "M0 0M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2 M0 0M15 18H9 M0 0M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14 M0 0M15 18A2 2 0 1 0 19 18A2 2 0 1 0 15 18 M0 0M5 18A2 2 0 1 0 9 18A2 2 0 1 0 5 18";
+  /// Lucide icon `turtle` (24x24 stroke paths).
   static const String turtle = "M0 0m12 10 2 4v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3a8 8 0 1 0-16 0v3a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-3l2-4h4Z M0 0M4.82 7.9 8 10 M0 0M15.18 7.9 12 10 M0 0M16.93 10H20a2 2 0 0 1 0 4H2";
+  /// Lucide icon `tv-minimal-play` (24x24 stroke paths).
   static const String tvMinimalPlay = "M0 0M10 7.75a.75.75 0 0 1 1.142-.638l3.664 2.249a.75.75 0 0 1 0 1.278l-3.664 2.25a.75.75 0 0 1-1.142-.64z M0 0M7 21h10 M0 0M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `tv-minimal` (24x24 stroke paths).
   static const String tvMinimal = "M0 0M7 21h10 M0 0M4 3h16a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `tv` (24x24 stroke paths).
   static const String tv = "M0 0M4 7h16a2 2 0 0 1 2 2v11a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2Z M0 0M17 2L12 7L7 2";
+  /// Lucide icon `twitch` (24x24 stroke paths).
   static const String twitch = "M0 0M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7";
+  /// Lucide icon `twitter` (24x24 stroke paths).
   static const String twitter = "M0 0M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z";
+  /// Lucide icon `type-outline` (24x24 stroke paths).
   static const String typeOutline = "M0 0M14 16.5a.5.5 0 0 0 .5.5h.5a2 2 0 0 1 0 4H9a2 2 0 0 1 0-4h.5a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5V8a2 2 0 0 1-4 0V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 1-4 0v-.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5Z";
+  /// Lucide icon `type` (24x24 stroke paths).
   static const String type = "M0 0M4 7L4 4L20 4L20 7 M0 0M9 20L15 20 M0 0M12 4L12 20";
+  /// Lucide icon `umbrella-off` (24x24 stroke paths).
   static const String umbrellaOff = "M0 0M12 2v1 M0 0M15.5 21a1.85 1.85 0 0 1-3.5-1v-8H2a10 10 0 0 1 3.428-6.575 M0 0M17.5 12H22A10 10 0 0 0 9.004 3.455 M0 0m2 2 20 20";
+  /// Lucide icon `umbrella` (24x24 stroke paths).
   static const String umbrella = "M0 0M22 12a10.06 10.06 1 0 0-20 0Z M0 0M12 12v8a2 2 0 0 0 4 0 M0 0M12 2v1";
+  /// Lucide icon `underline` (24x24 stroke paths).
   static const String underline = "M0 0M6 4v6a6 6 0 0 0 12 0V4 M0 0M4 20L20 20";
+  /// Lucide icon `undo-2` (24x24 stroke paths).
   static const String undo2 = "M0 0M9 14 4 9l5-5 M0 0M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11";
+  /// Lucide icon `undo-dot` (24x24 stroke paths).
   static const String undoDot = "M0 0M21 17a9 9 0 0 0-15-6.7L3 13 M0 0M3 7v6h6 M0 0M11 17A1 1 0 1 0 13 17A1 1 0 1 0 11 17";
+  /// Lucide icon `undo` (24x24 stroke paths).
   static const String undo = "M0 0M3 7v6h6 M0 0M21 17a9 9 0 0 0-9-9 9 9 0 0 0-6 2.3L3 13";
+  /// Lucide icon `unfold-horizontal` (24x24 stroke paths).
   static const String unfoldHorizontal = "M0 0M16 12h6 M0 0M8 12H2 M0 0M12 2v2 M0 0M12 8v2 M0 0M12 14v2 M0 0M12 20v2 M0 0m19 15 3-3-3-3 M0 0m5 9-3 3 3 3";
+  /// Lucide icon `unfold-vertical` (24x24 stroke paths).
   static const String unfoldVertical = "M0 0M12 22v-6 M0 0M12 8V2 M0 0M4 12H2 M0 0M10 12H8 M0 0M16 12h-2 M0 0M22 12h-2 M0 0m15 19-3 3-3-3 M0 0m15 5-3-3-3 3";
+  /// Lucide icon `ungroup` (24x24 stroke paths).
   static const String ungroup = "M0 0M6 4h6a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z M0 0M12 14h6a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `university` (24x24 stroke paths).
   static const String university = "M0 0M11 10A1 1 0 1 0 13 10A1 1 0 1 0 11 10 M0 0M22 20V8h-4l-6-4-6 4H2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2 M0 0M6 17v.01 M0 0M6 13v.01 M0 0M18 17v.01 M0 0M18 13v.01 M0 0M14 22v-5a2 2 0 0 0-2-2a2 2 0 0 0-2 2v5";
+  /// Lucide icon `unlink-2` (24x24 stroke paths).
   static const String unlink2 = "M0 0M15 7h2a5 5 0 0 1 0 10h-2m-6 0H7A5 5 0 0 1 7 7h2";
+  /// Lucide icon `unlink` (24x24 stroke paths).
   static const String unlink = "M0 0m18.84 12.25 1.72-1.71h-.02a5.004 5.004 0 0 0-.12-7.07 5.006 5.006 0 0 0-6.95 0l-1.72 1.71 M0 0m5.17 11.75-1.71 1.71a5.004 5.004 0 0 0 .12 7.07 5.006 5.006 0 0 0 6.95 0l1.71-1.71 M0 0M8 2L8 5 M0 0M2 8L5 8 M0 0M16 19L16 22 M0 0M19 16L22 16";
+  /// Lucide icon `unplug` (24x24 stroke paths).
   static const String unplug = "M0 0m19 5 3-3 M0 0m2 22 3-3 M0 0M6.3 20.3a2.4 2.4 0 0 0 3.4 0L12 18l-6-6-2.3 2.3a2.4 2.4 0 0 0 0 3.4Z M0 0M7.5 13.5 10 11 M0 0M10.5 16.5 13 14 M0 0m12 6 6 6 2.3-2.3a2.4 2.4 0 0 0 0-3.4l-2.6-2.6a2.4 2.4 0 0 0-3.4 0Z";
+  /// Lucide icon `upload` (24x24 stroke paths).
   static const String upload = "M0 0M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4 M0 0M17 8L12 3L7 8 M0 0M12 3L12 15";
+  /// Lucide icon `usb` (24x24 stroke paths).
   static const String usb = "M0 0M9 7A1 1 0 1 0 11 7A1 1 0 1 0 9 7 M0 0M3 20A1 1 0 1 0 5 20A1 1 0 1 0 3 20 M0 0M4.7 19.3 19 5 M0 0m21 3-3 1 2 2Z M0 0M9.26 7.68 5 12l2 5 M0 0m10 14 5 2 3.5-3.5 M0 0m18 12 1-1 1 1-1 1Z";
+  /// Lucide icon `user-check` (24x24 stroke paths).
   static const String userCheck = "M0 0M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M0 0M5 7A4 4 0 1 0 13 7A4 4 0 1 0 5 7 M0 0M16 11L18 13L22 9";
+  /// Lucide icon `user-cog` (24x24 stroke paths).
   static const String userCog = "M0 0M15 15A3 3 0 1 0 21 15A3 3 0 1 0 15 15 M0 0M5 7A4 4 0 1 0 13 7A4 4 0 1 0 5 7 M0 0M10 15H6a4 4 0 0 0-4 4v2 M0 0m21.7 16.4-.9-.3 M0 0m15.2 13.9-.9-.3 M0 0m16.6 18.7.3-.9 M0 0m19.1 12.2.3-.9 M0 0m19.6 18.7-.4-1 M0 0m16.8 12.3-.4-1 M0 0m14.3 16.6 1-.4 M0 0m20.7 13.8 1-.4";
+  /// Lucide icon `user-minus` (24x24 stroke paths).
   static const String userMinus = "M0 0M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M0 0M5 7A4 4 0 1 0 13 7A4 4 0 1 0 5 7 M0 0M22 11L16 11";
+  /// Lucide icon `user-pen` (24x24 stroke paths).
   static const String userPen = "M0 0M11.5 15H7a4 4 0 0 0-4 4v2 M0 0M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z M0 0M6 7A4 4 0 1 0 14 7A4 4 0 1 0 6 7";
+  /// Lucide icon `user-plus` (24x24 stroke paths).
   static const String userPlus = "M0 0M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M0 0M5 7A4 4 0 1 0 13 7A4 4 0 1 0 5 7 M0 0M19 8L19 14 M0 0M22 11L16 11";
+  /// Lucide icon `user-round-check` (24x24 stroke paths).
   static const String userRoundCheck = "M0 0M2 21a8 8 0 0 1 13.292-6 M0 0M5 8A5 5 0 1 0 15 8A5 5 0 1 0 5 8 M0 0m16 19 2 2 4-4";
+  /// Lucide icon `user-round-cog` (24x24 stroke paths).
   static const String userRoundCog = "M0 0M2 21a8 8 0 0 1 10.434-7.62 M0 0M5 8A5 5 0 1 0 15 8A5 5 0 1 0 5 8 M0 0M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18 M0 0m19.5 14.3-.4.9 M0 0m16.9 20.8-.4.9 M0 0m21.7 19.5-.9-.4 M0 0m15.2 16.9-.9-.4 M0 0m21.7 16.5-.9.4 M0 0m15.2 19.1-.9.4 M0 0m19.5 21.7-.4-.9 M0 0m16.9 15.2-.4-.9";
+  /// Lucide icon `user-round-minus` (24x24 stroke paths).
   static const String userRoundMinus = "M0 0M2 21a8 8 0 0 1 13.292-6 M0 0M5 8A5 5 0 1 0 15 8A5 5 0 1 0 5 8 M0 0M22 19h-6";
+  /// Lucide icon `user-round-pen` (24x24 stroke paths).
   static const String userRoundPen = "M0 0M2 21a8 8 0 0 1 10.821-7.487 M0 0M21.378 16.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z M0 0M5 8A5 5 0 1 0 15 8A5 5 0 1 0 5 8";
+  /// Lucide icon `user-round-plus` (24x24 stroke paths).
   static const String userRoundPlus = "M0 0M2 21a8 8 0 0 1 13.292-6 M0 0M5 8A5 5 0 1 0 15 8A5 5 0 1 0 5 8 M0 0M19 16v6 M0 0M22 19h-6";
+  /// Lucide icon `user-round-search` (24x24 stroke paths).
   static const String userRoundSearch = "M0 0M5 8A5 5 0 1 0 15 8A5 5 0 1 0 5 8 M0 0M2 21a8 8 0 0 1 10.434-7.62 M0 0M15 18A3 3 0 1 0 21 18A3 3 0 1 0 15 18 M0 0m22 22-1.9-1.9";
+  /// Lucide icon `user-round-x` (24x24 stroke paths).
   static const String userRoundX = "M0 0M2 21a8 8 0 0 1 11.873-7 M0 0M5 8A5 5 0 1 0 15 8A5 5 0 1 0 5 8 M0 0m17 17 5 5 M0 0m22 17-5 5";
+  /// Lucide icon `user-round` (24x24 stroke paths).
   static const String userRound = "M0 0M7 8A5 5 0 1 0 17 8A5 5 0 1 0 7 8 M0 0M20 21a8 8 0 0 0-16 0";
+  /// Lucide icon `user-search` (24x24 stroke paths).
   static const String userSearch = "M0 0M6 7A4 4 0 1 0 14 7A4 4 0 1 0 6 7 M0 0M10.3 15H7a4 4 0 0 0-4 4v2 M0 0M14 17A3 3 0 1 0 20 17A3 3 0 1 0 14 17 M0 0m21 21-1.9-1.9";
+  /// Lucide icon `user-x` (24x24 stroke paths).
   static const String userX = "M0 0M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M0 0M5 7A4 4 0 1 0 13 7A4 4 0 1 0 5 7 M0 0M17 8L22 13 M0 0M22 8L17 13";
+  /// Lucide icon `user` (24x24 stroke paths).
   static const String user = "M0 0M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2 M0 0M8 7A4 4 0 1 0 16 7A4 4 0 1 0 8 7";
+  /// Lucide icon `users-round` (24x24 stroke paths).
   static const String usersRound = "M0 0M18 21a8 8 0 0 0-16 0 M0 0M5 8A5 5 0 1 0 15 8A5 5 0 1 0 5 8 M0 0M22 20c0-3.37-2-6.5-4-8a5 5 0 0 0-.45-8.3";
+  /// Lucide icon `users` (24x24 stroke paths).
   static const String users = "M0 0M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M0 0M5 7A4 4 0 1 0 13 7A4 4 0 1 0 5 7 M0 0M22 21v-2a4 4 0 0 0-3-3.87 M0 0M16 3.13a4 4 0 0 1 0 7.75";
+  /// Lucide icon `utensils-crossed` (24x24 stroke paths).
   static const String utensilsCrossed = "M0 0m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8 M0 0M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7 M0 0m2.1 21.8 6.4-6.3 M0 0m19 5-7 7";
+  /// Lucide icon `utensils` (24x24 stroke paths).
   static const String utensils = "M0 0M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2 M0 0M7 2v20 M0 0M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7";
+  /// Lucide icon `utility-pole` (24x24 stroke paths).
   static const String utilityPole = "M0 0M12 2v20 M0 0M2 5h20 M0 0M3 3v2 M0 0M7 3v2 M0 0M17 3v2 M0 0M21 3v2 M0 0m19 5-7 7-7-7";
+  /// Lucide icon `variable` (24x24 stroke paths).
   static const String variable = "M0 0M8 21s-4-3-4-9 4-9 4-9 M0 0M16 3s4 3 4 9-4 9-4 9 M0 0M15 9L9 15 M0 0M9 9L15 15";
+  /// Lucide icon `vault` (24x24 stroke paths).
   static const String vault = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M7 7.5A0.5 0.5 0 1 0 8 7.5A0.5 0.5 0 1 0 7 7.5 M0 0m7.9 7.9 2.7 2.7 M0 0M16 7.5A0.5 0.5 0 1 0 17 7.5A0.5 0.5 0 1 0 16 7.5 M0 0m13.4 10.6 2.7-2.7 M0 0M7 16.5A0.5 0.5 0 1 0 8 16.5A0.5 0.5 0 1 0 7 16.5 M0 0m7.9 16.1 2.7-2.7 M0 0M16 16.5A0.5 0.5 0 1 0 17 16.5A0.5 0.5 0 1 0 16 16.5 M0 0m13.4 13.4 2.7 2.7 M0 0M10 12A2 2 0 1 0 14 12A2 2 0 1 0 10 12";
+  /// Lucide icon `vegan` (24x24 stroke paths).
   static const String vegan = "M0 0M16 8q6 0 6-6-6 0-6 6 M0 0M17.41 3.59a10 10 0 1 0 3 3 M0 0M2 2a26.6 26.6 0 0 1 10 20c.9-6.82 1.5-9.5 4-14";
+  /// Lucide icon `venetian-mask` (24x24 stroke paths).
   static const String venetianMask = "M0 0M18 11c-1.5 0-2.5.5-3 2 M0 0M4 6a2 2 0 0 0-2 2v4a5 5 0 0 0 5 5 8 8 0 0 1 5 2 8 8 0 0 1 5-2 5 5 0 0 0 5-5V8a2 2 0 0 0-2-2h-3a8 8 0 0 0-5 2 8 8 0 0 0-5-2z M0 0M6 11c1.5 0 2.5.5 3 2";
+  /// Lucide icon `venus-and-mars` (24x24 stroke paths).
   static const String venusAndMars = "M0 0M10 20h4 M0 0M12 16v6 M0 0M17 2h4v4 M0 0m21 2-5.46 5.46 M0 0M7 11A5 5 0 1 0 17 11A5 5 0 1 0 7 11";
+  /// Lucide icon `venus` (24x24 stroke paths).
   static const String venus = "M0 0M12 15v7 M0 0M9 19h6 M0 0M6 9A6 6 0 1 0 18 9A6 6 0 1 0 6 9";
+  /// Lucide icon `vibrate-off` (24x24 stroke paths).
   static const String vibrateOff = "M0 0m2 8 2 2-2 2 2 2-2 2 M0 0m22 8-2 2 2 2-2 2 2 2 M0 0M8 8v10c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2 M0 0M16 10.34V6c0-.55-.45-1-1-1h-4.34 M0 0M2 2L22 22";
+  /// Lucide icon `vibrate` (24x24 stroke paths).
   static const String vibrate = "M0 0m2 8 2 2-2 2 2 2-2 2 M0 0m22 8-2 2 2 2-2 2 2 2 M0 0M9 5h6a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-6a1 1 0 0 1 -1 -1v-12a1 1 0 0 1 1 -1Z";
+  /// Lucide icon `video-off` (24x24 stroke paths).
   static const String videoOff = "M0 0M10.66 6H14a2 2 0 0 1 2 2v2.5l5.248-3.062A.5.5 0 0 1 22 7.87v8.196 M0 0M16 16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2 M0 0m2 2 20 20";
+  /// Lucide icon `video` (24x24 stroke paths).
   static const String video = "M0 0m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5 M0 0M4 6h10a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `videotape` (24x24 stroke paths).
   static const String videotape = "M0 0M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-16a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2Z M0 0M2 8h20 M0 0M6 14A2 2 0 1 0 10 14A2 2 0 1 0 6 14 M0 0M8 12h8 M0 0M14 14A2 2 0 1 0 18 14A2 2 0 1 0 14 14";
+  /// Lucide icon `view` (24x24 stroke paths).
   static const String view = "M0 0M21 17v2a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-2 M0 0M21 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2 M0 0M11 12A1 1 0 1 0 13 12A1 1 0 1 0 11 12 M0 0M18.944 12.33a1 1 0 0 0 0-.66 7.5 7.5 0 0 0-13.888 0 1 1 0 0 0 0 .66 7.5 7.5 0 0 0 13.888 0";
+  /// Lucide icon `voicemail` (24x24 stroke paths).
   static const String voicemail = "M0 0M2 12A4 4 0 1 0 10 12A4 4 0 1 0 2 12 M0 0M14 12A4 4 0 1 0 22 12A4 4 0 1 0 14 12 M0 0M6 16L18 16";
+  /// Lucide icon `volleyball` (24x24 stroke paths).
   static const String volleyball = "M0 0M11.1 7.1a16.55 16.55 0 0 1 10.9 4 M0 0M12 12a12.6 12.6 0 0 1-8.7 5 M0 0M16.8 13.6a16.55 16.55 0 0 1-9 7.5 M0 0M20.7 17a12.8 12.8 0 0 0-8.7-5 13.3 13.3 0 0 1 0-10 M0 0M6.3 3.8a16.55 16.55 0 0 0 1.9 11.5 M0 0M2 12A10 10 0 1 0 22 12A10 10 0 1 0 2 12";
+  /// Lucide icon `volume-1` (24x24 stroke paths).
   static const String volume1 = "M0 0M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z M0 0M16 9a5 5 0 0 1 0 6";
+  /// Lucide icon `volume-2` (24x24 stroke paths).
   static const String volume2 = "M0 0M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z M0 0M16 9a5 5 0 0 1 0 6 M0 0M19.364 18.364a9 9 0 0 0 0-12.728";
+  /// Lucide icon `volume-off` (24x24 stroke paths).
   static const String volumeOff = "M0 0M16 9a5 5 0 0 1 .95 2.293 M0 0M19.364 5.636a9 9 0 0 1 1.889 9.96 M0 0m2 2 20 20 M0 0m7 7-.587.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298V11 M0 0M9.828 4.172A.686.686 0 0 1 11 4.657v.686";
+  /// Lucide icon `volume-x` (24x24 stroke paths).
   static const String volumeX = "M0 0M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z M0 0M22 9L16 15 M0 0M16 9L22 15";
+  /// Lucide icon `volume` (24x24 stroke paths).
   static const String volume = "M0 0M11 4.702a.705.705 0 0 0-1.203-.498L6.413 7.587A1.4 1.4 0 0 1 5.416 8H3a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2.416a1.4 1.4 0 0 1 .997.413l3.383 3.384A.705.705 0 0 0 11 19.298z";
+  /// Lucide icon `vote` (24x24 stroke paths).
   static const String vote = "M0 0m9 12 2 2 4-4 M0 0M5 7c0-1.1.9-2 2-2h10a2 2 0 0 1 2 2v12H5V7Z M0 0M22 19H2";
+  /// Lucide icon `wallet-cards` (24x24 stroke paths).
   static const String walletCards = "M0 0M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2Z M0 0M3 9a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2 M0 0M3 11h3c.8 0 1.6.3 2.1.9l1.1.9c1.6 1.6 4.1 1.6 5.7 0l1.1-.9c.5-.5 1.3-.9 2.1-.9H21";
+  /// Lucide icon `wallet-minimal` (24x24 stroke paths).
   static const String walletMinimal = "M0 0M17 14h.01 M0 0M7 7h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14";
+  /// Lucide icon `wallet` (24x24 stroke paths).
   static const String wallet = "M0 0M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1 M0 0M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4";
+  /// Lucide icon `wallpaper` (24x24 stroke paths).
   static const String wallpaper = "M0 0M6 9A2 2 0 1 0 10 9A2 2 0 1 0 6 9 M0 0m9 17 6.1-6.1a2 2 0 0 1 2.81.01L22 15V5a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2 M0 0M8 21h8 M0 0M12 17v4";
+  /// Lucide icon `wand-sparkles` (24x24 stroke paths).
   static const String wandSparkles = "M0 0m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72 M0 0m14 7 3 3 M0 0M5 6v4 M0 0M19 14v4 M0 0M10 2v2 M0 0M7 8H3 M0 0M21 16h-4 M0 0M11 3H9";
+  /// Lucide icon `wand` (24x24 stroke paths).
   static const String wand = "M0 0M15 4V2 M0 0M15 16v-2 M0 0M8 9h2 M0 0M20 9h2 M0 0M17.8 11.8 19 13 M0 0M15 9h.01 M0 0M17.8 6.2 19 5 M0 0m3 21 9-9 M0 0M12.2 6.2 11 5";
+  /// Lucide icon `warehouse` (24x24 stroke paths).
   static const String warehouse = "M0 0M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z M0 0M6 18h12 M0 0M6 14h12 M0 0M6 10h12v12h-12Z";
+  /// Lucide icon `washing-machine` (24x24 stroke paths).
   static const String washingMachine = "M0 0M3 6h3 M0 0M17 6h.01 M0 0M5 2h14a2 2 0 0 1 2 2v16a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-16a2 2 0 0 1 2 -2Z M0 0M7 13A5 5 0 1 0 17 13A5 5 0 1 0 7 13 M0 0M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5";
+  /// Lucide icon `watch` (24x24 stroke paths).
   static const String watch = "M0 0M6 12A6 6 0 1 0 18 12A6 6 0 1 0 6 12 M0 0M12 10L12 12L13 13 M0 0m16.13 7.66-.81-4.05a2 2 0 0 0-2-1.61h-2.68a2 2 0 0 0-2 1.61l-.78 4.05 M0 0m7.88 16.36.8 4a2 2 0 0 0 2 1.61h2.72a2 2 0 0 0 2-1.61l.81-4.05";
+  /// Lucide icon `waves-ladder` (24x24 stroke paths).
   static const String wavesLadder = "M0 0M19 5a2 2 0 0 0-2 2v11 M0 0M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 M0 0M7 13h10 M0 0M7 9h10 M0 0M9 5a2 2 0 0 0-2 2v11";
+  /// Lucide icon `waves` (24x24 stroke paths).
   static const String waves = "M0 0M2 6c.6.5 1.2 1 2.5 1C7 7 7 5 9.5 5c2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 M0 0M2 12c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1 M0 0M2 18c.6.5 1.2 1 2.5 1 2.5 0 2.5-2 5-2 2.6 0 2.4 2 5 2 2.5 0 2.5-2 5-2 1.3 0 1.9.5 2.5 1";
+  /// Lucide icon `waypoints` (24x24 stroke paths).
   static const String waypoints = "M0 0M9.5 4.5A2.5 2.5 0 1 0 14.5 4.5A2.5 2.5 0 1 0 9.5 4.5 M0 0m10.2 6.3-3.9 3.9 M0 0M2 12A2.5 2.5 0 1 0 7 12A2.5 2.5 0 1 0 2 12 M0 0M7 12h10 M0 0M17 12A2.5 2.5 0 1 0 22 12A2.5 2.5 0 1 0 17 12 M0 0m13.8 17.7 3.9-3.9 M0 0M9.5 19.5A2.5 2.5 0 1 0 14.5 19.5A2.5 2.5 0 1 0 9.5 19.5";
+  /// Lucide icon `webcam` (24x24 stroke paths).
   static const String webcam = "M0 0M4 10A8 8 0 1 0 20 10A8 8 0 1 0 4 10 M0 0M9 10A3 3 0 1 0 15 10A3 3 0 1 0 9 10 M0 0M7 22h10 M0 0M12 22v-4";
+  /// Lucide icon `webhook-off` (24x24 stroke paths).
   static const String webhookOff = "M0 0M17 17h-5c-1.09-.02-1.94.92-2.5 1.9A3 3 0 1 1 2.57 15 M0 0M9 3.4a4 4 0 0 1 6.52.66 M0 0m6 17 3.1-5.8a2.5 2.5 0 0 0 .057-2.05 M0 0M20.3 20.3a4 4 0 0 1-2.3.7 M0 0M18.6 13a4 4 0 0 1 3.357 3.414 M0 0m12 6 .6 1 M0 0m2 2 20 20";
+  /// Lucide icon `webhook` (24x24 stroke paths).
   static const String webhook = "M0 0M18 16.98h-5.99c-1.1 0-1.95.94-2.48 1.9A4 4 0 0 1 2 17c.01-.7.2-1.4.57-2 M0 0m6 17 3.13-5.78c.53-.97.1-2.18-.5-3.1a4 4 0 1 1 6.89-4.06 M0 0m12 6 3.13 5.73C15.66 12.7 16.9 13 18 13a4 4 0 0 1 0 8";
+  /// Lucide icon `weight` (24x24 stroke paths).
   static const String weight = "M0 0M9 5A3 3 0 1 0 15 5A3 3 0 1 0 9 5 M0 0M6.5 8a2 2 0 0 0-1.905 1.46L2.1 18.5A2 2 0 0 0 4 21h16a2 2 0 0 0 1.925-2.54L19.4 9.5A2 2 0 0 0 17.48 8Z";
+  /// Lucide icon `wheat-off` (24x24 stroke paths).
   static const String wheatOff = "M0 0m2 22 10-10 M0 0m16 8-1.17 1.17 M0 0M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z M0 0m8 8-.53.53a3.5 3.5 0 0 0 0 4.94L9 15l1.53-1.53c.55-.55.88-1.25.98-1.97 M0 0M10.91 5.26c.15-.26.34-.51.56-.73L13 3l1.53 1.53a3.5 3.5 0 0 1 .28 4.62 M0 0M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z M0 0M11.47 17.47 13 19l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L5 19l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z M0 0m16 16-.53.53a3.5 3.5 0 0 1-4.94 0L9 15l1.53-1.53a3.49 3.49 0 0 1 1.97-.98 M0 0M18.74 13.09c.26-.15.51-.34.73-.56L21 11l-1.53-1.53a3.5 3.5 0 0 0-4.62-.28 M0 0M2 2L22 22";
+  /// Lucide icon `wheat` (24x24 stroke paths).
   static const String wheat = "M0 0M2 22 16 8 M0 0M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z M0 0M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z M0 0M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z M0 0M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z M0 0M11.47 17.47 13 19l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L5 19l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z M0 0M15.47 13.47 17 15l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L9 15l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z M0 0M19.47 9.47 21 11l-1.53 1.53a3.5 3.5 0 0 1-4.94 0L13 11l1.53-1.53a3.5 3.5 0 0 1 4.94 0Z";
+  /// Lucide icon `whole-word` (24x24 stroke paths).
   static const String wholeWord = "M0 0M4 12A3 3 0 1 0 10 12A3 3 0 1 0 4 12 M0 0M10 9v6 M0 0M14 12A3 3 0 1 0 20 12A3 3 0 1 0 14 12 M0 0M14 7v8 M0 0M22 17v1c0 .5-.5 1-1 1H3c-.5 0-1-.5-1-1v-1";
+  /// Lucide icon `wifi-high` (24x24 stroke paths).
   static const String wifiHigh = "M0 0M12 20h.01 M0 0M5 12.859a10 10 0 0 1 14 0 M0 0M8.5 16.429a5 5 0 0 1 7 0";
+  /// Lucide icon `wifi-low` (24x24 stroke paths).
   static const String wifiLow = "M0 0M12 20h.01 M0 0M8.5 16.429a5 5 0 0 1 7 0";
+  /// Lucide icon `wifi-off` (24x24 stroke paths).
   static const String wifiOff = "M0 0M12 20h.01 M0 0M8.5 16.429a5 5 0 0 1 7 0 M0 0M5 12.859a10 10 0 0 1 5.17-2.69 M0 0M19 12.859a10 10 0 0 0-2.007-1.523 M0 0M2 8.82a15 15 0 0 1 4.177-2.643 M0 0M22 8.82a15 15 0 0 0-11.288-3.764 M0 0m2 2 20 20";
+  /// Lucide icon `wifi-zero` (24x24 stroke paths).
   static const String wifiZero = "M0 0M12 20h.01";
+  /// Lucide icon `wifi` (24x24 stroke paths).
   static const String wifi = "M0 0M12 20h.01 M0 0M2 8.82a15 15 0 0 1 20 0 M0 0M5 12.859a10 10 0 0 1 14 0 M0 0M8.5 16.429a5 5 0 0 1 7 0";
+  /// Lucide icon `wind-arrow-down` (24x24 stroke paths).
   static const String windArrowDown = "M0 0M10 2v8 M0 0M12.8 21.6A2 2 0 1 0 14 18H2 M0 0M17.5 10a2.5 2.5 0 1 1 2 4H2 M0 0m6 6 4 4 4-4";
+  /// Lucide icon `wind` (24x24 stroke paths).
   static const String wind = "M0 0M12.8 19.6A2 2 0 1 0 14 16H2 M0 0M17.5 8a2.5 2.5 0 1 1 2 4H2 M0 0M9.8 4.4A2 2 0 1 1 11 8H2";
+  /// Lucide icon `wine-off` (24x24 stroke paths).
   static const String wineOff = "M0 0M8 22h8 M0 0M7 10h3m7 0h-1.343 M0 0M12 15v7 M0 0M7.307 7.307A12.33 12.33 0 0 0 7 10a5 5 0 0 0 7.391 4.391M8.638 2.981C8.75 2.668 8.872 2.34 9 2h6c1.5 4 2 6 2 8 0 .407-.05.809-.145 1.198 M0 0M2 2L22 22";
+  /// Lucide icon `wine` (24x24 stroke paths).
   static const String wine = "M0 0M8 22h8 M0 0M7 10h10 M0 0M12 15v7 M0 0M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z";
+  /// Lucide icon `workflow` (24x24 stroke paths).
   static const String workflow = "M0 0M5 3h4a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z M0 0M7 11v4a2 2 0 0 0 2 2h4 M0 0M15 13h4a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-4a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2Z";
+  /// Lucide icon `worm` (24x24 stroke paths).
   static const String worm = "M0 0m19 12-1.5 3 M0 0M19.63 18.81 22 20 M0 0M6.47 8.23a1.68 1.68 0 0 1 2.44 1.93l-.64 2.08a6.76 6.76 0 0 0 10.16 7.67l.42-.27a1 1 0 1 0-2.73-4.21l-.42.27a1.76 1.76 0 0 1-2.63-1.99l.64-2.08A6.66 6.66 0 0 0 3.94 3.9l-.7.4a1 1 0 1 0 2.55 4.34z";
+  /// Lucide icon `wrap-text` (24x24 stroke paths).
   static const String wrapText = "M0 0M3 6L21 6 M0 0M3 12h15a3 3 0 1 1 0 6h-4 M0 0M16 16L14 18L16 20 M0 0M3 18L10 18";
+  /// Lucide icon `wrench` (24x24 stroke paths).
   static const String wrench = "M0 0M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z";
+  /// Lucide icon `x` (24x24 stroke paths).
   static const String x = "M0 0M18 6 6 18 M0 0m6 6 12 12";
+  /// Lucide icon `youtube` (24x24 stroke paths).
   static const String youtube = "M0 0M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17 M0 0m10 15 5-3-5-3z";
+  /// Lucide icon `zap-off` (24x24 stroke paths).
   static const String zapOff = "M0 0M10.513 4.856 13.12 2.17a.5.5 0 0 1 .86.46l-1.377 4.317 M0 0M15.656 10H20a1 1 0 0 1 .78 1.63l-1.72 1.773 M0 0M16.273 16.273 10.88 21.83a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14H4a1 1 0 0 1-.78-1.63l4.507-4.643 M0 0m2 2 20 20";
+  /// Lucide icon `zap` (24x24 stroke paths).
   static const String zap = "M0 0M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z";
+  /// Lucide icon `zoom-in` (24x24 stroke paths).
   static const String zoomIn = "M0 0M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11 M0 0M21 21L16.65 16.65 M0 0M11 8L11 14 M0 0M8 11L14 11";
+  /// Lucide icon `zoom-out` (24x24 stroke paths).
   static const String zoomOut = "M0 0M3 11A8 8 0 1 0 19 11A8 8 0 1 0 3 11 M0 0M21 21L16.65 16.65 M0 0M8 11L14 11";
 }
 

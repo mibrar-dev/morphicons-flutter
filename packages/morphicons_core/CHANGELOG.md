@@ -1,6 +1,6 @@
-## 0.1.0
+## 1.0.0
 
-- Initial release.
+- Stable 1.0.0 release, ready for pub.dev.
 - Full SVG `d` parser (relative commands, shorthands, packed arc flags).
 - Cubic normalizer for `line`, `circle`, `ellipse`, `rect`, `polyline`,
   `polygon` and arcs, plus `fitIcon` re-gridding onto 24×24.
@@ -15,3 +15,7 @@
   `bouncy` presets and interruption-safe re-planning.
 - Numeric parity against the upstream morphicons JS implementation:
   Procrustes 4.4e-16, resampling 7.3e-15, frames byte-exact.
+
+## 0.1.0
+
+- Initial prerelease.

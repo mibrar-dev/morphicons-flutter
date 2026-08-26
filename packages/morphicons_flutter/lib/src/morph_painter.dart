@@ -3,8 +3,8 @@
 /// Takes a plan + progress t, builds a dart:ui.Path from the interpolated
 /// polyline points (stroke style: PaintingStyle.stroke, StrokeCap.round,
 /// StrokeJoin.round, given strokeWidth/color), and snaps to the exact
-/// canonical target icon paths when settled (t >= 1 / spring settled) so a
-/// resting icon is pixel-identical to a static one.
+/// canonical target icon paths when [canonicalSnap] is true so a resting
+/// icon is pixel-identical to a static one.
 ///
 /// Only touches dart:ui here — never in morphicons_core.
 library;
@@ -16,21 +16,35 @@ import 'package:morphicons_core/morphicons_core.dart';
 
 /// CustomPainter for rendering a morph plan at progress t.
 ///
-/// When [t] >= 1, paints the exact canonical shape from [canonicalPaths]
-/// instead of the interpolated polyline for pixel-perfect rest state.
+/// When [canonicalSnap] is true, paints the exact canonical shape from
+/// [canonicalPaths] instead of the interpolated polyline. Callers are
+/// responsible for deciding when to snap:
+///
+/// * **Uncontrolled settled**: pass `canonicalSnap: true` after the spring
+///   has fully settled at its target.
+/// * **Controlled t == 1**: pass `canonicalSnap: true` for pixel-perfect
+///   rendering at exactly t = 1.
+/// * **Controlled t > 1 (overshoot)**: pass `canonicalSnap: false` so the
+///   extrapolated frame remains visible.
+/// * **In-flight**: pass `canonicalSnap: false`.
 class MorphPainter extends CustomPainter {
-  /// The morph plan to render. Null when at rest (use canonicalPaths).
+  /// The morph plan to render. Null when using canonical snap only.
   final MorphPlan? plan;
 
   /// Interpolated output buffers (preallocated, zero allocation per frame).
   final List<Float64List>? out;
 
-  /// Progress through the morph (0..1). Values > 1 are extrapolation (overshoot).
+  /// Progress through the morph (0..1 typical; < 0 or > 1 extrapolates).
   final double t;
 
-  /// Canonical cubic paths for the target icon (for exact t=1 rendering).
-  /// When provided and t >= 1, this is painted instead of the polyline.
+  /// Canonical cubic paths for the target icon (for exact t = 1 rendering).
   final List<CubicPath>? canonicalPaths;
+
+  /// When true, paints [canonicalPaths] exactly instead of the polyline.
+  ///
+  /// Pass true for a fully-settled uncontrolled icon or controlled t == 1.
+  /// Pass false for in-flight springs and controlled t > 1 (overshoot).
+  final bool canonicalSnap;
 
   /// Stroke width for the path.
   final double strokeWidth;
@@ -42,11 +56,12 @@ class MorphPainter extends CustomPainter {
   /// to the paint size). Defaults to the canonical 24×24 grid.
   final double viewBox;
 
-  MorphPainter({
+  const MorphPainter({
     required this.plan,
     required this.out,
     required this.t,
     this.canonicalPaths,
+    this.canonicalSnap = false,
     this.strokeWidth = 2,
     this.color = const Color(0xFF000000),
     this.viewBox = 24,
@@ -65,9 +80,8 @@ class MorphPainter extends CustomPainter {
     canvas.save();
     canvas.scale(size.width / viewBox, size.height / viewBox);
     try {
-      // When t >= 1 and we have canonical paths, render them exactly.
-      // This ensures pixel-perfect matching with a static icon at rest.
-      if (t >= 1 && canonicalPaths != null) {
+      // Canonical snap: render exact target cubics when explicitly requested.
+      if (canonicalSnap && canonicalPaths != null) {
         final path = _cubicsToPath(canonicalPaths!);
         canvas.drawPath(path, paint);
         return;
@@ -94,6 +108,7 @@ class MorphPainter extends CustomPainter {
         plan != oldDelegate.plan ||
         color != oldDelegate.color ||
         strokeWidth != oldDelegate.strokeWidth ||
+        canonicalSnap != oldDelegate.canonicalSnap ||
         canonicalPaths != oldDelegate.canonicalPaths;
   }
 }

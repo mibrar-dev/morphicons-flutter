@@ -87,8 +87,21 @@ class MorphIconState extends State<MorphIcon> {
   String _source = '';
   String _target = '';
   bool _registered = false;
+  bool _springSettled = true;
 
   bool get _settledAtTarget => _spring.x >= 1;
+
+  /// Current interpolation progress (spring x in uncontrolled mode,
+  /// the [MorphIcon.progress] value in controlled mode). Exposed for
+  /// telemetry and debugging UIs.
+  double get progress => widget._isControlled ? widget.progress! : _spring.x;
+
+  /// Current spring velocity (uncontrolled mode only; 0 when controlled).
+  double get velocity => widget._isControlled ? 0 : _spring.v;
+
+  /// Whether the icon is resting on its target shape.
+  bool get settled =>
+      widget._isControlled ? widget.progress! >= 1 : _spring.x >= 1;
 
   @override
   void initState() {
@@ -159,6 +172,7 @@ class MorphIconState extends State<MorphIcon> {
     _rebuildPlan(icon, icon);
     _spring.x = 1;
     _spring.v = 0;
+    _springSettled = true;
     _unregister();
     setState(() {});
   }
@@ -167,11 +181,11 @@ class MorphIconState extends State<MorphIcon> {
     // Interruption: re-sample the current intermediate shape as the new
     // morph source so the re-plan starts exactly where we are.
     final closed = _plan!.items.map((it) => it.closed).toList();
-    final newSource =
-        _settledAtTarget ? _target : serialize(_out!, closed);
+    final newSource = _settledAtTarget ? _target : serialize(_out!, closed);
     _target = icon;
     _rebuildPlan(newSource, icon);
     _spring.start();
+    _springSettled = false;
     _register();
     setState(() {});
   }
@@ -193,6 +207,7 @@ class MorphIconState extends State<MorphIcon> {
     if (settled) {
       _spring.x = 1;
       _spring.v = 0;
+      _springSettled = true;
       _unregister();
     }
     setState(() {});
@@ -207,6 +222,8 @@ class MorphIconState extends State<MorphIcon> {
   @override
   Widget build(BuildContext context) {
     final t = widget._isControlled ? widget.progress! : _spring.x;
+    final canonicalSnap =
+        widget._isControlled ? widget.progress == 1 : _springSettled;
     final color = widget.color ?? DefaultTextStyle.of(context).style.color;
     final child = CustomPaint(
       size: Size.square(widget.size),
@@ -215,6 +232,7 @@ class MorphIconState extends State<MorphIcon> {
         out: _out,
         t: t,
         canonicalPaths: _canonical,
+        canonicalSnap: canonicalSnap,
         strokeWidth: widget.strokeWidth,
         color: color ?? const Color(0xFF000000),
       ),

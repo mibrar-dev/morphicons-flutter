@@ -1,6 +1,6 @@
 # morphicons_core
 
-Pure-Dart core of [Morphicons](https://github.com/infinora/morphicons_flutter):
+Pure-Dart core of [Morphicons](https://github.com/mibrar-dev/morphicons-flutter):
 the similarity-transform solver behind similarity-aware icon morphing. A
 faithful port of the [morphicons](https://github.com/guillermolg00/morphicons)
 core — Flutter-free by design, unit-testable on the plain Dart VM.

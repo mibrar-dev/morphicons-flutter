@@ -1,4 +1,4 @@
-# Dart
+# Dart / Flutter
 .dart_tool/
 .packages
 build/
@@ -7,5 +7,32 @@ pubspec.lock
 .flutter-plugins-dependencies
 .idea/
 *.iml
+
+# Node
 node_modules/
+
+# AI / local planning artifacts — never publish, never push
+docs/
+.history/
+.tmp/
+tmp/
+.opencode/
+.claude/
+AGENT.md
+CLAUDE.md
+.mcp.json
+
+# Reference upstream checkout (keep fixtures but ignore cloned source)
 reference/morphicons/
+
+# Tool local deps
+tool/node_modules/
+
+# Generated screenshots / design reference comps (root-level)
+morphicons_*.png
+reference_*.png
+morphicons*.png
+
+# OS
+.DS_Store
+Thumbs.db

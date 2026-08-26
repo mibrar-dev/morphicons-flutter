@@ -39,6 +39,95 @@ key.currentState?.morphTo(MorphIconsLucide.check); // animates
 key.currentState?.set(MorphIconsLucide.x);         // jumps, no animation
 ```
 
+## More widgets & helpers
+
+`morphicons_flutter` exports `MorphCanvas`, `MorphMask`, `MorphTween`, `MorphPair`, and `String` helpers in addition to `MorphIcon`.
+
+### MorphCanvas / MorphCanvasPainter
+
+```dart
+// Animated — owns its own ticker.
+MorphCanvas(
+  icon: isOpen ? MorphIconsLucide.x : MorphIconsLucide.menu,
+  spring: SpringPreset.snappy,
+  size: 48,
+)
+
+// Controlled — no ticker, progress supplied from outside.
+MorphCanvas.controlled(
+  from: MorphIconsLucide.menu,
+  icon: MorphIconsLucide.x,
+  progress: dragProgress,
+)
+
+// Or paint directly inside your own CustomPaint widget.
+CustomPaint(
+  size: const Size.square(48),
+  painter: MorphCanvasPainter.controlled(
+    from: MorphIconsLucide.menu,
+    to: MorphIconsLucide.x,
+    progress: 0.5,
+  ),
+)
+```
+
+### MorphMask
+
+```dart
+// Mask a child with a morphing stroke icon.
+MorphMask(
+  icon: MorphIconsLucide.x,
+  child: Image.asset('photo.jpg', fit: BoxFit.cover),
+)
+
+// Controlled mask.
+MorphMask.controlled(
+  from: MorphIconsLucide.menu,
+  icon: MorphIconsLucide.x,
+  progress: dragProgress,
+  child: child,
+)
+```
+
+`MorphMask` composites through an offscreen `saveLayer` every frame, so it is best suited to small interactive surfaces rather than large grids of animated children.
+
+### MorphTween
+
+```dart
+final tween = MorphTween(from: MorphIconsLucide.menu, to: MorphIconsLucide.x);
+final mid = tween.transform(0.5); // polar-interpolated d string
+final end = tween.transform(1);   // exact canonical target
+```
+
+### MorphPair and readable helpers
+
+```dart
+final pair = MorphIconsLucide.menu.morphTo(MorphIconsLucide.x);
+// or the short alias:
+final pair = MorphIconsLucide.menu.morph(MorphIconsLucide.x);
+
+// Build controlled widgets from the pair:
+pair.icon(progress: 0.5);
+pair.canvas(progress: 0.5);
+pair.mask(progress: 0.5, child: child);
+
+// Ticker-free d-string interpolator:
+final tween = pair.tween();
+```
+
+### Explicit `String` helpers
+
+```dart
+MorphIconsLucide.menu.morphCanvasTo(MorphIconsLucide.x, progress: 0.5);
+MorphIconsLucide.menu.morphMaskTo(
+  MorphIconsLucide.x,
+  progress: 0.5,
+  child: child,
+);
+```
+
+All `controlled` constructors and helpers are state-management-neutral: they receive `progress` directly and do not start a ticker, so they work with `setState`, `AnimatedBuilder`, or any external controller.
+
 ## The pipeline (mirrors upstream `core → dom → react`)
 
 1. **Normalize** every SVG primitive to cubic Bézier subpaths (`parsePath`, `iconToCubics`, `fitIcon`).
@@ -72,6 +161,19 @@ uses only the Flutter SDK. Icon packs are separate, optional packages.
 ```sh
 cd tool && npm install && node extract_icons.mjs
 ```
+
+## Website
+
+From the repository root, build the Flutter iframe from its package directory, then serve the static site:
+
+```sh
+cd packages/morphicons_site_demo
+flutter build web --release --base-href /flutter/ -o ../../website/flutter
+cd ../..
+python3 -m http.server 8765 --directory website
+```
+
+Open <http://127.0.0.1:8765/> in a browser. The browser-local SVG converter keeps processing on-device and provides four outputs: a Dart `const`, a ready-to-paste map entry, the raw SVG `d` string, and the sampled points used for morphing.
 
 ## Credits & license
 

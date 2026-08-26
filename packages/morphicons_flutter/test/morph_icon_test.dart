@@ -42,6 +42,20 @@ void main() {
       final painter = _painterOf(tester)!;
       expect(painter.t, 1);
       expect(painter.canonicalPaths, isNotNull);
+      expect(painter.canonicalSnap, isTrue);
+    });
+
+    testWidgets('controlled progress above one keeps extrapolated geometry',
+        (tester) async {
+      await tester.pumpWidget(
+        const MaterialApp(
+          home: MorphIcon.controlled(from: _menu, icon: _x, progress: 1.25),
+        ),
+      );
+
+      final painter = _painterOf(tester)!;
+      expect(painter.t, 1.25);
+      expect(painter.canonicalSnap, isFalse);
     });
 
     testWidgets('imperative morphTo animates and settles to canonical shape',
@@ -80,8 +94,27 @@ void main() {
       expect(MorphScheduler.instance.activeCount, 0);
     });
 
-    testWidgets('uncontrolled icon change morphs then settles',
+    testWidgets('set during animation snaps to canonical target',
         (tester) async {
+      final key = GlobalKey<MorphIconState>();
+      await tester.pumpWidget(
+        MaterialApp(home: MorphIcon(key: key, icon: _menu)),
+      );
+      key.currentState!.morphTo(_x);
+      await tester.pump();
+      await tester.pump(const Duration(milliseconds: 40));
+      expect(_painterOf(tester)!.canonicalSnap, isFalse);
+
+      key.currentState!.set(_horizontal);
+      await tester.pump();
+      final painter = _painterOf(tester)!;
+      expect(painter.t, greaterThanOrEqualTo(1));
+      expect(painter.canonicalSnap, isTrue);
+      expect(painter.canonicalPaths, isNotNull);
+      expect(MorphScheduler.instance.activeCount, 0);
+    });
+
+    testWidgets('uncontrolled icon change morphs then settles', (tester) async {
       await tester.pumpWidget(
         const MaterialApp(home: MorphIcon(icon: _menu)),
       );

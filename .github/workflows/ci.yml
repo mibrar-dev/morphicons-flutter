@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+      - run: dart analyze
+      - run: flutter analyze
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+      - name: Core tests
+        run: dart test -p vm
+        working-directory: packages/morphicons_core
+      - name: Lucide tests
+        run: dart test -p vm
+        working-directory: packages/morphicons_lucide
+      - name: Flutter tests
+        run: flutter test
+        working-directory: packages/morphicons_flutter
+
+  dry-run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+      - run: flutter pub get
+      - run: dart pub publish --dry-run --directory=packages/morphicons_core
+      - run: flutter pub publish --dry-run --directory=packages/morphicons_flutter
+      - run: dart pub publish --dry-run --directory=packages/morphicons_lucide

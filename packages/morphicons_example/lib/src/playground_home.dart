@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:morphicons_core/morphicons_core.dart' hide Alignment;
 import 'package:morphicons_flutter/morphicons_flutter.dart';
 import 'package:morphicons_lucide/morphicons_lucide.dart';
 

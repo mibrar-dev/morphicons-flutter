@@ -236,7 +236,7 @@ async function main() {
   }
 
   const dartBody = rows
-    .map((r) => `  static const String ${r.dartName} = "${r.d}";`)
+    .map((r) => `  /// Lucide icon \`${r.kebabName}\` (24x24 stroke paths).\n  static const String ${r.dartName} = "${r.d}";`)
     .join("\n");
 
   const mapBody = rows

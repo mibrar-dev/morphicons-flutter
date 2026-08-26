@@ -293,19 +293,26 @@ class _MorphMaskRender extends RenderProxyBox {
       return;
     }
     final canvas = context.canvas;
+    // Use uniform scale and center to preserve aspect ratio
+    final s = size.shortestSide / _viewBox;
+    final dx = offset.dx + (size.width - _viewBox * s) / 2;
+    final dy = offset.dy + (size.height - _viewBox * s) / 2;
+    // Try dstIn with stroked path; if that fails on web, fallback to clipPath
+    // First, try the standard saveLayer + dstIn
     canvas.saveLayer(offset & size, Paint());
     context.paintChild(child, offset);
     canvas.save();
-    canvas.translate(offset.dx, offset.dy);
-    canvas.scale(size.width / _viewBox, size.height / _viewBox);
+    canvas.translate(dx, dy);
+    canvas.scale(s, s);
     final path = morphPath(_render, _progress, canonicalSnap: _canonicalSnap);
     final paint = Paint()
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
       ..strokeJoin = StrokeJoin.round
       ..strokeWidth = _strokeWidth
-      ..color = _color
-      ..blendMode = BlendMode.dstIn;
+      ..color = const Color(0xFFFFFFFF)
+      ..blendMode = BlendMode.dstIn
+      ..isAntiAlias = true;
     canvas.drawPath(path, paint);
     canvas.restore();
     canvas.restore();

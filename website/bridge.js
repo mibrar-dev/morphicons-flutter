@@ -38,6 +38,15 @@
     { id: 'square-circle', label: 'square → circle', from: 'M5 5h14v14H5Z', to: 'M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20' },
   ];
 
+  // Viewport-aware: pause telemetry DOM updates when bridge offscreen — Flutter iframe keeps its own spring.
+  let bridgeVisible = true;
+  const bridgeRoot = document.querySelector('.flutter-bridge') || frame;
+  if ('IntersectionObserver' in window && bridgeRoot) {
+    const io = new IntersectionObserver((entries) => { bridgeVisible = entries[0].isIntersecting; }, { threshold: 0.12 });
+    io.observe(bridgeRoot);
+  }
+  document.addEventListener('visibilitychange', () => { if (document.hidden) bridgeVisible = false; });
+
   PAIRS.forEach((pair, i) => {
     const opt = document.createElement('option');
     opt.value = String(i);
@@ -151,6 +160,8 @@
     }
     if (!ready) return;
     if (d.type === 'telemetry') {
+      // Skip DOM thrash when scrolled away.
+      if (!bridgeVisible || document.hidden) return;
       setReadout(ro.x, fixed(d.x, 3));
       setReadout(ro.v, fixed(d.v, 3));
       setReadout(ro.settled, d.settled === true ? 'yes' : d.settled === false ? 'no' : '—');

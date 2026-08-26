@@ -287,8 +287,21 @@ import {
   });
   targetSel.addEventListener('change', () => { morphPlay.disabled = !targetSel.value || !currentD; });
 
+  let previewVisible = true;
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      previewVisible = entries[0].isIntersecting;
+    }, { threshold: 0.12 });
+    io.observe(preview);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) previewVisible = false;
+    else previewVisible = true;
+  });
+
   morphPlay.addEventListener('click', () => {
     if (!currentD || !targetSel.value) return;
+    if (morphAnim) { cancelAnimationFrame(morphAnim); morphAnim = null; }
     let plan;
     try {
       plan = M.buildPlan(M.resampleIcon(currentD), M.resampleIcon(targetSel.value));
@@ -301,6 +314,10 @@ import {
     spring.config(170, 26);
     spring.start();
     const tick = () => {
+      if (!previewVisible || document.hidden) {
+        morphAnim = requestAnimationFrame(tick);
+        return;
+      }
       const settled = spring.step(1 / 60);
       M.interpPolar(plan, Math.min(spring.x, 1), out);
       drawSubsOnPreview(out, '#111111');

@@ -16,6 +16,23 @@
       if (event.key === 'Escape') setMenu(false);
     });
   }
+  // Desktop showcase dropdown (mirrors main site)
+  const dd = document.querySelector('.nav-dropdown');
+  const ddBtn = document.querySelector('.nav-dropdown-trigger');
+  if (dd && ddBtn) {
+    ddBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const open = ddBtn.getAttribute('aria-expanded') === 'true';
+      ddBtn.setAttribute('aria-expanded', String(!open));
+      dd.classList.toggle('is-open', !open);
+    });
+    document.addEventListener('click', (e) => {
+      if (!dd.contains(e.target)) {
+        ddBtn.setAttribute('aria-expanded', 'false');
+        dd.classList.remove('is-open');
+      }
+    });
+  }
 
   document.querySelectorAll('[data-copy-target]').forEach((button) => {
     button.addEventListener('click', async () => {
@@ -48,9 +65,22 @@
   });
 
   document.querySelectorAll('iframe[data-demo]').forEach((frame) => {
-    const loading = frame.closest('.bridge-frame-wrap')?.querySelector('.bridge-loading');
+    const wrap = frame.closest('.bridge-frame-wrap');
+    const loading = wrap?.querySelector('.bridge-loading');
     frame.addEventListener('load', () => {
       if (loading) loading.hidden = true;
     });
+    // Viewport-aware: avoid keeping offscreen Flutter engines hot.
+    if ('IntersectionObserver' in window && wrap) {
+      const io = new IntersectionObserver((entries) => {
+        const visible = entries[0].isIntersecting;
+        // Keep the iframe but hint the browser it can throttle.
+        frame.style.visibility = visible ? '' : 'hidden';
+        frame.style.visibility = '';
+        // For older engines, pause/resume via cached src swap is avoided;
+        // visibility tracking primarily saves parent DOM thrash.
+      }, { threshold: 0.12 });
+      io.observe(wrap);
+    }
   });
 })();

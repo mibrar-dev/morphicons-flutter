@@ -9,23 +9,39 @@ const LUCIDE = window.LucideCatalog || {};
 (() => {
   const toggle = document.querySelector('.nav-toggle');
   const menu = document.getElementById('mobileMenu');
-  if (!toggle || !menu) return;
-
-  function setMenu(open) {
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-    menu.classList.toggle('is-open', open);
-    menu.setAttribute('aria-hidden', String(!open));
-    document.body.classList.toggle('menu-open', open);
+  if (toggle && menu) {
+    function setMenu(open) {
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      menu.classList.toggle('is-open', open);
+      menu.setAttribute('aria-hidden', String(!open));
+      document.body.classList.toggle('menu-open', open);
+    }
+    toggle.addEventListener('click', () => {
+      setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setMenu(false);
+    });
   }
-
-  toggle.addEventListener('click', () => {
-    setMenu(toggle.getAttribute('aria-expanded') !== 'true');
-  });
-  menu.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') setMenu(false);
-  });
+  // Desktop showcase dropdown — click toggles for keyboard/touch, hover still works via CSS.
+  const dd = document.querySelector('.nav-dropdown');
+  const ddBtn = document.querySelector('.nav-dropdown-trigger');
+  if (dd && ddBtn) {
+    ddBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const open = ddBtn.getAttribute('aria-expanded') === 'true';
+      ddBtn.setAttribute('aria-expanded', String(!open));
+      dd.classList.toggle('is-open', !open);
+    });
+    document.addEventListener('click', (e) => {
+      if (!dd.contains(e.target)) {
+        ddBtn.setAttribute('aria-expanded', 'false');
+        dd.classList.remove('is-open');
+      }
+    });
+  }
 })();
 
 function iconData(name, fallback) {
@@ -161,16 +177,20 @@ function drawCurve(canvas, k, c, currentT) {
 }
 
 /* ============================================================
-   HERO — auto-cycling showcase
+   HERO — auto-cycling showcase (viewport-aware)
    ============================================================ */
 const hero = (() => {
   const canvas = document.getElementById('heroCanvas');
+  if (!canvas) return {};
   const label = document.getElementById('heroPairLabel');
+  const heroSection = canvas.closest('.hero') || canvas.parentElement;
   let idx = 0;
   let plan = null, out = null;
   const spring = new M.Spring();
   let phase = 'morph'; // morph -> hold -> next
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let visible = true;
+  let rafId = null;
 
   function loadPair(i) {
     const p = PAIRS[i];
@@ -180,7 +200,7 @@ const hero = (() => {
     spring.config(170, 26);
     spring.start();
     phase = 'morph';
-    label.textContent = p.label;
+    if (label) label.textContent = p.label;
     return performance.now() - t0;
   }
 
@@ -188,9 +208,19 @@ const hero = (() => {
   loadPair(0);
 
   function frame() {
+    rafId = null;
+    let canDraw = visible && !document.hidden;
+    if (heroSection) {
+      const r = heroSection.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) canDraw = false;
+    }
+    if (!canDraw) {
+      rafId = requestAnimationFrame(frame);
+      return;
+    }
     const fit = fitCanvas(canvas);
-    if (fit) {
-      const { ctx, w, h, dpr } = fit;
+    if (fit && plan && out) {
+      const { ctx, w, h } = fit;
       if (reducedMotion) {
         M.interpPolar(plan, 1, out);
         drawSubs(ctx, w, h, out, '#24211d', 2 * (w / 240) * 0.9);
@@ -208,10 +238,34 @@ const hero = (() => {
         }
       }
     }
-    requestAnimationFrame(frame);
+    rafId = requestAnimationFrame(frame);
   }
-  requestAnimationFrame(frame);
-  return {};
+  // Pause when scrolled out of view — saves CPU and respects user.
+  if ('IntersectionObserver' in window && heroSection) {
+    const io = new IntersectionObserver((entries) => {
+      visible = entries[0].isIntersecting && !document.hidden;
+      window._heroVisible = visible;
+      if (visible && rafId == null) rafId = requestAnimationFrame(frame);
+    }, { threshold: 0.15 });
+    io.observe(heroSection);
+  }
+  window._heroVisible = visible;
+  window._heroGetVisible = () => visible;
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) visible = false;
+    else if (heroSection) {
+      const r = heroSection.getBoundingClientRect();
+      visible = r.bottom > 0 && r.top < window.innerHeight;
+    } else visible = true;
+    window._heroVisible = visible;
+    if (visible && rafId == null) rafId = requestAnimationFrame(frame);
+  });
+  rafId = requestAnimationFrame(frame);
+  return {
+    get visible() { return visible; },
+    pause() { visible = false; window._heroVisible = false; },
+    resume() { visible = true; window._heroVisible = true; if (rafId == null) rafId = requestAnimationFrame(frame); }
+  };
 })();
 
 /* ============================================================
@@ -357,9 +411,45 @@ const pg = (() => {
     drawCurve(curveCanvas, state.k, state.c, t);
   }
 
-  /* ----- animation loop ----- */
+  /* ----- animation loop (pauses when section not in view) ----- */
+  let pgVisible = true;
+  const pgSection = document.getElementById('playground') || document.querySelector('.playground');
+  if ('IntersectionObserver' in window && pgSection) {
+    const io = new IntersectionObserver((entries) => {
+      pgVisible = entries[0].isIntersecting && !document.hidden;
+      // expose for debugging / tests
+      window._pgVisible = pgVisible;
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    io.observe(pgSection);
+  }
+  // Also pause while tab hidden (user switched tabs) — saves battery.
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) pgVisible = false;
+    else if (pgSection) {
+      const rect = pgSection.getBoundingClientRect();
+      pgVisible = rect.top < window.innerHeight && rect.bottom > 0;
+    } else pgVisible = true;
+    window._pgVisible = pgVisible;
+  });
+  // debugging helper
+  window._pgVisible = pgVisible;
+  window._pgGetVisible = () => pgVisible;
+  window._pgSectionRect = () => {
+    if (!pgSection) return null;
+    const r = pgSection.getBoundingClientRect();
+    return { top: r.top, bottom: r.bottom, vh: window.innerHeight, hidden: document.hidden, flag: pgVisible };
+  };
   function tick() {
-    if (state.mode === 'playing') {
+    // Recompute visibility synchronously each tick as safety net (covers fast scroll before observer fires)
+    let canAnimate = pgVisible && !document.hidden;
+    if (pgSection) {
+      const r = pgSection.getBoundingClientRect();
+      const inView = r.bottom > 0 && r.top < window.innerHeight;
+      if (!inView) canAnimate = false;
+    }
+    window._lastCanAnimate = canAnimate;
+    window._lastTickMode = state.mode;
+    if (state.mode === 'playing' && canAnimate) {
       const settled = state.spring.step(1 / 60);
       state.t = Math.min(state.spring.x, 1.2);
       render(Math.min(state.t, 1));
@@ -369,7 +459,8 @@ const pg = (() => {
           render(1);
           playBtn.textContent = 'Play';
           playBtn.setAttribute('aria-pressed', 'false');
-          if (state.animationSet.length >= 2) {
+          // Only auto-advance the staged set while visible — otherwise pause.
+          if (state.animationSet.length >= 2 && canAnimate) {
             state.animationIndex = (state.animationIndex + 1) % state.animationSet.length;
             rebuildPlan();
             restart();

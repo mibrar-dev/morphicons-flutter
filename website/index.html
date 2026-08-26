@@ -23,25 +23,29 @@
       <span>Morphicons</span>
       <span class="wordmark-sub">for Flutter</span>
     </a>
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Primary">
       <a href="#playground">Playground</a>
-      <a href="showcase/">Showcase</a>
-      <a href="showcase/mask/">MorphMask</a>
-      <a href="showcase/canvas/">MorphCanvas</a>
-      <a href="roadmap/">Roadmap</a>
-      <a href="#flutter-live">Flutter live</a>
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false">Showcase <span class="nav-caret" aria-hidden="true">▾</span></button>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="showcase/" role="menuitem">Core patterns</a>
+          <a href="showcase/mask/" role="menuitem">MorphMask</a>
+          <a href="showcase/canvas/" role="menuitem">MorphCanvas</a>
+          <a href="roadmap/" role="menuitem">Roadmap</a>
+        </div>
+      </div>
       <a href="#features">How it works</a>
-      <a href="#compatibility">Compatibility</a>
       <a href="#converter">Converter</a>
       <a href="#docs">Docs</a>
-      <a href="#publishing">Publishing</a>
-      <a href="https://github.com/guillermolg00/morphicons" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a>
     </nav>
-    <a class="btn btn-sm" href="https://pub.dev/packages/morphicons_flutter">pub.dev</a>
-    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu">
-      <span class="nav-toggle-line"></span>
-      <span class="nav-toggle-line"></span>
-    </button>
+    <div class="nav-actions">
+      <a class="btn btn-sm nav-cta" href="https://pub.dev/packages/morphicons_flutter">pub.dev</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -50,17 +54,14 @@
     <p class="mobile-menu-kicker mono">Navigate the workbench</p>
     <nav class="mobile-menu-links" aria-label="Mobile navigation">
        <a href="#playground">Playground</a>
-       <a href="showcase/">Showcase</a>
+       <a href="showcase/">Showcase — Core</a>
        <a href="showcase/mask/">MorphMask</a>
        <a href="showcase/canvas/">MorphCanvas</a>
        <a href="roadmap/">Roadmap</a>
-      <a href="#flutter-live">Flutter live</a>
       <a href="#features">How it works</a>
-      <a href="#compatibility">Compatibility</a>
       <a href="#converter">Converter</a>
       <a href="#docs">Docs</a>
-      <a href="#publishing">Publishing</a>
-      <a href="https://github.com/guillermolg00/morphicons" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a>
     </nav>
     <a class="btn mobile-menu-cta" href="https://pub.dev/packages/morphicons_flutter">View on pub.dev <span class="btn-icon" aria-hidden="true">↗</span></a>
   </div>
@@ -613,47 +614,7 @@ final d = serialize(out);</code></pre>
   </div>
 </section>
 
-<!-- ============ PUBLISHING ============ -->
-<section id="publishing" class="section">
-  <div class="section-head reveal">
-    <p class="kicker">Package status</p>
-    <h2>Pub-ready, verified.</h2>
-    <p class="section-sub">Every package in the monorepo passes <span class="mono">dart pub publish --dry-run</span>
-    with zero warnings and follows the pub.dev scoring checklist.</p>
-  </div>
-  <div class="pub-grid">
-    <div class="card reveal">
-      <p class="card-label mono">morphicons_core</p>
-      <ul class="check-list">
-        <li>pubspec, README, CHANGELOG, MIT LICENSE</li>
-        <li>example/ + ≥ 20 % documented public API</li>
-        <li>dart analyze — no issues</li>
-        <li>dry-run: 0 warnings · 31 KB archive</li>
-        <li>platforms: all (pure Dart, web + Wasm-ready)</li>
-      </ul>
-    </div>
-    <div class="card reveal">
-      <p class="card-label mono">morphicons_flutter</p>
-      <ul class="check-list">
-        <li>pubspec, README, CHANGELOG, MIT LICENSE</li>
-        <li>example/ + ≥ 20 % documented public API</li>
-        <li>flutter analyze — no issues · 8 widget tests</li>
-        <li>dry-run: 0 warnings · 7 KB archive</li>
-        <li>platforms: iOS, Android, web, macOS, Windows, Linux</li>
-      </ul>
-    </div>
-    <div class="card reveal">
-      <p class="card-label mono">morphicons_lucide</p>
-      <ul class="check-list">
-        <li>pubspec, README, CHANGELOG, MIT LICENSE</li>
-        <li>example/ + ≥ 20 % documented public API</li>
-        <li>dart analyze — no issues · 1,565 icons parse-tested</li>
-        <li>dry-run: 0 warnings</li>
-        <li>platforms: all (pure const data)</li>
-      </ul>
-    </div>
-  </div>
-</section>
+
 
 </main>
 

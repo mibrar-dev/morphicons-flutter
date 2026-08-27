@@ -9,7 +9,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2324211d' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 7h16M4 12h16M4 17h10'/%3E%3C/svg%3E">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="morphicons-mark.svg" type="image/svg+xml">
 </head>
 <body>
 
@@ -306,8 +310,8 @@
         <div class="how-grid">
           <div>
             <h2>Six kilobytes of math.</h2>
-            <p>morphicons solves the optimal similarity between two shapes in closed form (2D Procrustes): if a pair is congruent under rotation, it rotates; if not, it morphs in the aligned frame. Nobody declares rotation groups by hand. Springs are interruptible, corners stay sharp at rest, and the core never touches the DOM, so every Flutter surface is a first-class driver.</p>
-            <p>Icons are consumed as data, not widgets: a name maps to a <span class="mono">26pt</span> path, structurally typed. Raw D hidden to keep layout stable.</p>
+            <p>morphicons solves the optimal similarity between two shapes in closed form (2D Procrustes): if a pair is congruent under rotation, it rotates; if not, it morphs in the aligned frame. Nobody declares rotation groups by hand. Springs are interruptible, corners stay sharp at rest, and the core is pure Dart — no <span class="mono">Widget</span>, no <span class="mono">BuildContext</span> — so every Flutter surface is a first-class driver: <span class="mono">Widget</span>, <span class="mono">CustomPainter</span>, charts, games.</p>
+            <p>Icons are consumed as data, not widgets: an <span class="mono">IconData</span> or a raw SVG <span class="mono">d</span> maps to the same 24×24 cubic pipeline, structurally typed. Custom <span class="mono">d</span> just works; font glyphs resolve through the curated table in <span class="mono">icon_data_resolver.dart</span>. Raw paths stay off-layout until you Copy.</p>
             <a class="btn" href="https://github.com/mibrar-dev/morphicons-flutter#readme" target="_blank" rel="noopener">See the full docs <span class="btn-icon" aria-hidden="true">→</span></a>
           </div>
           <dl class="stats-grid">
@@ -318,17 +322,26 @@
           </dl>
         </div>
         <div class="compat-pills-wrap">
-          <p>Works with any stroke icon set — on any grid, via fitIcon.</p>
-          <ul class="compat-pills">
-            <li>Lucide</li>
-            <li>Tabler</li>
-            <li>Heroicons outline</li>
-            <li>Iconoir</li>
-            <li>Akar</li>
-            <li>Untitled UI</li>
-            <li>Hugeicons</li>
-            <li>shadcn registry</li>
+          <p>Works with any icon set — stroke or filled, any grid, via <span class="mono">fitIcon</span> + <span class="mono">IconData</span> resolver.</p>
+          <p class="compat-lead hint">Same <span class="mono">MorphIcon</span> for <span class="mono">String d</span> and <span class="mono">IconData</span>. Canonical 24 grid; other grids (20, 16, 32…) fitted once via <span class="mono">fitIcon(raw, "0 0 20 20")</span>. Paste custom SVG as <span class="mono">d</span> — no extra widget. Add any font glyph by extending the resolver table (see <span class="mono">lib/src/icon_data_resolver.dart</span>).</p>
+          <ul class="compat-pills" aria-label="Compatible icon sets for Flutter">
+            <li title="1500+ stroke icons — morphicons_lucide pack, 24×24">Lucide</li>
+            <li title="~4800 outline icons — extract via tool/extract_tabler.mjs, 24×24">Tabler</li>
+            <li title="24 outline + 20/16 solid — tool/extract_heroicons.mjs handles fitted variants">Heroicons</li>
+            <li title="Stroke set on 24 — fitIcon not needed">Iconoir</li>
+            <li title="Phosphor — stroke/fill variants on 256 grid, use fitIcon">Phosphor</li>
+            <li title="Curated Map<int,String> in lib/src/icon_data_resolver.dart — extend via TTF codegen">Material Symbols <span class="compat-pill-meta">IconData</span></li>
+            <li title="CupertinoIcons / cupertino_icons — SF-style, via resolver or custom d">Cupertino <span class="compat-pill-meta">IconData</span></li>
+            <li class="is-generic" title="Any SVG path d — paste or generate, same solver">Any SVG → <span class="mono">String d</span></li>
+            <li class="is-generic" title="Any font — Material, FontAwesome, Iconsax, custom TTF via codePoint">Any <span class="mono">IconData</span></li>
           </ul>
+          <ul class="compat-pills compat-pills--tight" aria-label="Additional compatible sources">
+            <li class="is-muted" title="Outline set often used with shadcn/ui components, also SVG d">Feather</li>
+            <li class="is-muted">Font Awesome</li>
+            <li class="is-muted">Fluent UI</li>
+            <li class="is-muted">Custom TTF</li>
+          </ul>
+          <p class="compat-note mono">Mixed morphs: <span class="mono">IconData ↔ String d</span> in one widget. Stroke ↔ filled same solver. Grids normalized in aligned frame — no rotation bleed.</p>
         </div>
       </div>
 

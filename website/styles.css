@@ -1771,6 +1771,20 @@ pre code { line-height: 1.7; }
   font-weight: 500;
   color: var(--ink);
 }
+.compat-lead {
+  margin-top: 8px !important;
+  max-width: 68ch;
+  font-weight: 400 !important;
+  font-size: 13px !important;
+  line-height: 1.7;
+  color: var(--muted) !important;
+}
+.compat-lead .mono {
+  background: var(--surface-2);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 0.92em;
+}
 .compat-pills {
   display: flex;
   flex-wrap: wrap;
@@ -1778,9 +1792,13 @@ pre code { line-height: 1.7; }
   margin-top: 16px;
   list-style: none;
 }
+.compat-pills--tight {
+  margin-top: 10px;
+}
 .compat-pills li {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   height: 32px;
   padding: 0 14px;
   border: 1px solid var(--hairline);
@@ -1788,6 +1806,59 @@ pre code { line-height: 1.7; }
   border-radius: 6px;
   font-size: 13px;
   color: var(--body);
+  transition: border-color 180ms ease, background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+.compat-pills li:hover {
+  border-color: #333;
+  background: var(--surface-2);
+}
+.compat-pill-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--hairline);
+  background: var(--surface-2);
+  border-radius: 999px;
+  padding: 2px 7px;
+  line-height: 1;
+}
+.compat-pills li.is-generic {
+  background: var(--ink);
+  color: var(--canvas);
+  border-color: var(--ink);
+}
+.compat-pills li.is-generic .mono {
+  color: var(--canvas);
+  background: transparent;
+  padding: 0;
+  font-size: 1em;
+}
+.compat-pills li.is-generic:hover {
+  background: #e5e5e5;
+  border-color: #e5e5e5;
+}
+.compat-pills li.is-muted {
+  background: transparent;
+  border-style: dashed;
+  color: var(--muted);
+  font-size: 12.5px;
+  height: 30px;
+}
+.compat-note {
+  margin-top: 14px !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  line-height: 1.6;
+  color: var(--muted) !important;
+}
+.compat-note .mono {
+  background: var(--surface-2);
+  border-radius: 4px;
+  padding: 1px 5px;
+  font-size: 1em;
+  color: var(--muted);
 }
 
 @media (max-width: 1120px) {

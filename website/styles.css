@@ -2171,7 +2171,7 @@ pre code { line-height: 1.7; }
 
 /* ============================================================
    MASK — dark premium card matching morphicons.com/showcase/mask
-   Large preview: one <span> with 3 gradient bars clipped by mask-image.
+   Large preview: one <span> with single continuous gradient clipped by mask-image.
    Right controls: SHAPE pills + ELEMENT PAINT seg (Gradient/currentColor).
    ============================================================ */
 .mask-demo-section {
@@ -2228,12 +2228,9 @@ pre code { line-height: 1.7; }
 .mask-el {
   width: 144px;
   height: 144px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: center;
-  align-items: stretch;
+  display: block;
   flex: none;
+  /* single continuous gradient — no gaps on diagonal X (like morphicons.com reference) */
   /* mask driven by JS via maskImage / -webkitMaskImage -> hidden SVG <mask><path> */
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
@@ -2248,22 +2245,13 @@ pre code { line-height: 1.7; }
 @media (min-width: 640px) {
   .mask-el { width: 160px; height: 160px; }
 }
-.mask-el.is-gradient { background: transparent; }
+.mask-el.is-gradient {
+  background: linear-gradient(135deg, #007cf0 0%, #00dfd8 40%, #7928ca 70%, #ff0080 100%);
+}
 .mask-el.is-current {
   background: currentColor;
   color: var(--ink);
 }
-.mask-el.is-current .mask-bar { display: none; }
-.mask-bar {
-  height: 28px;
-  border-radius: 999px;
-  width: 100%;
-  flex: none;
-}
-/* Correct gradients: bar1 blue→green, bar2 teal→purple, bar3 blue→purple — matches spec + reference palette */
-.mask-bar:nth-child(1) { background: linear-gradient(90deg, #007cf0 0%, #00dfd8 100%); }
-.mask-bar:nth-child(2) { background: linear-gradient(90deg, #00dfd8 0%, #7928ca 100%); }
-.mask-bar:nth-child(3) { background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 55%, #d946ef 100%); }
 
 .mask-controls {
   display: flex;
@@ -2400,7 +2388,6 @@ pre code { line-height: 1.7; }
   .mask-card-header { padding: 16px; }
   .mask-controls { padding: 16px; }
   .mask-el { width: 144px; height: 144px; }
-  .mask-bar { height: 24px; }
 }
 @media (max-width: 960px) and (min-width: 768px) {
   .mask-controls { width: 300px; }

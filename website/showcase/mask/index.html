@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MorphMask — Morphicons for Flutter</title><meta name="description" content="Paint rich Flutter surfaces through animated MorphMask geometry."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../styles.css"><link rel="icon" type="image/png" href="../../flutter/favicon.png"></head>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MorphMask — Morphicons for Flutter</title><meta name="description" content="Paint rich Flutter surfaces through animated MorphMask geometry — web-native mask-image demo with one element, no path in the DOM."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../styles.css"><link rel="icon" type="image/png" href="../../flutter/favicon.png"></head>
 <body class="route-page"><div class="ambient" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
 <header class="nav"><div class="nav-inner"><a class="wordmark" href="../../"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>Morphicons</span><span class="wordmark-sub">for Flutter</span></a>
   <nav class="nav-links" aria-label="Primary">
@@ -21,10 +21,48 @@
   </div>
 </div></header>
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mobile-menu-inner"><p class="mobile-menu-kicker mono">Flutter workbench</p><nav class="mobile-menu-links" aria-label="Mobile navigation"><a href="../../">Home</a><a href="../">Showcase — Core</a><a href="./">MorphMask</a><a href="../../roadmap/">Roadmap</a><a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a></nav><a class="btn mobile-menu-cta" href="https://pub.dev/packages/morphicons_flutter">View on pub.dev <span class="btn-icon">↗</span></a></div></div>
-<main><section class="route-hero"><div class="hero-meta"><span class="tag tag-yellow">render target</span><span class="tag tag-green">child paint preserved</span></div><p class="kicker">MorphMask</p><h1 class="hero-title">Let the child stay rich.<br><em>Let the edge stay alive.</em></h1><p class="hero-sub">MorphMask clips a normal Flutter child with morphing stroke geometry. Use a gradient, current color, or a decorated surface without turning the icon solver into a paint-only API.</p><div class="route-links"><a class="btn" href="#mask-live">See it in Flutter <span class="btn-icon">↓</span></a><a class="btn btn-ghost" href="../">Previous: Core patterns</a></div></section><nav class="route-tabs" aria-label="Showcase sections"><a href="../">Core</a><a class="is-active" href="./">MorphMask</a><a href="../../roadmap/">Roadmap</a></nav>
-<section class="section section-alt"><div class="section-head"><p class="kicker">Three finishes, one geometry</p><h2>Mask the surface, not the idea.</h2><p class="section-sub">The animated path controls the visible boundary. The child remains a normal renderable widget, so its decoration, gradient, and semantics remain yours.</p></div><div class="bento"><article class="bento-card"><span class="tag tag-blue">gradient</span><h3>Paint inside the path</h3><p>Wrap a <span class="mono">DecoratedBox</span> with a linear or radial gradient. The mask reveals the same rich paint at every frame.</p></article><article class="bento-card"><span class="tag tag-green">currentColor</span><h3>Inherit the theme</h3><p>Use <span class="mono">ColorScheme</span> or <span class="mono">DefaultTextStyle</span> to keep a morphing control in the same visual language as its host.</p></article><article class="bento-card"><span class="tag tag-yellow">decoration</span><h3>Keep the child honest</h3><p>Images, borders, shadows, and rounded decorations stay child concerns. Geometry and paint are deliberately separate.</p></article></div></section>
-<section class="section" id="mask-live"><div class="section-head"><p class="kicker">Live Flutter</p><h2>Watch the mask compose.</h2><p class="section-sub">The compiled demo is loaded directly from <span class="mono">../../flutter/index.html?demo=mask</span>.</p></div><div class="bridge-frame-wrap"><div class="bridge-frame-bar"><span></span><span></span><span></span><p>morphicons_site_demo — mask</p><a href="../../flutter/index.html?demo=mask" target="_blank" rel="noopener">open full</a></div><div class="bridge-loading">loading Flutter engine…</div><iframe data-demo src="../../flutter/index.html?demo=mask" title="MorphMask Flutter gradient and decoration showcase"></iframe></div></section>
-<section class="section section-alt"><div class="docs-grid"><div class="doc-block"><p class="kicker">Paint versus geometry</p><h3>Two layers, one contract</h3><p>The child is laid out, hit-tested, and painted as usual. MorphMask adds its geometry as a compositing mask after the child paints. This is why a gradient belongs in the child, not in the path solver.</p><p class="hint">A save layer is an offscreen buffer. It costs memory bandwidth per animated frame, so keep masks to small interactive surfaces rather than large icon grids.</p></div><div class="doc-block"><p class="kicker">Flutter API</p><h3>Pair helpers stay readable</h3><pre><code>menu.morphTo(x).mask(
+<main><section class="route-hero"><div class="hero-meta"><span class="tag tag-yellow">css mask</span><span class="tag tag-green">one element</span></div><p class="kicker">MorphMask</p><h1 class="hero-title">One element,<br><em>no path in the DOM.</em></h1><p class="hero-sub">A single <span class="mono">&lt;span&gt;</span> keeps the paint — gradient, image, or <span class="mono">currentColor</span>. The morphing stroke lives only as <span class="mono">mask-image</span> (<span class="mono">url(#mask)</span>), so no <span class="mono">&lt;path&gt;</span> is ever injected and the element stays a normal box.</p><div class="route-links"><a class="btn" href="#mask-demo">See the mask <span class="btn-icon">↓</span></a><a class="btn btn-ghost" href="../">Previous: Core patterns</a></div></section><nav class="route-tabs" aria-label="Showcase sections"><a href="../">Core</a><a class="is-active" href="./">MorphMask</a><a href="../../roadmap/">Roadmap</a></nav>
+
+<section class="mask-demo-section" id="mask-demo">
+<div class="mask-card">
+  <div class="mask-card-left">
+    <div class="mask-preview-head"><span>Preview</span><span>mask-image</span></div>
+    <div class="mask-preview-stage">
+      <!-- The masked element: gradient bars show through the morphing stroke shape -->
+      <div id="maskEl" class="mask-el is-gradient" aria-label="Masked element showing gradient through morphing icon">
+        <div class="mask-bar" aria-hidden="true"></div>
+        <div class="mask-bar" aria-hidden="true"></div>
+        <div class="mask-bar" aria-hidden="true"></div>
+      </div>
+    </div>
+    <p class="hint mask-hint">Three gradient bars (blue → green, teal → purple, blue → purple) show through the stroke mask. The <span class="mono">span</span> never contains a <span class="mono">&lt;path&gt;</span>.</p>
+    <p class="mono mask-current-label">Current: <b id="maskCurrentLabel">menu → x</b></p>
+  </div>
+  <div class="mask-card-right">
+    <div class="mask-control-group">
+      <p class="mask-label">Shape</p>
+      <div class="mask-shape-grid" id="maskShapeGrid" role="group" aria-label="Shape"></div>
+    </div>
+    <div class="mask-control-group">
+      <p class="mask-label">Element paint</p>
+      <div class="seg mask-paint-seg" id="maskPaintSeg" role="group" aria-label="Element paint">
+        <button class="seg-btn is-active" type="button" data-paint="gradient" aria-pressed="true">Gradient</button>
+        <button class="seg-btn" type="button" data-paint="currentColor" aria-pressed="false">currentColor</button>
+      </div>
+      <p class="hint" style="margin-top:8px; font-size:12px">Gradient keeps three bars. <span class="mono">currentColor</span> paints the element in text color and inherits the theme.</p>
+    </div>
+    <div class="mask-code-block">
+      <div class="mask-code-head"><span class="mono">span with mask-image</span><button class="btn btn-sm btn-ghost" data-copy-target="mask-code-snip">Copy</button></div>
+      <pre><code id="mask-code-snip">span.style.maskImage = "url(#morphicons-mask-1)"
+span.style.webkitMaskImage = "url(#morphicons-mask-1)"
+// morph drives the hidden &lt;mask&gt;&lt;path d&gt; — no &lt;path&gt; in the span</code></pre>
+    </div>
+  </div>
+</div>
+<p class="hint mono" style="margin-top:12px; text-align:center; font-size:11px">Web: <span class="mono">maskTarget(span)</span> · Flutter: <span class="mono">MorphMask(child: DecoratedBox(gradient: …))</span> — same solver, same springs.</p>
+</section>
+
+<section class="section section-alt"><div class="docs-grid"><div class="doc-block"><p class="kicker">Paint versus geometry</p><h3>Two layers, one contract</h3><p>The child is laid out, hit-tested, and painted as usual. MorphMask adds its geometry as a compositing mask after the child paints. This is why a gradient belongs in the child, not in the path solver.</p><p class="hint">A save layer is an offscreen buffer. It costs memory bandwidth per animated frame, so keep masks to small interactive surfaces rather than large icon grids. Web masks re-rasterize every frame too — fine for toggles, not for dense grids.</p></div><div class="doc-block"><p class="kicker">Flutter API</p><h3>Pair helpers stay readable</h3><pre><code>menu.morphTo(x).mask(
   progress: progress,
   child: DecoratedBox(
     decoration: const BoxDecoration(
@@ -54,4 +92,265 @@ MorphMask.controlled(
 
 // The same call is available as pair.mask(...)
 // or menu.morphMaskTo(x, progress: progress, child: child).</code></pre></div></section>
-</main><footer class="footer"><div class="footer-inner"><p>Morphicons for Flutter · MIT · <a href="../../">Back to the workbench</a></p><p class="mono"><a href="../">Core</a> · <a href="../../roadmap/">Roadmap</a></p></div></footer><script src="../../showcase.js"></script></body></html>
+</main><footer class="footer"><div class="footer-inner"><p>Morphicons for Flutter · MIT · <a href="../../">Back to the workbench</a></p><p class="mono"><a href="../">Core</a> · <a href="../../roadmap/">Roadmap</a></p></div></footer>
+<script src="../../assets/morphicons-core.js"></script>
+<script src="../../assets/lucide-catalog.js"></script>
+<script src="../../showcase.js"></script>
+<script>
+/* Mask demo: span with mask-image driven by hidden double-buffered <mask><path> */
+(() => {
+  const M = window.MorphCore;
+  const LUCIDE = window.LucideCatalog;
+  if (!M || !LUCIDE) return;
+  const maskEl = document.getElementById('maskEl');
+  const shapeGrid = document.getElementById('maskShapeGrid');
+  const paintSeg = document.getElementById('maskPaintSeg');
+  const currentLabel = document.getElementById('maskCurrentLabel');
+  if (!maskEl || !shapeGrid || !paintSeg) return;
+
+  const SHAPES = ['menu','x','sun','moon','heart','star'];
+  // ensure all shapes exist; fallback to menu/x
+  const available = SHAPES.filter(function(n){ return !!LUCIDE[n]; });
+  const shapes = available.length >= 4 ? available : ['menu','x','heart','star'];
+
+  // --- double-buffered hidden SVG masks (mirrors morphicons/adapters/mask.ts) ---
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  var seq = Math.floor(Math.random()*1e6);
+  var host = document.createElementNS(SVG_NS, 'svg');
+  host.setAttribute('width','0');
+  host.setAttribute('height','0');
+  host.setAttribute('aria-hidden','true');
+  host.style.position = 'absolute';
+  host.style.width = '0';
+  host.style.height = '0';
+  host.style.overflow = 'hidden';
+  document.body.appendChild(host);
+
+  function makeLayer(id){
+    var mask = document.createElementNS(SVG_NS, 'mask');
+    mask.setAttribute('id', id);
+    mask.setAttribute('maskUnits','objectBoundingBox');
+    mask.setAttribute('maskContentUnits','objectBoundingBox');
+    mask.setAttribute('mask-type','alpha');
+    var g = document.createElementNS(SVG_NS, 'g');
+    // map 24x24 icon grid onto 0..1 objectBoundingBox
+    g.setAttribute('transform','scale(0.041666666666666664 0.041666666666666664)');
+    var path = document.createElementNS(SVG_NS, 'path');
+    path.setAttribute('fill','none');
+    path.setAttribute('stroke','#fff');
+    path.setAttribute('stroke-width','2');
+    path.setAttribute('stroke-linecap','round');
+    path.setAttribute('stroke-linejoin','round');
+    g.appendChild(path);
+    mask.appendChild(g);
+    host.appendChild(mask);
+    return { id: id, mask: mask, path: path };
+  }
+  var idA = 'morphicons-mask-' + (seq++) + '-a';
+  var idB = 'morphicons-mask-' + (seq++) + '-b';
+  var layerA = makeLayer(idA);
+  var layerB = makeLayer(idB);
+  var layers = [layerA, layerB];
+  var front = 0;
+  // start with first layer
+  maskEl.style.maskImage = 'url(#' + idA + ')';
+  maskEl.style.webkitMaskImage = 'url(#' + idA + ')';
+  // seed both masks with initial shape to avoid blank first frame
+  try { layerA.path.setAttribute('d', LUCIDE[shapes[0]] || ''); } catch(e){}
+  try { layerB.path.setAttribute('d', LUCIDE[shapes[0]] || ''); } catch(e){}
+
+  var current = shapes[0];
+  var target = shapes[1] || shapes[0];
+  var plan = null, out = null;
+  var spring = new M.Spring();
+  var rafId = null;
+  var isAnimating = false;
+
+  function getD(name){ return LUCIDE[name] || LUCIDE['menu']; }
+
+  function buildPlan(fromName, toName){
+    var fromD = getD(fromName), toD = getD(toName);
+    try {
+      plan = M.buildPlan(M.resampleIcon(fromD), M.resampleIcon(toD));
+      out = M.allocOutputs(plan);
+      return true;
+    } catch (e) {
+      console.error('buildPlan failed', e);
+      return false;
+    }
+  }
+
+  function serializeCurrent(){
+    if (!plan || !out) return getD(current);
+    var closed = plan.items.map(function(it){ return !!it.closed; });
+    try { return M.serialize(out, closed); } catch (e) {
+      // fallback manual
+      var d = '';
+      for (var k=0;k<out.length;k++){
+        var pts = out[k];
+        var n = pts.length/2;
+        if (n<2) continue;
+        d += 'M' + Math.round(pts[0]*100)/100 + ' ' + Math.round(pts[1]*100)/100;
+        for (var i=1;i<n;i++) d += 'L' + Math.round(pts[2*i]*100)/100 + ' ' + Math.round(pts[2*i+1]*100)/100;
+        if (closed[k]) d += 'Z';
+      }
+      return d;
+    }
+  }
+
+  function setMaskD(d){
+    front = 1 - front;
+    var layer = layers[front];
+    layer.path.setAttribute('d', d);
+    maskEl.style.maskImage = 'url(#' + layer.id + ')';
+    maskEl.style.webkitMaskImage = 'url(#' + layer.id + ')';
+  }
+
+  function renderAt(t){
+    if (!plan || !out) return;
+    M.interpPolar(plan, t, out);
+    var d = serializeCurrent();
+    setMaskD(d);
+  }
+
+  function updateButtons(activeName){
+    shapeGrid.querySelectorAll('button').forEach(function(b){
+      var on = b.dataset.shape === activeName;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+  }
+
+  function setLabel(from, to, animating){
+    if (animating) currentLabel.textContent = from + ' \u2192 ' + to;
+    else currentLabel.textContent = from;
+  }
+
+  function animateTo(nextName){
+    if (!nextName || nextName === target && !isAnimating && nextName === current) return;
+    if (rafId) cancelAnimationFrame(rafId);
+    var fromName = isAnimating ? current : current;
+    // If animating, we should snapshot intermediate shape as source for seamless interruption:
+    // resample current interpolated shape as new from.
+    // Simplest: if animating, use current interpolated d as from (already in mask). To preserve velocity, rebuild from that d.
+    // For now, rebuild from last settled current to nextName, and restart spring — acceptable for demo.
+    target = nextName;
+    if (!buildPlan(current, target)){
+      isAnimating = false;
+      return;
+    }
+    isAnimating = true;
+    setLabel(current, target, true);
+    spring = new M.Spring();
+    spring.config(170, 26);
+    spring.start();
+    function tick(){
+      rafId = null;
+      // viewport-aware: skip if hidden? keep running but throttle if document hidden
+      if (document.hidden){
+        rafId = requestAnimationFrame(tick);
+        return;
+      }
+      var settled = spring.step(1/60);
+      var t = Math.min(spring.x, 1);
+      renderAt(t);
+      if (!settled){
+        rafId = requestAnimationFrame(tick);
+      } else {
+        // snap to canonical at rest for crispness
+        isAnimating = false;
+        current = target;
+        setLabel(current, current, false);
+        updateButtons(current);
+        // ensure canonical d in front buffer
+        front = 1 - front;
+        var layer = layers[front];
+        try { layer.path.setAttribute('d', getD(current)); } catch(e){}
+        maskEl.style.maskImage = 'url(#' + layer.id + ')';
+        maskEl.style.webkitMaskImage = 'url(#' + layer.id + ')';
+        // schedule auto-advance
+        scheduleAuto();
+      }
+    }
+    rafId = requestAnimationFrame(tick);
+  }
+
+  // Build shape buttons
+  shapes.forEach(function(name){
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.dataset.shape = name;
+    btn.textContent = name;
+    btn.setAttribute('aria-pressed', String(name === current));
+    if (name === current) btn.classList.add('is-active');
+    btn.addEventListener('click', function(){ animateTo(name); });
+    shapeGrid.appendChild(btn);
+  });
+
+  // Paint toggle
+  paintSeg.querySelectorAll('[data-paint]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      paintSeg.querySelectorAll('[data-paint]').forEach(function(x){
+        var on = x === btn;
+        x.classList.toggle('is-active', on);
+        x.setAttribute('aria-pressed', String(on));
+      });
+      var paint = btn.dataset.paint;
+      if (paint === 'gradient'){
+        maskEl.classList.remove('is-current');
+        maskEl.classList.add('is-gradient');
+      } else {
+        maskEl.classList.remove('is-gradient');
+        maskEl.classList.add('is-current');
+      }
+    });
+  });
+
+  // initial render
+  buildPlan(current, target);
+  renderAt(0);
+  setLabel(current, target, false);
+  updateButtons(current);
+
+  // auto-advance through shapes every ~2s when idle and visible
+  var autoTimer = null;
+  function scheduleAuto(){
+    if (autoTimer) clearTimeout(autoTimer);
+    autoTimer = setTimeout(function(){
+      if (isAnimating || document.hidden) { scheduleAuto(); return; }
+      var idx = shapes.indexOf(current);
+      var next = shapes[(idx + 1) % shapes.length];
+      animateTo(next);
+    }, 1800);
+  }
+  // handle visibility: pause scheduling when hidden
+  document.addEventListener('visibilitychange', function(){
+    if (!document.hidden && !isAnimating) scheduleAuto();
+  });
+  // IntersectionObserver: pause auto when offscreen
+  var section = document.getElementById('mask-demo');
+  var visible = true;
+  if ('IntersectionObserver' in window && section){
+    var io = new IntersectionObserver(function(entries){
+      visible = entries[0].isIntersecting;
+      if (visible && !isAnimating) scheduleAuto();
+      else if (!visible && autoTimer) { clearTimeout(autoTimer); autoTimer=null; }
+    }, { threshold: 0.15 });
+    io.observe(section);
+  }
+  scheduleAuto();
+
+  // expose for tests/debug
+  window._maskDemo = {
+    get current(){ return current; },
+    get target(){ return target; },
+    get paint(){ return maskEl.classList.contains('is-current') ? 'currentColor' : 'gradient'; },
+    setShape: animateTo,
+    setPaint: function(p){
+      var btn = paintSeg.querySelector('[data-paint="' + p + '"]');
+      if (btn) btn.click();
+    }
+  };
+})();
+</script>
+</body></html>

@@ -5,103 +5,185 @@
     "navLinksChildren": 5,
     "navLinksTexts": [
       "Playground",
+      "Converter",
       "Showcase",
-      "How it works",
       "Roadmap",
       "GitHub"
     ],
-    "navLinksHeight": 22,
     "navWrap": "nowrap",
+    "navHeight": 22,
     "notWrapped": true,
-    "maybePub": "pub.dev",
-    "totalTopItems": 6,
-    "hasPublishingText": false,
-    "hasPublishingEl": false,
-    "publishingRemoved": true,
-    "kickers": [],
-    "heroFromExists_old": false,
-    "pgFromExists": true,
-    "pgToExists": true,
-    "pgFromToExists": true,
-    "pgFromToHasArrow": true,
-    "heroFromToAttr": "",
-    "heroShowsFromTo": true,
-    "heroTitleText": "Morph any Flutter iconinto any other.",
-    "pgTitle": "menu → x",
-    "pgTitleHasX": true,
-    "pgCanvasExists": true,
+    "toggleDisplay": "none",
+    "pubText": "pub.dev",
+    "pubHref": "https://pub.dev/packages/morphicons_flutter",
+    "totalTop": 6,
+    "hasPublishing": false,
+    "hasPubEl": false,
+    "kickers": [
+      "Converter · SVG → Dart",
+      "Flutter-native · IconData · filled"
+    ],
+    "heroTitle": "Morph any Flutter iconinto any other.",
+    "heroSub": "Animate Lucide, Tabler, Heroicons or any stroke icon set. Optimal rotation solved in closed form, spring physics, zero dependencies.",
+    "installChip": true,
+    "installText": "$ flutter pub add morphicons_flutter Copy",
+    "pgFrom": true,
+    "pgTo": true,
+    "pgFromTo": true,
+    "pgFromToArrow": true,
+    "pgFromToVisible": true,
+    "heroFromTo": true,
+    "pgTitle": "arrow-right → arrow-down",
+    "pgCanvas": true,
     "pgCanvasRect": {
       "w": 320,
-      "h": 320
+      "h": 320,
+      "vis": true
     },
-    "pgCanvasVisible": true,
+    "pairBtns": [
+      "menu → x",
+      "arrow-right → arrow-down",
+      "plus → minus",
+      "check → x",
+      "square → circle"
+    ],
     "pairCount": 5,
-    "activeLabel": "menu → x",
-    "lucideCountText": "1565 icons",
+    "activePair": "arrow-right → arrow-down",
+    "lucideCount": "1565 icons",
+    "lucideResults": 36,
+    "frameExists": true,
+    "frameTabs": [
+      "Playground",
+      "Converter",
+      "Code",
+      "How it works"
+    ],
+    "frameActive": "Playground",
+    "converterSection": true,
+    "converterGrid": true,
+    "convInputPage": true,
+    "convPreviewPage": true,
+    "iconDataSection": true,
+    "iconDataCanvas": true,
+    "iconDataPairs": [
+      "home-favorite",
+      "star-home",
+      "search-star",
+      "menu-close",
+      "settings-home",
+      "home-lucide-x"
+    ],
     "bodyBg": "rgb(16, 16, 16)",
     "canvasVar": "#101010",
-    "darkTheme": true,
-    "installChip": true,
-    "installText": "$\n      flutter pub add morphicons_flutter\n      Copy"
+    "inkVar": "#ededed",
+    "dark": true
   },
   "showcase": {
-    "headerHeight": 64,
-    "headerIs64": true,
+    "url": "http://127.0.0.1:8765/showcase/",
+    "header64": true,
+    "headerH": 64,
     "hasPublishing": false,
-    "publishingRemoved": true,
     "bodyBg": "rgb(16, 16, 16)",
     "canvasVar": "#101010",
-    "darkTheme": true,
-    "url": "http://127.0.0.1:8765/showcase/",
-    "bodyTextLen": 2153,
-    "maskMentions": true,
-    "heartMentions": false,
+    "dark": true,
+    "showcaseTitle": "Showcase",
+    "showcaseTabs": [
+      "Core",
+      "Mask adapter",
+      "Canvas adapter"
+    ],
+    "showcaseActive": "Core",
+    "metaCols": 3,
+    "metaTitles": [
+      "WHY THIS PATH",
+      "WHAT IT WEIGHS",
+      "THE TRADEOFF"
+    ],
+    "workbench": true,
+    "sidebar": true,
+    "controlLabels": [
+      "LIBRARY",
+      "FRAMEWORK",
+      "SPRING",
+      "STROKE"
+    ],
+    "patternCards": 6,
+    "patternTitles": [
+      "Copy to clipboard",
+      "Password visibility",
+      "Theme toggle",
+      "Player controls",
+      "Inline validation",
+      "File tree"
+    ],
+    "liveCanvases": [
+      "live-copy",
+      "live-eye",
+      "live-theme",
+      "live-play",
+      "live-mute",
+      "live-valid",
+      "live-valid-icon",
+      "live-folder"
+    ],
     "iframe": true,
     "iframeSrc": "../flutter/index.html?demo=core",
-    "iframeRect": {
-      "w": 304,
-      "h": 560
-    },
-    "totalTop": 5,
-    "notWrapped": true
+    "maskEl": false,
+    "maskShapeGrid": false,
+    "maskShapeBtns": [],
+    "maskCurrent": null,
+    "maskPaint": [],
+    "bodyLen": 2804,
+    "totalTop": 5
   },
   "mask": {
-    "headerHeight": 64,
-    "headerIs64": true,
+    "url": "http://127.0.0.1:8765/showcase/mask/",
+    "header64": true,
+    "headerH": 64,
     "hasPublishing": false,
-    "publishingRemoved": true,
     "bodyBg": "rgb(16, 16, 16)",
     "canvasVar": "#101010",
-    "darkTheme": true,
-    "url": "http://127.0.0.1:8765/showcase/mask/",
-    "bodyTextLen": 2479,
-    "maskMentions": true,
-    "heartMentions": false,
-    "iframe": true,
-    "iframeSrc": "../../flutter/index.html?demo=mask",
-    "iframeRect": {
-      "w": 304,
-      "h": 560
-    },
-    "totalTop": 5,
-    "notWrapped": true
+    "dark": true,
+    "showcaseTabs": [],
+    "metaCols": 0,
+    "metaTitles": [],
+    "workbench": false,
+    "sidebar": false,
+    "controlLabels": [],
+    "patternCards": 0,
+    "patternTitles": [],
+    "liveCanvases": [],
+    "iframe": false,
+    "iframeSrc": null,
+    "maskEl": true,
+    "maskShapeGrid": true,
+    "maskShapeBtns": [
+      "menu",
+      "x",
+      "sun",
+      "moon",
+      "heart",
+      "star"
+    ],
+    "maskCurrent": "menu",
+    "maskPaint": [
+      "Gradient",
+      "currentColor"
+    ],
+    "bodyLen": 2372,
+    "totalTop": 5
   },
   "mobileCheck": {
-    "navInnerH": 64,
+    "navH": 64,
     "navLinksDisplay": "none",
     "toggleDisplay": "flex",
     "hasPublishing": false,
     "heroTitle": "Morph any Flutter iconinto any other."
   },
-  "darkVals": {
+  "roadmap": {
+    "hasPublishing": false,
+    "dark": "rgb(16, 16, 16)",
     "canvas": "#101010",
-    "ink": "#ededed",
-    "muted": "#a1a1a1",
-    "surface": "#171717",
-    "line": "#262626"
-  },
-  "afterPlay": {
-    "pgTitle": "menu → x",
-    "tVal": "t = 0.742"
+    "items": 5
   }
 }

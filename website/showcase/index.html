@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Widget patterns — Morphicons for Flutter</title>
-<meta name="description" content="Flutter interaction patterns built with Morphicons.">
+<title>Showcase — Morphicons for Flutter</title>
+<meta name="description" content="Flutter interaction patterns built with Morphicons. Core showcase with live morphs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <link rel="icon" type="image/png" href="../flutter/favicon.png">
 </head>
-<body class="route-page">
+<body class="route-page" style="background:#101010;">
 <div class="ambient" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
 <header class="nav"><div class="nav-inner">
   <a class="wordmark" href="../"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>Morphicons</span><span class="wordmark-sub">for Flutter</span></a>
@@ -35,37 +35,171 @@
 </div></header>
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mobile-menu-inner"><p class="mobile-menu-kicker mono">Flutter workbench</p><nav class="mobile-menu-links" aria-label="Mobile navigation"><a href="../">Home</a><a href="./">Showcase — Core</a><a href="mask/">MorphMask</a><a href="../roadmap/">Roadmap</a><a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a></nav><a class="btn mobile-menu-cta" href="https://pub.dev/packages/morphicons_flutter">View on pub.dev <span class="btn-icon">↗</span></a></div></div>
 <main>
-  <section class="route-hero"><div class="hero-meta"><span class="tag tag-green">Flutter native</span><span class="tag tag-blue">core patterns</span></div><p class="kicker">The interaction layer</p><h1 class="hero-title">Small state changes,<br><em>beautifully articulated.</em></h1><p class="hero-sub">A reference-inspired shelf of everyday Flutter widgets. Each example keeps its state local, its icon data explicit, and its transition powered by <span class="mono">MorphIcon</span>.</p><div class="route-links"><a class="btn" href="#patterns">Browse patterns <span class="btn-icon">↓</span></a><a class="btn btn-ghost" href="mask/">Next: MorphMask</a></div></section>
-  <nav class="route-tabs" aria-label="Showcase sections"><a class="is-active" href="./">Core</a><a href="mask/">MorphMask</a><a href="../roadmap/">Roadmap</a></nav>
-  <section class="section section-alt" id="patterns"><div class="section-head"><p class="kicker">Core showcase</p><h2>Six moments worth a morph.</h2><p class="section-sub">These are deliberately ordinary controls: the animation should clarify the state, never compete with it.</p></div><div class="showcase-tabs" role="tablist" aria-label="Showcase sections"><button class="seg-btn is-active" data-tab="controls" role="tab">Controls</button><button class="seg-btn" data-tab="structure" role="tab">Structure</button><button class="seg-btn" data-tab="api" role="tab">API</button></div>
-    <div data-panel="controls" class="showcase-panel"><div class="pattern-grid"><article class="card pattern-card"><canvas id="live-copy" width="96" height="96" class="pattern-icon" style="width:48px;height:48px"></canvas><h3>Copy / check</h3><p>Confirm a clipboard action without replacing the button or shifting layout.</p><div style="display:flex; gap:8px; align-items:center; margin-top:12px"><button id="live-copy-btn" class="btn btn-sm">Copy</button><code class="mono">copied ? check : copy</code></div></article><article class="card pattern-card"><div style="position:relative; width:48px; height:48px;" class="pattern-icon"><canvas id="live-eye" width="96" height="96" style="width:48px;height:48px"></canvas></div><h3>Password visibility</h3><p>Eye states stay legible while the field keeps focus and its geometry.</p><div style="position:relative; margin-top:12px"><input id="live-password-input" type="password" value="correct-horse" style="width:100%; height:36px; padding:0 36px 0 12px; border:1px solid var(--hairline); border-radius:6px; background:var(--canvas); color:var(--ink)"><button id="live-eye-btn" style="position:absolute; right:4px; top:50%; transform:translateY(-50%); width:28px; height:28px; display:grid; place-items:center; border:0; background:transparent; cursor:pointer"><canvas width="28" height="28" style="width:28px;height:28px; display:none"></canvas></button></div></article><article class="card pattern-card"><canvas id="live-theme" width="96" height="96" class="pattern-icon" style="width:48px;height:48px"></canvas><h3>Theme toggle</h3><p>Sun and moon share one expressive control, with no cross-fade flash.</p><div style="margin-top:12px; font-family:var(--mono); font-size:12px; color:var(--muted)">Click the icon to toggle</div></article><article class="card pattern-card"><div style="display:flex; gap:8px; align-items:center" class="pattern-icon"><canvas id="live-play" width="64" height="64" style="width:32px;height:32px"></canvas><canvas id="live-mute" width="64" height="64" style="width:32px;height:32px"></canvas></div><h3>Player controls</h3><p>Play, pause, and skip can be composed from the same small vocabulary.</p><div style="margin-top:12px; font-family:var(--mono); font-size:12px; color:var(--muted)">Click play/pause or mute</div></article><article class="card pattern-card"><div style="position:relative; width:48px; height:48px;" class="pattern-icon"><canvas id="live-valid" width="96" height="96" style="width:48px;height:48px"></canvas></div><h3>Inline validation</h3><p>Validation changes read as a response beside the input, not a new screen.</p><div style="margin-top:12px"><input id="live-email" placeholder="you@example.com" style="width:100%; height:36px; padding:0 36px 0 12px; border:1px solid var(--hairline); border-radius:6px; background:var(--canvas); color:var(--ink)"></div></article><article class="card pattern-card"><div style="display:flex; align-items:center; gap:6px" class="pattern-icon"><span id="live-chevron" style="display:inline-block; transition:transform 200ms; font-size:12px;">›</span><canvas id="live-folder" width="64" height="64" style="width:36px;height:36px"></canvas></div><h3>File tree</h3><p>Disclosure arrows preserve hierarchy while folders open and close.</p><button id="live-tree-btn" style="margin-top:12px; width:100%; padding:8px; border:1px solid var(--hairline); border-radius:6px; background:var(--canvas); color:var(--ink); text-align:left; font-size:13px">Toggle folder</button><div id="live-tree-files" hidden style="margin-top:8px; margin-left:16px; border-left:1px solid var(--hairline); padding-left:12px; font-family:var(--mono); font-size:12px; color:var(--muted)">button.tsx<br>input.tsx<br>toggle.tsx</div></article></div></div>
-    <div data-panel="structure" class="showcase-panel" hidden><div class="docs-grid"><div class="doc-block"><h3>State stays yours</h3><p>Morphicons is state-management neutral. A boolean, a provider, a bloc, or a gesture can own the decision; the widget only renders it.</p><pre><code>final isOpen = ValueNotifier(false);
-
-ValueListenableBuilder&lt;bool&gt;(
-  valueListenable: isOpen,
-  builder: (_, open, __) =&gt; IconButton(
-    onPressed: () =&gt; isOpen.value = !open,
-    icon: MorphIcon(icon: open ? x : menu),
-  ),
-)</code></pre></div><div class="doc-block"><h3>One pair, many surfaces</h3><p>The same source and target can drive a normal icon or a mask.</p><pre><code>final pair = menu.morphTo(x);</code></pre></div></div></div>
-    <div data-panel="api" class="showcase-panel" hidden><div class="doc-block doc-wide"><div class="card-label-row"><h3>A Flutter-first API</h3><span class="tag tag-green">Dart</span></div><p>Use the readable aliases when the source and target are naturally paired, or the explicit constructors when a code review benefits from naming every role.</p><pre><code>menu.morphTo(x).icon(progress: progress);
-menu.morphMaskTo(x, progress: progress, child: coloredSurface);</code></pre></div></div>
+  <section class="showcase-hero-section">
+    <div class="showcase-hero-inner">
+      <h1 class="showcase-title">Showcase</h1>
+      <nav class="showcase-main-tabs" aria-label="Showcase sections">
+        <a class="is-active" href="./">Core</a>
+        <a href="mask/">Mask adapter</a>
+        <a href="../roadmap/">Canvas adapter</a>
+      </nav>
+      <p class="showcase-desc">A hardened core for production motion. Flutter-native morphing that keeps state local, geometry explicit and springs physical — from clipboard confirmation to file-tree disclosure. Six everyday interactions where a morph clarifies intent without adding chrome.</p>
+      <div class="showcase-meta-grid">
+        <div class="meta-col">
+          <h3>WHY THIS PATH</h3>
+          <p>Rotation is solved in closed form. If a pair is congruent under a similarity transform it rotates; otherwise it morphs in the aligned frame. No manual rotation groups.</p>
+        </div>
+        <div class="meta-col">
+          <h3>WHAT IT WEIGHS</h3>
+          <p>6.5 kB gzipped core, zero runtime dependencies, one shared Ticker for every icon on screen. Planning any pair costs &lt;1 ms on a mid-range device.</p>
+        </div>
+        <div class="meta-col">
+          <h3>THE TRADEOFF</h3>
+          <p>Stroke is first-class; filled shapes reuse the same polar solver. Corners stay sharp at rest, and masks stay small to avoid an extra save-layer per frame.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="showcase-workbench-section" id="patterns" aria-label="Core patterns workbench">
+    <div class="showcase-workbench">
+      <aside class="showcase-sidebar" aria-label="Showcase controls">
+        <div class="control-group">
+          <p class="control-label">LIBRARY</p>
+          <div class="seg control-seg" role="tablist" aria-label="Library">
+            <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-control="library" data-value="lucide">Lucide</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="library" data-value="heroicons">Heroicons</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="library" data-value="tabler">Tabler</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <p class="control-label">FRAMEWORK</p>
+          <div class="seg control-seg" role="tablist" aria-label="Framework">
+            <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-control="framework" data-value="react">React</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="framework" data-value="vue">Vue</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="framework" data-value="svelte">Svelte</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <p class="control-label">SPRING</p>
+          <div class="seg control-seg" role="tablist" aria-label="Spring preset">
+            <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-control="spring" data-value="smooth">smooth</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="spring" data-value="snappy">snappy</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="spring" data-value="bouncy">bouncy</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <p class="control-label">STROKE</p>
+          <div class="seg control-seg" role="tablist" aria-label="Stroke width">
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="stroke" data-value="1">1</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="stroke" data-value="1.5">1.5</button>
+            <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-control="stroke" data-value="2">2</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="stroke" data-value="2.5">2.5</button>
+          </div>
+        </div>
+        <p class="control-hint">Library &amp; framework are visual adapters — the same stroke geometry, emitted as React, Vue or Svelte. Spring and stroke drive every live morph on the right.</p>
+      </aside>
+      <div class="showcase-stage">
+        <div class="pattern-grid">
+          <article class="card pattern-card" data-pattern="copy" tabindex="0" role="button" aria-label="Copy to clipboard — tap to show confirmation morph">
+            <div class="pattern-card-top">
+              <div class="pattern-icon" aria-hidden="true"><canvas id="live-copy" width="96" height="96" aria-hidden="true"></canvas></div>
+              <h3>Copy to clipboard</h3>
+            </div>
+            <p>Confirm a clipboard action without replacing the button or shifting layout.</p>
+            <div class="pattern-card-demo">
+              <div style="display:flex; gap:8px; align-items:center;">
+                <button id="live-copy-btn" class="btn btn-sm" type="button" aria-pressed="false">Copy</button>
+                <code class="mono" style="font-size:11px; color:#737373;">tap card or button → check</code>
+              </div>
+            </div>
+          </article>
+          <article class="card pattern-card" data-pattern="password" tabindex="0" role="button" aria-label="Password visibility — tap to toggle eye morph">
+            <div class="pattern-card-top">
+              <div class="pattern-icon" aria-hidden="true"><canvas id="live-eye" width="96" height="96" aria-hidden="true"></canvas></div>
+              <h3>Password visibility</h3>
+            </div>
+            <p>Eye states stay legible while the field keeps focus and its geometry.</p>
+            <div class="pattern-card-demo">
+              <div style="position:relative;">
+                <input id="live-password-input" type="password" value="correct-horse" autocomplete="off" spellcheck="false" aria-label="Password">
+                <button id="live-eye-btn" type="button" aria-label="Show password" aria-pressed="false" style="position:absolute; right:4px; top:50%; transform:translateY(-50%); width:28px; height:28px; display:grid; place-items:center; border:0; background:transparent; cursor:pointer; color:#a1a1a1;">
+                  <span class="mono" style="font-size:11px; display:none;" aria-hidden="true">view</span>
+                </button>
+              </div>
+              <span class="mono" style="font-size:11px; color:#737373; margin-top:8px; display:block;">tap card or eye → eye-off</span>
+            </div>
+          </article>
+          <article class="card pattern-card" data-pattern="theme" tabindex="0" role="button" aria-label="Theme toggle — tap to morph sun and moon">
+            <div class="pattern-card-top">
+              <div class="pattern-icon" aria-hidden="true"><canvas id="live-theme" width="96" height="96" style="cursor:pointer;" role="img" aria-label="Sun — tap to toggle theme" tabindex="0"></canvas></div>
+              <h3>Theme toggle</h3>
+            </div>
+            <p>Sun and moon share one expressive control, with no cross-fade flash.</p>
+            <div class="pattern-card-demo">
+              <span class="mono" style="font-size:11px; color:#737373;">tap card or icon → moon</span>
+            </div>
+          </article>
+          <article class="card pattern-card" data-pattern="player" tabindex="0" role="button" aria-label="Player controls — tap to toggle play, tap speaker to mute">
+            <div class="pattern-card-top">
+              <div class="pattern-icon" aria-hidden="true" style="display:flex; gap:6px; align-items:center; justify-content:center; width:64px;">
+                <canvas id="live-play" width="64" height="64" style="width:22px; height:22px; cursor:pointer;" role="img" aria-label="Play — tap to pause" tabindex="0"></canvas>
+                <canvas id="live-mute" width="64" height="64" style="width:22px; height:22px; cursor:pointer;" role="img" aria-label="Volume — tap to mute" aria-pressed="false" tabindex="0"></canvas>
+              </div>
+              <h3>Player controls</h3>
+            </div>
+            <p>Play, pause and mute compose from the same small vocabulary.</p>
+            <div class="pattern-card-demo">
+              <span class="mono" style="font-size:11px; color:#737373;">tap card → play/pause · tap speaker → mute</span>
+            </div>
+          </article>
+          <article class="card pattern-card" data-pattern="validation" tabindex="0" role="button" aria-label="Inline validation — type an email to morph check and x">
+            <div class="pattern-card-top">
+              <div class="pattern-icon" aria-hidden="true"><canvas id="live-valid" width="96" height="96" aria-hidden="true"></canvas></div>
+              <h3>Inline validation</h3>
+            </div>
+            <p>Validation changes read as a response beside the input, not a new screen.</p>
+            <div class="pattern-card-demo">
+              <div style="position:relative;">
+                <input id="live-email" placeholder="you@example.com" autocomplete="off" spellcheck="false" aria-label="Email">
+                <div style="position:absolute; right:8px; top:50%; transform:translateY(-50%); width:22px; height:22px; display:grid; place-items:center; pointer-events:none;">
+                  <canvas id="live-valid-icon" width="48" height="48" style="width:22px; height:22px; display:none; opacity:0;" aria-hidden="true"></canvas>
+                </div>
+              </div>
+              <span class="mono" style="font-size:11px; color:#737373; margin-top:8px; display:block;">tap card to cycle · type to validate → check/x</span>
+            </div>
+          </article>
+          <article class="card pattern-card" data-pattern="tree" tabindex="0" role="button" aria-label="File tree — tap to disclose folder">
+            <div class="pattern-card-top">
+              <div class="pattern-icon" aria-hidden="true" style="display:flex; align-items:center; gap:6px; justify-content:center;">
+                <span id="live-chevron" style="display:inline-block; transition:transform 200ms var(--ease-smooth); font-size:12px; color:#a1a1a1;" aria-hidden="true">›</span>
+                <canvas id="live-folder" width="64" height="64" style="width:24px; height:24px; cursor:pointer;" role="img" aria-label="Folder — tap to open" aria-expanded="false" tabindex="0"></canvas>
+              </div>
+              <h3>File tree</h3>
+            </div>
+            <p>Disclosure arrows preserve hierarchy while folders open and close.</p>
+            <div class="pattern-card-demo">
+              <button id="live-tree-btn" type="button" aria-expanded="false" style="width:100%; padding:8px 12px; border:1px solid #262626; border-radius:8px; background:#0a0a0a; color:#ededed; text-align:left; font-size:13px; cursor:pointer;">Toggle folder</button>
+              <div id="live-tree-files" hidden style="margin-top:10px; margin-left:8px; border-left:1px solid #262626; padding-left:12px; font-family:var(--mono); font-size:11px; line-height:1.9; color:#a1a1a1;">
+                button.tsx<br>input.tsx<br>toggle.tsx
+              </div>
+              <span class="mono" style="font-size:11px; color:#737373; margin-top:8px; display:block;">tap card or folder → open/close</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
   </section>
   <section class="section"><div class="section-head"><p class="kicker">Live Flutter</p><h2>The examples are real, not screenshots.</h2><p class="section-sub">This iframe loads the compiled Flutter demo with <span class="mono">?demo=core</span>. Open it full-screen to inspect the interactions.</p></div><div class="bridge-frame-wrap"><div class="bridge-frame-bar"><span></span><span></span><span></span><p>morphicons_site_demo — core</p><a href="../flutter/index.html?demo=core" target="_blank" rel="noopener">open full</a></div><div class="bridge-loading">loading Flutter engine…</div><iframe data-demo src="../flutter/index.html?demo=core" title="Morphicons Flutter core widget showcase"></iframe></div></section>
   <section class="section section-alt"><div class="section-head"><p class="kicker">Dart usage</p><h2>Copy the smallest useful example.</h2></div><div class="doc-block code-card"><div class="code-out-head"><span class="mono">core_patterns.dart</span><button class="btn btn-sm btn-ghost" data-copy-target="core-code">Copy</button></div><pre><code id="core-code">import 'package:flutter/material.dart';
 import 'package:morphicons_lucide/morphicons_lucide.dart';
 import 'package:morphicons_flutter/morphicons_flutter.dart';
-
 class CopyButton extends StatefulWidget {
   const CopyButton({super.key});
-
   @override
   State&lt;CopyButton&gt; createState() =&gt; _CopyButtonState();
 }
-
 class _CopyButtonState extends State&lt;CopyButton&gt; {
   var copied = false;
-
   @override
   Widget build(BuildContext context) =&gt; IconButton(
     onPressed: () =&gt; setState(() =&gt; copied = true),
@@ -75,6 +209,30 @@ class _CopyButtonState extends State&lt;CopyButton&gt; {
 }</code></pre></div></section>
 </main>
 <footer class="footer"><div class="footer-inner"><p>Morphicons for Flutter · MIT · <a href="../">Back to the workbench</a></p><p class="mono"><a href="mask/">MorphMask</a> · <a href="../roadmap/">Roadmap</a></p></div></footer>
+<script src="../assets/morphicons-core.js"></script>
+<script src="../assets/lucide-catalog.js"></script>
 <script src="../showcase.js"></script>
 <script src="../showcase-live.js"></script>
+<script>
+(() => {
+  const sidebar = document.querySelector('.showcase-sidebar');
+  if (!sidebar) return;
+  sidebar.querySelectorAll('.control-seg').forEach(seg => {
+    seg.querySelectorAll('.seg-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        seg.querySelectorAll('.seg-btn').forEach(b => {
+          const isActive = b === btn;
+          b.classList.toggle('is-active', isActive);
+          b.setAttribute('aria-selected', String(isActive));
+        });
+        const control = btn.dataset.control;
+        const value = btn.dataset.value;
+        if (control === 'spring' || control === 'stroke') {
+          window.dispatchEvent(new CustomEvent('showcase:control', { detail: { control, value } }));
+        }
+      });
+    });
+  });
+})();
+</script>
 </body></html>

@@ -22,6 +22,7 @@
     </a>
     <nav class="nav-links" aria-label="Primary">
       <a href="#playground">Playground</a>
+      <a href="#converter">Converter</a>
       <a href="showcase/">Showcase</a>
       <a href="roadmap/">Roadmap</a>
       <a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a>
@@ -41,6 +42,7 @@
     <p class="mobile-menu-kicker mono">Navigate</p>
     <nav class="mobile-menu-links" aria-label="Mobile navigation">
       <a href="#playground">Playground</a>
+      <a href="#converter">Converter</a>
       <a href="showcase/">Showcase</a>
       <a href="roadmap/">Roadmap</a>
       <a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a>
@@ -333,6 +335,80 @@
     </div>
   </div>
   <p class="hint mono frame-footnote" style="margin-top:10px; text-align:center; font-size:11px">Frame is one scroll label: playground · converter · code · info live inside. D hidden. Square 6px · dark minimal.</p>
+</section>
+
+<!-- ============ CONVERTER — standalone, dark minimal, square 6px ============ -->
+<section id="converter" class="converter-section">
+  <div class="converter-inner reveal">
+    <div class="converter-header">
+      <p class="kicker">Converter · SVG → Dart</p>
+      <h2>Bring your own icons — paste SVG, get Dart.</h2>
+      <p class="section-sub" style="margin-top:12px; max-width:64ch">Paste <span class="mono">SVG</span> markup or drop a <span class="mono">.svg</span> file. Flattens <span class="mono">path / line / circle / ellipse / rect / polyline / polygon</span> to a morph-ready <span class="mono">d</span> string. Preview auto-morphs (slow) on the 24×24 grid. Dark minimal · square 6px · <span class="mono">converter-core.mjs</span>.</p>
+    </div>
+    <div class="converter-grid">
+      <div class="converter-left">
+        <div class="converter-card">
+          <div class="converter-card-head">
+            <p class="card-label" style="margin:0">Input — SVG markup or file</p>
+            <span class="tag tag-yellow">stroke only</span>
+          </div>
+          <div class="conv-drop" id="convDropPage">
+            <label class="mono" for="convInputPage" style="font-size:11px; color:var(--muted)">SVG markup</label>
+            <textarea id="convInputPage" class="conv-input mono" placeholder="&lt;svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot;&gt;&#10;  &lt;path d=&quot;M12 2v20M2 12h20&quot;/&gt;&#10;&lt;/svg&gt;" rows="10" spellcheck="false"></textarea>
+            <input type="file" id="convFilePage" accept=".svg,image/svg+xml" hidden>
+            <div class="conv-drop-hint mono">
+              <span>Drop SVG here or</span>
+              <button type="button" class="btn btn-sm btn-ghost" id="convBrowsePage" style="height:26px; padding:0 10px; margin-left:6px">Browse</button>
+              <button type="button" class="btn btn-sm" id="convSamplePage" style="height:26px; padding:0 10px; margin-left:6px">Load sample</button>
+            </div>
+            <div class="conv-actions" style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; align-items:center">
+              <button class="btn btn-sm" id="convRunPage" type="button">Convert</button>
+              <label class="mono" style="font-size:11px; color:var(--muted); display:flex; align-items:center; gap:6px">as <input id="convNamePage" class="lucide-search mono" value="myIcon" style="width:120px; height:32px" spellcheck="false"></label>
+              <span class="mono hint" id="convStatusPage" style="flex:1; min-width:160px; margin:0">Awaiting SVG…</span>
+            </div>
+          </div>
+          <div class="conv-stats mono" style="display:flex; gap:16px; margin-top:14px; font-size:11px; color:var(--muted)">
+            <span>subs <b id="cvSubsPage" style="color:var(--ink)">—</b></span>
+            <span>pts <b id="cvPtsPage" style="color:var(--ink)">—</b></span>
+            <span>status <b id="cvVerdictPage" style="color:var(--ink)">—</b></span>
+          </div>
+          <p class="hint" style="margin-top:10px; font-size:11px">Supports <span class="mono">path</span>, <span class="mono">line</span>, <span class="mono">circle</span>, <span class="mono">ellipse</span>, <span class="mono">rect</span>, <span class="mono">polyline</span>, <span class="mono">polygon</span>. Transforms and fills are flagged, not guessed.</p>
+        </div>
+      </div>
+      <div class="converter-right">
+        <div class="converter-card" style="padding:0; overflow:hidden">
+          <div class="window" style="border:0; border-radius:6px; box-shadow:none; margin:0">
+            <div class="window-bar"><span></span><span></span><span></span><p class="window-title mono">preview · auto-morph</p></div>
+            <div style="display:grid; place-items:center; padding:16px; background:var(--canvas); min-height:220px">
+              <canvas id="convPreviewPage" width="360" height="360" style="width:180px; height:180px; display:block"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="converter-card" style="margin-top:14px; padding:0; overflow:hidden">
+          <div class="code-panel" style="border:0; border-radius:6px; box-shadow:none; margin:0">
+            <div class="code-panel-head">
+              <div class="conv-tabs seg" id="convTabsPage" role="tablist" aria-label="Converter output" style="border:0; margin:0; display:flex; gap:4px">
+                <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-out="dart">dart</button>
+                <button class="seg-btn" type="button" role="tab" aria-selected="false" data-out="map">map</button>
+                <button class="seg-btn" type="button" role="tab" aria-selected="false" data-out="raw">raw</button>
+                <button class="seg-btn" type="button" role="tab" aria-selected="false" data-out="points">points</button>
+              </div>
+              <div style="display:flex; gap:8px; align-items:center">
+                <button class="btn btn-sm btn-ghost" id="convCopyPage" type="button">Copy</button>
+                <button class="btn btn-sm btn-ghost" id="convDownloadPage" type="button">.dart</button>
+              </div>
+            </div>
+            <pre class="code-output" style="max-height:180px; margin:0"><code id="convOutPage">// No stroke geometry yet</code></pre>
+          </div>
+        </div>
+        <div class="conv-morph-ctl" style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap">
+          <select id="convMorphTargetPage" class="lucide-search mono" style="flex:1; min-width:140px" aria-label="Morph target"><option value="">morph to…</option></select>
+          <button class="btn btn-sm" id="convMorphPlayPage" type="button" disabled>Preview morph</button>
+        </div>
+        <p class="hint" style="margin-top:8px">Preview morphs on demand. D strings hidden from layout; use Copy to grab raw. Uses <span class="mono">converter-core.mjs</span> — same as frame converter.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ============ ICONDATA — Flutter IconData live (filled) ============ -->

@@ -8,63 +8,68 @@ import {
 /* ============================================================
    SVG -> Morphicons converter
    Browser adapter for the pure converter-core helpers.
+   Mounts both the frame-panel converter and the standalone
+   page converter (dark minimal, square 6px). Uses same core.
    ============================================================ */
 
-(() => {
-  const M = window.MorphCore;
-  const input = document.getElementById('convInput');
-  if (!input) return;
-  const runBtn = document.getElementById('convRun');
-  const sampleBtn = document.getElementById('convSample');
-  const dropZone = document.getElementById('convDrop');
-  const fileInput = document.getElementById('convFile');
-  const status = document.getElementById('convStatus');
-  const preview = document.getElementById('convPreview');
-  if (!preview) return;
-  const nameInput = document.getElementById('convName');
-  const outCode = document.getElementById('convOut');
-  const copyBtn = document.getElementById('convCopy');
-  const downloadBtn = document.getElementById('convDownload');
-  const tabs = document.querySelectorAll('.conv-tabs .seg-btn');
-  const targetSel = document.getElementById('convMorphTarget');
-  const morphPlay = document.getElementById('convMorphPlay');
-  const cvSubs = document.getElementById('cvSubs');
-  const cvPts = document.getElementById('cvPts');
-  const cvVerdict = document.getElementById('cvVerdict');
-
-  const SAMPLE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+const SAMPLE = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="12" cy="12" r="9"/>
   <polyline points="12 7 12 12 15.5 13.5"/>
 </svg>`;
 
+const BUILT_IN = [
+  ['menu', 'M4 6L20 6M4 12L20 12M4 18L20 18'],
+  ['x', 'M18 6L6 18M6 6L18 18'],
+  ['check', 'M20 6L9 17L4 12'],
+  ['plus', 'M5 12L19 12M12 5L12 19'],
+  ['arrow-right', 'M5 12L19 12M12 5L19 12L12 19'],
+  ['square', 'M5 5L19 5L19 19L5 19Z'],
+  ['circle', 'M12 2A10 10 0 1 0 12 22A10 10 0 1 0 12 2Z'],
+];
+
+function attributes(el) {
+  const attrs = {};
+  for (const item of el.attributes) attrs[item.name] = item.value;
+  return attrs;
+}
+
+function flatten(svg) {
+  const nodes = [{ tag: 'svg', attrs: attributes(svg) }];
+  const walk = (parent) => {
+    for (const el of parent.children) {
+      nodes.push({ tag: el.tagName, attrs: attributes(el) });
+      if (['g', 'svg', 'defs', 'symbol'].includes(el.tagName.toLowerCase())) walk(el);
+    }
+  };
+  walk(svg);
+
+  const result = flattenNodes(nodes);
+  const viewBox = (svg.getAttribute('viewBox') || '')
+    .trim()
+    .split(/[\s,]+/)
+    .map(Number);
+  return { ...result, viewBox: viewBox.length === 4 && viewBox.every(Number.isFinite) ? viewBox : null };
+}
+
+function mountConverter(config) {
+  const M = window.MorphCore;
+  if (!M) return;
+
+  const {
+    input, runBtn, sampleBtn, dropZone, fileInput, status, preview,
+    nameInput, outCode, copyBtn, downloadBtn, tabsContainer, targetSel,
+    morphPlay, cvSubs, cvPts, cvVerdict, browseBtn,
+  } = config;
+
+  // Guard: required elements must exist, otherwise this instance is not on page
+  if (!input || !preview || !status || !runBtn) return;
+
+  const tabs = tabsContainer ? tabsContainer.querySelectorAll('.seg-btn') : [];
   let currentD = '';
   let currentPoints = [];
   let morphAnim = null;
   let outMode = 'dart';
-
-  function attributes(el) {
-    const attrs = {};
-    for (const item of el.attributes) attrs[item.name] = item.value;
-    return attrs;
-  }
-
-  function flatten(svg) {
-    const nodes = [{ tag: 'svg', attrs: attributes(svg) }];
-    const walk = (parent) => {
-      for (const el of parent.children) {
-        nodes.push({ tag: el.tagName, attrs: attributes(el) });
-        if (['g', 'svg', 'defs', 'symbol'].includes(el.tagName.toLowerCase())) walk(el);
-      }
-    };
-    walk(svg);
-
-    const result = flattenNodes(nodes);
-    const viewBox = (svg.getAttribute('viewBox') || '')
-      .trim()
-      .split(/[\s,]+/)
-      .map(Number);
-    return { ...result, viewBox: viewBox.length === 4 && viewBox.every(Number.isFinite) ? viewBox : null };
-  }
+  let previewVisible = true;
 
   function drawD(canvas, d, color) {
     const rect = canvas.getBoundingClientRect();
@@ -74,7 +79,6 @@ import {
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     if (!d) return;
-
     const pad = 0.08;
     const scale = (Math.min(canvas.width, canvas.height) / 24) * (1 - 2 * pad);
     ctx.save();
@@ -118,11 +122,10 @@ import {
 
   function resetAssessment() {
     currentPoints = [];
-    cvSubs.textContent = '—';
-    cvPts.textContent = '—';
-    cvVerdict.textContent = '—';
-    cvVerdict.style.color = '';
-    morphPlay.disabled = true;
+    if (cvSubs) cvSubs.textContent = '—';
+    if (cvPts) cvPts.textContent = '—';
+    if (cvVerdict) { cvVerdict.textContent = '—'; cvVerdict.style.color = ''; }
+    if (morphPlay) morphPlay.disabled = true;
   }
 
   function assess() {
@@ -132,15 +135,13 @@ import {
       const sampled = M.resampleIcon(currentD);
       currentPoints = sampled.map(({ pts }) => Array.from(pts));
       const pointCount = currentPoints.reduce((total, points) => total + points.length / 2, 0);
-      cvSubs.textContent = String(currentPoints.length);
-      cvPts.textContent = String(pointCount);
-      cvVerdict.textContent = 'morph-ready';
-      cvVerdict.style.color = '#346538';
-      morphPlay.disabled = !targetSel.value;
+      if (cvSubs) cvSubs.textContent = String(currentPoints.length);
+      if (cvPts) cvPts.textContent = String(pointCount);
+      if (cvVerdict) { cvVerdict.textContent = 'morph-ready'; cvVerdict.style.color = '#346538'; }
+      if (morphPlay) morphPlay.disabled = !targetSel || !targetSel.value;
       return sampled;
     } catch (error) {
-      cvVerdict.textContent = 'parse error';
-      cvVerdict.style.color = '#9F2F2D';
+      if (cvVerdict) { cvVerdict.textContent = 'parse error'; cvVerdict.style.color = '#9F2F2D'; }
       status.textContent = `Could not parse the flattened path: ${error.message}`;
       return null;
     }
@@ -148,15 +149,16 @@ import {
 
   function renderOutput() {
     if (!currentD) return;
+    if (!nameInput || !outCode) return;
     const outputs = serializeOutputs({ id: sanitizeIdentifier(nameInput.value), d: currentD, points: currentPoints });
-    outCode.textContent = outputs[outMode];
+    outCode.textContent = outputs[outMode] ?? outputs.dart;
   }
 
   function clearConversion(message) {
     currentD = '';
     resetAssessment();
     drawD(preview, '');
-    outCode.textContent = '// No stroke geometry found in this SVG.';
+    if (outCode) outCode.textContent = '// No stroke geometry found in this SVG.';
     status.textContent = message;
   }
 
@@ -165,33 +167,26 @@ import {
       cancelAnimationFrame(morphAnim);
       morphAnim = null;
     }
-
     const markupError = validateSvgMarkup(svgText);
     if (markupError) {
       clearConversion(markupError);
-      cvVerdict.textContent = 'parse error';
-      cvVerdict.style.color = '#9F2F2D';
+      if (cvVerdict) { cvVerdict.textContent = 'parse error'; cvVerdict.style.color = '#9F2F2D'; }
       return;
     }
-
     const doc = new DOMParser().parseFromString(svgText, 'image/svg+xml');
     const parserError = doc.querySelector('parsererror');
     const svg = doc.documentElement;
     if (parserError || !svg || svg.tagName.toLowerCase() !== 'svg') {
       clearConversion('That is not valid SVG markup.');
-      cvVerdict.textContent = 'parse error';
-      cvVerdict.style.color = '#9F2F2D';
+      if (cvVerdict) { cvVerdict.textContent = 'parse error'; cvVerdict.style.color = '#9F2F2D'; }
       return;
     }
-
     const { d, notes, viewBox, elementCount } = flatten(svg);
     if (!d) {
       clearConversion('No stroke geometry found. ' + (notes.join(' · ') || 'Add path/line/circle/rect elements.'));
-      cvVerdict.textContent = 'nothing to morph';
-      cvVerdict.style.color = '#9F2F2D';
+      if (cvVerdict) { cvVerdict.textContent = 'nothing to morph'; cvVerdict.style.color = '#9F2F2D'; }
       return;
     }
-
     currentD = d;
     let message = `Flattened ${elementCount} element${elementCount === 1 ? '' : 's'}`;
     if (viewBox && (viewBox[2] !== 24 || viewBox[3] !== 24)) {
@@ -204,45 +199,51 @@ import {
     renderOutput();
   }
 
-  tabs.forEach((button) => {
-    button.addEventListener('click', () => {
-      tabs.forEach((item) => item.classList.remove('is-active'));
-      button.classList.add('is-active');
-      outMode = button.dataset.out;
-      renderOutput();
+  if (tabs && tabs.length) {
+    tabs.forEach((button) => {
+      button.addEventListener('click', () => {
+        tabs.forEach((item) => item.classList.remove('is-active'));
+        button.classList.add('is-active');
+        outMode = button.dataset.out || 'dart';
+        renderOutput();
+      });
     });
-  });
+  }
 
-  copyBtn.addEventListener('click', async () => {
-    try {
-      await navigator.clipboard.writeText(outCode.textContent);
-      copyBtn.textContent = 'Copied';
-      setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1200);
-    } catch {
-      copyBtn.textContent = 'Copy failed';
-      setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1600);
-    }
-  });
+  if (copyBtn && outCode) {
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(outCode.textContent);
+        copyBtn.textContent = 'Copied';
+        setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1200);
+      } catch {
+        copyBtn.textContent = 'Copy failed';
+        setTimeout(() => { copyBtn.textContent = 'Copy'; }, 1600);
+      }
+    });
+  }
 
-  downloadBtn.addEventListener('click', () => {
-    if (!currentD) return;
-    const outputs = serializeOutputs({ id: sanitizeIdentifier(nameInput.value), d: currentD, points: currentPoints });
-    const blob = new Blob([outputs.dart + '\n'], { type: 'text/plain;charset=utf-8' });
-    const url = URL.createObjectURL(blob);
-    const anchor = document.createElement('a');
-    anchor.href = url;
-    anchor.download = `${sanitizeIdentifier(nameInput.value)}.dart`;
-    anchor.click();
-    URL.revokeObjectURL(url);
-  });
+  if (downloadBtn) {
+    downloadBtn.addEventListener('click', () => {
+      if (!currentD) return;
+      const outputs = serializeOutputs({ id: sanitizeIdentifier(nameInput ? nameInput.value : 'myIcon'), d: currentD, points: currentPoints });
+      const blob = new Blob([outputs.dart + '\n'], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement('a');
+      anchor.href = url;
+      anchor.download = `${sanitizeIdentifier(nameInput ? nameInput.value : 'myIcon')}.dart`;
+      anchor.click();
+      URL.revokeObjectURL(url);
+    });
+  }
 
-  nameInput.addEventListener('input', renderOutput);
-  runBtn.addEventListener('click', () => convert(input.value));
-  sampleBtn.addEventListener('click', () => {
+  if (nameInput) nameInput.addEventListener('input', renderOutput);
+  if (runBtn) runBtn.addEventListener('click', () => convert(input.value));
+  if (sampleBtn) sampleBtn.addEventListener('click', () => {
     input.value = SAMPLE;
     convert(SAMPLE);
   });
-  input.addEventListener('keydown', (event) => {
+  if (input) input.addEventListener('keydown', (event) => {
     if ((event.metaKey || event.ctrlKey) && event.key === 'Enter') convert(input.value);
   });
 
@@ -252,44 +253,41 @@ import {
     reader.onload = () => {
       input.value = String(reader.result);
       const base = file.name.replace(/\.svg$/i, '').replace(/[^A-Za-z0-9]+/g, '_');
-      nameInput.value = sanitizeIdentifier(base);
+      if (nameInput) nameInput.value = sanitizeIdentifier(base);
       convert(input.value);
     };
     reader.onerror = () => clearConversion('Could not read that local SVG file.');
     reader.readAsText(file);
   }
 
-  fileInput.addEventListener('change', () => loadFile(fileInput.files[0]));
-  dropZone.addEventListener('dragover', (event) => {
-    event.preventDefault();
-    dropZone.style.borderColor = '#111';
-  });
-  dropZone.addEventListener('dragleave', () => { dropZone.style.borderColor = ''; });
-  dropZone.addEventListener('drop', (event) => {
-    event.preventDefault();
-    dropZone.style.borderColor = '';
-    loadFile(event.dataTransfer.files[0]);
-  });
+  if (fileInput) fileInput.addEventListener('change', () => loadFile(fileInput.files[0]));
+  if (dropZone) {
+    dropZone.addEventListener('dragover', (event) => {
+      event.preventDefault();
+      dropZone.style.borderColor = '#111';
+    });
+    dropZone.addEventListener('dragleave', () => { dropZone.style.borderColor = ''; });
+    dropZone.addEventListener('drop', (event) => {
+      event.preventDefault();
+      dropZone.style.borderColor = '';
+      loadFile(event.dataTransfer.files[0]);
+    });
+    if (browseBtn && fileInput) browseBtn.addEventListener('click', () => fileInput.click());
+  }
 
-  const BUILT_IN = [
-    ['menu', 'M4 6L20 6M4 12L20 12M4 18L20 18'],
-    ['x', 'M18 6L6 18M6 6L18 18'],
-    ['check', 'M20 6L9 17L4 12'],
-    ['plus', 'M5 12L19 12M12 5L12 19'],
-    ['arrow-right', 'M5 12L19 12M12 5L19 12L12 19'],
-    ['square', 'M5 5L19 5L19 19L5 19Z'],
-    ['circle', 'M12 2A10 10 0 1 0 12 22A10 10 0 1 0 12 2Z'],
-  ];
-  BUILT_IN.forEach(([name, d]) => {
-    const option = document.createElement('option');
-    option.value = d;
-    option.textContent = name;
-    targetSel.appendChild(option);
-  });
-  targetSel.addEventListener('change', () => { morphPlay.disabled = !targetSel.value || !currentD; });
+  // Populate built-in morph targets
+  if (targetSel) {
+    BUILT_IN.forEach(([name, d]) => {
+      const option = document.createElement('option');
+      option.value = d;
+      option.textContent = name;
+      targetSel.appendChild(option);
+    });
+    targetSel.addEventListener('change', () => { if (morphPlay) morphPlay.disabled = !targetSel.value || !currentD; });
+  }
 
-  let previewVisible = true;
-  if ('IntersectionObserver' in window) {
+  // IntersectionObserver for preview visibility
+  if ('IntersectionObserver' in window && preview) {
     const io = new IntersectionObserver((entries) => {
       previewVisible = entries[0].isIntersecting;
     }, { threshold: 0.12 });
@@ -300,33 +298,87 @@ import {
     else previewVisible = true;
   });
 
-  morphPlay.addEventListener('click', () => {
-    if (!currentD || !targetSel.value) return;
-    if (morphAnim) { cancelAnimationFrame(morphAnim); morphAnim = null; }
-    let plan;
-    try {
-      plan = M.buildPlan(M.resampleIcon(currentD), M.resampleIcon(targetSel.value));
-    } catch (error) {
-      status.textContent = `Could not build a plan: ${error.message}`;
-      return;
-    }
-    const out = M.allocOutputs(plan);
-    const spring = new M.Spring();
-    spring.config(170, 26);
-    spring.start();
-    const tick = () => {
-      if (!previewVisible || document.hidden) {
-        morphAnim = requestAnimationFrame(tick);
+  if (morphPlay && targetSel) {
+    morphPlay.addEventListener('click', () => {
+      if (!currentD || !targetSel.value) return;
+      if (morphAnim) { cancelAnimationFrame(morphAnim); morphAnim = null; }
+      let plan;
+      try {
+        plan = M.buildPlan(M.resampleIcon(currentD), M.resampleIcon(targetSel.value));
+      } catch (error) {
+        status.textContent = `Could not build a plan: ${error.message}`;
         return;
       }
-      const settled = spring.step(1 / 60);
-      M.interpPolar(plan, Math.min(spring.x, 1), out);
-      drawSubsOnPreview(out, '#ededed');
-      if (!settled) morphAnim = requestAnimationFrame(tick);
-      else morphAnim = null;
-    };
-    tick();
-  });
+      const out = M.allocOutputs(plan);
+      const spring = new M.Spring();
+      spring.config(170, 26);
+      spring.start();
+      const tick = () => {
+        if (!previewVisible || document.hidden) {
+          morphAnim = requestAnimationFrame(tick);
+          return;
+        }
+        const settled = spring.step(1 / 60);
+        M.interpPolar(plan, Math.min(spring.x, 1), out);
+        drawSubsOnPreview(out, '#ededed');
+        if (!settled) morphAnim = requestAnimationFrame(tick);
+        else morphAnim = null;
+      };
+      tick();
+    });
+  }
 
   window.addEventListener('resize', () => { if (currentD) drawD(preview, currentD, '#ededed'); });
+
+  // expose for tests/debug
+  return { convert, get currentD() { return currentD; } };
+}
+
+(() => {
+  // Mount frame converter (existing IDs)
+  mountConverter({
+    input: document.getElementById('convInput'),
+    runBtn: document.getElementById('convRun'),
+    sampleBtn: document.getElementById('convSample'),
+    dropZone: document.getElementById('convDrop'),
+    fileInput: document.getElementById('convFile'),
+    status: document.getElementById('convStatus'),
+    preview: document.getElementById('convPreview'),
+    nameInput: document.getElementById('convName'),
+    outCode: document.getElementById('convOut'),
+    copyBtn: document.getElementById('convCopy'),
+    downloadBtn: document.getElementById('convDownload'),
+    tabsContainer: document.getElementById('convTabs'),
+    targetSel: document.getElementById('convMorphTarget'),
+    morphPlay: document.getElementById('convMorphPlay'),
+    cvSubs: document.getElementById('cvSubs'),
+    cvPts: document.getElementById('cvPts'),
+    cvVerdict: document.getElementById('cvVerdict'),
+    browseBtn: document.getElementById('convBrowse'),
+  });
+
+  // Mount standalone page converter (new IDs with Page suffix)
+  const pageInstance = mountConverter({
+    input: document.getElementById('convInputPage'),
+    runBtn: document.getElementById('convRunPage'),
+    sampleBtn: document.getElementById('convSamplePage'),
+    dropZone: document.getElementById('convDropPage'),
+    fileInput: document.getElementById('convFilePage'),
+    status: document.getElementById('convStatusPage'),
+    preview: document.getElementById('convPreviewPage'),
+    nameInput: document.getElementById('convNamePage'),
+    outCode: document.getElementById('convOutPage'),
+    copyBtn: document.getElementById('convCopyPage'),
+    downloadBtn: document.getElementById('convDownloadPage'),
+    tabsContainer: document.getElementById('convTabsPage'),
+    targetSel: document.getElementById('convMorphTargetPage'),
+    morphPlay: document.getElementById('convMorphPlayPage'),
+    cvSubs: document.getElementById('cvSubsPage'),
+    cvPts: document.getElementById('cvPtsPage'),
+    cvVerdict: document.getElementById('cvVerdictPage'),
+    browseBtn: document.getElementById('convBrowsePage'),
+  });
+
+  // Expose for debugging and tests
+  window._converterPage = pageInstance;
 })();

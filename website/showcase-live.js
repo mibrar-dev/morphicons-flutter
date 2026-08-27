@@ -1,16 +1,21 @@
-/* showcase-live.js — 6 live MorphCore cards, like morphicons.com
-   Copy→Check, Eye→EyeOff, Sun→Moon, Play↔Pause + Volume↔VolumeX, Check↔X, Folder↔FolderOpen
+/* showcase-live.js — 6 REAL MorphCore cards like morphicons.com
+   Copy→Check inside npm pill, Eye↔EyeOff inside input, Sun↔Moon button,
+   Play↔Pause + Volume↔VolumeX in player cluster, Check↔X trailing validation, Folder↔FolderOpen tree
    - Real polar interpolation + Procrustes solver via MorphCore (6.5 kB core)
    - Interruptible: mid-flight re-plan from interpolated shape, velocity preserved (λ tie-break)
    - Spring presets + stroke live from left sidebar (showcase:control)
-   - Cards are tappable (role=button, keyboard, cursor) — not just the icon
+   - Cards are tappable (role=button, keyboard, cursor) — icons themselves are live canvases
    - Reduced motion → instant canonical snap, no frames
-   - Hi-DPI canvas, resize-aware, visibility-aware
+   - Hi-DPI canvas, resize-aware, visibility-aware, keyboard accessible
 */
 (() => {
   const M = window.MorphCore;
-  const L = window.LucideCatalog;
-  if (!M || !L) {
+  const Catalogs = {
+    lucide: window.LucideCatalog || {},
+    heroicons: window.HeroiconsCatalog || {},
+    tabler: window.TablerCatalog || {}
+  };
+  if (!M || !Catalogs.lucide || !Object.keys(Catalogs.lucide).length) {
     console.warn('[showcase-live] MorphCore or LucideCatalog missing');
     return;
   }
@@ -19,12 +24,80 @@
   let currentPreset = SPRING_PRESETS.smooth;
   let currentPresetKey = 'smooth';
   let currentStroke = 2;
+  let currentLibrary = 'lucide';
   const liveMorphs = [];
+  const libraryHandlers = [];
   const rm = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  function dOf(name, fallback) { return L[name] || fallback || null; }
+  // Logical -> physical name per library. Logical keys cover all 6 cards.
+  const LIB_ALIASES = {
+    lucide: {
+      'copy': 'copy',
+      'check': 'check',
+      'eye': 'eye',
+      'eye-off': 'eye-off',
+      'sun': 'sun',
+      'moon': 'moon',
+      'play': 'play',
+      'pause': 'pause',
+      'volume-2': 'volume-2',
+      'volume-x': 'volume-x',
+      'x': 'x',
+      'folder': 'folder',
+      'folder-open': 'folder-open'
+    },
+    heroicons: {
+      'copy': 'clipboard-document',
+      'check': 'check',
+      'eye': 'eye',
+      'eye-off': 'eye-slash',
+      'sun': 'sun',
+      'moon': 'moon',
+      'play': 'play',
+      'pause': 'pause',
+      'volume-2': 'speaker-wave',
+      'volume-x': 'speaker-x-mark',
+      'x': 'x-mark',
+      'folder': 'folder',
+      'folder-open': 'folder-open'
+    },
+    tabler: {
+      'copy': 'copy',
+      'check': 'check',
+      'eye': 'eye',
+      'eye-off': 'eye-off',
+      'sun': 'sun',
+      'moon': 'moon',
+      'play': 'player-play',
+      'pause': 'player-pause',
+      'volume-2': 'volume-2',
+      'volume-x': 'volume-off',
+      'x': 'x',
+      'folder': 'folder',
+      'folder-open': 'folder-open'
+    }
+  };
 
-  // Sidebar controls drive every morph (library/framework are visual adapters — stroke+spring are live)
+  function physicalName(logical) {
+    const m = LIB_ALIASES[currentLibrary] || LIB_ALIASES.lucide;
+    return (m[logical] || LIB_ALIASES.lucide[logical] || logical);
+  }
+  function currentCatalog() { return Catalogs[currentLibrary] || Catalogs.lucide; }
+  function dOf(logical, fallback) {
+    const cat = currentCatalog();
+    const phys = physicalName(logical);
+    return cat[phys] || cat[logical] || Catalogs.lucide[phys] || Catalogs.lucide[logical] || fallback || null;
+  }
+  function dOfLibrary(library, logical) {
+    const cat = Catalogs[library] || Catalogs.lucide;
+    const alias = (LIB_ALIASES[library] || LIB_ALIASES.lucide)[logical] || logical;
+    return cat[alias] || cat[logical] || Catalogs.lucide[alias] || Catalogs.lucide[logical] || null;
+  }
+
+  function updateLibraryIcons() {
+    libraryHandlers.forEach(fn => { try { fn(); } catch(e){ console.warn('[showcase-live] library handler failed', e); } });
+  }
+
   window.addEventListener('showcase:control', (e) => {
     const d = e.detail || {};
     if (d.control === 'spring' && SPRING_PRESETS[d.value]) {
@@ -40,7 +113,10 @@
         liveMorphs.forEach(m => m && m.rerender && m.rerender());
       }
     }
-    // library/framework -> no-op but keep selected state visual; we stay on Lucide geometry
+    if (d.control === 'library' && Catalogs[d.value]) {
+      currentLibrary = d.value;
+      updateLibraryIcons();
+    }
   });
 
   function fitCanvas(canvas) {
@@ -81,7 +157,7 @@
     const color = opts.color || '#ededed';
     const presetAtBirth = opts.presetKey ? (SPRING_PRESETS[opts.presetKey] || currentPreset) : currentPreset;
 
-    let targetD = fromD; // currently settled target
+    let targetD = fromD;
     let plan = null, out = null;
     let playing = false, raf = null;
     let lastT = 0, curT = 0;
@@ -107,8 +183,7 @@
     }
 
     function morphTo(newTargetD) {
-      if (!newTargetD || newTargetD === targetD && !playing) return;
-      // reduced motion -> instant canonical
+      if (!newTargetD || (newTargetD === targetD && !playing)) return;
       if (rm.matches) {
         try {
           const solo = M.buildPlan(M.resampleIcon(newTargetD), M.resampleIcon(newTargetD));
@@ -126,7 +201,6 @@
 
       let newPlan = null, newOut = null;
       if (playing && out && plan) {
-        // interrupt: snapshot current interpolated polyline as source (preserves position, velocity via spring)
         try {
           const synthetic = out.map((pts,i) => ({ pts: new Float64Array(pts), closed: !!plan.items[i].closed }));
           const targetResampled = M.resampleIcon(newTargetD);
@@ -146,14 +220,13 @@
       }
       plan = newPlan; out = newOut; targetD = newTargetD;
       spring.config(currentPreset.k, currentPreset.c);
-      spring.start(); // x=0, v preserved clamp ±14
+      spring.start();
       curT = 0;
       if (!playing) { playing = true; tick(); }
     }
 
     function tick() {
       if (!playing) return;
-      // throttle when tab hidden or completely offscreen? keep ticking but defer rAF if hidden to save CPU
       if (document.hidden) { raf = requestAnimationFrame(tick); return; }
       const settled = spring.step(1/60);
       curT = Math.min(Math.max(spring.x, 0), 1.2);
@@ -170,10 +243,27 @@
     function updateStroke(v) { stroke = v; }
     function rerender() { render(lastT); }
     function destroy() { if (raf) cancelAnimationFrame(raf); playing=false; }
+    function snapTo(d) {
+      if (!d) return;
+      // cancel in-flight
+      if (raf) cancelAnimationFrame(raf);
+      playing = false; raf = null;
+      try {
+        const solo = M.buildPlan(M.resampleIcon(d), M.resampleIcon(d));
+        const soloOut = M.allocOutputs(solo);
+        M.interpPolar(solo, 1, soloOut);
+        plan = solo; out = soloOut; targetD = d; lastT = 1; curT = 1;
+        const fit = fitCanvas(canvas);
+        if (fit) {
+          const closed = solo.items.map(it=>!!it.closed);
+          drawSubs(fit.ctx, fit.w, fit.h, soloOut, color, stroke*(fit.w/120)*0.9, closed);
+        }
+      } catch(_e) {}
+    }
 
     render(0);
 
-    const api = { canvas, morphTo, render, updateSpring, updateStroke, rerender, destroy, get playing(){return playing;}, get target(){return targetD;}, get plan(){return plan;} };
+    const api = { canvas, morphTo, snapTo, render, updateSpring, updateStroke, rerender, destroy, get playing(){return playing;}, get target(){return targetD;}, get plan(){return plan;} };
     liveMorphs.push(api);
     return api;
   }
@@ -184,14 +274,10 @@
     if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex','0');
     if (!card.hasAttribute('role')) card.setAttribute('role','button');
     const onActivate = (e) => {
-      // don't double-trigger when interacting with native controls inside
       const t = e.target;
       if (t && t.closest) {
-        // if click originated from an input/textarea/select, ignore card tap (user is typing)
         if (t.closest('input, textarea, select')) return;
-        // if target is a button and card handler is same as button, avoid double
         if (t.closest('button') && card.contains(t.closest('button'))) {
-          // let button handler run; card tap would duplicate. For keyboard we still allow.
           if (e.type === 'click') return;
         }
       }
@@ -203,33 +289,35 @@
     });
   }
 
-  // --------------- 1. Copy → Check ---------------
+  // --------------- 1. Copy → Check — npm pill, icon inside button ---------------
   (() => {
     const canvas = document.getElementById('live-copy');
     const btn = document.getElementById('live-copy-btn');
     const card = canvas ? canvas.closest('.pattern-card') : null;
+    const headerCopy = card ? card.querySelector('.demo-card-copy-btn') : null;
     if (!canvas) return;
-    const copyD = dOf('copy'), checkD = dOf('check');
+    let copyD = dOf('copy'), checkD = dOf('check');
     if (!copyD || !checkD) return;
-    const m = createMorph(canvas, copyD, checkD);
+    let m = createMorph(canvas, copyD, checkD);
     if (!m) return;
     let copied = false;
     let revertTimer = null;
 
     function doCopy() {
-      if (copied && revertTimer) return; // already showing check, wait for revert
+      if (copied && revertTimer) return;
       copied = true;
       m.morphTo(checkD);
-      if (btn) { btn.textContent = 'Copied'; btn.setAttribute('aria-pressed','true'); }
+      if (btn) { btn.setAttribute('aria-pressed','true'); btn.setAttribute('aria-label','Copied'); }
       if (card) card.setAttribute('aria-pressed','true');
-      // clipboard best-effort
+      if (headerCopy) { headerCopy.textContent = 'Copied'; }
       navigator.clipboard && navigator.clipboard.writeText('npm i morphicons').catch(()=>{});
       clearTimeout(revertTimer);
       revertTimer = setTimeout(() => {
         copied = false;
         m.morphTo(copyD);
-        if (btn) { btn.textContent = 'Copy'; btn.setAttribute('aria-pressed','false'); }
+        if (btn) { btn.setAttribute('aria-pressed','false'); btn.setAttribute('aria-label','Copy command'); }
         if (card) card.setAttribute('aria-pressed','false');
+        if (headerCopy) headerCopy.textContent = 'Flutter';
         revertTimer = null;
       }, 1600);
     }
@@ -237,6 +325,9 @@
     if (btn) {
       btn.addEventListener('click', (e) => { e.stopPropagation(); doCopy(); });
       btn.setAttribute('aria-pressed','false');
+    }
+    if (headerCopy) {
+      headerCopy.addEventListener('click', (e) => { e.stopPropagation(); doCopy(); });
     }
     canvas.addEventListener('click', (e) => { e.stopPropagation(); doCopy(); });
     canvas.style.cursor = 'pointer';
@@ -246,20 +337,24 @@
       card.setAttribute('aria-label','Copy to clipboard — tap to show confirmation morph');
       makeCardTappable(card, doCopy);
     }
-    // expose for tests/debug
     window._liveCopy = { morph: m, doCopy, get copied(){return copied;} };
+    libraryHandlers.push(() => {
+      copyD = dOf('copy'); checkD = dOf('check');
+      if (!copyD || !checkD || !m || !m.snapTo) return;
+      m.snapTo(copied ? checkD : copyD);
+    });
   })();
 
-  // --------------- 2. Password: Eye ↔ EyeOff ---------------
+  // --------------- 2. Password: Eye ↔ EyeOff — real input with trailing morph button ---------------
   (() => {
     const canvas = document.getElementById('live-eye');
     const input = document.getElementById('live-password-input');
     const btn = document.getElementById('live-eye-btn');
     const card = canvas ? canvas.closest('.pattern-card') : null;
     if (!canvas) return;
-    const eyeD = dOf('eye'), eyeOffD = dOf('eye-off');
+    let eyeD = dOf('eye'), eyeOffD = dOf('eye-off');
     if (!eyeD || !eyeOffD) return;
-    const m = createMorph(canvas, eyeD, eyeOffD);
+    let m = createMorph(canvas, eyeD, eyeOffD);
     if (!m) return;
     let visible = false;
 
@@ -273,6 +368,12 @@
       }
       if (card) card.setAttribute('aria-pressed', String(visible));
       canvas.setAttribute('aria-label', visible ? 'Eye off — tap to hide' : 'Eye — tap to show');
+      // keep focus on input if it had focus
+      if (input && document.activeElement === input) {
+        // preserve cursor
+        const len = input.value.length;
+        try { input.setSelectionRange(len,len); } catch(_e) {}
+      }
     }
 
     if (btn) btn.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
@@ -283,7 +384,6 @@
     if (input) input.setAttribute('aria-label','Password');
     if (card) {
       card.setAttribute('aria-label','Password visibility — tap to toggle eye morph');
-      // card tap toggles, but ignore when focusing input
       makeCardTappable(card, (e) => {
         const ae = document.activeElement;
         if (ae === input) return;
@@ -291,16 +391,22 @@
       });
     }
     window._liveEye = { morph: m, toggle, get visible(){return visible;} };
+    libraryHandlers.push(() => {
+      eyeD = dOf('eye'); eyeOffD = dOf('eye-off');
+      if (!eyeD || !eyeOffD || !m || !m.snapTo) return;
+      m.snapTo(visible ? eyeOffD : eyeD);
+    });
   })();
 
-  // --------------- 3. Theme: Sun ↔ Moon ---------------
+  // --------------- 3. Theme: Sun ↔ Moon — single button ---------------
   (() => {
     const canvas = document.getElementById('live-theme');
+    const btn = document.getElementById('live-theme-btn');
     const card = canvas ? canvas.closest('.pattern-card') : null;
     if (!canvas) return;
-    const sunD = dOf('sun'), moonD = dOf('moon');
+    let sunD = dOf('sun'), moonD = dOf('moon');
     if (!sunD || !moonD) return;
-    const m = createMorph(canvas, sunD, moonD);
+    let m = createMorph(canvas, sunD, moonD);
     if (!m) return;
     let dark = false;
 
@@ -308,36 +414,52 @@
       dark = !dark;
       m.morphTo(dark ? moonD : sunD);
       document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+      if (btn) btn.setAttribute('aria-pressed', String(dark));
       if (card) card.setAttribute('aria-pressed', String(dark));
       canvas.setAttribute('aria-label', dark ? 'Moon — tap for sun' : 'Sun — tap for moon');
-      // subtle: add data-theme for CSS hooks if present
+      if (btn) btn.setAttribute('aria-label', dark ? 'Switch to light' : 'Switch to dark');
       document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
     }
 
-    canvas.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
+    const trigger = btn || canvas;
+    trigger.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
     canvas.style.cursor = 'pointer';
+    if (btn) btn.style.cursor = 'pointer';
     canvas.setAttribute('role','img');
-    canvas.setAttribute('tabindex','0');
     canvas.setAttribute('aria-label','Sun — tap to toggle theme');
-    canvas.addEventListener('keydown', (e) => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); toggle(); } });
+    if (btn) {
+      btn.setAttribute('tabindex','0');
+      btn.addEventListener('keydown', (e) => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); toggle(); } });
+    } else {
+      canvas.setAttribute('tabindex','0');
+      canvas.addEventListener('keydown', (e) => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); toggle(); } });
+    }
     if (card) {
       card.setAttribute('aria-label','Theme toggle — tap to morph sun and moon');
       makeCardTappable(card, toggle);
     }
     window._liveTheme = { morph: m, toggle, get dark(){return dark;} };
+    libraryHandlers.push(() => {
+      sunD = dOf('sun'); moonD = dOf('moon');
+      if (!sunD || !moonD || !m || !m.snapTo) return;
+      m.snapTo(dark ? moonD : sunD);
+    });
   })();
 
-  // --------------- 4. Player: Play↔Pause + Volume↔VolumeX ---------------
+  // --------------- 4. Player: Play↔Pause + Volume↔VolumeX — real player cluster ---------------
   (() => {
     const playCanvas = document.getElementById('live-play');
     const muteCanvas = document.getElementById('live-mute');
+    const playBtn = document.getElementById('live-play-btn');
+    const muteBtn = document.getElementById('live-mute-btn');
     const card = playCanvas ? playCanvas.closest('.pattern-card') : null;
     if (!playCanvas || !muteCanvas) return;
-    const playD = dOf('play'), pauseD = dOf('pause');
-    const volD = dOf('volume-2') || dOf('volume'), volX = dOf('volume-x');
+    let playD = dOf('play'), pauseD = dOf('pause');
+    let volD = dOf('volume-2') || dOf('volume'), volX = dOf('volume-x');
     if (!playD || !pauseD || !volD || !volX) return;
-    const mPlay = createMorph(playCanvas, playD, pauseD);
-    const mMute = createMorph(muteCanvas, volD, volX);
+    // play on light bg → dark stroke
+    let mPlay = createMorph(playCanvas, playD, pauseD, { color: '#0a0a0a' });
+    let mMute = createMorph(muteCanvas, volD, volX);
     if (!mPlay || !mMute) return;
     let playing = false, muted = false;
 
@@ -345,102 +467,118 @@
       if (e) e.stopPropagation();
       playing = !playing;
       mPlay.morphTo(playing ? pauseD : playD);
-      playCanvas.setAttribute('aria-label', playing ? 'Pause — tap to play' : 'Play — tap to pause');
+      const label = playing ? 'Pause — tap to play' : 'Play — tap to pause';
+      playCanvas.setAttribute('aria-label', label);
+      if (playBtn) playBtn.setAttribute('aria-label', label);
       if (card) card.setAttribute('aria-pressed', String(playing));
     }
     function toggleMute(e) {
       if (e) e.stopPropagation();
       muted = !muted;
       mMute.morphTo(muted ? volX : volD);
-      muteCanvas.setAttribute('aria-label', muted ? 'Unmute' : 'Mute');
-      muteCanvas.setAttribute('aria-pressed', String(muted));
+      const label = muted ? 'Unmute' : 'Mute';
+      muteCanvas.setAttribute('aria-label', label);
+      if (muteBtn) {
+        muteBtn.setAttribute('aria-label', label);
+        muteBtn.setAttribute('aria-pressed', String(muted));
+      }
     }
 
-    playCanvas.addEventListener('click', togglePlay);
-    muteCanvas.addEventListener('click', toggleMute);
+    if (playBtn) playBtn.addEventListener('click', togglePlay);
+    else playCanvas.addEventListener('click', togglePlay);
+    if (muteBtn) muteBtn.addEventListener('click', toggleMute);
+    else muteCanvas.addEventListener('click', toggleMute);
+
     [playCanvas, muteCanvas].forEach(c => {
       c.style.cursor='pointer';
       c.setAttribute('role','img');
-      c.setAttribute('tabindex','0');
-      c.addEventListener('keydown', (e) => {
-        if (e.key==='Enter' || e.key===' ') { e.preventDefault(); (c===playCanvas?togglePlay:toggleMute)(e); }
-      });
     });
+    if (playBtn) {
+      playBtn.style.cursor='pointer';
+      playBtn.setAttribute('tabindex','0');
+      playBtn.addEventListener('keydown', (e) => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); togglePlay(e); }});
+    } else {
+      playCanvas.setAttribute('tabindex','0');
+      playCanvas.addEventListener('keydown', (e) => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); togglePlay(e); }});
+    }
+    if (muteBtn) {
+      muteBtn.style.cursor='pointer';
+      muteBtn.setAttribute('tabindex','0');
+      muteBtn.addEventListener('keydown', (e) => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); toggleMute(e); }});
+    } else {
+      muteCanvas.setAttribute('tabindex','0');
+      muteCanvas.addEventListener('keydown', (e) => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); toggleMute(e); }});
+    }
     playCanvas.setAttribute('aria-label','Play — tap to pause');
     muteCanvas.setAttribute('aria-label','Volume — tap to mute');
-    muteCanvas.setAttribute('aria-pressed','false');
+    if (muteBtn) muteBtn.setAttribute('aria-pressed','false');
 
     if (card) {
       card.setAttribute('aria-label','Player controls — tap to toggle play, tap speaker to mute');
-      // card tap toggles play; mute is separate via its own canvas
       makeCardTappable(card, (e) => {
-        // if mute canvas was the target, ignore card-level play toggle (mute handler already ran with stopPropagation)
+        // card tap toggles play; mute is separate
         togglePlay(e);
       });
     }
     window._livePlayer = { play: mPlay, mute: mMute, togglePlay, toggleMute, get playing(){return playing;}, get muted(){return muted;} };
+    libraryHandlers.push(() => {
+      playD = dOf('play'); pauseD = dOf('pause');
+      volD = dOf('volume-2') || dOf('volume'); volX = dOf('volume-x');
+      if (!playD || !pauseD || !volD || !volX) return;
+      if (mPlay && mPlay.snapTo) mPlay.snapTo(playing ? pauseD : playD);
+      if (mMute && mMute.snapTo) mMute.snapTo(muted ? volX : volD);
+    });
   })();
 
-  // --------------- 5. Inline validation: Check ↔ X (EMAIL) ---------------
+  // --------------- 5. Inline validation: Check ↔ X trailing — real email input ---------------
   (() => {
-    const headerCanvas = document.getElementById('live-valid');
     const trailingCanvas = document.getElementById('live-valid-icon');
     const input = document.getElementById('live-email');
-    const card = headerCanvas ? headerCanvas.closest('.pattern-card') : null;
-    if (!headerCanvas || !input) return;
-    const checkD = dOf('check'), xD = dOf('x');
+    const card = input ? input.closest('.pattern-card') : null;
+    if (!trailingCanvas || !input) return;
+    let checkD = dOf('check'), xD = dOf('x');
     if (!checkD || !xD) return;
 
-    const mHeader = createMorph(headerCanvas, checkD, xD);
-    const mTrailing = trailingCanvas ? createMorph(trailingCanvas, checkD, xD) : null;
-    if (!mHeader) return;
+    let mTrailing = createMorph(trailingCanvas, checkD, xD);
+    if (!mTrailing) return;
     const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let lastState = null; // 'empty' | 'valid' | 'invalid'
 
     function update() {
-      const v = input.value;
+      const v = input.value.trim();
       const hasValue = v.length > 0;
       const valid = EMAIL.test(v);
       const state = !hasValue ? 'empty' : (valid ? 'valid' : 'invalid');
 
-      // header morph mirrors trailing: opacity when empty
       if (!hasValue) {
-        headerCanvas.style.opacity = '0.35';
-        if (trailingCanvas) { trailingCanvas.style.display='none'; trailingCanvas.style.opacity='0'; }
+        trailingCanvas.style.display='none';
+        trailingCanvas.style.opacity='0';
         lastState = 'empty';
+        input.setAttribute('aria-invalid', 'false');
         return;
       }
-      headerCanvas.style.opacity = '1';
-      if (trailingCanvas) {
-        trailingCanvas.style.display = 'block';
-        trailingCanvas.style.opacity = '1';
-      }
+      trailingCanvas.style.display = 'block';
+      // trigger reflow then fade in
+      requestAnimationFrame(() => { trailingCanvas.style.opacity='1'; });
       if (state === lastState) return;
       const target = valid ? checkD : xD;
-      mHeader.morphTo(target);
-      if (mTrailing) mTrailing.morphTo(target);
+      mTrailing.morphTo(target);
       lastState = state;
-      if (trailingCanvas) {
-        trailingCanvas.setAttribute('aria-label', valid ? 'Valid email' : 'Invalid email');
-      }
-      headerCanvas.setAttribute('aria-label', valid ? 'Valid — check' : 'Invalid — x');
+      trailingCanvas.setAttribute('aria-label', valid ? 'Valid email' : 'Invalid email');
+      input.setAttribute('aria-invalid', valid ? 'false' : 'true');
+      // tint border
+      input.style.borderColor = valid ? '#262626' : '#404040';
     }
 
-    // initial
-    headerCanvas.style.transition = 'opacity 200ms var(--ease-smooth)';
-    headerCanvas.style.opacity = '0.35';
-    headerCanvas.setAttribute('role','img');
-    headerCanvas.setAttribute('aria-label','Validation — type an email');
-    if (trailingCanvas) {
-      trailingCanvas.style.display='none';
-      trailingCanvas.style.opacity='0';
-      trailingCanvas.style.transition='opacity 200ms var(--ease-smooth)';
-      trailingCanvas.setAttribute('role','img');
-    }
+    trailingCanvas.style.opacity='0';
+    trailingCanvas.style.transition='opacity 200ms var(--ease-smooth)';
+    trailingCanvas.setAttribute('role','img');
+    trailingCanvas.setAttribute('aria-hidden','true');
 
     input.addEventListener('input', update);
     input.addEventListener('change', update);
-    // card tap focuses input (and cycles demo values for discoverability)
+    input.addEventListener('blur', update);
+
     let demoIdx = 0;
     const demos = ['', 'you@example.com', 'not-an-email'];
     function cycleDemo() {
@@ -456,13 +594,29 @@
         cycleDemo();
       });
     }
-    // also header tap cycles
-    headerCanvas.addEventListener('click', (e) => { e.stopPropagation(); cycleDemo(); });
-    headerCanvas.style.cursor='pointer';
-    window._liveValid = { header: mHeader, trailing: mTrailing, update, input };
+    // also trailing click cycles
+    trailingCanvas.addEventListener('click', (e) => { e.stopPropagation(); cycleDemo(); });
+    trailingCanvas.style.cursor='pointer';
+    trailingCanvas.parentElement && (trailingCanvas.parentElement.style.cursor='pointer');
+    window._liveValid = { trailing: mTrailing, update, input, cycleDemo };
+    libraryHandlers.push(() => {
+      checkD = dOf('check'); xD = dOf('x');
+      if (!checkD || !xD || !mTrailing || !mTrailing.snapTo) return;
+      // Rebuild trailing based on lastState; if empty hide, else show check/x
+      const v = input.value.trim();
+      const hasValue = v.length>0;
+      if (!hasValue) {
+        // keep hidden, but snap to check for next show
+        mTrailing.snapTo(checkD);
+        return;
+      }
+      const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+      const target = valid ? checkD : xD;
+      mTrailing.snapTo(target);
+    });
   })();
 
-  // --------------- 6. File tree: Folder ↔ FolderOpen (+ chevron) ---------------
+  // --------------- 6. File tree: Folder ↔ FolderOpen (+ chevron) — real disclosures ---------------
   (() => {
     const canvas = document.getElementById('live-folder');
     const btn = document.getElementById('live-tree-btn');
@@ -470,25 +624,25 @@
     const chevron = document.getElementById('live-chevron');
     const card = canvas ? canvas.closest('.pattern-card') : null;
     if (!canvas) return;
-    const folderD = dOf('folder'), folderOpenD = dOf('folder-open');
+    let folderD = dOf('folder'), folderOpenD = dOf('folder-open');
     if (!folderD || !folderOpenD) return;
-    const m = createMorph(canvas, folderD, folderOpenD);
+    let m = createMorph(canvas, folderD, folderOpenD);
     if (!m) return;
     let open = false;
 
-    function setOpen(next, fromCard) {
+    function setOpen(next) {
       if (typeof next === 'boolean') open = next;
       else open = !open;
       m.morphTo(open ? folderOpenD : folderD);
       if (files) files.hidden = !open;
       if (chevron) chevron.style.transform = open ? 'rotate(90deg)' : '';
       if (btn) {
-        btn.textContent = open ? 'Close folder' : 'Toggle folder';
         btn.setAttribute('aria-expanded', String(open));
       }
       if (card) card.setAttribute('aria-expanded', String(open));
       canvas.setAttribute('aria-label', open ? 'Open folder — tap to close' : 'Folder — tap to open');
       canvas.setAttribute('aria-expanded', String(open));
+      if (btn) btn.setAttribute('aria-label', open ? 'Collapse components' : 'Expand components');
     }
     function toggle(e) { if (e) e.stopPropagation(); setOpen(!open); }
 
@@ -501,11 +655,21 @@
     canvas.setAttribute('aria-expanded','false');
     canvas.addEventListener('keydown', (e) => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); toggle(); }});
     if (chevron) chevron.setAttribute('aria-hidden','true');
+    if (btn) {
+      btn.setAttribute('tabindex','0');
+      btn.addEventListener('keydown', (e) => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); toggle(); }});
+    }
     if (card) {
       card.setAttribute('aria-label','File tree — tap to disclose folder');
       makeCardTappable(card, toggle);
     }
+    // also handle header lib row is static — no morph
     window._liveTree = { morph: m, toggle, setOpen, get open(){return open;} };
+    libraryHandlers.push(() => {
+      folderD = dOf('folder'); folderOpenD = dOf('folder-open');
+      if (!folderD || !folderOpenD || !m || !m.snapTo) return;
+      m.snapTo(open ? folderOpenD : folderD);
+    });
   })();
 
   // keep canvases crisp on resize / orientation
@@ -517,5 +681,7 @@
   window.addEventListener('orientationchange', () => setTimeout(() => liveMorphs.forEach(m=>m.rerender()), 150));
 
   // expose
-  window._showcaseLive = { morphs: liveMorphs, presets: SPRING_PRESETS, get stroke(){return currentStroke;}, get preset(){return currentPresetKey;} };
+  window._showcaseLive = { morphs: liveMorphs, presets: SPRING_PRESETS, get stroke(){return currentStroke;}, get preset(){return currentPresetKey;}, get library(){return currentLibrary;}, get catalogs(){return Catalogs;} };
+  // also expose for tests: current catalog accessor
+  window._showcaseLibrary = { get library(){return currentLibrary;}, setLibrary: (lib)=>{ if(Catalogs[lib]){ currentLibrary=lib; updateLibraryIcons(); } }, catalogs: Catalogs, aliases: LIB_ALIASES };
 })();

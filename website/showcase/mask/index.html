@@ -1,6 +1,18 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>MorphMask — Morphicons for Flutter</title><meta name="description" content="Paint rich Flutter surfaces through animated MorphMask geometry — web-native mask-image demo with one element, no path in the DOM."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"><link rel="stylesheet" href="../../styles.css"><link rel="icon" type="image/png" href="../../flutter/favicon.png"></head>
-<body class="route-page"><div class="ambient" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mask adapter — Morphicons for Flutter</title>
+<meta name="description" content="Morph Iconify-style CSS mask icons in place — one element, no path in the DOM. Gradient, image or currentColor shows through the mask shape.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../styles.css">
+<link rel="icon" type="image/png" href="../../flutter/favicon.png">
+</head>
+<body class="route-page" style="background:var(--canvas-soft);">
+<div class="ambient" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
 <header class="nav"><div class="nav-inner"><a class="wordmark" href="../../"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>Morphicons</span><span class="wordmark-sub">for Flutter</span></a>
   <nav class="nav-links" aria-label="Primary">
     <a href="../../">Home</a>
@@ -21,48 +33,95 @@
   </div>
 </div></header>
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mobile-menu-inner"><p class="mobile-menu-kicker mono">Flutter workbench</p><nav class="mobile-menu-links" aria-label="Mobile navigation"><a href="../../">Home</a><a href="../">Showcase — Core</a><a href="./">MorphMask</a><a href="../../roadmap/">Roadmap</a><a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a></nav><a class="btn mobile-menu-cta" href="https://pub.dev/packages/morphicons_flutter">View on pub.dev <span class="btn-icon">↗</span></a></div></div>
-<main><section class="route-hero"><div class="hero-meta"><span class="tag tag-yellow">css mask</span><span class="tag tag-green">one element</span></div><p class="kicker">MorphMask</p><h1 class="hero-title">One element,<br><em>no path in the DOM.</em></h1><p class="hero-sub">A single <span class="mono">&lt;span&gt;</span> keeps the paint — gradient, image, or <span class="mono">currentColor</span>. The morphing stroke lives only as <span class="mono">mask-image</span> (<span class="mono">url(#mask)</span>), so no <span class="mono">&lt;path&gt;</span> is ever injected and the element stays a normal box.</p><div class="route-links"><a class="btn" href="#mask-demo">See the mask <span class="btn-icon">↓</span></a><a class="btn btn-ghost" href="../">Previous: Core patterns</a></div></section><nav class="route-tabs" aria-label="Showcase sections"><a href="../">Core</a><a class="is-active" href="./">MorphMask</a><a href="../../roadmap/">Roadmap</a></nav>
 
-<section class="mask-demo-section" id="mask-demo">
-<div class="mask-card">
-  <div class="mask-card-left">
-    <div class="mask-preview-head"><span>Preview</span><span>mask-image</span></div>
-    <div class="mask-preview-stage">
-      <!-- The masked element: gradient bars show through the morphing stroke shape -->
-      <div id="maskEl" class="mask-el is-gradient" aria-label="Masked element showing gradient through morphing icon">
-        <div class="mask-bar" aria-hidden="true"></div>
-        <div class="mask-bar" aria-hidden="true"></div>
-        <div class="mask-bar" aria-hidden="true"></div>
+<main>
+  <!-- Hero — matches morphicons.com/showcase/mask dark editorial -->
+  <section class="showcase-hero-section">
+    <div class="showcase-hero-inner">
+      <h1 class="showcase-title">Showcase</h1>
+      <nav class="showcase-main-tabs" aria-label="Showcase sections">
+        <a href="../">Core</a>
+        <a class="is-active" href="./" aria-current="page">Mask adapter</a>
+        <a href="../../roadmap/">Canvas adapter</a>
+      </nav>
+      <p class="showcase-desc">Iconify-style pipelines render icons as CSS masks: a <span class="mono">span</span> whose shape is a <span class="mono">mask-image</span>, no path in the DOM. The mask adapter morphs that span as it is. <span class="mono">svgToIcon</span> reads the markup, <span class="mono">maskTarget</span> drives the mask, and your element keeps its classes, its paint and its place in the layout.</p>
+      <div class="showcase-meta-grid">
+        <div class="meta-col">
+          <h3>WHY THIS PATH</h3>
+          <p>You already ship icons as CSS masks: UnoCSS presetIcons, Tailwind icon plugins, plain Iconify. This animates the elements you have instead of asking you to switch to inline SVG. Any stroke-drawn set Iconify carries qualifies.</p>
+        </div>
+        <div class="meta-col">
+          <h3>HOW IT WORKS</h3>
+          <p><span class="mono">svgToIcon</span> turns markup into morphable data, re-gridding off-grid sets via their viewBox. <span class="mono">maskTarget</span> keeps a hidden pair of SVG mask buffers and flips <span class="mono">mask-image</span> between them each frame, which is what keeps Safari repainting. Whatever paints the element shows through the moving shape.</p>
+        </div>
+        <div class="meta-col">
+          <h3>THE TRADEOFF</h3>
+          <p>Every frame re-rasterizes the mask on the main thread, so budget it like a hover effect: toggles, nav, empty states. For icon-heavy views, inline SVG stays leaner. Client-only by nature, and fill-drawn sets (Material Symbols) are rejected up front.</p>
+        </div>
       </div>
     </div>
-    <p class="hint mask-hint">Three gradient bars (blue → green, teal → purple, blue → purple) show through the stroke mask. The <span class="mono">span</span> never contains a <span class="mono">&lt;path&gt;</span>.</p>
-    <p class="mono mask-current-label">Current: <b id="maskCurrentLabel">menu → x</b></p>
-  </div>
-  <div class="mask-card-right">
-    <div class="mask-control-group">
-      <p class="mask-label">Shape</p>
-      <div class="mask-shape-grid" id="maskShapeGrid" role="group" aria-label="Shape"></div>
-    </div>
-    <div class="mask-control-group">
-      <p class="mask-label">Element paint</p>
-      <div class="seg mask-paint-seg" id="maskPaintSeg" role="group" aria-label="Element paint">
-        <button class="seg-btn is-active" type="button" data-paint="gradient" aria-pressed="true">Gradient</button>
-        <button class="seg-btn" type="button" data-paint="currentColor" aria-pressed="false">currentColor</button>
-      </div>
-      <p class="hint" style="margin-top:8px; font-size:12px">Gradient keeps three bars. <span class="mono">currentColor</span> paints the element in text color and inherits the theme.</p>
-    </div>
-    <div class="mask-code-block">
-      <div class="mask-code-head"><span class="mono">span with mask-image</span><button class="btn btn-sm btn-ghost" data-copy-target="mask-code-snip">Copy</button></div>
-      <pre><code id="mask-code-snip">span.style.maskImage = "url(#morphicons-mask-1)"
-span.style.webkitMaskImage = "url(#morphicons-mask-1)"
-// morph drives the hidden &lt;mask&gt;&lt;path d&gt; — no &lt;path&gt; in the span</code></pre>
-    </div>
-  </div>
-</div>
-<p class="hint mono" style="margin-top:12px; text-align:center; font-size:11px">Web: <span class="mono">maskTarget(span)</span> · Flutter: <span class="mono">MorphMask(child: DecoratedBox(gradient: …))</span> — same solver, same springs.</p>
-</section>
+  </section>
 
-<section class="section section-alt"><div class="docs-grid"><div class="doc-block"><p class="kicker">Paint versus geometry</p><h3>Two layers, one contract</h3><p>The child is laid out, hit-tested, and painted as usual. MorphMask adds its geometry as a compositing mask after the child paints. This is why a gradient belongs in the child, not in the path solver.</p><p class="hint">A save layer is an offscreen buffer. It costs memory bandwidth per animated frame, so keep masks to small interactive surfaces rather than large icon grids. Web masks re-rasterize every frame too — fine for toggles, not for dense grids.</p></div><div class="doc-block"><p class="kicker">Flutter API</p><h3>Pair helpers stay readable</h3><pre><code>menu.morphTo(x).mask(
+  <!-- Mask demo — dark premium card: header + large preview + right controls -->
+  <section class="mask-demo-section" aria-label="Mask adapter demo">
+    <article class="mask-card">
+      <header class="mask-card-header">
+        <h3>One element, no path in the DOM</h3>
+        <p>The shape below is a plain <span class="mono">span</span>: its geometry is a referenced SVG mask the driver rewrites per frame, and its color is just CSS showing through.</p>
+      </header>
+      <div class="mask-card-body">
+        <div class="mask-preview">
+          <!-- The masked element: 3 gradient bars clipped by morphing stroke mask. No <path> inside. -->
+          <span id="maskEl" class="mask-el is-gradient" role="img" aria-label="menu icon rendered through a CSS mask">
+            <span class="mask-bar" aria-hidden="true"></span>
+            <span class="mask-bar" aria-hidden="true"></span>
+            <span class="mask-bar" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="mask-controls">
+          <div>
+            <p class="mask-label">Shape</p>
+            <div class="mask-shape-grid" id="maskShapeGrid" role="group" aria-label="Shape"></div>
+          </div>
+          <div>
+            <p class="mask-label">Element paint</p>
+            <div class="seg mask-paint-seg" id="maskPaintSeg" role="group" aria-label="Element paint">
+              <button class="seg-btn is-active" type="button" data-paint="gradient" aria-pressed="true">Gradient</button>
+              <button class="seg-btn" type="button" data-paint="currentColor" aria-pressed="false">currentColor</button>
+            </div>
+            <p class="hint" style="margin-top:10px; font-size:13px; line-height:1.5">The morph never touches color. A gradient, an image, plain <span class="mono">currentColor</span>: whatever paints the element shows through the moving mask.</p>
+          </div>
+          <p class="mono" id="maskCurrentLabel" style="font-size:11px; color:var(--muted); margin-top:2px">Current: <b style="color:var(--ink); font-weight:500">menu → x</b></p>
+        </div>
+      </div>
+    </article>
+
+    <div class="mask-integration">
+      <h2>The whole integration</h2>
+      <p>Two adapter calls around the plain DOM driver. The element is anything with a box: a <span class="mono">span</span> from UnoCSS presetIcons, a Tailwind icon plugin, or your own markup.</p>
+      <div class="mask-code-panel">
+        <div class="mask-code-panel-head"><span class="mono">morphicons/adapters</span><button class="btn btn-sm btn-ghost" data-copy-target="mask-code-full">Copy</button></div>
+        <pre><code id="mask-code-full">import { createMorph } from "morphicons/dom";
+import { maskTarget, svgToIcon } from "morphicons/adapters";
+
+// what an Iconify pipeline ships: markup, not components
+const MENU = svgToIcon(
+  '&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor"&gt;&lt;path d="M4 12h16"/&gt;&lt;path d="M4 18h16"/&gt;&lt;path d="M4 6h16"/&gt;&lt;/svg&gt;',
+);
+const X = svgToIcon(
+  '&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor"&gt;&lt;path d="M18 6 6 18"/&gt;&lt;path d="m6 6 12 12"/&gt;&lt;/svg&gt;',
+);
+
+const target = maskTarget(el); // el: your mask-styled &lt;span&gt;
+const morph = createMorph(target, MENU);
+morph.morphTo(X, "snappy");
+
+// on unmount: morph.destroy(); target.dispose();</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt"><div class="docs-grid"><div class="doc-block"><p class="kicker">Paint versus geometry</p><h3>Two layers, one contract</h3><p>The child is laid out, hit-tested, and painted as usual. MorphMask adds its geometry as a compositing mask after the child paints. This is why a gradient belongs in the child, not in the path solver.</p><p class="hint">A save layer is an offscreen buffer. It costs memory bandwidth per animated frame, so keep masks to small interactive surfaces rather than large icon grids. Web masks re-rasterize every frame too — fine for toggles, not for dense grids.</p></div><div class="doc-block"><p class="kicker">Flutter API</p><h3>Pair helpers stay readable</h3><pre><code>menu.morphTo(x).mask(
   progress: progress,
   child: DecoratedBox(
     decoration: const BoxDecoration(
@@ -73,7 +132,7 @@ span.style.webkitMaskImage = "url(#morphicons-mask-1)"
     child: const SizedBox.expand(),
   ),
 );</code></pre></div></div></section>
-<section class="section"><div class="doc-block code-card"><div class="code-out-head"><span class="mono">morph_mask.dart</span><button class="btn btn-sm btn-ghost" data-copy-target="mask-code">Copy</button></div><pre><code id="mask-code">final pair = menu.morphTo(x);
+  <section class="section"><div class="doc-block code-card"><div class="code-out-head"><span class="mono">morph_mask.dart</span><button class="btn btn-sm btn-ghost" data-copy-target="mask-code">Copy</button></div><pre><code id="mask-code">final pair = menu.morphTo(x);
 
 MorphMask.controlled(
   from: pair.from,
@@ -92,12 +151,14 @@ MorphMask.controlled(
 
 // The same call is available as pair.mask(...)
 // or menu.morphMaskTo(x, progress: progress, child: child).</code></pre></div></section>
-</main><footer class="footer"><div class="footer-inner"><p>Morphicons for Flutter · MIT · <a href="../../">Back to the workbench</a></p><p class="mono"><a href="../">Core</a> · <a href="../../roadmap/">Roadmap</a></p></div></footer>
+</main>
+<footer class="footer"><div class="footer-inner"><p>Morphicons for Flutter · MIT · <a href="../../">Back to the workbench</a></p><p class="mono"><a href="../">Core</a> · <a href="../../roadmap/">Roadmap</a></p></div></footer>
+
 <script src="../../assets/morphicons-core.js"></script>
 <script src="../../assets/lucide-catalog.js"></script>
 <script src="../../showcase.js"></script>
 <script>
-/* Mask demo: span with mask-image driven by hidden double-buffered <mask><path> */
+/* Mask demo: one <span> with mask-image driven by hidden double-buffered <mask><path>. No <path> in the span. */
 (() => {
   const M = window.MorphCore;
   const LUCIDE = window.LucideCatalog;
@@ -109,7 +170,6 @@ MorphMask.controlled(
   if (!maskEl || !shapeGrid || !paintSeg) return;
 
   const SHAPES = ['menu','x','sun','moon','heart','star'];
-  // ensure all shapes exist; fallback to menu/x
   const available = SHAPES.filter(function(n){ return !!LUCIDE[n]; });
   const shapes = available.length >= 4 ? available : ['menu','x','heart','star'];
 
@@ -133,7 +193,6 @@ MorphMask.controlled(
     mask.setAttribute('maskContentUnits','objectBoundingBox');
     mask.setAttribute('mask-type','alpha');
     var g = document.createElementNS(SVG_NS, 'g');
-    // map 24x24 icon grid onto 0..1 objectBoundingBox
     g.setAttribute('transform','scale(0.041666666666666664 0.041666666666666664)');
     var path = document.createElementNS(SVG_NS, 'path');
     path.setAttribute('fill','none');
@@ -152,10 +211,14 @@ MorphMask.controlled(
   var layerB = makeLayer(idB);
   var layers = [layerA, layerB];
   var front = 0;
-  // start with first layer
   maskEl.style.maskImage = 'url(#' + idA + ')';
   maskEl.style.webkitMaskImage = 'url(#' + idA + ')';
-  // seed both masks with initial shape to avoid blank first frame
+  maskEl.style.maskRepeat = 'no-repeat';
+  maskEl.style.webkitMaskRepeat = 'no-repeat';
+  maskEl.style.maskPosition = 'center';
+  maskEl.style.webkitMaskPosition = 'center';
+  maskEl.style.maskSize = 'contain';
+  maskEl.style.webkitMaskSize = 'contain';
   try { layerA.path.setAttribute('d', LUCIDE[shapes[0]] || ''); } catch(e){}
   try { layerB.path.setAttribute('d', LUCIDE[shapes[0]] || ''); } catch(e){}
 
@@ -184,7 +247,6 @@ MorphMask.controlled(
     if (!plan || !out) return getD(current);
     var closed = plan.items.map(function(it){ return !!it.closed; });
     try { return M.serialize(out, closed); } catch (e) {
-      // fallback manual
       var d = '';
       for (var k=0;k<out.length;k++){
         var pts = out[k];
@@ -222,18 +284,18 @@ MorphMask.controlled(
   }
 
   function setLabel(from, to, animating){
-    if (animating) currentLabel.textContent = from + ' \u2192 ' + to;
-    else currentLabel.textContent = from;
+    if (!currentLabel) return;
+    // keep inner <b> structure if present
+    var b = currentLabel.querySelector('b');
+    var text = animating ? from + ' \u2192 ' + to : from;
+    if (b) b.textContent = text;
+    else currentLabel.textContent = 'Current: ' + text;
+    maskEl.setAttribute('aria-label', (animating ? to : from) + ' icon rendered through a CSS mask');
   }
 
   function animateTo(nextName){
     if (!nextName || nextName === target && !isAnimating && nextName === current) return;
     if (rafId) cancelAnimationFrame(rafId);
-    var fromName = isAnimating ? current : current;
-    // If animating, we should snapshot intermediate shape as source for seamless interruption:
-    // resample current interpolated shape as new from.
-    // Simplest: if animating, use current interpolated d as from (already in mask). To preserve velocity, rebuild from that d.
-    // For now, rebuild from last settled current to nextName, and restart spring — acceptable for demo.
     target = nextName;
     if (!buildPlan(current, target)){
       isAnimating = false;
@@ -246,7 +308,6 @@ MorphMask.controlled(
     spring.start();
     function tick(){
       rafId = null;
-      // viewport-aware: skip if hidden? keep running but throttle if document hidden
       if (document.hidden){
         rafId = requestAnimationFrame(tick);
         return;
@@ -257,25 +318,22 @@ MorphMask.controlled(
       if (!settled){
         rafId = requestAnimationFrame(tick);
       } else {
-        // snap to canonical at rest for crispness
         isAnimating = false;
         current = target;
         setLabel(current, current, false);
         updateButtons(current);
-        // ensure canonical d in front buffer
         front = 1 - front;
         var layer = layers[front];
         try { layer.path.setAttribute('d', getD(current)); } catch(e){}
         maskEl.style.maskImage = 'url(#' + layer.id + ')';
         maskEl.style.webkitMaskImage = 'url(#' + layer.id + ')';
-        // schedule auto-advance
         scheduleAuto();
       }
     }
     rafId = requestAnimationFrame(tick);
   }
 
-  // Build shape buttons
+  // Build shape buttons — pill style matching morphicons.com
   shapes.forEach(function(name){
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -306,13 +364,11 @@ MorphMask.controlled(
     });
   });
 
-  // initial render
   buildPlan(current, target);
   renderAt(0);
   setLabel(current, target, false);
   updateButtons(current);
 
-  // auto-advance through shapes every ~2s when idle and visible
   var autoTimer = null;
   function scheduleAuto(){
     if (autoTimer) clearTimeout(autoTimer);
@@ -321,14 +377,12 @@ MorphMask.controlled(
       var idx = shapes.indexOf(current);
       var next = shapes[(idx + 1) % shapes.length];
       animateTo(next);
-    }, 1800);
+    }, 2600);
   }
-  // handle visibility: pause scheduling when hidden
   document.addEventListener('visibilitychange', function(){
     if (!document.hidden && !isAnimating) scheduleAuto();
   });
-  // IntersectionObserver: pause auto when offscreen
-  var section = document.getElementById('mask-demo');
+  var section = document.querySelector('.mask-demo-section');
   var visible = true;
   if ('IntersectionObserver' in window && section){
     var io = new IntersectionObserver(function(entries){
@@ -340,7 +394,6 @@ MorphMask.controlled(
   }
   scheduleAuto();
 
-  // expose for tests/debug
   window._maskDemo = {
     get current(){ return current; },
     get target(){ return target; },

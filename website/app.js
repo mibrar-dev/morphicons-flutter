@@ -940,6 +940,15 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
     try { history.replaceState(null, '', '#'+name); } catch {}
   }
   tabs.forEach((btn) => btn.addEventListener('click', () => activate(btn.dataset.frameTab)));
+  // nav links that point to frame tabs (e.g. Converter in header)
+  document.querySelectorAll('[data-frame-tab-link]').forEach((link) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const name = link.dataset.frameTabLink;
+      document.getElementById('playground')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      activate(name);
+    });
+  });
   // converter browse button → file input
   const convBrowse = document.getElementById('convBrowse');
   const convFile = document.getElementById('convFile');
@@ -947,6 +956,8 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
   // allow deep link #converter etc
   const hash = (location.hash || '').replace('#','');
   if (hash && document.querySelector(`.frame-tab[data-frame-tab="${hash}"]`)) activate(hash);
+  // also support #converter hash via nav
+  if (location.hash === '#converter') activate('converter');
   // expose for nav testing
   window._frameActivate = activate;
 })();

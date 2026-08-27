@@ -72,14 +72,6 @@
           </div>
         </div>
         <div class="control-group">
-          <p class="control-label">FRAMEWORK</p>
-          <div class="seg control-seg" role="tablist" aria-label="Framework">
-            <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-control="framework" data-value="react">React</button>
-            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="framework" data-value="vue">Vue</button>
-            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="framework" data-value="svelte">Svelte</button>
-          </div>
-        </div>
-        <div class="control-group">
           <p class="control-label">SPRING</p>
           <div class="seg control-seg" role="tablist" aria-label="Spring preset">
             <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-control="spring" data-value="smooth">smooth</button>
@@ -96,100 +88,147 @@
             <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="stroke" data-value="2.5">2.5</button>
           </div>
         </div>
-        <p class="control-hint">Library &amp; framework are visual adapters — the same stroke geometry, emitted as React, Vue or Svelte. Spring and stroke drive every live morph on the right.</p>
+        <p class="control-hint">Library switches the catalog — same 6 patterns rendered with Lucide, Heroicons or Tabler strokes on the Flutter 24 grid. Spring and stroke drive every live morph on the right.</p>
       </aside>
       <div class="showcase-stage">
         <div class="pattern-grid">
-          <article class="card pattern-card" data-pattern="copy" tabindex="0" role="button" aria-label="Copy to clipboard — tap to show confirmation morph">
-            <div class="pattern-card-top">
-              <div class="pattern-icon" aria-hidden="true"><canvas id="live-copy" width="96" height="96" aria-hidden="true"></canvas></div>
-              <h3>Copy to clipboard</h3>
-            </div>
-            <p>Confirm a clipboard action without replacing the button or shifting layout.</p>
-            <div class="pattern-card-demo">
-              <div style="display:flex; gap:8px; align-items:center;">
-                <button id="live-copy-btn" class="btn btn-sm" type="button" aria-pressed="false">Copy</button>
-                <code class="mono" style="font-size:11px; color:#737373;">tap card or button → check</code>
+          <!-- 1. Copy to clipboard — npm pill with morph inside button -->
+          <article class="card pattern-card demo-card" data-pattern="copy" tabindex="0" role="button" aria-label="Copy to clipboard — tap to show confirmation morph">
+            <div class="demo-card-head">
+              <div>
+                <h3>Copy to clipboard</h3>
+                <p>The most repeated swap: Copy settles into Check.</p>
               </div>
+              <button type="button" class="demo-card-copy-btn mono" data-copy-npm aria-label="Copy Flutter snippet">Flutter</button>
             </div>
-          </article>
-          <article class="card pattern-card" data-pattern="password" tabindex="0" role="button" aria-label="Password visibility — tap to toggle eye morph">
-            <div class="pattern-card-top">
-              <div class="pattern-icon" aria-hidden="true"><canvas id="live-eye" width="96" height="96" aria-hidden="true"></canvas></div>
-              <h3>Password visibility</h3>
-            </div>
-            <p>Eye states stay legible while the field keeps focus and its geometry.</p>
-            <div class="pattern-card-demo">
-              <div style="position:relative;">
-                <input id="live-password-input" type="password" value="correct-horse" autocomplete="off" spellcheck="false" aria-label="Password">
-                <button id="live-eye-btn" type="button" aria-label="Show password" aria-pressed="false" style="position:absolute; right:4px; top:50%; transform:translateY(-50%); width:28px; height:28px; display:grid; place-items:center; border:0; background:transparent; cursor:pointer; color:#a1a1a1;">
-                  <span class="mono" style="font-size:11px; display:none;" aria-hidden="true">view</span>
+            <div class="demo-body demo-body-centered">
+              <div class="demo-npm-pill">
+                <span class="mono demo-npm-text">npm i morphicons</span>
+                <button id="live-copy-btn" class="demo-icon-btn demo-npm-btn" type="button" aria-label="Copy command" aria-pressed="false">
+                  <canvas id="live-copy" width="64" height="64" aria-hidden="true"></canvas>
                 </button>
               </div>
-              <span class="mono" style="font-size:11px; color:#737373; margin-top:8px; display:block;">tap card or eye → eye-off</span>
             </div>
+            <span class="mono demo-hint">tap card or icon → check</span>
           </article>
-          <article class="card pattern-card" data-pattern="theme" tabindex="0" role="button" aria-label="Theme toggle — tap to morph sun and moon">
-            <div class="pattern-card-top">
-              <div class="pattern-icon" aria-hidden="true"><canvas id="live-theme" width="96" height="96" style="cursor:pointer;" role="img" aria-label="Sun — tap to toggle theme" tabindex="0"></canvas></div>
-              <h3>Theme toggle</h3>
-            </div>
-            <p>Sun and moon share one expressive control, with no cross-fade flash.</p>
-            <div class="pattern-card-demo">
-              <span class="mono" style="font-size:11px; color:#737373;">tap card or icon → moon</span>
-            </div>
-          </article>
-          <article class="card pattern-card" data-pattern="player" tabindex="0" role="button" aria-label="Player controls — tap to toggle play, tap speaker to mute">
-            <div class="pattern-card-top">
-              <div class="pattern-icon" aria-hidden="true" style="display:flex; gap:6px; align-items:center; justify-content:center; width:64px;">
-                <canvas id="live-play" width="64" height="64" style="width:22px; height:22px; cursor:pointer;" role="img" aria-label="Play — tap to pause" tabindex="0"></canvas>
-                <canvas id="live-mute" width="64" height="64" style="width:22px; height:22px; cursor:pointer;" role="img" aria-label="Volume — tap to mute" aria-pressed="false" tabindex="0"></canvas>
+
+          <!-- 2. Password visibility — real input with eye morph inside trailing button -->
+          <article class="card pattern-card demo-card" data-pattern="password" tabindex="0" role="button" aria-label="Password visibility — tap to toggle eye morph">
+            <div class="demo-card-head">
+              <div>
+                <h3>Password visibility</h3>
+                <p>Eye to EyeOff on the input's trailing button.</p>
               </div>
-              <h3>Player controls</h3>
+              <span class="mono demo-card-badge">Input</span>
             </div>
-            <p>Play, pause and mute compose from the same small vocabulary.</p>
-            <div class="pattern-card-demo">
-              <span class="mono" style="font-size:11px; color:#737373;">tap card → play/pause · tap speaker → mute</span>
+            <div class="demo-body demo-body-centered">
+              <div class="demo-field">
+                <input id="live-password-input" class="demo-input" type="password" value="correct-horse-battery" autocomplete="off" spellcheck="false" aria-label="Password">
+                <button id="live-eye-btn" type="button" aria-label="Show password" aria-pressed="false" class="demo-field-btn">
+                  <canvas id="live-eye" width="64" height="64" aria-hidden="true"></canvas>
+                </button>
+              </div>
             </div>
+            <span class="mono demo-hint">tap card or eye → eye-off</span>
           </article>
-          <article class="card pattern-card" data-pattern="validation" tabindex="0" role="button" aria-label="Inline validation — type an email to morph check and x">
-            <div class="pattern-card-top">
-              <div class="pattern-icon" aria-hidden="true"><canvas id="live-valid" width="96" height="96" aria-hidden="true"></canvas></div>
-              <h3>Inline validation</h3>
+
+          <!-- 3. Theme toggle — sun/moon in one button -->
+          <article class="card pattern-card demo-card" data-pattern="theme" tabindex="0" role="button" aria-label="Theme toggle — tap to morph sun and moon">
+            <div class="demo-card-head">
+              <div>
+                <h3>Theme toggle</h3>
+                <p>Sun to Moon in one slot — no double SVG.</p>
+              </div>
+              <span class="mono demo-card-badge">Toggle</span>
             </div>
-            <p>Validation changes read as a response beside the input, not a new screen.</p>
-            <div class="pattern-card-demo">
-              <div style="position:relative;">
-                <input id="live-email" placeholder="you@example.com" autocomplete="off" spellcheck="false" aria-label="Email">
-                <div style="position:absolute; right:8px; top:50%; transform:translateY(-50%); width:22px; height:22px; display:grid; place-items:center; pointer-events:none;">
-                  <canvas id="live-valid-icon" width="48" height="48" style="width:22px; height:22px; display:none; opacity:0;" aria-hidden="true"></canvas>
+            <div class="demo-body demo-body-centered">
+              <button id="live-theme-btn" type="button" aria-label="Toggle theme" aria-pressed="false" class="demo-theme-btn">
+                <canvas id="live-theme" width="64" height="64" aria-hidden="true"></canvas>
+              </button>
+            </div>
+            <span class="mono demo-hint">tap card or icon → moon</span>
+          </article>
+
+          <!-- 4. Player controls — play/pause + mute with progress -->
+          <article class="card pattern-card demo-card" data-pattern="player" tabindex="0" role="button" aria-label="Player controls — tap to toggle play, tap speaker to mute">
+            <div class="demo-card-head">
+              <div>
+                <h3>Player controls</h3>
+                <p>Play and pause, plus mute on the same cluster.</p>
+              </div>
+              <span class="mono demo-card-badge">Audio</span>
+            </div>
+            <div class="demo-body demo-body-centered">
+              <div class="demo-player">
+                <div class="demo-player-head mono"><span>ambient-01.wav</span><span>3:42</span></div>
+                <div class="demo-player-bar"><div class="demo-player-progress"></div></div>
+                <div class="demo-player-controls">
+                  <button id="live-play-btn" type="button" aria-label="Play" class="demo-play-btn">
+                    <canvas id="live-play" width="64" height="64" aria-hidden="true"></canvas>
+                  </button>
+                  <button id="live-mute-btn" type="button" aria-label="Mute" aria-pressed="false" class="demo-mute-btn">
+                    <canvas id="live-mute" width="64" height="64" aria-hidden="true"></canvas>
+                  </button>
                 </div>
               </div>
-              <span class="mono" style="font-size:11px; color:#737373; margin-top:8px; display:block;">tap card to cycle · type to validate → check/x</span>
             </div>
+            <span class="mono demo-hint">tap card → play/pause · tap speaker → mute</span>
           </article>
-          <article class="card pattern-card" data-pattern="tree" tabindex="0" role="button" aria-label="File tree — tap to disclose folder">
-            <div class="pattern-card-top">
-              <div class="pattern-icon" aria-hidden="true" style="display:flex; align-items:center; gap:6px; justify-content:center;">
-                <span id="live-chevron" style="display:inline-block; transition:transform 200ms var(--ease-smooth); font-size:12px; color:#a1a1a1;" aria-hidden="true">›</span>
-                <canvas id="live-folder" width="64" height="64" style="width:24px; height:24px; cursor:pointer;" role="img" aria-label="Folder — tap to open" aria-expanded="false" tabindex="0"></canvas>
+
+          <!-- 5. Inline validation — email field with trailing check/x morph -->
+          <article class="card pattern-card demo-card" data-pattern="validation" tabindex="0" role="button" aria-label="Inline validation — type an email to morph check and x">
+            <div class="demo-card-head">
+              <div>
+                <h3>Inline validation</h3>
+                <p>Trailing icon tracks the field: Check when valid, X when not.</p>
               </div>
-              <h3>File tree</h3>
+              <span class="mono demo-card-badge">Form</span>
             </div>
-            <p>Disclosure arrows preserve hierarchy while folders open and close.</p>
-            <div class="pattern-card-demo">
-              <button id="live-tree-btn" type="button" aria-expanded="false" style="width:100%; padding:8px 12px; border:1px solid #262626; border-radius:8px; background:#0a0a0a; color:#ededed; text-align:left; font-size:13px; cursor:pointer;">Toggle folder</button>
-              <div id="live-tree-files" hidden style="margin-top:10px; margin-left:8px; border-left:1px solid #262626; padding-left:12px; font-family:var(--mono); font-size:11px; line-height:1.9; color:#a1a1a1;">
-                button.tsx<br>input.tsx<br>toggle.tsx
+            <div class="demo-body demo-body-centered">
+              <div class="demo-field">
+                <input id="live-email" class="demo-input" type="email" placeholder="you@example.com" autocomplete="off" spellcheck="false" aria-label="Email">
+                <div class="demo-field-trailing" aria-hidden="true">
+                  <canvas id="live-valid-icon" width="64" height="64" aria-hidden="true" style="display:none; opacity:0;"></canvas>
+                </div>
               </div>
-              <span class="mono" style="font-size:11px; color:#737373; margin-top:8px; display:block;">tap card or folder → open/close</span>
             </div>
+            <span class="mono demo-hint">tap card to cycle · type to validate → check/x</span>
+          </article>
+
+          <!-- 6. File tree — folder morph with disclosure chevron (CSS) -->
+          <article class="card pattern-card demo-card" data-pattern="tree" tabindex="0" role="button" aria-label="File tree — tap to disclose folder">
+            <div class="demo-card-head">
+              <div>
+                <h3>File tree</h3>
+                <p>Folders morph open; the disclosure chevron stays CSS.</p>
+              </div>
+              <span class="mono demo-card-badge">Tree</span>
+            </div>
+            <div class="demo-body demo-body-centered">
+              <div class="demo-tree">
+                <button id="live-tree-btn" type="button" aria-expanded="false" class="demo-tree-row">
+                  <span id="live-chevron" class="demo-chevron" aria-hidden="true">›</span>
+                  <canvas id="live-folder" width="64" height="64" aria-hidden="true"></canvas>
+                  <span class="mono demo-tree-label">components</span>
+                </button>
+                <div id="live-tree-files" hidden class="demo-tree-children mono">
+                  <span>button.tsx</span>
+                  <span>input.tsx</span>
+                  <span>toggle.tsx</span>
+                </div>
+                <div class="demo-tree-row static" style="opacity:0.55; cursor:default;">
+                  <span class="demo-chevron" style="visibility:hidden;" aria-hidden="true">›</span>
+                  <span class="demo-folder-static" aria-hidden="true" style="width:18px; height:18px; display:grid; place-items:center; font-size:12px; color:#737373;">◻</span>
+                  <span class="mono demo-tree-label">lib</span>
+                </div>
+              </div>
+            </div>
+            <span class="mono demo-hint">tap card or folder → open/close</span>
           </article>
         </div>
       </div>
     </div>
   </section>
-  <section class="section"><div class="section-head"><p class="kicker">Live Flutter</p><h2>The examples are real, not screenshots.</h2><p class="section-sub">This iframe loads the compiled Flutter demo with <span class="mono">?demo=core</span>. Open it full-screen to inspect the interactions.</p></div><div class="bridge-frame-wrap"><div class="bridge-frame-bar"><span></span><span></span><span></span><p>morphicons_site_demo — core</p><a href="../flutter/index.html?demo=core" target="_blank" rel="noopener">open full</a></div><div class="bridge-loading">loading Flutter engine…</div><iframe data-demo src="../flutter/index.html?demo=core" title="Morphicons Flutter core widget showcase"></iframe></div></section>
   <section class="section section-alt"><div class="section-head"><p class="kicker">Dart usage</p><h2>Copy the smallest useful example.</h2></div><div class="doc-block code-card"><div class="code-out-head"><span class="mono">core_patterns.dart</span><button class="btn btn-sm btn-ghost" data-copy-target="core-code">Copy</button></div><pre><code id="core-code">import 'package:flutter/material.dart';
 import 'package:morphicons_lucide/morphicons_lucide.dart';
 import 'package:morphicons_flutter/morphicons_flutter.dart';
@@ -211,6 +250,8 @@ class _CopyButtonState extends State&lt;CopyButton&gt; {
 <footer class="footer"><div class="footer-inner"><p>Morphicons for Flutter · MIT · <a href="../">Back to the workbench</a></p><p class="mono"><a href="mask/">MorphMask</a> · <a href="../roadmap/">Roadmap</a></p></div></footer>
 <script src="../assets/morphicons-core.js"></script>
 <script src="../assets/lucide-catalog.js"></script>
+<script src="../assets/heroicons-catalog.js"></script>
+<script src="../assets/tabler-catalog.js"></script>
 <script src="../showcase.js"></script>
 <script src="../showcase-live.js"></script>
 <script>
@@ -227,7 +268,7 @@ class _CopyButtonState extends State&lt;CopyButton&gt; {
         });
         const control = btn.dataset.control;
         const value = btn.dataset.value;
-        if (control === 'spring' || control === 'stroke') {
+        if (control === 'spring' || control === 'stroke' || control === 'library') {
           window.dispatchEvent(new CustomEvent('showcase:control', { detail: { control, value } }));
         }
       });

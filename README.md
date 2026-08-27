@@ -36,6 +36,12 @@ MorphIcon.controlled(
 final key = GlobalKey<MorphIconState>();
 MorphIcon(key: key, icon: MorphIconsLucide.menu);
 key.currentState?.morphTo(MorphIconsLucide.check);
+
+// IconData — same widget, same solver (filled)
+MorphIcon(icon: isHome ? Icons.home : Icons.favorite)
+MorphIcon(icon: Icons.search) // stroked SVG or filled font, both animate
+MorphIcon.controlled(from: Icons.home, icon: Icons.settings, progress: t)
+MorphIcon.font(icon: Icons.home) // typed, rejects String
 ```
 
 Mask a child with the same geometry:
@@ -47,7 +53,7 @@ MorphMask(icon: MorphIconsLucide.heart, child: DecoratedBox(
 ))
 ```
 
-More: `MorphCanvas`, `MorphTween`, `MorphPair` (`menu.morphTo(x)`), and `String` helpers. See [DOCS.md](DOCS.md) and the [live site](https://mibrar-dev.github.io/morphicons-flutter/).
+More: `MorphCanvas`, `MorphTween`, `MorphPair` (`menu.morphTo(x)`), and `String` helpers. Live IconData demo (filled `Icons.home → Icons.favorite` with the real Flutter build) is at the new **IconData** section on the [live site](https://mibrar-dev.github.io/morphicons-flutter/#icondata) and in `example/icon_data_example.dart`. See [DOCS.md](DOCS.md).
 
 ## How it works
 

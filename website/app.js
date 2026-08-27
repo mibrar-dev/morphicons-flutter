@@ -368,11 +368,14 @@ const pg = (() => {
      return PAIRS[state.pair];
    }
 
-   function rebuildPlan() {
-     const p = currentPair();
-     if (!p.from || !p.to) return;
-    title.textContent = p.label;
-    pairSource.textContent = `from ${p.from}  →  to ${p.to}`;
+    function rebuildPlan() {
+      const p = currentPair();
+      if (!p.from || !p.to) return;
+     title.textContent = p.label;
+     // D string hidden to prevent dynamic flow/layout reflow — keep label only
+     pairSource.textContent = p.label;
+     pairSource.setAttribute('data-d-from', p.from);
+     pairSource.setAttribute('data-d-to', p.to);
     const t0 = performance.now();
     state.plan = M.buildPlan(M.resampleIcon(p.from), M.resampleIcon(p.to));
     const ms = performance.now() - t0;
@@ -476,18 +479,33 @@ const pg = (() => {
       state.t = Math.min(state.spring.x, 1.2);
       render(Math.min(state.t, 1));
         if (settled) {
-          state.mode = 'idle';
-          state.t = 1;
-          render(1);
-          playBtn.textContent = 'Play';
-          playBtn.setAttribute('aria-pressed', 'false');
-          // Only auto-advance the staged set while visible — otherwise pause.
-          if (state.animationSet.length >= 2 && canAnimate) {
-            state.animationIndex = (state.animationIndex + 1) % state.animationSet.length;
-            rebuildPlan();
-            restart();
-          }
-       }
+           state.mode = 'idle';
+           state.t = 1;
+           render(1);
+           playBtn.textContent = 'Play';
+           playBtn.setAttribute('aria-pressed', 'false');
+           // Auto-morph every icon at start: cycle animationSet if present, otherwise cycle PAIRS slowly
+           if (canAnimate) {
+             if (state.animationSet.length >= 2) {
+               state.animationIndex = (state.animationIndex + 1) % state.animationSet.length;
+               rebuildPlan();
+               restart();
+             } else {
+               // no set: auto-advance through built-in pairs to show every icon morphing
+               state.pair = (state.pair + 1) % PAIRS.length;
+               // update pairGrid active state
+               const btns = pairGrid.querySelectorAll('.pair-btn');
+               btns.forEach((x, idx) => {
+                 const active = idx === state.pair;
+                 x.classList.toggle('is-active', active);
+                 x.setAttribute('aria-selected', String(active));
+               });
+               rebuildPlan();
+               // small hold before next morph so slow motion is visible
+               setTimeout(() => { if (pgVisible && !document.hidden) restart(); }, isSlow ? 600 : 300);
+             }
+           }
+        }
     }
     requestAnimationFrame(tick);
   }
@@ -575,12 +593,26 @@ const pg = (() => {
      render(Math.min(state.t, 1));
    });
 
-   // Slow motion + from→to preview (minimal, matches hero)
-   const slowToggle = document.getElementById('pgSlow');
-   const fromToWrap = document.getElementById('pgFromTo');
-   const fromCanvas = document.getElementById('pgFromCanvas');
-   const toCanvas = document.getElementById('pgToCanvas');
-   let slow = false;
+    // Slow motion + from→to preview (slow by default, toggle to normal)
+    const slowToggle = document.getElementById('pgSlow');
+    const fromToWrap = document.getElementById('pgFromTo');
+    const fromCanvas = document.getElementById('pgFromCanvas');
+    const toCanvas = document.getElementById('pgToCanvas');
+    let slow = slowToggle ? !!slowToggle.checked : false;
+    // initialize slow config if checked on load (every icon auto-morphs slow)
+    if (slow) {
+      state.k = 90; state.c = 20; state.preset = 'custom';
+      if (kSlider) kSlider.value = '90';
+      if (cSlider) cSlider.value = '20';
+      if (kVal) kVal.textContent = '90';
+      if (cVal) cVal.textContent = '20';
+      if (seg) {
+        seg.querySelectorAll('.seg-btn').forEach((x) => { x.classList.remove('is-active'); x.setAttribute('aria-selected','false'); });
+        const cust = seg.querySelector('[data-preset="custom"]');
+        if (cust) { cust.classList.add('is-active'); cust.setAttribute('aria-selected','true'); }
+      }
+    }
+    if (fromToWrap) fromToWrap.hidden = !slow;
    function drawStaticPG(canvasEl, d, color) {
      const fit = fitCanvas(canvasEl);
      if (!fit) return;
@@ -725,11 +757,12 @@ const pg = (() => {
       label.textContent = name;
       button.appendChild(label);
       button.addEventListener('click', () => {
-         state.selected = name;
-         state.animationSet = isSelected ? state.animationSet.filter((item) => item !== name) : [...state.animationSet, name];
-         selected.textContent = `${name} · ${LUCIDE[name]}`;
-         render();
-      });
+          state.selected = name;
+          state.animationSet = isSelected ? state.animationSet.filter((item) => item !== name) : [...state.animationSet, name];
+          // hide D string — show name only to prevent layout reflow
+          selected.textContent = isSelected ? `Removed ${name}` : `Added ${name} · ${state.animationSet.length} in set`;
+          render();
+       });
       fragment.appendChild(button);
     });
     results.appendChild(fragment);
@@ -883,6 +916,321 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
     el.style.setProperty('--index', String(i % 6));
     io.observe(el);
   });
+})();
+
+/* ============================================================
+   FRAME TABS — single sub-website interface (no scroll labels)
+   ============================================================ */
+(() => {
+  const tabs = document.querySelectorAll('.frame-tab');
+  const panels = document.querySelectorAll('.frame-panel');
+  if (!tabs.length || !panels.length) return;
+  function activate(name) {
+    tabs.forEach((t) => {
+      const on = t.dataset.frameTab === name;
+      t.classList.toggle('is-active', on);
+      t.setAttribute('aria-selected', String(on));
+    });
+    panels.forEach((p) => {
+      const on = p.dataset.panel === name;
+      p.classList.toggle('is-active', on);
+      p.hidden = !on;
+    });
+    // keep URL in sync without scrolling
+    try { history.replaceState(null, '', '#'+name); } catch {}
+  }
+  tabs.forEach((btn) => btn.addEventListener('click', () => activate(btn.dataset.frameTab)));
+  // converter browse button → file input
+  const convBrowse = document.getElementById('convBrowse');
+  const convFile = document.getElementById('convFile');
+  if (convBrowse && convFile) convBrowse.addEventListener('click', () => convFile.click());
+  // allow deep link #converter etc
+  const hash = (location.hash || '').replace('#','');
+  if (hash && document.querySelector(`.frame-tab[data-frame-tab="${hash}"]`)) activate(hash);
+  // expose for nav testing
+  window._frameActivate = activate;
+})();
+
+/* ============================================================
+   ICONDATA — Flutter IconData live (filled · same solver)
+   ============================================================ */
+(() => {
+  const canvas = document.getElementById('iconDataCanvas');
+  if (!canvas || !window.MorphCore) return;
+
+  const M = window.MorphCore;
+  const fromCanvas = document.getElementById('iconDataFromCanvas');
+  const toCanvas = document.getElementById('iconDataToCanvas');
+  const title = document.getElementById('iconDataTitle');
+  const meta = document.getElementById('iconDataMeta');
+  const playBtn = document.getElementById('iconDataPlay');
+  const replayBtn = document.getElementById('iconDataReplay');
+  const slowBox = document.getElementById('iconDataSlow');
+  const curveCanvas = document.getElementById('iconDataCurve');
+
+  // Curated Material d — 24×24, same strings as lib/src/icon_data_resolver.dart
+  const MATERIAL = {
+    home: 'M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z',
+    favorite: 'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z',
+    star: 'M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z',
+    search: 'M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z',
+    settings: 'M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94L14.4 2.81c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41L9.25 5.35C8.66 5.59 8.12 5.92 7.63 6.29L5.24 5.33c-.22-.08-.47 0-.59.22L2.74 8.87C2.62 9.08 2.66 9.34 2.86 9.48l2.03 1.58C4.84 11.36 4.8 11.69 4.8 12s0.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l0.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l0.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61L19.14 12.94zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.98 3.6-3.6 3.6z',
+    menu: 'M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z',
+    close: 'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
+    lucideX: 'M18 6L6 18M6 6L18 18',
+  };
+
+  const PAIRS = [
+    { id: 'home-favorite', label: 'home → favorite', title: 'home → favorite · filled', from: MATERIAL.home, to: MATERIAL.favorite, filled: true },
+    { id: 'star-home', label: 'star → home', title: 'star → home · filled', from: MATERIAL.star, to: MATERIAL.home, filled: true },
+    { id: 'search-star', label: 'search → star', title: 'search → star · filled', from: MATERIAL.search, to: MATERIAL.star, filled: true },
+    { id: 'menu-close', label: 'menu → close', title: 'menu → close · filled', from: MATERIAL.menu, to: MATERIAL.close, filled: true },
+    { id: 'settings-home', label: 'settings → home', title: 'settings → home · filled', from: MATERIAL.settings, to: MATERIAL.home, filled: true },
+    { id: 'home-lucide-x', label: 'home ↔ lucide x (mixed)', title: 'home (IconData) ↔ lucide x (String) · mixed', from: MATERIAL.home, to: MATERIAL.lucideX, filled: false },
+  ];
+
+  // Helpers: fitCanvas/draw already defined earlier via closure? Reuse outer scope functions
+  // but define local filled-aware draw to avoid polluting global.
+  function localFit(canvasEl) {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const rect = canvasEl.getBoundingClientRect();
+    if (rect.width === 0) return null;
+    const w = Math.round(rect.width * dpr);
+    const h = Math.round(rect.height * dpr);
+    if (canvasEl.width !== w || canvasEl.height !== h) { canvasEl.width = w; canvasEl.height = h; }
+    const ctx = canvasEl.getContext('2d');
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    return { ctx, w, h, dpr };
+  }
+  function drawFilled(ctx, w, h, subs, color) {
+    ctx.clearRect(0, 0, w, h);
+    const pad = 0.10;
+    const s = (Math.min(w, h) / 24) * (1 - 2 * pad);
+    const ox = (w - 24 * s) / 2;
+    const oy = (h - 24 * s) / 2;
+    ctx.fillStyle = color;
+    for (const pts of subs) {
+      if (typeof pts === 'string') continue;
+      const n = pts.length / 2;
+      if (n < 2) continue;
+      ctx.beginPath();
+      ctx.moveTo(ox + pts[0] * s, oy + pts[1] * s);
+      for (let i = 1; i < n; i++) ctx.lineTo(ox + pts[2 * i] * s, oy + pts[2 * i + 1] * s);
+      ctx.closePath();
+      ctx.fill();
+    }
+  }
+  function drawStroked(ctx, w, h, subs, color, lineW) {
+    ctx.clearRect(0, 0, w, h);
+    const pad = 0.10;
+    const s = (Math.min(w, h) / 24) * (1 - 2 * pad);
+    const ox = (w - 24 * s) / 2;
+    const oy = (h - 24 * s) / 2;
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lineW;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    for (const pts of subs) {
+      if (typeof pts === 'string') continue;
+      const n = pts.length / 2;
+      if (n < 2) continue;
+      ctx.beginPath();
+      ctx.moveTo(ox + pts[0] * s, oy + pts[1] * s);
+      for (let i = 1; i < n; i++) ctx.lineTo(ox + pts[2 * i] * s, oy + pts[2 * i + 1] * s);
+      ctx.stroke();
+    }
+  }
+  function drawStatic(canvasEl, d, filled) {
+    const fit = localFit(canvasEl);
+    if (!fit) return;
+    try {
+      const plan = M.buildPlan(M.resampleIcon(d), M.resampleIcon(d));
+      const out = M.allocOutputs(plan);
+      M.interpPolar(plan, 1, out);
+      if (filled) drawFilled(fit.ctx, fit.w, fit.h, out, '#7d7d7d');
+      else drawStroked(fit.ctx, fit.w, fit.h, out, '#7d7d7d', 1.6 * (fit.w / 84) * 0.9);
+    } catch {}
+  }
+
+  let pairIdx = 0;
+  let plan = null, out = null;
+  const spring = new M.Spring();
+  let slow = false;
+  let playing = true;
+  let t = 0;
+  let rafId = null;
+  let visible = true;
+
+  function currentPair() { return PAIRS[pairIdx]; }
+
+  function rebuild(pair) {
+    const t0 = performance.now();
+    plan = M.buildPlan(M.resampleIcon(pair.from), M.resampleIcon(pair.to));
+    out = M.allocOutputs(plan);
+    const st = (() => {
+      const it = plan.items[0];
+      const sigma = it.sigma !== undefined ? it.sigma : Math.exp(it.lnSigma);
+      const blockHybrid = plan.items.every((x) => x.block != null) && plan.items.every((x) => Math.abs(x.theta - it.theta) < 1e-12);
+      return { theta: it.theta, sigma, res: it.res, blockHybrid };
+    })();
+    const ms = performance.now() - t0;
+    if (title) title.textContent = pair.title;
+    if (meta) meta.textContent = `${st.theta.toFixed(3)} rad · σ ${st.sigma.toFixed(3)} · ${ms.toFixed(1)} ms${st.blockHybrid ? ' · block' : ''}`;
+    drawStatic(fromCanvas, pair.from, pair.filled);
+    drawStatic(toCanvas, pair.to, pair.filled);
+    // curve
+    const cc = document.getElementById('iconDataCurve');
+    if (cc) {
+      const k = slow ? 90 : 170, c = slow ? 20 : 26;
+      const fit = localFit(cc);
+      if (fit) {
+        const { ctx, w, h } = fit;
+        ctx.clearRect(0, 0, w, h);
+        const s2 = new M.Spring(); s2.config(k, c); s2.start();
+        const xs = [];
+        while (!s2.step(1/60) && xs.length < 600) xs.push(s2.x);
+        xs.push(1);
+        const maxT = xs.length / 60;
+        const px = (tt) => (tt / maxT) * (w - 8) + 4;
+        const py = (x) => h - 10 - (x / 1.25) * (h - 24);
+        ctx.strokeStyle = '#262626'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(0, py(1)); ctx.lineTo(w, py(1)); ctx.stroke();
+        ctx.strokeStyle = '#ededed'; ctx.lineWidth = 1.6; ctx.beginPath();
+        xs.forEach((x, i) => {
+          const X = px(i/60), Y = py(x);
+          if (i===0) ctx.moveTo(X,Y); else ctx.lineTo(X,Y);
+        });
+        ctx.stroke();
+      }
+    }
+    spring.config(slow ? 90 : 170, slow ? 20 : 26);
+    spring.start();
+    playing = true;
+    if (playBtn) { playBtn.textContent = 'Pause'; playBtn.setAttribute('aria-pressed', 'true'); }
+    t = 0;
+    if (rafId == null) rafId = requestAnimationFrame(tick);
+  }
+
+  function render(tt) {
+    const fit = localFit(canvas);
+    if (!fit || !plan || !out) return;
+    const pair = currentPair();
+    M.interpPolar(plan, tt, out);
+    if (pair.filled) drawFilled(fit.ctx, fit.w, fit.h, out, '#ededed');
+    else drawStroked(fit.ctx, fit.w, fit.h, out, '#ededed', 2 * (fit.w / 320) * 0.9);
+  }
+
+  function tick() {
+    rafId = null;
+    const section = document.getElementById('icondata');
+    let canAnimate = visible && !document.hidden && playing;
+    if (section) {
+      const r = section.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > window.innerHeight) canAnimate = false;
+    }
+    if (canAnimate) {
+      const dt = slow ? 1/120 : 1/60;
+      const settled = spring.step(dt);
+      t = Math.min(spring.x, 1);
+      render(Math.min(t, 1));
+      if (settled) {
+        playing = false;
+        render(1);
+        if (playBtn) { playBtn.textContent = 'Play'; playBtn.setAttribute('aria-pressed', 'false'); }
+        // auto-advance after hold when visible
+        setTimeout(() => {
+          if (visible && !document.hidden && !playing) {
+            pairIdx = (pairIdx + 1) % PAIRS.length;
+            syncPills();
+            rebuild(currentPair());
+          }
+        }, slow ? 900 : 600);
+      }
+    }
+    rafId = requestAnimationFrame(tick);
+  }
+
+  function syncPills() {
+    document.querySelectorAll('[data-icondata-pair]').forEach((b) => {
+      const on = b.dataset.icondataPair === currentPair().id;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', String(on));
+    });
+  }
+
+  document.querySelectorAll('[data-icondata-pair]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.icondataPair;
+      const idx = PAIRS.findIndex((p) => p.id === id);
+      if (idx >= 0) {
+        pairIdx = idx;
+        syncPills();
+        rebuild(currentPair());
+      }
+    });
+  });
+
+  if (playBtn) playBtn.addEventListener('click', () => {
+    playing = !playing;
+    playBtn.textContent = playing ? 'Pause' : 'Play';
+    playBtn.setAttribute('aria-pressed', String(playing));
+    if (playing) {
+      // if at end, restart
+      if (t >= 1) { rebuild(currentPair()); }
+      if (rafId == null) rafId = requestAnimationFrame(tick);
+    }
+  });
+  if (replayBtn) replayBtn.addEventListener('click', () => rebuild(currentPair()));
+  if (slowBox) slowBox.addEventListener('change', () => {
+    slow = slowBox.checked;
+    rebuild(currentPair());
+  });
+
+  const copyBtn = document.getElementById('copyIconDataCode');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const target = document.getElementById('iconDataCode');
+      if (!target) return;
+      const text = target.textContent;
+      try {
+        if (navigator.clipboard) await navigator.clipboard.writeText(text);
+        const orig = copyBtn.textContent; copyBtn.textContent = 'Copied'; copyBtn.classList.add('is-copied');
+        setTimeout(() => { copyBtn.textContent = orig; copyBtn.classList.remove('is-copied'); }, 1400);
+      } catch {}
+    });
+  }
+
+  // Visibility observer
+  const sec = document.getElementById('icondata');
+  if ('IntersectionObserver' in window && sec) {
+    const io = new IntersectionObserver((entries) => {
+      visible = entries[0].isIntersecting && !document.hidden;
+      if (visible && rafId == null) rafId = requestAnimationFrame(tick);
+    }, { threshold: 0.12 });
+    io.observe(sec);
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) visible = false;
+    else if (sec) {
+      const r = sec.getBoundingClientRect();
+      visible = r.bottom > 0 && r.top < window.innerHeight;
+    }
+    if (visible && rafId == null) rafId = requestAnimationFrame(tick);
+  });
+  window.addEventListener('resize', () => render(Math.min(t,1)));
+
+  // Initial
+  rebuild(currentPair());
+  rafId = requestAnimationFrame(tick);
+  // expose for tests
+  window._iconDataDemo = {
+    get pair() { return currentPair().id; },
+    setPair(id) {
+      const idx = PAIRS.findIndex((p) => p.id === id);
+      if (idx >= 0) { pairIdx = idx; syncPills(); rebuild(currentPair()); }
+    },
+    get playing() { return playing; },
+    get visible() { return visible; },
+  };
 })();
 
 /* Copy buttons for code panels (shadcn style — square 6px, dark theme) */

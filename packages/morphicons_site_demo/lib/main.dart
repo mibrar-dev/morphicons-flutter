@@ -74,7 +74,12 @@ class _DemoRootState extends State<_DemoRoot> {
 
   String _queryMode() {
     final value = Uri.base.queryParameters['demo'];
-    if (value == 'core' || value == 'mask' || value == 'canvas') return value!;
+    if (value == 'core' ||
+        value == 'mask' ||
+        value == 'canvas' ||
+        value == 'iconData') {
+      return value!;
+    }
     return 'studio';
   }
 
@@ -90,7 +95,10 @@ class _DemoRootState extends State<_DemoRoot> {
               data['cmd'] == 'demo' &&
               data['mode'] is String) {
             final mode = data['mode'] as String;
-            if (mode == 'core' || mode == 'mask' || mode == 'canvas') {
+            if (mode == 'core' ||
+                mode == 'mask' ||
+                mode == 'canvas' ||
+                mode == 'iconData') {
               setState(() => _mode = mode);
             } else if (mode == 'studio') {
               setState(() => _mode = 'studio');
@@ -112,6 +120,8 @@ class _DemoRootState extends State<_DemoRoot> {
         return const _DemoApp(child: _MaskDemo());
       case 'canvas':
         return const _DemoApp(child: _CanvasDemo());
+      case 'iconData':
+        return const _DemoApp(child: _IconDataDemo());
       default:
         return const BridgeApp();
     }
@@ -330,17 +340,10 @@ class _MaskDemoState extends State<_MaskDemo> {
   Widget build(BuildContext context) {
     final child = DecoratedBox(
       decoration: BoxDecoration(
-        color: paintMode == 1
-            ? const Color(0xff302b63)
-            : paintMode == 2
-                ? Colors.white
-                : null,
+        color: paintMode == 1 ? const Color(0xff302b63) : null,
         gradient: paintMode == 0
             ? const LinearGradient(
                 colors: [Color(0xfff857a6), Color(0xffff5858)])
-            : null,
-        border: paintMode == 2
-            ? Border.all(color: const Color(0xff302b63), width: 12)
             : null,
       ),
       child: const SizedBox(width: 220, height: 150),
@@ -375,7 +378,7 @@ class _MaskDemoState extends State<_MaskDemo> {
           const Text('Child paint'),
           Wrap(
               spacing: 4,
-              children: ['gradient', 'current color', 'decoration']
+              children: ['gradient', 'current color']
                   .asMap()
                   .entries
                   .map((entry) => ChoiceChip(
@@ -502,6 +505,201 @@ class _TrendPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _TrendPainter oldDelegate) => false;
+}
+
+class _IconDataDemo extends StatefulWidget {
+  const _IconDataDemo();
+
+  @override
+  State<_IconDataDemo> createState() => _IconDataDemoState();
+}
+
+class _IconDataDemoState extends State<_IconDataDemo> {
+  bool _first = true;
+  double _t = 0;
+  bool _scrub = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return _DemoFrame(
+      title: 'IconData morph (Material)',
+      subtitle:
+          'Same MorphIcon, same solver — IconData glyphs morph via the curated table (lib/src/icon_data_resolver.dart).',
+      child: Column(children: [
+        _DemoCard(
+          child: Column(children: [
+            const Text('Uncontrolled — swap icon, spring animates',
+                style: TextStyle(fontWeight: FontWeight.bold)),
+            const SizedBox(height: 12),
+            MorphIcon(
+              icon: _first ? Icons.home : Icons.favorite,
+              spring: SpringPreset.snappy,
+              size: 72,
+              color: const Color(0xff111111),
+              semanticLabel: _first ? 'Home' : 'Favorite',
+            ),
+            const SizedBox(height: 8),
+            Text(
+              'MorphIcon(icon: Icons.${_first ? "home" : "favorite"})',
+              style: const TextStyle(fontFamily: 'monospace', fontSize: 11),
+            ),
+            const SizedBox(height: 12),
+            FilledButton(
+              onPressed: () => setState(() => _first = !_first),
+              child: Text(_first ? 'Morph to favorite' : 'Morph to home'),
+            ),
+          ]),
+        ),
+        const SizedBox(height: 12),
+        _DemoCard(
+          child: Column(children: [
+            Row(
+              children: [
+                const Text('Controlled scrub',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                const Spacer(),
+                Switch(
+                  value: _scrub,
+                  onChanged: (v) => setState(() => _scrub = v),
+                ),
+                const Text('scrub',
+                    style: TextStyle(fontSize: 11, fontFamily: 'monospace')),
+              ],
+            ),
+            const SizedBox(height: 8),
+            if (_scrub) ...[
+              MorphIcon.controlled(
+                from: Icons.home,
+                icon: Icons.settings,
+                progress: _t,
+                size: 64,
+                color: const Color(0xff302b63),
+                semanticLabel: 'Home → Settings at ${(_t * 100).round()}%',
+              ),
+              Slider(
+                value: _t,
+                onChanged: (v) => setState(() => _t = v),
+              ),
+              Text('t = ${_t.toStringAsFixed(2)}',
+                  style:
+                      const TextStyle(fontFamily: 'monospace', fontSize: 11)),
+            ] else
+              MorphIcon(
+                icon: _first ? Icons.search : Icons.star,
+                size: 64,
+                color: const Color(0xff302b63),
+                semanticLabel: 'Search or star',
+              ),
+            const SizedBox(height: 8),
+            const Text(
+              'Same widget: MorphIcon(icon: Icons.search) → Icons.star → Icons.menu → Icons.close — all share the Procrustes polar solver.',
+              style: TextStyle(fontSize: 11, color: Colors.black54),
+              textAlign: TextAlign.center,
+            ),
+          ]),
+        ),
+        const SizedBox(height: 12),
+        _DemoCard(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Imperative via GlobalKey',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 8),
+              const _IconDataImperativeRow(),
+            ],
+          ),
+        ),
+        const SizedBox(height: 12),
+        _DemoCard(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Text('Mixed: Material IconData → Lucide String d',
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              const SizedBox(height: 8),
+              const _MixedIconDataRow(),
+              const SizedBox(height: 6),
+              const Text(
+                'Mixed kind is allowed in the unified MorphIcon(Object) — stroked String d (Lucide) and filled IconData resolve to 24×24 and blend via the same plan.',
+                style: TextStyle(fontSize: 11, color: Colors.black54),
+              ),
+            ],
+          ),
+        ),
+      ]),
+    );
+  }
+}
+
+class _IconDataImperativeRow extends StatefulWidget {
+  const _IconDataImperativeRow();
+  @override
+  State<_IconDataImperativeRow> createState() => __IconDataImperativeRowState();
+}
+
+class __IconDataImperativeRowState extends State<_IconDataImperativeRow> {
+  final _key = GlobalKey<MorphIconState>();
+  bool _toFav = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: [
+      MorphIcon(
+        key: _key,
+        icon: Icons.star,
+        size: 48,
+        color: const Color(0xff111111),
+      ),
+      const SizedBox(width: 12),
+      const Expanded(
+        child: Text('Star → Favorite via key',
+            style: TextStyle(fontSize: 12, fontFamily: 'monospace')),
+      ),
+      FilledButton.tonal(
+        onPressed: () {
+          _toFav = !_toFav;
+          _key.currentState?.morphTo(_toFav ? Icons.favorite : Icons.star);
+        },
+        child: const Text('morphTo'),
+      ),
+    ]);
+  }
+}
+
+class _MixedIconDataRow extends StatefulWidget {
+  const _MixedIconDataRow();
+  @override
+  State<_MixedIconDataRow> createState() => __MixedIconDataRowState();
+}
+
+class __MixedIconDataRowState extends State<_MixedIconDataRow> {
+  bool _toLucide = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(children: [
+      // Demonstrates Object union: IconData home ↔ Lucide X (String d)
+      MorphIcon(
+        icon: _toLucide ? MorphIconsLucide.x : Icons.home,
+        size: 48,
+        color: const Color(0xff111111),
+      ),
+      const SizedBox(width: 12),
+      Expanded(
+        child: Text(
+          _toLucide
+              ? 'Icons.home → Lucide x (mixed)'
+              : 'Lucide x → Icons.home (mixed)',
+          style: const TextStyle(fontSize: 11, fontFamily: 'monospace'),
+        ),
+      ),
+      FilledButton.tonal(
+        onPressed: () => setState(() => _toLucide = !_toLucide),
+        child: const Text('Toggle'),
+      ),
+    ]);
+  }
 }
 
 class BridgeApp extends StatefulWidget {

@@ -14,3 +14,4 @@ export 'src/morph_painter.dart';
 export 'src/morph_pair.dart';
 export 'src/morph_tween.dart';
 export 'src/morph_scheduler.dart';
+export 'src/icon_data_resolver.dart';

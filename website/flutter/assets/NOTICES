@@ -24416,7 +24416,9 @@ material_color_utilities
 --------------------------------------------------------------------------------
 morphicons_core
 morphicons_flutter
+morphicons_heroicons
 morphicons_lucide
+morphicons_tabler
 
 MIT License
 

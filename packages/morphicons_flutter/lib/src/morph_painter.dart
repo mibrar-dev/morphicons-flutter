@@ -56,6 +56,14 @@ class MorphPainter extends CustomPainter {
   /// to the paint size). Defaults to the canonical 24×24 grid.
   final double viewBox;
 
+  /// Whether to render as filled silhouettes (`true`) vs stroked outlines.
+  ///
+  /// Filled mode matches `IconData` (Material) icons: `PaintingStyle.fill`,
+  /// `nonZero` winding, strokeWidth ignored. Stroked mode is the classic
+  /// Lucide/Tabler wireframe. Mirrors the `MorphKind` branch in
+  /// `docs/UNIFIED_MORPHICON_REPORT.md` §4 without duplicating painter logic.
+  final bool filled;
+
   const MorphPainter({
     required this.plan,
     required this.out,
@@ -65,12 +73,13 @@ class MorphPainter extends CustomPainter {
     this.strokeWidth = 2,
     this.color = const Color(0xFF000000),
     this.viewBox = 24,
+    this.filled = false,
   });
 
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..style = PaintingStyle.stroke
+      ..style = filled ? PaintingStyle.fill : PaintingStyle.stroke
       ..strokeCap = StrokeCap.round
       ..strokeJoin = StrokeJoin.round
       ..strokeWidth = strokeWidth
@@ -109,7 +118,8 @@ class MorphPainter extends CustomPainter {
         color != oldDelegate.color ||
         strokeWidth != oldDelegate.strokeWidth ||
         canonicalSnap != oldDelegate.canonicalSnap ||
-        canonicalPaths != oldDelegate.canonicalPaths;
+        canonicalPaths != oldDelegate.canonicalPaths ||
+        filled != oldDelegate.filled;
   }
 }
 

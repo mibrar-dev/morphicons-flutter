@@ -4,23 +4,23 @@
    ============================================================ */
 
 :root {
-  --canvas: #ffffff;
-  --surface: #ffffff;
-  --surface-2: #f7f7f5;
-  --shell: #ffffff;
-  --shell-line: #e8e8e6;
-  --shell-line-strong: #d8d8d6;
+  --canvas: #101010;
+  --surface: #0a0a0a;
+  --surface-2: #1a1a1a;
+  --shell: #111111;
+  --shell-line: #262626;
+  --shell-line-strong: #333333;
   --inner-line: transparent;
-  --ink: #111111;
-  --ink-2: #2a2a2a;
-  --muted: #6b6b6b;
-  --line: #ebebeb;
-  --line-soft: rgba(0,0,0,0.06);
+  --ink: #ededed;
+  --ink-2: #ededed;
+  --muted: #a1a1a1;
+  --line: #262626;
+  --line-soft: rgba(255,255,255,0.06);
 
-  --pastel-red-bg: #f5f5f5;   --pastel-red-fg: #111111;
-  --pastel-blue-bg: #f0f0f0;  --pastel-blue-fg: #111111;
-  --pastel-green-bg: #f0f0f0; --pastel-green-fg: #111111;
-  --pastel-yellow-bg: #f5f5f5;--pastel-yellow-fg: #111111;
+  --pastel-red-bg: #1a1a1a;   --pastel-red-fg: #ededed;
+  --pastel-blue-bg: #1a1a1a;  --pastel-blue-fg: #ededed;
+  --pastel-green-bg: #1a1a1a; --pastel-green-fg: #ededed;
+  --pastel-yellow-bg: #1a1a1a;--pastel-yellow-fg: #ededed;
 
   --serif: 'Instrument Serif', Georgia, serif;
   --sans: 'Geist', system-ui, -apple-system, sans-serif;
@@ -47,7 +47,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--sans);
-  background: var(--canvas-soft);
+  background: var(--canvas);
   color: var(--ink);
   line-height: 1.6;
   font-size: 16px;

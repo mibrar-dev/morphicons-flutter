@@ -1,6 +1,7 @@
 /// Morphing alpha masks for arbitrary Flutter children.
 library;
 
+import 'dart:math' as math;
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:morphicons_core/morphicons_core.dart';
@@ -283,6 +284,49 @@ class _MorphMaskRender extends RenderProxyBox {
     markNeedsPaint();
   }
 
+  Path _buildStrokedClip(double s, double dx, double dy) {
+    // Build a filled path that is the stroked outline of the morphed icon.
+    final outs = _render.interpolate(_progress);
+    final closeds = _render.closed;
+    final hw = _strokeWidth * s / 2;
+    final path = Path();
+
+    for (var k = 0; k < outs.length; k++) {
+      final pts = outs[k];
+      final n = pts.length ~/ 2;
+      if (n < 2) continue;
+      final closed = closeds[k];
+      final sx = List<double>.filled(n, 0);
+      final sy = List<double>.filled(n, 0);
+      for (var i = 0; i < n; i++) {
+        sx[i] = dx + pts[2 * i] * s;
+        sy[i] = dy + pts[2 * i + 1] * s;
+      }
+      final segCount = closed ? n : n - 1;
+      for (var i = 0; i < segCount; i++) {
+        final x0 = sx[i];
+        final y0 = sy[i];
+        final x1 = sx[(i + 1) % n];
+        final y1 = sy[(i + 1) % n];
+        final ddx = x1 - x0;
+        final ddy = y1 - y0;
+        final len = math.sqrt(ddx * ddx + ddy * ddy);
+        if (len < 1e-9) continue;
+        final nx = -ddy / len * hw;
+        final ny = ddx / len * hw;
+        path.moveTo(x0 + nx, y0 + ny);
+        path.lineTo(x0 - nx, y0 - ny);
+        path.lineTo(x1 - nx, y1 - ny);
+        path.lineTo(x1 + nx, y1 + ny);
+        path.close();
+      }
+      for (var i = 0; i < n; i++) {
+        path.addOval(Rect.fromCircle(center: Offset(sx[i], sy[i]), radius: hw));
+      }
+    }
+    return path;
+  }
+
   @override
   void paint(PaintingContext context, Offset offset) {
     final child = this.child;
@@ -292,29 +336,18 @@ class _MorphMaskRender extends RenderProxyBox {
         _viewBox <= 0) {
       return;
     }
-    final canvas = context.canvas;
-    // Use uniform scale and center to preserve aspect ratio
     final s = size.shortestSide / _viewBox;
     final dx = offset.dx + (size.width - _viewBox * s) / 2;
     final dy = offset.dy + (size.height - _viewBox * s) / 2;
-    // Try dstIn with stroked path; if that fails on web, fallback to clipPath
-    // First, try the standard saveLayer + dstIn
-    canvas.saveLayer(offset & size, Paint());
-    context.paintChild(child, offset);
+    final clip = _buildStrokedClip(s, dx, dy);
+    if (clip.getBounds().isEmpty) {
+      context.paintChild(child, offset);
+      return;
+    }
+    final canvas = context.canvas;
     canvas.save();
-    canvas.translate(dx, dy);
-    canvas.scale(s, s);
-    final path = morphPath(_render, _progress, canonicalSnap: _canonicalSnap);
-    final paint = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeCap = StrokeCap.round
-      ..strokeJoin = StrokeJoin.round
-      ..strokeWidth = _strokeWidth
-      ..color = const Color(0xFFFFFFFF)
-      ..blendMode = BlendMode.dstIn
-      ..isAntiAlias = true;
-    canvas.drawPath(path, paint);
-    canvas.restore();
+    canvas.clipPath(clip);
+    context.paintChild(child, offset);
     canvas.restore();
   }
 }

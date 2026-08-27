@@ -198,7 +198,7 @@ import {
     }
     if (notes.length) message += ` · ${notes.join(' · ')}`;
     status.textContent = message;
-    drawD(preview, d, '#111111');
+    drawD(preview, d, '#ededed');
     assess();
     renderOutput();
   }
@@ -320,12 +320,12 @@ import {
       }
       const settled = spring.step(1 / 60);
       M.interpPolar(plan, Math.min(spring.x, 1), out);
-      drawSubsOnPreview(out, '#111111');
+      drawSubsOnPreview(out, '#ededed');
       if (!settled) morphAnim = requestAnimationFrame(tick);
       else morphAnim = null;
     };
     tick();
   });
 
-  window.addEventListener('resize', () => { if (currentD) drawD(preview, currentD, '#111111'); });
+  window.addEventListener('resize', () => { if (currentD) drawD(preview, currentD, '#ededed'); });
 })();

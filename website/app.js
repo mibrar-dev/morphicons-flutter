@@ -98,7 +98,7 @@ function svgFromD(d, stroke, strokeWidth) {
   const svg = document.createElementNS(NS, 'svg');
   svg.setAttribute('viewBox', '0 0 24 24');
   svg.setAttribute('fill', 'none');
-  svg.setAttribute('stroke', stroke || '#24211d');
+  svg.setAttribute('stroke', stroke || '#ededed');
   svg.setAttribute('stroke-width', String(strokeWidth ?? 2));
   svg.setAttribute('stroke-linecap', 'round');
   svg.setAttribute('stroke-linejoin', 'round');
@@ -150,11 +150,11 @@ function drawCurve(canvas, k, c, currentT) {
   const px = (tt) => (tt / maxT) * (w - 8) + 4;
   const py = (x) => h - 10 - (x / 1.25) * (h - 24);
 
-  ctx.strokeStyle = '#e7e1d8';
+  ctx.strokeStyle = '#262626';
   ctx.lineWidth = 1;
   ctx.beginPath(); ctx.moveTo(0, py(1)); ctx.lineTo(w, py(1)); ctx.stroke();
 
-  ctx.strokeStyle = '#24211d';
+  ctx.strokeStyle = '#ededed';
   ctx.lineWidth = 1.6;
   ctx.beginPath();
   xs.forEach((x, i) => {
@@ -201,12 +201,11 @@ const hero = (() => {
     if (!canvasEl) return;
     const fit = fitCanvas(canvasEl);
     if (!fit) return;
-    // For static from/to, build a trivial plan and draw at t=0 or 1 without spring
     try {
       const soloPlan = M.buildPlan(M.resampleIcon(d), M.resampleIcon(d));
       const soloOut = M.allocOutputs(soloPlan);
       M.interpPolar(soloPlan, 1, soloOut);
-      drawSubs(fit.ctx, fit.w, fit.h, soloOut, '#6b6b6b', 1.6 * (fit.w / 112) * 0.9);
+      drawSubs(fit.ctx, fit.w, fit.h, soloOut, '#7d7d7d', 1.6 * (fit.w / 112) * 0.9);
     } catch {}
   }
 
@@ -243,16 +242,16 @@ const hero = (() => {
       const { ctx, w, h } = fit;
       if (reducedMotion) {
         M.interpPolar(plan, 1, out);
-        drawSubs(ctx, w, h, out, '#24211d', 2 * (w / 240) * 0.9);
+        drawSubs(ctx, w, h, out, '#ededed', 2 * (w / 240) * 0.9);
       } else if (phase === 'morph') {
         const dt = slow ? 1/120 : 1/60; // slow motion halves speed
         const settled = spring.step(dt);
         M.interpPolar(plan, Math.min(spring.x, 1), out);
-        drawSubs(ctx, w, h, out, '#111111', 2 * (w / 240) * 0.9);
+        drawSubs(ctx, w, h, out, '#ededed', 2 * (w / 240) * 0.9);
         if (settled) { phase = 'hold'; holdUntil = performance.now() + (slow ? 2200 : 1400); }
       } else if (phase === 'hold') {
         M.interpPolar(plan, 1, out);
-        drawSubs(ctx, w, h, out, '#24211d', 2 * (w / 240) * 0.9);
+        drawSubs(ctx, w, h, out, '#ededed', 2 * (w / 240) * 0.9);
         if (performance.now() > holdUntil) {
           idx = (idx + 1) % PAIRS.length;
           loadPair(idx);
@@ -341,7 +340,7 @@ const pg = (() => {
      b.setAttribute('aria-selected', String(i === 0));
      b.setAttribute('aria-label', `Use icon pair ${p.label}`);
      b.title = p.label;
-     b.appendChild(svgFromD(p.to, '#24211d', state.stroke));
+     b.appendChild(svgFromD(p.to, '#ededed', state.stroke));
     const lbl = document.createElement('span');
     lbl.textContent = p.label;
     b.appendChild(lbl);
@@ -417,7 +416,7 @@ const pg = (() => {
     const fit = fitCanvas(canvas);
     if (fit && state.plan) {
       M.interpPolar(state.plan, t, state.out);
-       drawSubs(fit.ctx, fit.w, fit.h, state.out, '#24211d', state.stroke * (fit.w / 320) * 0.9);
+       drawSubs(fit.ctx, fit.w, fit.h, state.out, '#ededed', state.stroke * (fit.w / 320) * 0.9);
     }
     if (!cmpWrap.hidden) {
       const fit2 = fitCanvas(cmpCanvas);
@@ -680,7 +679,7 @@ const pg = (() => {
        item.className = 'animation-set-item';
        item.setAttribute('role', 'listitem');
        item.title = `${index + 1}. ${name}`;
-       item.appendChild(svgFromD(LUCIDE[name], '#24211d', pg.stroke));
+       item.appendChild(svgFromD(LUCIDE[name], '#ededed', pg.stroke));
        const remove = document.createElement('button');
        remove.type = 'button';
        remove.className = 'animation-set-remove';
@@ -721,7 +720,7 @@ const pg = (() => {
       button.setAttribute('aria-label', `Select Lucide icon ${name}`);
        button.setAttribute('aria-selected', String(isSelected));
       button.title = `Lucide: ${name}`;
-       button.appendChild(svgFromD(LUCIDE[name], '#24211d', pg.stroke));
+       button.appendChild(svgFromD(LUCIDE[name], '#ededed', pg.stroke));
       const label = document.createElement('span');
       label.textContent = name;
       button.appendChild(label);

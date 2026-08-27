@@ -30,13 +30,11 @@
         <div class="nav-dropdown-menu" role="menu">
           <a href="showcase/" role="menuitem">Core patterns</a>
           <a href="showcase/mask/" role="menuitem">MorphMask</a>
-          <a href="showcase/canvas/" role="menuitem">MorphCanvas</a>
           <a href="roadmap/" role="menuitem">Roadmap</a>
         </div>
       </div>
-      <a href="#features">How it works</a>
-      <a href="#converter">Converter</a>
-      <a href="#docs">Docs</a>
+      <a href="#how">How it works</a>
+      <a href="roadmap/">Roadmap</a>
       <a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a>
     </nav>
     <div class="nav-actions">
@@ -56,11 +54,8 @@
        <a href="#playground">Playground</a>
        <a href="showcase/">Showcase — Core</a>
        <a href="showcase/mask/">MorphMask</a>
-       <a href="showcase/canvas/">MorphCanvas</a>
        <a href="roadmap/">Roadmap</a>
-      <a href="#features">How it works</a>
-      <a href="#converter">Converter</a>
-      <a href="#docs">Docs</a>
+      <a href="#how">How it works</a>
       <a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a>
     </nav>
     <a class="btn mobile-menu-cta" href="https://pub.dev/packages/morphicons_flutter">View on pub.dev <span class="btn-icon" aria-hidden="true">↗</span></a>
@@ -248,386 +243,55 @@
   </div>
 </section>
 
-<!-- ============ FLUTTER LIVE ============ -->
-<section id="flutter-live" class="section section-alt">
+
+<!-- ============ CODE ============ -->
+<section class="section">
   <div class="section-head reveal">
-    <p class="kicker">Flutter live</p>
-    <h2>The real package, running right here.</h2>
-    <p class="section-sub">The frame below is not a simulation — it is
-    <span class="mono">morphicons_flutter</span> compiled to the web with
-    <span class="mono">flutter build web</span>. This page talks to it over
-    <span class="mono">postMessage</span>: your controls go in, live spring and solver
-    telemetry comes back out of actual Dart code.</p>
+    <p class="kicker">Code</p>
+    <h2>One widget, three modes.</h2>
+    <p class="section-sub">Copy the Flutter snippet for the current pair. The same solver powers <span class="mono">MorphIcon</span>, <span class="mono">MorphMask</span> and the pure-Dart core.</p>
   </div>
-
-  <div class="flutter-bridge">
-    <div class="bridge-frame-wrap reveal">
-      <div class="bridge-frame-bar"><span></span><span></span><span></span>
-        <p>morphicons_site_demo — flutter build web --release</p>
-        <a href="flutter/index.html" target="_blank" rel="noopener">open full</a>
-      </div>
-      <div id="bridgeLoading" class="bridge-loading">compiling… loading Flutter engine</div>
-      <iframe id="flutterBridge" src="flutter/index.html" title="morphicons_flutter running in the browser"></iframe>
+  <div class="doc-block code-card reveal">
+    <div class="code-out-head"><span class="mono">app.dart</span><button class="btn btn-sm btn-ghost" data-copy-target="code-panel">Copy</button></div>
+    <pre class="code-output"><code id="code-panel">MorphIcon(icon: isOpen ? MorphIconsLucide.x : MorphIconsLucide.menu, spring: SpringPreset.snappy)</code></pre>
+    <div style="margin-top:12px; display:flex; gap:8px; flex-wrap:wrap">
+      <button class="btn btn-sm btn-ghost" data-copy-target="code-uncontrolled">Copy uncontrolled</button>
+      <button class="btn btn-sm btn-ghost" data-copy-target="code-controlled">Copy controlled</button>
+      <button class="btn btn-sm btn-ghost" data-copy-target="code-mask">Copy mask</button>
     </div>
-
-    <div class="bridge-controls">
-      <div class="card reveal">
-        <p class="card-label">Send to Flutter</p>
-         <div class="slider-row">
-           <label for="fbPair">icon pair</label>
-           <select id="fbPair" class="conv-select mono" style="grid-column: span 2; width: 100%"></select>
-         </div>
-         <div class="slider-row">
-           <label for="fbStroke">stroke width</label>
-           <input type="range" id="fbStroke" min="1" max="2.5" step="0.1" value="2">
-           <span class="mono" id="fbStrokeVal">2.0</span>
-         </div>
-        <div class="seg" id="fbModeSeg">
-          <button class="seg-btn is-active" data-mode="uncontrolled">uncontrolled</button>
-          <button class="seg-btn" data-mode="controlled">controlled</button>
-        </div>
-        <div class="slider-row">
-          <label for="fbK">stiffness <span class="mono">k</span></label>
-          <input type="range" id="fbK" min="40" max="600" step="1" value="170">
-          <span class="mono" id="fbKVal">170</span>
-        </div>
-        <div class="slider-row">
-          <label for="fbC">damping <span class="mono">c</span></label>
-          <input type="range" id="fbC" min="4" max="40" step="0.5" value="26">
-          <span class="mono" id="fbCVal">26</span>
-        </div>
-        <div class="slider-row" id="fbScrubRow" hidden>
-          <label for="fbT">progress <span class="mono">t</span></label>
-          <input type="range" id="fbT" min="0" max="1" step="0.001" value="0">
-          <span class="mono" id="fbTVal">0.00</span>
-        </div>
-        <div class="conv-actions">
-          <button class="btn btn-sm" id="fbMorph">Morph</button>
-          <button class="btn btn-sm btn-ghost" id="fbReset">Reset</button>
-        </div>
-      </div>
-
-      <div class="card reveal">
-        <p class="card-label">Telemetry from Dart</p>
-        <div class="readout mono">
-          <div class="readout-row"><span>spring x</span><b id="fbX">—</b></div>
-          <div class="readout-row"><span>velocity v</span><b id="fbV">—</b></div>
-          <div class="readout-row"><span>settled</span><b id="fbSettled">—</b></div>
-          <div class="readout-row"><span>θ (solver)</span><b id="fbTheta">—</b></div>
-          <div class="readout-row"><span>σ (solver)</span><b id="fbSigma">—</b></div>
-          <div class="readout-row"><span>residual</span><b id="fbRes">—</b></div>
-          <div class="readout-row"><span>block hybrid</span><b id="fbBlock">—</b></div>
-          <div class="readout-row"><span>buildPlan</span><b id="fbBuild">—</b></div>
-        </div>
-        <p class="bridge-note">Every value on the left is computed inside the iframe by the
-        Dart solver — <span class="mono">MorphIconState.progress</span>,
-        <span class="mono">.velocity</span> and <span class="mono">planBetween()</span> —
-        and posted to this page 10 times per second.</p>
-      </div>
-    </div>
+    <pre hidden><code id="code-uncontrolled">MorphIcon(icon: isOpen ? MorphIconsLucide.x : MorphIconsLucide.menu)</code></pre>
+    <pre hidden><code id="code-controlled">MorphIcon.controlled(from: MorphIconsLucide.menu, icon: MorphIconsLucide.x, progress: t)</code></pre>
+    <pre hidden><code id="code-mask">MorphMask(icon: MorphIconsLucide.heart, child: DecoratedBox(decoration: BoxDecoration(gradient: LinearGradient(colors: [Color(0xfff857a6), Color(0xffff5858)])), child: SizedBox(width: 220, height: 150)))</code></pre>
   </div>
 </section>
 
-<!-- ============ FEATURES / ENGINE ============ -->
-<section id="features" class="section section-alt">
+<!-- ============ HOW IT WORKS ============ -->
+<section id="how" class="section section-alt">
   <div class="section-head reveal">
-    <p class="kicker">The engine</p>
-    <h2>A solver, not a tween library.</h2>
-    <p class="section-sub">Eight stages, all pure math, all Flutter-free until the very last paint call.
-    A faithful Dart port of the <a href="https://github.com/guillermolg00/morphicons">morphicons</a> core —
-    validated against the original at float64 precision.</p>
+    <p class="kicker">How it works</p>
+    <h2>Six kilobytes of math.</h2>
+    <p class="section-sub">Optimal rotation solved in closed form (2D Procrustes), spring physics, zero dependencies. The core never touches the DOM.</p>
   </div>
-
-  <div class="bento">
-    <article class="bento-card bento-wide reveal">
-      <span class="tag tag-blue">stage 1–2</span>
-      <h3>Normalize everything to cubics</h3>
-      <p>A from-scratch SVG <span class="mono">d</span>-string parser and normalizer: lines, circles, ellipses,
-      rects, polylines, polygons and arcs become chains of cubic Béziers. Relative commands, H/V/S/T shorthands,
-      packed arc flags like <span class="mono">a1 1 0 0110</span> — the full mini-language.
-      <span class="mono">dart:ui.Path</span> is never touched until paint time.</p>
-    </article>
-    <article class="bento-card reveal">
-      <span class="tag tag-green">stage 3</span>
-      <h3>Corner-anchored resampling</h3>
-      <p>Each subpath is resampled to N = 64 points, equidistant by arc length (8-point Gauss–Legendre quadrature).
-      Corners are anchored as exact sample indices, so they stay sharp mid-morph.</p>
-    </article>
-    <article class="bento-card reveal">
-      <span class="tag tag-green">stage 4</span>
-      <h3>Correspondence search</h3>
-      <p>Both traversal directions, all circular start rotations, subpaths matched by
-      <span class="mono">dist(centroids) + 0.35·|ΔL|</span>. Unequal counts duplicate the nearest subpath —
-      shapes divide, they never vanish.</p>
-    </article>
-    <article class="bento-card reveal">
-      <span class="tag tag-yellow">stage 5</span>
-      <h3>2D Procrustes, closed form</h3>
-      <p>The optimal rotation θ*, scale σ* and translation per subpath — ten lines of arithmetic, no SVD.
-      A global hybrid pass makes rigid icons rotate as one block.</p>
-    </article>
-    <article class="bento-card reveal">
-      <span class="tag tag-yellow">stage 6</span>
-      <h3>Polar interpolation</h3>
-      <p>Motion is decomposed into translation + rotation(t·θ*) + scale(σ*ᵗ) applied to the residual —
-      never a raw x/y lerp. That is why circles don't shrink when they rotate.</p>
-    </article>
-    <article class="bento-card reveal">
-      <span class="tag tag-red">stage 7</span>
-      <h3>Physical springs</h3>
-      <p>Damped harmonic oscillator, 1/240 s substeps, three presets. Mid-flight interruptions re-plan from the
-      current shape and preserve velocity — rapid re-triggering never jumps.</p>
-    </article>
-    <article class="bento-card bento-wide reveal">
-      <span class="tag tag-red">stage 8</span>
-      <h3>Canonical snap + zero flash</h3>
-      <p>In flight the painter emits a cheap polyline; on settle it snaps to the exact canonical paths of the
-      target icon. The first frame is already the final shape — plan building is synchronous and takes
-      ~0.35 ms. A resting morph is pixel-identical to a static icon.</p>
-    </article>
-  </div>
-
   <div class="parity reveal">
-     <p class="kicker">Numeric parity with the upstream reference</p>
     <div class="parity-grid mono">
-      <div><b>4.4e-16</b><span>Procrustes θ / σ / residual</span></div>
-      <div><b>7.3e-15</b><span>resampled point clouds</span></div>
-      <div><b>byte-exact</b><span>interpolated frames, t = 0…1</span></div>
-      <div><b>351 µs</b><span>buildPlan, 2-subpath pair</span></div>
+      <div><b>0</b><span>runtime dependencies</span></div>
+      <div><b>&lt;1 ms</b><span>to plan any morph pair</span></div>
+      <div><b>1</b><span>shared Ticker for every icon</span></div>
+      <div><b>6.5 KB</b><span>core, gzipped</span></div>
     </div>
   </div>
-</section>
-
-<!-- ============ COMPATIBILITY ============ -->
-<section id="compatibility" class="section">
-  <div class="section-head reveal">
-    <p class="kicker">Compatibility</p>
-    <h2>Any stroke icon. Any source.</h2>
-    <p class="section-sub">Morphicons consumes raw SVG <span class="mono">d</span> strings or Lucide-style
-    <span class="mono">[tag, attrs]</span> nodes. If you can describe it as a path, it can morph.</p>
-  </div>
-
-  <div class="compat-grid">
-    <div class="card compat-works reveal">
+  <div class="compat-grid" style="margin-top:32px">
+    <div class="card reveal">
       <p class="card-label">Works with</p>
-      <ul class="compat-list">
-       <li><b>Lucide</b><span>1,500+ icons shipped as generated constants in <span class="mono">morphicons_lucide</span></span></li>
-        <li><b>Feather</b><span>same 24×24 stroke grammar as Lucide</span></li>
-        <li><b>Tabler Icons</b><span>24×24, stroke 2, round joins</span></li>
-        <li><b>Heroicons outline</b><span>24×24 stroke variant</span></li>
-        <li><b>Iconoir, Phosphor regular</b><span>uniform-stroke sets</span></li>
-        <li><b>Any custom <span class="mono">d</span> string</b><span>hand-drawn paths, logos, your own icon set</span></li>
-        <li><b>Off-grid icons</b><span><span class="mono">fitIcon()</span> re-grids 16/20/32/48 viewBoxes onto 24×24</span></li>
-      </ul>
-       <p class="hint">Best results: single-weight strokes, <span class="mono">fill="none"</span>, round caps and joins,
-       coordinates in a square viewBox. The solver was designed for exactly this grammar.</p>
-       <p class="hint attribution">Lucide source icons are ISC licensed. Morphicons keeps upstream credit and license notices with generated data.</p>
+      <p class="hint">Lucide · Feather · Tabler · Heroicons outline · any custom <span class="mono">d</span> string via <span class="mono">fitIcon</span></p>
     </div>
-    <div class="card compat-limits reveal">
+    <div class="card reveal">
       <p class="card-label">Out of scope</p>
-      <ul class="compat-list">
-        <li><b>Filled / solid icons</b><span>Material Symbols filled, emoji-style glyphs</span></li>
-        <li><b>Multi-color or gradient icons</b><span>the pipeline is geometry-only, single stroke color</span></li>
-        <li><b>Text or raster content</b><span>paths only</span></li>
-        <li><b>Masks and clip paths</b><span>not part of the icon grammar the solver assumes</span></li>
-      </ul>
-      <p class="hint">Rule of thumb: if the icon looks right rendered as one uniform stroke, it will morph well.
-      Icons with wildly different topology still morph — the solver just interpolates the residual — but the
-      rigid-body magic shows on stroke sets with shared structure.</p>
-    </div>
-  </div>
-
-  <div class="window reveal compat-demo">
-    <div class="window-bar"><span></span><span></span><span></span>
-      <p class="window-title">works with any d string — even hand-drawn ones</p>
-    </div>
-    <div class="compat-strip" id="compatStrip"></div>
-  </div>
-</section>
-
-<!-- ============ CONVERTER ============ -->
-<section id="converter" class="section section-alt">
-  <div class="section-head reveal">
-    <p class="kicker">Converter</p>
-    <h2>Bring your own icons.</h2>
-    <p class="section-sub">Paste any SVG or drop a file. The converter flattens it to the
-    stroke-path grammar Morphicons consumes and emits the exact Dart data for your package —
-     the same geometry rules as the companion Dart data extractor, running entirely in your browser.</p>
-  </div>
-
-  <div class="conv-grid">
-    <div class="card reveal">
-      <p class="card-label">Input — SVG markup or file</p>
-      <div class="conv-drop" id="convDrop">
-        <p>Drop an <span class="mono">.svg</span> file here, or</p>
-        <label class="btn btn-sm btn-ghost conv-file-label">Choose file<input type="file" id="convFile" accept=".svg,image/svg+xml" hidden></label>
-      </div>
-      <textarea id="convInput" class="conv-input mono" spellcheck="false"
-        placeholder='&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor"&gt;&#10;  &lt;path d="M12 2v20M2 12h20"/&gt;&#10;&lt;/svg&gt;'></textarea>
-      <div class="conv-actions">
-        <button class="btn btn-sm" id="convRun">Convert</button>
-        <button class="btn btn-sm btn-ghost" id="convSample">Load sample</button>
-      </div>
-      <p class="hint" id="convStatus">Supports path, line, circle, ellipse, rect, polyline, polygon. Transforms and fills are flagged, not guessed.</p>
-    </div>
-
-    <div class="card reveal">
-      <p class="card-label">Preview + morphability</p>
-      <div class="conv-preview-wrap">
-        <canvas id="convPreview" width="480" height="480"></canvas>
-        <div class="conv-morph-ctl">
-          <label for="convMorphTarget">morph preview against</label>
-          <select id="convMorphTarget" class="conv-select mono">
-            <option value="">— none —</option>
-          </select>
-          <button class="btn btn-sm" id="convMorphPlay" disabled>Play morph</button>
-        </div>
-      </div>
-      <div class="readout mono conv-readout">
-        <div class="readout-row"><span>subpaths</span><b id="cvSubs">—</b></div>
-        <div class="readout-row"><span>resampled points</span><b id="cvPts">—</b></div>
-        <div class="readout-row"><span>verdict</span><b id="cvVerdict">—</b></div>
-      </div>
-    </div>
-
-    <div class="card conv-output-card reveal">
-      <p class="card-label">Output</p>
-      <div class="conv-tabs">
-        <button class="seg-btn is-active" data-out="dart">Dart const</button>
-        <button class="seg-btn" data-out="map">Map entry</button>
-        <button class="seg-btn" data-out="raw">Raw d</button>
-        <button class="seg-btn" data-out="points">Points</button>
-      </div>
-      <div class="conv-out-head">
-        <label class="conv-name-label" for="convName">identifier</label>
-        <input type="text" id="convName" class="conv-name mono" value="myIcon" spellcheck="false">
-        <button class="btn btn-sm btn-ghost" id="convCopy">Copy</button>
-        <button class="btn btn-sm btn-ghost" id="convDownload">Download</button>
-      </div>
-      <pre class="conv-out"><code id="convOut">// Convert an icon to see its Dart data.</code></pre>
+      <p class="hint">Filled/solid icons · multi-color · text/raster</p>
     </div>
   </div>
 </section>
 
-<!-- ============ DOCS ============ -->
-<section id="docs" class="section section-alt">
-  <div class="section-head reveal">
-    <p class="kicker">Documentation</p>
-    <h2>Three modes, one widget.</h2>
-  </div>
-
-  <div class="docs-grid">
-    <div class="doc-block reveal">
-      <h3>Install</h3>
-      <pre><code>flutter pub add morphicons_flutter
-flutter pub add morphicons_lucide   # optional icon data</code></pre>
-    </div>
-
-    <div class="doc-block reveal">
-      <h3>1 · Uncontrolled</h3>
-      <p>Change <span class="mono">icon</span>, the widget animates.</p>
-      <pre><code>MorphIcon(
-  icon: isOpen ? MorphIconsLucide.x : MorphIconsLucide.menu,
-  spring: SpringPreset.snappy,
-)</code></pre>
-    </div>
-
-    <div class="doc-block reveal">
-      <h3>2 · Controlled</h3>
-      <p>Explicit progress — for scrubbers and drag gestures.</p>
-      <pre><code>MorphIcon.controlled(
-  from: MorphIconsLucide.menu,
-  icon: MorphIconsLucide.x,
-  progress: dragProgress, // 0..1, &gt;1 extrapolates
-)</code></pre>
-    </div>
-
-    <div class="doc-block reveal">
-      <h3>3 · Imperative</h3>
-      <p>Sequenced morphs through the state object.</p>
-      <pre><code>final key = GlobalKey&lt;MorphIconState&gt;();
-MorphIcon(key: key, icon: MorphIconsLucide.menu);
-
-key.currentState?.morphTo(MorphIconsLucide.check); // animates
-key.currentState?.set(MorphIconsLucide.x);          // jumps</code></pre>
-    </div>
-  </div>
-
-  <div class="doc-block doc-wide reveal">
-    <h3>Widget parameters</h3>
-    <div class="api-table-wrap">
-      <table class="api-table">
-        <thead><tr><th>Parameter</th><th>Type</th><th>Default</th><th>Notes</th></tr></thead>
-        <tbody>
-          <tr><td class="mono">icon</td><td class="mono">String</td><td>required</td><td>SVG <span class="mono">d</span> data of the target icon</td></tr>
-          <tr><td class="mono">spring</td><td class="mono">SpringPreset</td><td>smooth</td><td>smooth (k 170, c 26) · snappy (420, 30) · bouncy (300, 14) — or custom <span class="mono">SpringPreset(k, c)</span></td></tr>
-          <tr><td class="mono">size</td><td class="mono">double</td><td>24</td><td>rendered square size, logical pixels</td></tr>
-          <tr><td class="mono">strokeWidth</td><td class="mono">double</td><td>2</td><td>in 24×24 icon space; scales with size</td></tr>
-          <tr><td class="mono">color</td><td class="mono">Color?</td><td>text style</td><td>falls back to the ambient DefaultTextStyle color</td></tr>
-          <tr><td class="mono">semanticLabel</td><td class="mono">String?</td><td>null</td><td>hidden from semantics when null (aria-hidden parity)</td></tr>
-          <tr><td class="mono">progress</td><td class="mono">double?</td><td>null</td><td>controlled mode only, via <span class="mono">MorphIcon.controlled</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="docs-grid">
-    <div class="doc-block reveal">
-      <h3>Behavior parity</h3>
-      <ul class="doc-list">
-        <li>First frame paints the exact canonical shape — no async warm-up, no flash</li>
-        <li><span class="mono">MediaQuery.disableAnimations</span> → instant swap</li>
-        <li>One shared <span class="mono">Ticker</span> scheduler steps every active spring</li>
-        <li>Canonical snap on settle — resting icons are pixel-identical to static ones</li>
-        <li>Interruptions re-plan from the current shape, velocity preserved</li>
-      </ul>
-    </div>
-    <div class="doc-block reveal">
-      <h3>Pure-Dart core</h3>
-      <p><span class="mono">morphicons_core</span> has zero Flutter imports and zero dependencies —
-      <span class="mono">dart:math</span> and <span class="mono">dart:typed_data</span> only.
-      Run it on the Dart VM, test it headless, or drive it from a non-Flutter target:</p>
-      <pre><code>final plan = planBetween(menuD, xd);
-final out = allocOutputs(plan);
-interpPolar(plan, 0.5, out);
-final d = serialize(out);</code></pre>
-    </div>
-  </div>
-
-  <div class="faq reveal">
-    <p class="kicker">Questions</p>
-    <details>
-      <summary>Will it work with IconData / Material icons?<i></i></summary>
-      <p>Not directly — <span class="mono">IconData</span> glyphs are compiled into the font and can't be
-      introspected. Morphicons needs path data. Use any stroke icon set that ships SVG paths
-      (Lucide, Tabler, Feather, Heroicons outline) or convert your own right on this page with the
-      <a href="#converter">converter</a> above — for whole icon packs, <span class="mono">tool/extract_icons.mjs</span>
-       in the repo reads the installed Lucide modules and emits a complete Dart data file.</p>
-    </details>
-    <details>
-      <summary>Does it work on all Flutter platforms?<i></i></summary>
-      <p>Yes. The core is pure Dart; the widget layer uses only <span class="mono">CustomPaint</span> and
-      <span class="mono">Ticker</span>. iOS, Android, web (CanvasKit and HTML), macOS, Windows, Linux.</p>
-    </details>
-    <details>
-      <summary>How fast is it?<i></i></summary>
-       <p>Plan building takes ~0.35 ms for a two-subpath pair (the upstream reference measures 0.01–0.42 ms).
-      Per frame the painter only walks preallocated buffers — no heap allocation beyond the emitted
-      <span class="mono">Path</span>. A shared scheduler means 50 concurrent morphs still cost one ticker.</p>
-    </details>
-    <details>
-      <summary>Can icons have different numbers of subpaths?<i></i></summary>
-      <p>Yes. The nearest subpath is duplicated to balance the counts — visually it reads as cell division
-      rather than a shape vanishing.</p>
-    </details>
-    <details>
-       <summary>Is this a fork of the upstream project?<i></i></summary>
-      <p>It's a faithful transcription of the mathematics, validated against golden fixtures dumped from the
-      original implementation (θ/σ parity at 4.4e-16). Upstream is credited in the LICENSE and READMEs; both
-      are MIT.</p>
-    </details>
-  </div>
-</section>
 
 
 

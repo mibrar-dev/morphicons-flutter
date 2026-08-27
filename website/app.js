@@ -843,6 +843,7 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
    ============================================================ */
 (() => {
   const strip = document.getElementById('compatStrip');
+  if (!strip) return;
   const icons = [
     'M12 2A10 10 0 1 0 12 22A10 10 0 1 0 12 2Z',                       // circle
     'M5 5L19 5L19 19L5 19Z',                                           // square
@@ -881,5 +882,29 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
   els.forEach((el, i) => {
     el.style.setProperty('--index', String(i % 6));
     io.observe(el);
+  });
+})();
+
+/* Copy buttons for code panels (shadcn style) */
+(() => {
+  document.querySelectorAll('[data-copy-target]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const target = document.getElementById(button.dataset.copyTarget);
+      if (!target) return;
+      try {
+        await navigator.clipboard.writeText(target.textContent);
+        const orig = button.textContent;
+        button.textContent = 'Copied';
+        button.classList.add('is-copied');
+        setTimeout(() => {
+          button.textContent = orig;
+          button.classList.remove('is-copied');
+        }, 1400);
+      } catch {
+        const orig = button.textContent;
+        button.textContent = 'Copy failed';
+        setTimeout(() => { button.textContent = orig; }, 1400);
+      }
+    });
   });
 })();

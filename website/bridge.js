@@ -5,6 +5,7 @@
 
 (() => {
   const frame = document.getElementById('flutterBridge');
+  if (!frame) return;
   const loading = document.getElementById('bridgeLoading');
   const pairSel = document.getElementById('fbPair');
   const modeSeg = document.getElementById('fbModeSeg');
@@ -19,6 +20,7 @@
   const tVal = document.getElementById('fbTVal');
   const morphBtn = document.getElementById('fbMorph');
   const resetBtn = document.getElementById('fbReset');
+  if (!pairSel || !modeSeg || !kSlider || !cSlider) return;
   const ro = {
     x: document.getElementById('fbX'),
     v: document.getElementById('fbV'),

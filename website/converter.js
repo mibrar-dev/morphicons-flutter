@@ -12,14 +12,15 @@ import {
 
 (() => {
   const M = window.MorphCore;
-
   const input = document.getElementById('convInput');
+  if (!input) return;
   const runBtn = document.getElementById('convRun');
   const sampleBtn = document.getElementById('convSample');
   const dropZone = document.getElementById('convDrop');
   const fileInput = document.getElementById('convFile');
   const status = document.getElementById('convStatus');
   const preview = document.getElementById('convPreview');
+  if (!preview) return;
   const nameInput = document.getElementById('convName');
   const outCode = document.getElementById('convOut');
   const copyBtn = document.getElementById('convCopy');

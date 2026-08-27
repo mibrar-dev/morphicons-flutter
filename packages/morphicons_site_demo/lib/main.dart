@@ -330,12 +330,16 @@ class _MaskDemoState extends State<_MaskDemo> {
   Widget build(BuildContext context) {
     final child = DecoratedBox(
       decoration: BoxDecoration(
-        color: paintMode == 2 ? const Color(0xff302b63) : null,
+        color: paintMode == 1
+            ? const Color(0xff302b63)
+            : paintMode == 2
+                ? Colors.white
+                : null,
         gradient: paintMode == 0
             ? const LinearGradient(
                 colors: [Color(0xfff857a6), Color(0xffff5858)])
             : null,
-        border: paintMode == 1
+        border: paintMode == 2
             ? Border.all(color: const Color(0xff302b63), width: 12)
             : null,
       ),

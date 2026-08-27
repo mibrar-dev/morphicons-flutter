@@ -22,7 +22,6 @@
       <div class="nav-dropdown-menu" role="menu">
         <a href="./" role="menuitem" class="is-active">Core patterns</a>
         <a href="mask/" role="menuitem">MorphMask</a>
-        <a href="canvas/" role="menuitem">MorphCanvas</a>
         <a href="../roadmap/" role="menuitem">Roadmap</a>
       </div>
     </div>
@@ -34,10 +33,10 @@
     <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu"><span class="nav-toggle-line"></span><span class="nav-toggle-line"></span></button>
   </div>
 </div></header>
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mobile-menu-inner"><p class="mobile-menu-kicker mono">Flutter workbench</p><nav class="mobile-menu-links" aria-label="Mobile navigation"><a href="../">Home</a><a href="./">Showcase — Core</a><a href="mask/">MorphMask</a><a href="canvas/">MorphCanvas</a><a href="../roadmap/">Roadmap</a><a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a></nav><a class="btn mobile-menu-cta" href="https://pub.dev/packages/morphicons_flutter">View on pub.dev <span class="btn-icon">↗</span></a></div></div>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mobile-menu-inner"><p class="mobile-menu-kicker mono">Flutter workbench</p><nav class="mobile-menu-links" aria-label="Mobile navigation"><a href="../">Home</a><a href="./">Showcase — Core</a><a href="mask/">MorphMask</a><a href="../roadmap/">Roadmap</a><a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a></nav><a class="btn mobile-menu-cta" href="https://pub.dev/packages/morphicons_flutter">View on pub.dev <span class="btn-icon">↗</span></a></div></div>
 <main>
   <section class="route-hero"><div class="hero-meta"><span class="tag tag-green">Flutter native</span><span class="tag tag-blue">core patterns</span></div><p class="kicker">The interaction layer</p><h1 class="hero-title">Small state changes,<br><em>beautifully articulated.</em></h1><p class="hero-sub">A reference-inspired shelf of everyday Flutter widgets. Each example keeps its state local, its icon data explicit, and its transition powered by <span class="mono">MorphIcon</span>.</p><div class="route-links"><a class="btn" href="#patterns">Browse patterns <span class="btn-icon">↓</span></a><a class="btn btn-ghost" href="mask/">Next: MorphMask</a></div></section>
-  <nav class="route-tabs" aria-label="Showcase sections"><a class="is-active" href="./">Core</a><a href="mask/">MorphMask</a><a href="canvas/">MorphCanvas</a><a href="../roadmap/">Roadmap</a></nav>
+  <nav class="route-tabs" aria-label="Showcase sections"><a class="is-active" href="./">Core</a><a href="mask/">MorphMask</a><a href="../roadmap/">Roadmap</a></nav>
   <section class="section section-alt" id="patterns"><div class="section-head"><p class="kicker">Core showcase</p><h2>Six moments worth a morph.</h2><p class="section-sub">These are deliberately ordinary controls: the animation should clarify the state, never compete with it.</p></div><div class="showcase-tabs" role="tablist" aria-label="Showcase sections"><button class="seg-btn is-active" data-tab="controls" role="tab">Controls</button><button class="seg-btn" data-tab="structure" role="tab">Structure</button><button class="seg-btn" data-tab="api" role="tab">API</button></div>
     <div data-panel="controls" class="showcase-panel"><div class="pattern-grid"><article class="card pattern-card"><span class="pattern-icon">↗</span><h3>Copy / check</h3><p>Confirm a clipboard action without replacing the button or shifting layout.</p><code class="mono">MorphIcon(icon: copied ? check : copy)</code></article><article class="card pattern-card"><span class="pattern-icon">◉</span><h3>Password visibility</h3><p>Eye states stay legible while the field keeps focus and its geometry.</p><code class="mono">obscured ? eye : eyeOff</code></article><article class="card pattern-card"><span class="pattern-icon">☼</span><h3>Theme toggle</h3><p>Sun and moon share one expressive control, with no cross-fade flash.</p><code class="mono">theme == dark ? sun : moon</code></article><article class="card pattern-card"><span class="pattern-icon">▶</span><h3>Player controls</h3><p>Play, pause, and skip can be composed from the same small vocabulary.</p><code class="mono">isPlaying ? pause : play</code></article><article class="card pattern-card"><span class="pattern-icon">✓</span><h3>Inline validation</h3><p>Validation changes read as a response beside the input, not a new screen.</p><code class="mono">valid ? check : circleAlert</code></article><article class="card pattern-card"><span class="pattern-icon">▾</span><h3>File tree</h3><p>Disclosure arrows preserve hierarchy while folders open and close.</p><code class="mono">expanded ? chevronDown : chevronRight</code></article></div></div>
     <div data-panel="structure" class="showcase-panel" hidden><div class="docs-grid"><div class="doc-block"><h3>State stays yours</h3><p>Morphicons is state-management neutral. A boolean, a provider, a bloc, or a gesture can own the decision; the widget only renders it.</p><pre><code>final isOpen = ValueNotifier(false);
@@ -48,9 +47,8 @@ ValueListenableBuilder&lt;bool&gt;(
     onPressed: () =&gt; isOpen.value = !open,
     icon: MorphIcon(icon: open ? x : menu),
   ),
-)</code></pre></div><div class="doc-block"><h3>One pair, many surfaces</h3><p>The same source and target can drive a normal icon, a mask, or a canvas painter.</p><pre><code>final pair = menu.morphTo(x);</code></pre></div></div></div>
+)</code></pre></div><div class="doc-block"><h3>One pair, many surfaces</h3><p>The same source and target can drive a normal icon or a mask.</p><pre><code>final pair = menu.morphTo(x);</code></pre></div></div></div>
     <div data-panel="api" class="showcase-panel" hidden><div class="doc-block doc-wide"><div class="card-label-row"><h3>A Flutter-first API</h3><span class="tag tag-green">Dart</span></div><p>Use the readable aliases when the source and target are naturally paired, or the explicit constructors when a code review benefits from naming every role.</p><pre><code>menu.morphTo(x).icon(progress: progress);
-menu.morph(x).canvas(progress: progress);
 menu.morphMaskTo(x, progress: progress, child: coloredSurface);</code></pre></div></div>
   </section>
   <section class="section"><div class="section-head"><p class="kicker">Live Flutter</p><h2>The examples are real, not screenshots.</h2><p class="section-sub">This iframe loads the compiled Flutter demo with <span class="mono">?demo=core</span>. Open it full-screen to inspect the interactions.</p></div><div class="bridge-frame-wrap"><div class="bridge-frame-bar"><span></span><span></span><span></span><p>morphicons_site_demo — core</p><a href="../flutter/index.html?demo=core" target="_blank" rel="noopener">open full</a></div><div class="bridge-loading">loading Flutter engine…</div><iframe data-demo src="../flutter/index.html?demo=core" title="Morphicons Flutter core widget showcase"></iframe></div></section>
@@ -76,6 +74,6 @@ class _CopyButtonState extends State&lt;CopyButton&gt; {
   );
 }</code></pre></div></section>
 </main>
-<footer class="footer"><div class="footer-inner"><p>Morphicons for Flutter · MIT · <a href="../">Back to the workbench</a></p><p class="mono"><a href="mask/">MorphMask</a> · <a href="canvas/">MorphCanvas</a> · <a href="../roadmap/">Roadmap</a></p></div></footer>
+<footer class="footer"><div class="footer-inner"><p>Morphicons for Flutter · MIT · <a href="../">Back to the workbench</a></p><p class="mono"><a href="mask/">MorphMask</a> · <a href="../roadmap/">Roadmap</a></p></div></footer>
 <script src="../showcase.js"></script>
 </body></html>

@@ -885,14 +885,14 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
   });
 })();
 
-/* Copy buttons for code panels (shadcn style) */
+/* Copy buttons for code panels (shadcn style — square 6px, dark theme) */
 (() => {
   document.querySelectorAll('[data-copy-target]').forEach((button) => {
     button.addEventListener('click', async () => {
       const target = document.getElementById(button.dataset.copyTarget);
       if (!target) return;
-      try {
-        await navigator.clipboard.writeText(target.textContent);
+      const text = target.textContent;
+      const onSuccess = () => {
         const orig = button.textContent;
         button.textContent = 'Copied';
         button.classList.add('is-copied');
@@ -900,11 +900,53 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
           button.textContent = orig;
           button.classList.remove('is-copied');
         }, 1400);
-      } catch {
+      };
+      const onFail = () => {
         const orig = button.textContent;
         button.textContent = 'Copy failed';
         setTimeout(() => { button.textContent = orig; }, 1400);
+      };
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(text);
+          onSuccess();
+          return;
+        }
+        throw new Error('clipboard unavailable');
+      } catch {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          const ok = document.execCommand('copy');
+          ta.remove();
+          if (ok) onSuccess(); else onFail();
+        } catch {
+          onFail();
+        }
       }
     });
   });
+  // Minimal install chip — mirrors reference InstallCommand.
+  const copyInstall = document.getElementById('copyInstall');
+  if (copyInstall) {
+    copyInstall.addEventListener('click', async () => {
+      const text = 'flutter pub add morphicons_flutter';
+      const orig = copyInstall.textContent;
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) await navigator.clipboard.writeText(text);
+        else throw new Error('no clipboard');
+        copyInstall.textContent = 'Copied';
+        copyInstall.classList.add('is-copied');
+        setTimeout(() => { copyInstall.textContent = orig; copyInstall.classList.remove('is-copied'); }, 1400);
+      } catch {
+        copyInstall.textContent = 'Copy failed';
+        setTimeout(() => { copyInstall.textContent = orig; }, 1400);
+      }
+    });
+  }
 })();

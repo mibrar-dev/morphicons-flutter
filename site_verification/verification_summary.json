@@ -1,0 +1,107 @@
+{
+  "home": {
+    "headerHeight": 64,
+    "headerIs64": true,
+    "navLinksChildren": 5,
+    "navLinksTexts": [
+      "Playground",
+      "Showcase",
+      "How it works",
+      "Roadmap",
+      "GitHub"
+    ],
+    "navLinksHeight": 22,
+    "navWrap": "nowrap",
+    "notWrapped": true,
+    "maybePub": "pub.dev",
+    "totalTopItems": 6,
+    "hasPublishingText": false,
+    "hasPublishingEl": false,
+    "publishingRemoved": true,
+    "kickers": [],
+    "heroFromExists_old": false,
+    "pgFromExists": true,
+    "pgToExists": true,
+    "pgFromToExists": true,
+    "pgFromToHasArrow": true,
+    "heroFromToAttr": "",
+    "heroShowsFromTo": true,
+    "heroTitleText": "Morph any Flutter iconinto any other.",
+    "pgTitle": "menu → x",
+    "pgTitleHasX": true,
+    "pgCanvasExists": true,
+    "pgCanvasRect": {
+      "w": 320,
+      "h": 320
+    },
+    "pgCanvasVisible": true,
+    "pairCount": 5,
+    "activeLabel": "menu → x",
+    "lucideCountText": "1565 icons",
+    "bodyBg": "rgb(16, 16, 16)",
+    "canvasVar": "#101010",
+    "darkTheme": true,
+    "installChip": true,
+    "installText": "$\n      flutter pub add morphicons_flutter\n      Copy"
+  },
+  "showcase": {
+    "headerHeight": 64,
+    "headerIs64": true,
+    "hasPublishing": false,
+    "publishingRemoved": true,
+    "bodyBg": "rgb(16, 16, 16)",
+    "canvasVar": "#101010",
+    "darkTheme": true,
+    "url": "http://127.0.0.1:8765/showcase/",
+    "bodyTextLen": 2153,
+    "maskMentions": true,
+    "heartMentions": false,
+    "iframe": true,
+    "iframeSrc": "../flutter/index.html?demo=core",
+    "iframeRect": {
+      "w": 304,
+      "h": 560
+    },
+    "totalTop": 5,
+    "notWrapped": true
+  },
+  "mask": {
+    "headerHeight": 64,
+    "headerIs64": true,
+    "hasPublishing": false,
+    "publishingRemoved": true,
+    "bodyBg": "rgb(16, 16, 16)",
+    "canvasVar": "#101010",
+    "darkTheme": true,
+    "url": "http://127.0.0.1:8765/showcase/mask/",
+    "bodyTextLen": 2479,
+    "maskMentions": true,
+    "heartMentions": false,
+    "iframe": true,
+    "iframeSrc": "../../flutter/index.html?demo=mask",
+    "iframeRect": {
+      "w": 304,
+      "h": 560
+    },
+    "totalTop": 5,
+    "notWrapped": true
+  },
+  "mobileCheck": {
+    "navInnerH": 64,
+    "navLinksDisplay": "none",
+    "toggleDisplay": "flex",
+    "hasPublishing": false,
+    "heroTitle": "Morph any Flutter iconinto any other."
+  },
+  "darkVals": {
+    "canvas": "#101010",
+    "ink": "#ededed",
+    "muted": "#a1a1a1",
+    "surface": "#171717",
+    "line": "#262626"
+  },
+  "afterPlay": {
+    "pgTitle": "menu → x",
+    "tVal": "t = 0.742"
+  }
+}

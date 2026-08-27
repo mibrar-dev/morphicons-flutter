@@ -310,7 +310,7 @@
       if (btn) { btn.setAttribute('aria-pressed','true'); btn.setAttribute('aria-label','Copied'); }
       if (card) card.setAttribute('aria-pressed','true');
       if (headerCopy) { headerCopy.textContent = 'Copied'; }
-      navigator.clipboard && navigator.clipboard.writeText('npm i morphicons').catch(()=>{});
+      navigator.clipboard && navigator.clipboard.writeText('flutter pub add morphicons_flutter').catch(()=>{});
       clearTimeout(revertTimer);
       revertTimer = setTimeout(() => {
         copied = false;

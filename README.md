@@ -1,20 +1,20 @@
 # Morphicons for Flutter
 
-Morph any SVG icon into any other. Similarity-aware morphing for Flutter — a Dart port of [morphicons](https://github.com/guillermolg00/morphicons) (MIT, by Guillermo).
+Morph any icon into any other — `String d` or `IconData` with the same widget, same solver. A Dart port of [morphicons](https://github.com/guillermolg00/morphicons) (MIT).
 
-If a pair is congruent under rotation, it rotates; if not, it morphs in the aligned frame. No keyframes. No hand-declared correspondence. Zero dependencies.
+If a pair is congruent under rotation, it rotates; if not, it morphs. No groups, no keyframes. Zero dependencies.
 
-[![pub.dev](https://img.shields.io/pub/v/morphicons_flutter)](https://pub.dev/packages/morphicons_flutter)
-[![License: MIT](https://img.shields.io/badge/license-MIT-black.svg)](LICENSE)
+[![pub.dev](https://img.shields.io/pub/v/morphicons_flutter)](https://pub.dev/packages/morphicons_flutter) [![License: MIT](https://img.shields.io/badge/license-MIT-black.svg)](LICENSE)
 
 ## Install
 
 ```sh
 flutter pub add morphicons_flutter
-flutter pub add morphicons_lucide # optional, 1500+ icons
+# optional packs (1500 Lucide, 4761 Tabler, 1288 Heroicons) or use any IconData directly
+flutter pub add morphicons_lucide
 ```
 
-Or `dart pub add morphicons_core` for the pure-Dart solver (no Flutter).
+`dart pub add morphicons_core` for the pure-Dart solver.
 
 ## Use
 
@@ -22,43 +22,35 @@ Or `dart pub add morphicons_core` for the pure-Dart solver (no Flutter).
 import 'package:morphicons_flutter/morphicons_flutter.dart';
 import 'package:morphicons_lucide/morphicons_lucide.dart';
 
-// Uncontrolled — swap `icon`, it animates.
+// String d — stroked SVG
 MorphIcon(icon: isOpen ? MorphIconsLucide.x : MorphIconsLucide.menu)
 
-// Controlled — drive `progress` yourself (drag, scrub, etc.)
-MorphIcon.controlled(
-  from: MorphIconsLucide.menu,
-  icon: MorphIconsLucide.x,
-  progress: t, // 0..1
-)
-
-// Imperative
-final key = GlobalKey<MorphIconState>();
-MorphIcon(key: key, icon: MorphIconsLucide.menu);
-key.currentState?.morphTo(MorphIconsLucide.check);
-
-// IconData — same widget, same solver (filled)
+// IconData — filled font glyph, same widget
 MorphIcon(icon: isHome ? Icons.home : Icons.favorite)
-MorphIcon(icon: Icons.search) // stroked SVG or filled font, both animate
+MorphIcon(icon: Icons.search) // any IconData from any package
+
+// Typed, rejects the other kind
+MorphIcon.svg(icon: "M4 6L20 6...")
+MorphIcon.font(icon: Icons.home)
+
+// Controlled / imperative (both kinds)
 MorphIcon.controlled(from: Icons.home, icon: Icons.settings, progress: t)
-MorphIcon.font(icon: Icons.home) // typed, rejects String
+final key = GlobalKey<MorphIconState>();
+key.currentState?.morphTo(Icons.favorite);
 ```
 
-Mask a child with the same geometry:
+Any `IconData` from any `pub.dev` icon package works — the widget resolves it via a curated `Map<int,String>` table (`lib/src/icon_data_resolver.dart`) to the same 24×24 cubic pipeline. Add a new pack by extending the table or use `MorphIcon.svg(String d)`.
+
+Mask / canvas:
 
 ```dart
-MorphMask(icon: MorphIconsLucide.heart, child: DecoratedBox(
-  decoration: BoxDecoration(gradient: LinearGradient(colors: [Color(0xfff857a6), Color(0xffff5858)])),
-  child: SizedBox(width: 220, height: 150),
-))
+MorphMask(icon: Icons.favorite, child: SizedBox(width: 220, height: 150,
+  child: DecoratedBox(decoration: BoxDecoration(
+    gradient: LinearGradient(colors: [Color(0xfff857a6), Color(0xffff5858)])))))
 ```
 
-More: `MorphCanvas`, `MorphTween`, `MorphPair` (`menu.morphTo(x)`), and `String` helpers. Live IconData demo (filled `Icons.home → Icons.favorite` with the real Flutter build) is at the new **IconData** section on the [live site](https://mibrar-dev.github.io/morphicons-flutter/#icondata) and in `example/icon_data_example.dart`. See [DOCS.md](DOCS.md).
-
-## How it works
-
-Optimal similarity via 2D Procrustes in closed form, polar interpolation, spring physics. Validated against the upstream JS at float64 parity (θ/σ ≤4.4e-16). Details and the full pipeline in [DOCS.md](DOCS.md).
+Live `IconData → IconData` demo (filled `home → favorite`) is on the [site](https://mibrar-dev.github.io/morphicons-flutter/#icondata) and in `example/icon_data_example.dart`. Packs are optional; the adapter makes any installed icon package morphable. See [DOCS.md](DOCS.md) for the full pipeline and parity.
 
 ## License
 
-MIT. Algorithm & design credit: [Guillermo / morphicons](https://github.com/guillermolg00/morphicons). See [LICENSE](LICENSE).
+MIT. Algorithm & design: [Guillermo / morphicons](https://github.com/guillermolg00/morphicons). See [LICENSE](LICENSE).

@@ -1,0 +1,23 @@
+name: morphicons_tabler
+description: >-
+  Tabler icon data for Morphicons, generated from the npm @tabler/icons package as
+  plain Dart const maps of raw SVG `d` strings.
+version: 1.0.0
+homepage: https://github.com/mibrar-dev/morphicons-flutter
+repository: https://github.com/mibrar-dev/morphicons-flutter
+issue_tracker: https://github.com/mibrar-dev/morphicons-flutter/issues
+documentation: https://github.com/mibrar-dev/morphicons-flutter
+topics:
+  - icons
+  - tabler
+  - icon-pack
+environment:
+  sdk: ^3.6.0
+
+resolution: workspace
+
+dependencies:
+  morphicons_core: ^1.0.0
+
+dev_dependencies:
+  test: ^1.25.0

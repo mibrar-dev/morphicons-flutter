@@ -265,6 +265,68 @@
   </div>
 </section>
 
+<!-- ============ CONVERTER ============ -->
+<section id="converter" class="section">
+  <div class="section-head reveal">
+    <p class="kicker">Converter</p>
+    <h2>Bring your own icons.</h2>
+    <p class="section-sub">Paste any SVG, pick a morph target, and copy the Dart const — same stroke grammar as the core, running entirely in your browser.</p>
+  </div>
+  <div class="conv-grid">
+    <div class="card reveal">
+      <p class="card-label">Input — SVG markup</p>
+      <div class="conv-drop" id="convDrop">
+        <p>Drop an <span class="mono">.svg</span> here, or</p>
+        <label class="btn btn-sm btn-ghost conv-file-label">Choose file<input type="file" id="convFile" accept=".svg,image/svg+xml" hidden></label>
+      </div>
+      <textarea id="convInput" class="conv-input mono" spellcheck="false" placeholder='&lt;svg viewBox="0 0 24 24" fill="none" stroke="currentColor"&gt;&#10;  &lt;path d="M12 2v20M2 12h20"/&gt;&#10;&lt;/svg&gt;'></textarea>
+      <div class="conv-actions">
+        <button class="btn btn-sm" id="convRun">Convert</button>
+        <button class="btn btn-sm btn-ghost" id="convSample">Load sample</button>
+      </div>
+      <p class="hint" id="convStatus">Supports path, line, circle, ellipse, rect, polyline, polygon.</p>
+    </div>
+    <div class="card reveal">
+      <p class="card-label">Preview — from → to</p>
+      <div class="conv-preview-wrap">
+        <canvas id="convPreview" width="480" height="480"></canvas>
+        <div class="hero-fromto" style="justify-content:center; margin-top:12px">
+          <canvas id="convFrom" width="84" height="84"></canvas>
+          <span class="mono" style="color:var(--mute)">→</span>
+          <canvas id="convTo" width="84" height="84"></canvas>
+        </div>
+        <div class="conv-morph-ctl" style="margin-top:12px">
+          <label for="convMorphTarget">morph against</label>
+          <select id="convMorphTarget" class="conv-select mono"><option value="">— none —</option></select>
+          <button class="btn btn-sm" id="convMorphPlay" disabled>Play morph</button>
+          <label style="margin-left:12px; display:flex; gap:6px; align-items:center; font-size:12px"><input type="checkbox" id="convSlow"> Slow</label>
+        </div>
+      </div>
+      <div class="readout mono conv-readout">
+        <div class="readout-row"><span>subpaths</span><b id="cvSubs">—</b></div>
+        <div class="readout-row"><span>resampled points</span><b id="cvPts">—</b></div>
+        <div class="readout-row"><span>verdict</span><b id="cvVerdict">—</b></div>
+      </div>
+    </div>
+    <div class="card conv-output-card reveal">
+      <p class="card-label">Output — copy ready</p>
+      <div class="conv-tabs">
+        <button class="seg-btn is-active" data-out="dart">Dart const</button>
+        <button class="seg-btn" data-out="map">Map entry</button>
+        <button class="seg-btn" data-out="raw">Raw d</button>
+        <button class="seg-btn" data-out="points">Points</button>
+      </div>
+      <div class="conv-out-head">
+        <label class="conv-name-label" for="convName">identifier</label>
+        <input type="text" id="convName" class="conv-name mono" value="myIcon" spellcheck="false">
+        <button class="btn btn-sm btn-ghost" id="convCopy">Copy</button>
+        <button class="btn btn-sm btn-ghost" id="convDownload">Download</button>
+      </div>
+      <pre class="conv-out"><code id="convOut">// Convert an icon to see its Dart data.</code></pre>
+    </div>
+  </div>
+</section>
+
 <!-- ============ HOW IT WORKS ============ -->
 <section id="how" class="section section-alt">
   <div class="section-head reveal">

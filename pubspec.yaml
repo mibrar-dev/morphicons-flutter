@@ -8,5 +8,7 @@ workspace:
   - packages/morphicons_core
   - packages/morphicons_flutter
   - packages/morphicons_lucide
+  - packages/morphicons_tabler
+  - packages/morphicons_heroicons
   - packages/morphicons_example
   - packages/morphicons_site_demo

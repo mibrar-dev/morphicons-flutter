@@ -153,7 +153,7 @@ const PAIRS = [
 
 const PRESETS = { smooth: { k: 170, c: 26 }, snappy: { k: 420, c: 30 }, bouncy: { k: 300, c: 14 } };
 
-/* ---------- icon-only controls (SVG) ---------- */
+/* ---------- icon-only controls (SVG fallback when MorphCore is absent) ---------- */
 const PLAY_ICON = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>';
 const PAUSE_ICON = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>';
 function setPlayPauseIcon(btn, isPlaying) {
@@ -163,6 +163,98 @@ function setPlayPauseIcon(btn, isPlaying) {
   btn.setAttribute('aria-label', isPause ? 'Pause' : 'Play');
   btn.setAttribute('aria-pressed', String(isPause));
   btn.title = isPause ? 'Pause' : 'Play';
+}
+
+/* ---------- morphing icon buttons (MorphCore) ----------
+   The button icon is itself a canvas morph driven by the same solver:
+   interpPolar between play and pause shapes, animated with the snappy
+   spring (k=420, c=30) instead of a static innerHTML swap. */
+const BTN_PLAY_D = 'M6 3L20 12L6 21';
+const BTN_PAUSE_D = 'M6 4h4v16h-4zM14 4h4v16h-4z';
+
+function createMorphButton(btn, fromD, toD) {
+  if (!btn) return null;
+  const fallbackMorphTo = (d) => setPlayPauseIcon(btn, d === toD);
+  if (!M || typeof M.buildPlan !== 'function' || typeof M.Spring !== 'function') {
+    return { morphTo: fallbackMorphTo };
+  }
+  const plan = safeBuildPlan(fromD, toD);
+  const out = plan ? M.allocOutputs(plan) : null;
+  if (!out) return { morphTo: fallbackMorphTo };
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  btn.innerHTML = '';
+  const canvas = document.createElement('canvas');
+  canvas.width = Math.round(16 * dpr);
+  canvas.height = Math.round(16 * dpr);
+  canvas.setAttribute('aria-hidden', 'true');
+  btn.appendChild(canvas);
+  const ctx = canvas.getContext('2d');
+  const spring = new M.Spring();
+
+  // 0 = from (play) shape, 1 = to (pause) shape. Starts on the play shape so
+  // the first morphTo(toD) renders a visible play → pause morph.
+  let value = reducedMotion ? 1 : 0;
+  let from = value;
+  let target = value;
+  let rafId = null;
+
+  function draw() {
+    const s = canvas.width / 24;
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.strokeStyle = getComputedStyle(btn).color || '#ededed';
+    ctx.lineWidth = 2 * s;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    M.interpPolar(plan, Math.min(1, Math.max(0, value)), out);
+    for (const pts of out) {
+      if (typeof pts === 'string') continue;
+      const n = pts.length / 2;
+      if (n < 2) continue;
+      ctx.beginPath();
+      ctx.moveTo(pts[0] * s, pts[1] * s);
+      for (let i = 1; i < n; i++) ctx.lineTo(pts[2 * i] * s, pts[2 * i + 1] * s);
+      ctx.closePath();
+      ctx.stroke();
+    }
+  }
+
+  function frame() {
+    rafId = null;
+    if (spring.step(1 / 60)) {
+      value = target;
+      draw();
+      return;
+    }
+    value = from + (target - from) * Math.min(spring.x, 1);
+    draw();
+    rafId = requestAnimationFrame(frame);
+  }
+
+  function morphTo(d) {
+    const isTo = d === toD;
+    btn.setAttribute('aria-label', isTo ? 'Pause' : 'Play');
+    btn.setAttribute('aria-pressed', String(isTo));
+    btn.title = isTo ? 'Pause' : 'Play';
+    const to = isTo ? 1 : 0;
+    if (to === target && value === target) return;
+    if (reducedMotion) {
+      value = to;
+      target = to;
+      draw();
+      return;
+    }
+    from = value;
+    target = to;
+    spring.config(420, 30);
+    spring.start();
+    if (rafId == null) rafId = requestAnimationFrame(frame);
+  }
+
+  draw();
+  return { morphTo };
 }
 
 /* ---------- canvas helpers ---------- */
@@ -404,6 +496,7 @@ const pg = (() => {
   const title = document.getElementById('pgTitle');
   const playBtn = document.getElementById('pgPlay');
   const replayBtn = document.getElementById('pgReplay');
+  const pgPlayMorph = createMorphButton(playBtn, BTN_PLAY_D, BTN_PAUSE_D);
   const tSlider = document.getElementById('pgT');
   const tVal = document.getElementById('pgTVal');
   const kSlider = document.getElementById('pgK');
@@ -512,13 +605,13 @@ const pg = (() => {
       state.spring.x = 1;
       state.mode = 'idle';
       state.t = 1;
-      setPlayPauseIcon(playBtn, false);
+      pgPlayMorph?.morphTo(BTN_PLAY_D);
       render(1);
       return;
     }
     state.mode = 'playing';
     state.t = 0;
-    setPlayPauseIcon(playBtn, true);
+    pgPlayMorph?.morphTo(BTN_PAUSE_D);
   }
 
   function render(t) {
@@ -588,7 +681,7 @@ const pg = (() => {
            state.mode = 'idle';
            state.t = 1;
            render(1);
-           setPlayPauseIcon(playBtn, false);
+           pgPlayMorph?.morphTo(BTN_PLAY_D);
            // Auto-morph every icon at start: cycle animationSet if present, otherwise cycle PAIRS slowly
            // Wrapped so no failure during a transition can ever kill the rAF loop.
            if (canAnimate) {
@@ -622,13 +715,13 @@ const pg = (() => {
   playBtn.addEventListener('click', () => {
     if (state.mode === 'playing') {
       state.mode = 'idle';
-      setPlayPauseIcon(playBtn, false);
+      pgPlayMorph?.morphTo(BTN_PLAY_D);
       return;
     }
     if (state.t >= 1 || state.t === 0) restart();
     else {
       state.mode = 'playing';
-      setPlayPauseIcon(playBtn, true);
+      pgPlayMorph?.morphTo(BTN_PAUSE_D);
     }
   });
   replayBtn.addEventListener('click', restart);
@@ -935,41 +1028,65 @@ const pg = (() => {
     });
   }
 
+  function buildItemButton(entry) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.dataset.ref = entry.ref;
+    button.className = `lucide-item${state.animationSet.includes(entry.ref) ? ' is-selected' : ''}`;
+    button.setAttribute('role', 'option');
+    button.setAttribute('aria-label', `Select ${LIBRARIES[entry.lib].label} icon ${entry.name}`);
+    button.setAttribute('aria-selected', String(state.animationSet.includes(entry.ref)));
+    button.title = `${LIBRARIES[entry.lib].label}: ${entry.name}`;
+    button.appendChild(svgFromD(entry.d, '#ededed', pg.stroke));
+    const label = document.createElement('span');
+    label.textContent = entry.name;
+    button.appendChild(label);
+    const libTag = document.createElement('span');
+    libTag.className = 'lucide-item-lib';
+    libTag.textContent = LIBRARIES[entry.lib].label;
+    button.appendChild(libTag);
+    // read selection state at click time (never a stale closure)
+    button.addEventListener('click', () => {
+      const wasSelected = state.animationSet.includes(entry.ref);
+      state.selected = entry.ref;
+      state.animationSet = wasSelected
+        ? state.animationSet.filter((item) => item !== entry.ref)
+        : [...state.animationSet, entry.ref];
+      selected.textContent = wasSelected
+        ? `Removed ${entry.ref}`
+        : `Added ${entry.ref} · ${state.animationSet.length} in set`;
+      // update just this button's selection state — no grid rebuild
+      const on = !wasSelected;
+      button.classList.toggle('is-selected', on);
+      button.setAttribute('aria-selected', String(on));
+      renderAnimationSet();
+    });
+    return button;
+  }
+
+  // Full rebuild — only on search/filter/selection-affecting changes.
   function render() {
     const matches = filteredEntries();
     const visible = matches.slice(0, state.limit);
     const fragment = document.createDocumentFragment();
-    results.replaceChildren();
-    visible.forEach((entry) => {
-      const button = document.createElement('button');
-       const isSelected = state.animationSet.includes(entry.ref);
-      button.type = 'button';
-      button.className = `lucide-item${isSelected ? ' is-selected' : ''}`;
-      button.setAttribute('role', 'option');
-      button.setAttribute('aria-label', `Select ${LIBRARIES[entry.lib].label} icon ${entry.name}`);
-       button.setAttribute('aria-selected', String(isSelected));
-      button.title = `${LIBRARIES[entry.lib].label}: ${entry.name}`;
-       button.appendChild(svgFromD(entry.d, '#ededed', pg.stroke));
-      const label = document.createElement('span');
-      label.textContent = entry.name;
-      button.appendChild(label);
-      const libTag = document.createElement('span');
-      libTag.className = 'lucide-item-lib';
-      libTag.textContent = LIBRARIES[entry.lib].label;
-      button.appendChild(libTag);
-      button.addEventListener('click', () => {
-          state.selected = entry.ref;
-          state.animationSet = isSelected ? state.animationSet.filter((item) => item !== entry.ref) : [...state.animationSet, entry.ref];
-          // hide D string — show name only to prevent layout reflow
-          selected.textContent = isSelected ? `Removed ${entry.ref}` : `Added ${entry.ref} · ${state.animationSet.length} in set`;
-          render();
-       });
-      fragment.appendChild(button);
-    });
-    results.appendChild(fragment);
-     renderAnimationSet();
+    visible.forEach((entry) => fragment.appendChild(buildItemButton(entry)));
+    results.replaceChildren(fragment);
+    renderAnimationSet();
     count.textContent = `${matches.length} icons`;
     allVisible = visible.length >= matches.length;
+  }
+
+  // Append-only — used by infinite scroll. Never touches existing DOM,
+  // the animation set, or the left-side solver state.
+  function appendNextBatch() {
+    const matches = filteredEntries();
+    const next = matches.slice(state.limit, state.limit + 36);
+    if (!next.length) { allVisible = true; return; }
+    state.limit += 36;
+    const fragment = document.createDocumentFragment();
+    next.forEach((entry) => fragment.appendChild(buildItemButton(entry)));
+    results.appendChild(fragment);
+    allVisible = state.limit >= matches.length;
   }
 
   search.addEventListener('input', () => {
@@ -1018,11 +1135,9 @@ const pg = (() => {
         scrollRaf = requestAnimationFrame(() => {
           scrollRaf = null;
           if (allVisible) return;
-          const top = results.scrollTop;
-          state.limit += 36;
-          render();
-          // restore scrollTop so user stays near bottom, new items appear below
-          results.scrollTop = top;
+          if (lucideSentinel) lucideSentinel.remove();
+          appendNextBatch();
+          ensureSentinel();
         });
       }, { root: results, rootMargin: '120px', threshold: 0 });
     }
@@ -1038,15 +1153,14 @@ const pg = (() => {
       const threshold = 96;
       const nearBottom = results.scrollTop + results.clientHeight >= results.scrollHeight - threshold;
       if (nearBottom) {
-        const top = results.scrollTop;
-        state.limit += 36;
-        render();
-        results.scrollTop = top;
+        if (lucideSentinel) lucideSentinel.remove();
+        appendNextBatch();
+        ensureSentinel();
       }
     });
   }, { passive: true });
 
-  // patch render to re-attach sentinel after each render
+  // patch render to re-attach sentinel after each full render (search/filter only)
   const _origRender = render;
   render = function() {
     // unobserve previous sentinel before clearing results

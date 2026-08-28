@@ -728,7 +728,7 @@ const pg = (() => {
 
   tSlider.addEventListener('input', () => {
     state.mode = 'scrub';
-    setPlayPauseIcon(playBtn, false);
+    pgPlayMorph?.morphTo(BTN_PLAY_D);
     state.t = parseFloat(tSlider.value);
     render(state.t);
   });
@@ -821,11 +821,80 @@ const pg = (() => {
        drawSubs(fit.ctx, fit.w, fit.h, soloOut, color, 1.6 * (fit.w / 84) * 0.9);
      } catch {}
    }
+
+   // Morphing preview: each canvas morphs from its previous icon to the new
+   // pair's icon using the solver + snappy spring, instead of an instant swap.
+   const fromPreview = createMorphPreview(fromCanvas);
+   const toPreview = createMorphPreview(toCanvas);
+   function createMorphPreview(canvasEl) {
+     if (!canvasEl || !M || typeof M.buildPlan !== 'function') {
+       return { setIcon: (d) => drawStaticPG(canvasEl, d, '#6b6b6b') };
+     }
+     let currentD = null;
+     let plan = null, out = null;
+     const spring = new M.Spring();
+     let rafId = null;
+     let value = 1, from = 1, target = 1;
+     let fromPts = null;
+     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+     function draw(t) {
+       const fit = fitCanvas(canvasEl);
+       if (!fit || !plan || !out) return;
+       M.interpPolar(plan, Math.min(1, Math.max(0, t)), out);
+       drawSubs(fit.ctx, fit.w, fit.h, out, '#6b6b6b', 1.6 * (fit.w / 84) * 0.9);
+     }
+     function frame() {
+       rafId = null;
+       if (spring.step(1 / 60)) {
+         value = target;
+         draw(1);
+         return;
+       }
+       value = from + (target - from) * Math.min(spring.x, 1);
+       draw(value);
+       rafId = requestAnimationFrame(frame);
+     }
+     function setIcon(nextD) {
+       if (!nextD) return;
+       if (currentD === null || reducedMotion || currentD === nextD) {
+         // first draw or same icon: render statically
+         currentD = nextD;
+         try {
+           plan = M.buildPlan(M.resampleIcon(nextD), M.resampleIcon(nextD));
+           out = M.allocOutputs(plan);
+           draw(1);
+         } catch {}
+         return;
+       }
+       try {
+         // snapshot current interpolated shape as the morph source
+         M.interpPolar(plan, value, out);
+         const closed = plan.items.map((it) => !!it.closed);
+         fromPts = M.serialize(out, closed);
+         plan = M.buildPlan(M.resampleIcon(fromPts), M.resampleIcon(nextD));
+         out = M.allocOutputs(plan);
+       } catch {
+         try {
+           plan = M.buildPlan(M.resampleIcon(currentD), M.resampleIcon(nextD));
+           out = M.allocOutputs(plan);
+         } catch { return; }
+       }
+       currentD = nextD;
+       from = value;
+       target = 1;
+       value = 0;
+       spring.config(420, 30);
+       spring.start();
+       if (rafId == null) rafId = requestAnimationFrame(frame);
+     }
+     return { setIcon };
+   }
    function drawFromToPG() {
-     if (!slow || !fromCanvas || !toCanvas) return;
+     if (!slow || (!fromCanvas && !toCanvas)) return;
      const p = currentPair();
-     drawStaticPG(fromCanvas, p.from, '#6b6b6b');
-     drawStaticPG(toCanvas, p.to, '#6b6b6b');
+     fromPreview?.setIcon(p.from);
+     toPreview?.setIcon(p.to);
    }
    if (slowToggle) {
      slowToggle.addEventListener('change', () => {
@@ -1374,6 +1443,7 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
   const meta = document.getElementById('iconDataMeta');
   const playBtn = document.getElementById('iconDataPlay');
   const replayBtn = document.getElementById('iconDataReplay');
+  const iconDataPlayMorph = createMorphButton(playBtn, BTN_PLAY_D, BTN_PAUSE_D);
   const slowBox = document.getElementById('iconDataSlow');
   const curveCanvas = document.getElementById('iconDataCurve');
 
@@ -1514,7 +1584,7 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
     spring.config(slow ? 90 : 170, slow ? 20 : 26);
     spring.start();
     playing = true;
-    if (playBtn) setPlayPauseIcon(playBtn, true);
+    iconDataPlayMorph?.morphTo(BTN_PAUSE_D);
     t = 0;
     if (rafId == null) rafId = requestAnimationFrame(tick);
   }
@@ -1544,7 +1614,7 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
       if (settled) {
         playing = false;
         render(1);
-        if (playBtn) setPlayPauseIcon(playBtn, false);
+        iconDataPlayMorph?.morphTo(BTN_PLAY_D);
         // auto-advance after hold when visible
         setTimeout(() => {
           if (visible && !document.hidden && !playing) {
@@ -1580,7 +1650,7 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
 
   if (playBtn) playBtn.addEventListener('click', () => {
     playing = !playing;
-    setPlayPauseIcon(playBtn, playing);
+    iconDataPlayMorph?.morphTo(playing ? BTN_PAUSE_D : BTN_PLAY_D);
     if (playing) {
       // if at end, restart
       if (t >= 1) { rebuild(currentPair()); }

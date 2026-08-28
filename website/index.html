@@ -20,7 +20,7 @@
 <header class="nav">
   <div class="nav-inner">
     <a class="wordmark" href="#top">
-      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+      <svg class="wordmark-mark" viewBox="0 0 512 512" width="28" height="28" role="img" aria-label="Morphicons mark" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wordmarkGradient" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4F46E5"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs><rect x="0" y="0" width="512" height="512" rx="112" fill="url(#wordmarkGradient)"/><g fill="none" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round"><line x1="172.8" y1="161.6" x2="339.2" y2="230.4"/><line x1="172.8" y1="350.4" x2="339.2" y2="281.6"/><line x1="206" y1="256" x2="306" y2="256" opacity="0.4"/></g></svg>
       <span>Morphicons</span>
       <span class="wordmark-sub">for Flutter</span>
     </a>
@@ -108,7 +108,7 @@
 
       <!-- ============ PLAYGROUND PANEL ============ -->
       <div class="frame-panel is-active" data-panel="playground">
-        <div class="studio-grid">
+        <div class="studio-grid studio-grid--balanced">
           <!-- Stage -->
           <div class="studio-stage">
             <div class="mesh" aria-hidden="true"></div>
@@ -136,23 +136,12 @@
 
             <div class="pg-scrub" style="width:100%; max-width:360px; position:relative; z-index:1;">
               <div class="pg-scrub-row">
-                <button class="btn btn-sm" id="pgPlay" type="button" aria-pressed="true">Pause</button>
-                <button class="btn btn-sm btn-ghost" id="pgReplay" type="button">Restart</button>
+                <button class="btn btn-sm btn-icon-only" id="pgPlay" type="button" aria-pressed="true" aria-label="Pause" title="Pause"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg></button>
+                <button class="btn btn-sm btn-ghost btn-icon-only" id="pgReplay" type="button" aria-label="Restart" title="Restart"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg></button>
                 <input type="range" id="pgT" min="0" max="1" step="0.001" value="0" aria-label="Interpolation progress">
                 <span class="mono pg-t-val" id="pgTVal">t = 0.000</span>
               </div>
             </div>
-
-            <div class="animation-set" aria-labelledby="animationSetLabel" style="width:100%; max-width:360px; position:relative; z-index:1;">
-              <div class="card-label-row">
-                <p class="card-label" id="animationSetLabel">Animation set</p>
-                <span class="mono" id="animationSetCount">0 icons</span>
-              </div>
-              <div class="animation-set-strip" id="animationSet" role="list"></div>
-              <p class="hint" id="animationSetHint">Choose two or more icons to make a sequence. Auto-morph cycles slowly.</p>
-            </div>
-
-            <div class="pair-grid" id="pairGrid" role="listbox" aria-label="Icon pair" style="width:100%; max-width:360px; display:grid; grid-template-columns: repeat(5, 1fr); gap:6px; position:relative; z-index:1;"></div>
 
             <div class="studio-meta-row" style="position:relative; z-index:1; display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center; width:100%; max-width:360px;">
               <span class="mono" style="font-size:11px; color:var(--muted)" id="roPlanMs">—</span>
@@ -166,9 +155,31 @@
             </div>
           </div>
 
-          <!-- Picker -->
-          <div class="studio-picker">
-            <div class="picker-head">
+          <!-- Picker — balanced: quick pairs + sequence on top, then Lucide browser fills remaining height -->
+          <div class="studio-picker studio-picker--balanced">
+            <div class="picker-quick">
+              <div class="picker-quick-head">
+                <p class="card-label" style="margin:0">Quick pairs</p>
+                <span class="mono" style="font-size:11px; color:var(--muted)">tap to preview</span>
+              </div>
+              <div class="pair-grid pair-grid--compact" id="pairGrid" role="listbox" aria-label="Icon pair"></div>
+              <div class="animation-set" aria-labelledby="animationSetLabel" style="position:relative; z-index:1;">
+                <div class="card-label-row">
+                  <p class="card-label" id="animationSetLabel">Animation set</p>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span class="mono" id="animationSetCount">0 icons</span>
+                    <button class="btn btn-sm btn-ghost" id="downloadSelectedIcons" type="button" aria-label="Download selected icons as Dart file" disabled title="Download Dart file">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="animation-set-strip" id="animationSet" role="list"></div>
+                <p class="hint" id="animationSetHint">Choose two or more icons to make a sequence. Auto-morph cycles slowly.</p>
+              </div>
+            </div>
+
+            <div class="picker-browser">
+              <div class="picker-head">
               <div class="lucide-filters" role="group" aria-label="Lucide icon filters">
                 <button class="filter-btn is-active" type="button" data-lucide-filter="all" aria-pressed="true">All</button>
                 <button class="filter-btn" type="button" data-lucide-filter="arrow" aria-pressed="false">Arrows</button>
@@ -179,12 +190,13 @@
                 <span class="tag tag-blue" id="lucideCount" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); pointer-events:none; font-size:10px; padding:2px 6px;">loading</span>
               </div>
             </div>
-            <div class="lucide-results icon-pane" id="lucideResults" role="listbox" aria-label="Lucide icons"></div>
-            <div class="lucide-browser-foot">
-              <span class="hint mono" id="lucideSelected" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Select an icon</span>
-              <button class="btn btn-sm btn-ghost" id="lucideMore" type="button">Load more</button>
+            <div class="lucide-results icon-pane lucide-results--flex" id="lucideResults" role="listbox" aria-label="Lucide icons"></div>
+              <div class="lucide-browser-foot">
+                <span class="hint mono" id="lucideSelected" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Select an icon</span>
+                <button class="btn btn-sm btn-ghost" id="lucideMore" type="button">Load more</button>
+              </div>
             </div>
-            <p class="hint" style="margin-top:12px">Every icon auto-morphs on load (slow). Toggle to normal. Click to build a sequence.</p>
+            <p class="hint" style="margin:0">Every icon auto-morphs on load (slow). Toggle to normal. Click to build a sequence.</p>
           </div>
         </div>
 
@@ -376,8 +388,8 @@
         </div>
 
         <div class="icondata-controls" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; width:100%; max-width:360px; margin-top:14px">
-          <button class="btn btn-sm" id="iconDataPlay" type="button" aria-pressed="false">Play</button>
-          <button class="btn btn-sm btn-ghost" id="iconDataReplay" type="button">Restart</button>
+          <button class="btn btn-sm btn-icon-only" id="iconDataPlay" type="button" aria-pressed="true" aria-label="Pause" title="Pause"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg></button>
+          <button class="btn btn-sm btn-ghost btn-icon-only" id="iconDataReplay" type="button" aria-label="Restart" title="Restart"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg></button>
           <label class="toggle-row mono" style="font-size:11px; margin:0"><input type="checkbox" id="iconDataSlow"> <span>Slow 0.5×</span></label>
           <span class="mono" id="iconDataMeta" style="margin-left:auto; font-size:11px; color:var(--muted)">—</span>
         </div>

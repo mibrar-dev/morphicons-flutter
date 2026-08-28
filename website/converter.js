@@ -44,11 +44,20 @@ function flatten(svg) {
   walk(svg);
 
   const result = flattenNodes(nodes);
-  const viewBox = (svg.getAttribute('viewBox') || '')
-    .trim()
-    .split(/[\s,]+/)
-    .map(Number);
-  return { ...result, viewBox: viewBox.length === 4 && viewBox.every(Number.isFinite) ? viewBox : null };
+  let viewBox = null;
+  const vbAttr = (svg.getAttribute('viewBox') || '').trim();
+  if (vbAttr) {
+    const parts = vbAttr.split(/[\s,]+/).map(Number);
+    if (parts.length === 4 && parts.every(Number.isFinite) && parts[2] > 0 && parts[3] > 0) viewBox = parts;
+  }
+  if (!viewBox) {
+    const wRaw = svg.getAttribute('width');
+    const hRaw = svg.getAttribute('height');
+    const w = wRaw ? Number.parseFloat(String(wRaw)) : NaN;
+    const h = hRaw ? Number.parseFloat(String(hRaw)) : NaN;
+    if (Number.isFinite(w) && Number.isFinite(h) && w > 0 && h > 0) viewBox = [0, 0, w, h];
+  }
+  return { ...result, viewBox };
 }
 
 function mountConverter(config) {
@@ -67,11 +76,17 @@ function mountConverter(config) {
   const tabs = tabsContainer ? tabsContainer.querySelectorAll('.seg-btn') : [];
   let currentD = '';
   let currentPoints = [];
+  let currentViewBox = [0, 0, 24, 24];
   let morphAnim = null;
   let outMode = 'dart';
   let previewVisible = true;
 
-  function drawD(canvas, d, color) {
+  function resolveViewBox(vb) {
+    if (Array.isArray(vb) && vb.length === 4 && vb.every((v) => Number.isFinite(v)) && vb[2] > 0 && vb[3] > 0) return vb;
+    return [0, 0, 24, 24];
+  }
+
+  function drawD(canvas, d, color, viewBox) {
     const rect = canvas.getBoundingClientRect();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     canvas.width = Math.max(1, Math.round(rect.width * dpr));
@@ -80,12 +95,16 @@ function mountConverter(config) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     if (!d) return;
     const pad = 0.08;
-    const scale = (Math.min(canvas.width, canvas.height) / 24) * (1 - 2 * pad);
+    const vb = resolveViewBox(viewBox ?? currentViewBox);
+    const [vbX, vbY, vbW, vbH] = vb;
+    const scale = Math.min(canvas.width / vbW, canvas.height / vbH) * (1 - 2 * pad);
+    const ox = (canvas.width - vbW * scale) / 2 - vbX * scale;
+    const oy = (canvas.height - vbH * scale) / 2 - vbY * scale;
     ctx.save();
-    ctx.translate((canvas.width - 24 * scale) / 2, (canvas.height - 24 * scale) / 2);
+    ctx.translate(ox, oy);
     ctx.scale(scale, scale);
     ctx.strokeStyle = color;
-    ctx.lineWidth = 2;
+    ctx.lineWidth = 2 * Math.max(vbW, vbH) / 24;
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     try {
@@ -96,18 +115,31 @@ function mountConverter(config) {
     ctx.restore();
   }
 
-  function drawSubsOnPreview(subs, color) {
+  function drawSubsOnPreview(subs, color, viewBox) {
     const rect = preview.getBoundingClientRect();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     preview.width = Math.max(1, Math.round(rect.width * dpr));
     preview.height = Math.max(1, Math.round(rect.height * dpr));
     const ctx = preview.getContext('2d');
     ctx.clearRect(0, 0, preview.width, preview.height);
-    const scale = (Math.min(preview.width, preview.height) / 24) * 0.84;
-    const ox = (preview.width - 24 * scale) / 2;
-    const oy = (preview.height - 24 * scale) / 2;
+    if (!subs || subs.length === 0) return;
+    const baseVb = resolveViewBox(viewBox ?? currentViewBox);
+    const [bx, by, bw, bh] = baseVb;
+    const minX = Math.min(bx, 0);
+    const minY = Math.min(by, 0);
+    const maxX = Math.max(bx + bw, 24);
+    const maxY = Math.max(by + bh, 24);
+    const vbW = maxX - minX;
+    const vbH = maxY - minY;
+    const vbX = minX;
+    const vbY = minY;
+    const pad = 0.08;
+    const scale = Math.min(preview.width / vbW, preview.height / vbH) * (1 - 2 * pad);
+    const ox = (preview.width - vbW * scale) / 2 - vbX * scale;
+    const oy = (preview.height - vbH * scale) / 2 - vbY * scale;
+    const maxDim = Math.max(vbW, vbH);
     ctx.strokeStyle = color;
-    ctx.lineWidth = 2 * (preview.width / 480);
+    ctx.lineWidth = 2 * (preview.width / 480) * (maxDim / 24);
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     for (const pts of subs) {
@@ -156,8 +188,9 @@ function mountConverter(config) {
 
   function clearConversion(message) {
     currentD = '';
+    currentViewBox = [0, 0, 24, 24];
     resetAssessment();
-    drawD(preview, '');
+    drawD(preview, '', '#ededed', currentViewBox);
     if (outCode) outCode.textContent = '// No stroke geometry found in this SVG.';
     status.textContent = message;
   }
@@ -188,13 +221,14 @@ function mountConverter(config) {
       return;
     }
     currentD = d;
+    currentViewBox = resolveViewBox(viewBox);
     let message = `Flattened ${elementCount} element${elementCount === 1 ? '' : 's'}`;
     if (viewBox && (viewBox[2] !== 24 || viewBox[3] !== 24)) {
       message += ` · viewBox is ${viewBox[2]}×${viewBox[3]} — wrap with fitIcon() or rescale`;
     }
     if (notes.length) message += ` · ${notes.join(' · ')}`;
     status.textContent = message;
-    drawD(preview, d, '#ededed');
+    drawD(preview, d, '#ededed', currentViewBox);
     assess();
     renderOutput();
   }
@@ -320,7 +354,7 @@ function mountConverter(config) {
         }
         const settled = spring.step(1 / 60);
         M.interpPolar(plan, Math.min(spring.x, 1), out);
-        drawSubsOnPreview(out, '#ededed');
+        drawSubsOnPreview(out, '#ededed', currentViewBox);
         if (!settled) morphAnim = requestAnimationFrame(tick);
         else morphAnim = null;
       };
@@ -328,7 +362,7 @@ function mountConverter(config) {
     });
   }
 
-  window.addEventListener('resize', () => { if (currentD) drawD(preview, currentD, '#ededed'); });
+  window.addEventListener('resize', () => { if (currentD) drawD(preview, currentD, '#ededed', currentViewBox); });
 
   // expose for tests/debug
   return { convert, get currentD() { return currentD; } };

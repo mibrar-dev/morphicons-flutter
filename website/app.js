@@ -59,6 +59,18 @@ const PAIRS = [
 
 const PRESETS = { smooth: { k: 170, c: 26 }, snappy: { k: 420, c: 30 }, bouncy: { k: 300, c: 14 } };
 
+/* ---------- icon-only controls (SVG) ---------- */
+const PLAY_ICON = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>';
+const PAUSE_ICON = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg>';
+function setPlayPauseIcon(btn, isPlaying) {
+  if (!btn) return;
+  const isPause = !!isPlaying;
+  btn.innerHTML = isPause ? PAUSE_ICON : PLAY_ICON;
+  btn.setAttribute('aria-label', isPause ? 'Pause' : 'Play');
+  btn.setAttribute('aria-pressed', String(isPause));
+  btn.title = isPause ? 'Pause' : 'Play';
+}
+
 /* ---------- canvas helpers ---------- */
 function fitCanvas(canvas) {
   const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -404,15 +416,13 @@ const pg = (() => {
       state.spring.x = 1;
       state.mode = 'idle';
       state.t = 1;
-      playBtn.textContent = 'Play';
-      playBtn.setAttribute('aria-pressed', 'false');
+      setPlayPauseIcon(playBtn, false);
       render(1);
       return;
     }
     state.mode = 'playing';
     state.t = 0;
-    playBtn.textContent = 'Pause';
-    playBtn.setAttribute('aria-pressed', 'true');
+    setPlayPauseIcon(playBtn, true);
   }
 
   function render(t) {
@@ -482,8 +492,7 @@ const pg = (() => {
            state.mode = 'idle';
            state.t = 1;
            render(1);
-           playBtn.textContent = 'Play';
-           playBtn.setAttribute('aria-pressed', 'false');
+           setPlayPauseIcon(playBtn, false);
            // Auto-morph every icon at start: cycle animationSet if present, otherwise cycle PAIRS slowly
            if (canAnimate) {
              if (state.animationSet.length >= 2) {
@@ -514,23 +523,20 @@ const pg = (() => {
   playBtn.addEventListener('click', () => {
     if (state.mode === 'playing') {
       state.mode = 'idle';
-      playBtn.textContent = 'Play';
-      playBtn.setAttribute('aria-pressed', 'false');
+      setPlayPauseIcon(playBtn, false);
       return;
     }
     if (state.t >= 1 || state.t === 0) restart();
     else {
       state.mode = 'playing';
-      playBtn.textContent = 'Pause';
-      playBtn.setAttribute('aria-pressed', 'true');
+      setPlayPauseIcon(playBtn, true);
     }
   });
   replayBtn.addEventListener('click', restart);
 
   tSlider.addEventListener('input', () => {
     state.mode = 'scrub';
-    playBtn.textContent = 'Play';
-    playBtn.setAttribute('aria-pressed', 'false');
+    setPlayPauseIcon(playBtn, false);
     state.t = parseFloat(tSlider.value);
     render(state.t);
   });
@@ -693,10 +699,55 @@ const pg = (() => {
    const animationSet = document.getElementById('animationSet');
    const animationSetCount = document.getElementById('animationSetCount');
    const animationSetHint = document.getElementById('animationSetHint');
+  const downloadSelectedIconsBtn = document.getElementById('downloadSelectedIcons');
   const more = document.getElementById('lucideMore');
   const filters = document.querySelectorAll('[data-lucide-filter]');
   const names = Object.keys(LUCIDE).sort((a, b) => a.localeCompare(b));
   const shapePattern = /circle|square|triangle|diamond|hexagon|octagon|pentagon|star|heart|badge|box|disc|dot|shapes?/;
+  const DART_KEYWORDS = new Set([
+    'assert','break','case','catch','class','const','continue','default','do','else','enum','extends','false','final','finally','for','if','in','is','new','null','rethrow','return','super','switch','this','throw','true','try','var','void','while','with'
+  ]);
+  function toDartIdentifier(kebab) {
+    const parts = String(kebab).split('-');
+    const first = parts[0] || '';
+    const rest = parts.slice(1).map((p) => (p ? p[0].toUpperCase() + p.slice(1) : ''));
+    let id = first + rest.join('');
+    if (!id || /^[0-9]/.test(id)) {
+      id = 'icon' + (id ? id[0].toUpperCase() + id.slice(1) : 'Icon');
+    }
+    if (DART_KEYWORDS.has(id)) id += 'Icon';
+    // ensure valid: replace any remaining invalid chars (should not happen for kebab) and handle empty
+    id = id.replace(/[^A-Za-z0-9_]/g, '_');
+    if (!id) id = 'icon';
+    if (/^[0-9]/.test(id)) id = 'icon' + id;
+    return id;
+  }
+  function escapeDartString(value) {
+    return String(value).replaceAll('\\', '\\\\').replaceAll('"', '\\"').replaceAll('$', '\\$');
+  }
+  function buildSelectedIconsDart(names) {
+    const safeNames = Array.isArray(names) ? names.filter((n) => typeof n === 'string' && LUCIDE[n]) : [];
+    const lines = safeNames.map((name) => {
+      const id = toDartIdentifier(name);
+      const d = LUCIDE[name] || '';
+      const escaped = escapeDartString(d);
+      return `  static const String ${id} = "${escaped}";`;
+    });
+    return `class SelectedIcons {\n${lines.join('\n')}\n}\n`;
+  }
+  function downloadSelectedIconsDart() {
+    if (!state.animationSet.length || !downloadSelectedIconsBtn || downloadSelectedIconsBtn.disabled) return;
+    const content = buildSelectedIconsDart(state.animationSet);
+    const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'selected_icons.dart';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
    const state = { filter: 'all', query: '', limit: 36, selected: '', animationSet: [] };
 
    window.setLucideAnimationSet = (names) => {
@@ -726,6 +777,7 @@ const pg = (() => {
      });
      animationSetCount.textContent = `${state.animationSet.length} icon${state.animationSet.length === 1 ? '' : 's'}`;
      animationSetHint.textContent = state.animationSet.length < 2 ? 'Choose two or more icons to make a sequence.' : 'Stage advance cycles current → next through this set.';
+     if (downloadSelectedIconsBtn) downloadSelectedIconsBtn.disabled = state.animationSet.length === 0;
      pg.setAnimationSet(state.animationSet);
    }
 
@@ -791,9 +843,100 @@ const pg = (() => {
   });
   more.addEventListener('click', () => {
     state.limit += 36;
+    const top = results.scrollTop;
     render();
+    // keep scroll position after manual Load more so view doesn't jump
+    results.scrollTop = top;
   });
+
+  // --- infinite scroll: auto-load when user scrolls near bottom ---
+  let scrollRaf = null;
+  let lucideIO = null;
+  let lucideSentinel = null;
+
+  function ensureSentinel() {
+    if (lucideSentinel && lucideIO) {
+      try { lucideIO.unobserve(lucideSentinel); } catch {}
+    }
+    if (more.hidden || more.disabled) {
+      if (lucideSentinel) { lucideSentinel.remove(); lucideSentinel = null; }
+      return;
+    }
+    // create sentinel at end of results for IntersectionObserver
+    lucideSentinel = document.createElement('div');
+    lucideSentinel.className = 'lucide-sentinel';
+    lucideSentinel.setAttribute('aria-hidden', 'true');
+    lucideSentinel.style.cssText = 'height:1px;width:100%;pointer-events:none;';
+    results.appendChild(lucideSentinel);
+    if (!lucideIO && 'IntersectionObserver' in window) {
+      lucideIO = new IntersectionObserver((entries) => {
+        if (!entries[0].isIntersecting) return;
+        if (more.hidden || more.disabled) return;
+        // throttle via rAF to avoid double-fire with scroll handler
+        if (scrollRaf) return;
+        scrollRaf = requestAnimationFrame(() => {
+          scrollRaf = null;
+          if (more.hidden || more.disabled) return;
+          const top = results.scrollTop;
+          state.limit += 36;
+          render();
+          // restore scrollTop so user stays near bottom, new items appear below
+          results.scrollTop = top;
+        });
+      }, { root: results, rootMargin: '120px', threshold: 0 });
+    }
+    if (lucideIO && lucideSentinel) lucideIO.observe(lucideSentinel);
+  }
+
+  // Scroll fallback (for browsers without IO or for fast scroll)
+  results.addEventListener('scroll', () => {
+    if (scrollRaf) return;
+    scrollRaf = requestAnimationFrame(() => {
+      scrollRaf = null;
+      if (more.hidden || more.disabled) return;
+      const threshold = 96;
+      const nearBottom = results.scrollTop + results.clientHeight >= results.scrollHeight - threshold;
+      if (nearBottom) {
+        const top = results.scrollTop;
+        state.limit += 36;
+        render();
+        results.scrollTop = top;
+      }
+    });
+  }, { passive: true });
+
+  // patch render to re-attach sentinel after each render
+  const _origRender = render;
+  render = function() {
+    // unobserve previous sentinel before clearing results
+    if (lucideSentinel && lucideIO) {
+      try { lucideIO.unobserve(lucideSentinel); } catch {}
+      lucideSentinel = null;
+    }
+    _origRender();
+    ensureSentinel();
+  };
+
+  if (downloadSelectedIconsBtn) {
+    downloadSelectedIconsBtn.addEventListener('click', downloadSelectedIconsDart);
+    // ensure initial disabled state
+    downloadSelectedIconsBtn.disabled = state.animationSet.length === 0;
+  }
   render();
+  // expose for tests
+  window._lucideInfinite = {
+    get limit() { return state.limit; },
+    get resultsEl() { return results; },
+    loadMore() { state.limit += 36; render(); }
+  };
+  window._lucideDownload = {
+    get button() { return downloadSelectedIconsBtn; },
+    toDartIdentifier,
+    escapeDartString,
+    buildSelectedIconsDart,
+    downloadSelectedIconsDart,
+    get selected() { return [...state.animationSet]; }
+  };
 })();
 
 /* ============================================================
@@ -1116,7 +1259,7 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
     spring.config(slow ? 90 : 170, slow ? 20 : 26);
     spring.start();
     playing = true;
-    if (playBtn) { playBtn.textContent = 'Pause'; playBtn.setAttribute('aria-pressed', 'true'); }
+    if (playBtn) setPlayPauseIcon(playBtn, true);
     t = 0;
     if (rafId == null) rafId = requestAnimationFrame(tick);
   }
@@ -1146,7 +1289,7 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
       if (settled) {
         playing = false;
         render(1);
-        if (playBtn) { playBtn.textContent = 'Play'; playBtn.setAttribute('aria-pressed', 'false'); }
+        if (playBtn) setPlayPauseIcon(playBtn, false);
         // auto-advance after hold when visible
         setTimeout(() => {
           if (visible && !document.hidden && !playing) {
@@ -1182,8 +1325,7 @@ final d = serialize(output, plan.items.map((item) => item.closed).toList());`,
 
   if (playBtn) playBtn.addEventListener('click', () => {
     playing = !playing;
-    playBtn.textContent = playing ? 'Pause' : 'Play';
-    playBtn.setAttribute('aria-pressed', String(playing));
+    setPlayPauseIcon(playBtn, playing);
     if (playing) {
       // if at end, restart
       if (t >= 1) { rebuild(currentPair()); }

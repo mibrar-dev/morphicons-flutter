@@ -4,7 +4,7 @@ Morph any icon into any other — `String d` or `IconData` with the same widget,
 
 If a pair is congruent under rotation, it rotates; if not, it morphs. No groups, no keyframes. Zero dependencies.
 
-[![pub.dev](https://img.shields.io/pub/v/morphicons_flutter)](https://pub.dev/packages/morphicons_flutter) [![License: MIT](https://img.shields.io/badge/license-MIT-black.svg)](LICENSE)
+[![pub.dev](https://img.shields.io/pub/v/morphicons_flutter)](https://pub.dev/packages/morphicons_flutter) [![License: MIT](https://img.shields.io/badge/license-MIT-black.svg)](LICENSE) [![Website](https://img.shields.io/badge/website-morphicons--flutter-blue.svg)](https://mibrar-dev.github.io/morphicons-flutter/)
 
 ## Install
 

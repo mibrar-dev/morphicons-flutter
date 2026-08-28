@@ -180,20 +180,20 @@
 
             <div class="picker-browser">
               <div class="picker-head">
-              <div class="lucide-filters" role="group" aria-label="Lucide icon filters">
+              <div class="lucide-filters" role="group" aria-label="Icon library filters">
                 <button class="filter-btn is-active" type="button" data-lucide-filter="all" aria-pressed="true">All</button>
-                <button class="filter-btn" type="button" data-lucide-filter="arrow" aria-pressed="false">Arrows</button>
-                <button class="filter-btn" type="button" data-lucide-filter="shape" aria-pressed="false">Shapes</button>
+                <button class="filter-btn" type="button" data-lucide-filter="lucide" aria-pressed="false">Lucide</button>
+                <button class="filter-btn" type="button" data-lucide-filter="heroicons" aria-pressed="false">Heroicons</button>
+                <button class="filter-btn" type="button" data-lucide-filter="tabler" aria-pressed="false">Tabler</button>
               </div>
               <div style="position:relative; flex:1; min-width:140px;">
                 <input class="lucide-search mono" id="lucideSearch" type="search" placeholder="Search icons" autocomplete="off">
                 <span class="tag tag-blue" id="lucideCount" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); pointer-events:none; font-size:10px; padding:2px 6px;">loading</span>
               </div>
             </div>
-            <div class="lucide-results icon-pane lucide-results--flex" id="lucideResults" role="listbox" aria-label="Lucide icons"></div>
+            <div class="lucide-results icon-pane lucide-results--flex" id="lucideResults" role="listbox" aria-label="Icon library icons"></div>
               <div class="lucide-browser-foot">
                 <span class="hint mono" id="lucideSelected" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Select an icon</span>
-                <button class="btn btn-sm btn-ghost" id="lucideMore" type="button">Load more</button>
               </div>
             </div>
             <p class="hint" style="margin:0">Every icon auto-morphs on load (slow). Toggle to normal. Click to build a sequence.</p>
@@ -482,6 +482,8 @@ key.currentState?.morphTo(Icons.favorite);</code></pre>
 
 <script src="assets/morphicons-core.js"></script>
 <script src="assets/lucide-catalog.js"></script>
+<script src="assets/heroicons-catalog.js"></script>
+<script src="assets/tabler-catalog.js"></script>
 <script src="app.js"></script>
 <script type="module" src="converter.js"></script>
 </body>

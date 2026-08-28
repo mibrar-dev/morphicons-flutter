@@ -4,6 +4,11 @@
 
 const M = window.MorphCore;
 const LUCIDE = window.LucideCatalog || {};
+const LIBRARIES = {
+  lucide: { label: 'Lucide', data: LUCIDE },
+  heroicons: { label: 'Heroicons', data: window.HeroiconsCatalog || {} },
+  tabler: { label: 'Tabler', data: window.TablerCatalog || {} },
+};
 
 /* ---------- floating navigation ---------- */
 (() => {
@@ -44,8 +49,97 @@ const LUCIDE = window.LucideCatalog || {};
   }
 })();
 
+/* Library-qualified icon refs: "lucide:menu", "heroicons:x-mark", "tabler:x".
+   Bare names resolve against Lucide for backwards compatibility. */
+function splitIconRef(ref) {
+  const s = String(ref || '');
+  const i = s.indexOf(':');
+  if (i > 0) {
+    const lib = s.slice(0, i);
+    const name = s.slice(i + 1);
+    return { lib: Object.prototype.hasOwnProperty.call(LIBRARIES, lib) ? lib : '', name };
+  }
+  return { lib: 'lucide', name: s };
+}
+function dForRef(ref, fallback) {
+  const { lib, name } = splitIconRef(ref);
+  const data = lib ? LIBRARIES[lib].data : null;
+  const d = (data && name && data[name]) || '';
+  return d || fallback || '';
+}
+
+/* ---------- morph safety net ----------
+   Any ref — known or not, valid d or not — must always produce a usable
+   plan. Empirically: resampleIcon('') / 'M12 12' yield 0 subpaths and
+   buildPlan then throws "icon has no subpaths"; malformed d throws from the
+   parser. A throw inside the auto-morph loop would kill the rAF chain, so
+   every stage below degrades to a fallback instead of throwing. */
+const FALLBACK_D = 'M0 0M12 2A10 10 0 1 0 12 22A10 10 0 1 0 12 2Z';
+const FALLBACK_PTS = (() => {
+  const pts = new Float64Array(2 * 64);
+  for (let i = 0; i < 64; i++) {
+    const a = (i / 64) * Math.PI * 2;
+    pts[2 * i] = 12 + 9 * Math.cos(a);
+    pts[2 * i + 1] = 12 + 9 * Math.sin(a);
+  }
+  return [{ pts, closed: true }];
+})();
+
+function resolveD(ref) {
+  const e = catalogEntry(ref);
+  return e ? e.d : FALLBACK_D;
+}
+
+function iconLabel(ref) {
+  const e = catalogEntry(ref);
+  return e ? e.name : String(ref ?? '').replace(/^[a-z]+:/i, '');
+}
+
+function catalogEntry(ref) {
+  if (typeof ref !== 'string') return null;
+  const raw = ref.trim();
+  if (!raw) return null;
+  const { lib, name } = splitIconRef(raw);
+  const libs = lib ? [lib] : Object.keys(LIBRARIES);
+  for (const l of libs) {
+    const data = LIBRARIES[l] && LIBRARIES[l].data;
+    if (data && Object.prototype.hasOwnProperty.call(data, name) && typeof data[name] === 'string' && data[name].trim()) {
+      return { ref: `${l}:${name}`, lib: l, name, d: data[name] };
+    }
+  }
+  return null;
+}
+
+const RESAMPLE_CACHE_LIMIT = 512;
+const resampleCache = new Map();
+function safeResample(d) {
+  if (typeof d !== 'string' || !d.trim()) return null;
+  const hit = resampleCache.get(d);
+  if (hit !== undefined) return hit;
+  let out = null;
+  try {
+    const subs = M.resampleIcon(d);
+    out = Array.isArray(subs) && subs.length > 0 && subs.every((s) => s && s.pts && s.pts.length >= 4) ? subs : null;
+  } catch { out = null; }
+  if (resampleCache.size >= RESAMPLE_CACHE_LIMIT) resampleCache.delete(resampleCache.keys().next().value);
+  resampleCache.set(d, out);
+  return out;
+}
+
+function safeBuildPlan(fromD, toD) {
+  const a = safeResample(fromD) || FALLBACK_PTS;
+  const b = safeResample(toD) || FALLBACK_PTS;
+  try {
+    return M.buildPlan(a, b);
+  } catch {
+    // Last resort: identity plan on the fallback icon — a valid plan is
+    // always returned so sequences, springs and the UI never break.
+    try { return M.buildPlan(FALLBACK_PTS, FALLBACK_PTS); } catch { return null; }
+  }
+}
+
 function iconData(name, fallback) {
-  return LUCIDE[name] || fallback;
+  return dForRef(name, fallback);
 }
 
 /* ---------- icon pairs (24x24 stroke data, lucide grammar) ---------- */
@@ -375,21 +469,23 @@ const pg = (() => {
      if (state.animationSet.length >= 2) {
        const from = state.animationSet[state.animationIndex % state.animationSet.length];
        const to = state.animationSet[(state.animationIndex + 1) % state.animationSet.length];
-       return { label: `${from} → ${to}`, from: iconData(from, ''), to: iconData(to, '') };
+       return { label: `${iconLabel(from)} → ${iconLabel(to)}`, from: resolveD(from), to: resolveD(to) };
      }
      return PAIRS[state.pair];
    }
 
     function rebuildPlan() {
       const p = currentPair();
-      if (!p.from || !p.to) return;
+      if (!p || !p.from || !p.to) return;
      title.textContent = p.label;
      // D string hidden to prevent dynamic flow/layout reflow — keep label only
      pairSource.textContent = p.label;
      pairSource.setAttribute('data-d-from', p.from);
      pairSource.setAttribute('data-d-to', p.to);
     const t0 = performance.now();
-    state.plan = M.buildPlan(M.resampleIcon(p.from), M.resampleIcon(p.to));
+    const plan = safeBuildPlan(p.from, p.to);
+    if (!plan) return; // keep the previous plan — never break the loop
+    state.plan = plan;
     const ms = performance.now() - t0;
     state.out = M.allocOutputs(state.plan);
     const st = planStats(state.plan);
@@ -494,25 +590,28 @@ const pg = (() => {
            render(1);
            setPlayPauseIcon(playBtn, false);
            // Auto-morph every icon at start: cycle animationSet if present, otherwise cycle PAIRS slowly
+           // Wrapped so no failure during a transition can ever kill the rAF loop.
            if (canAnimate) {
-             if (state.animationSet.length >= 2) {
-               state.animationIndex = (state.animationIndex + 1) % state.animationSet.length;
-               rebuildPlan();
-               restart();
-             } else {
-               // no set: auto-advance through built-in pairs to show every icon morphing
-               state.pair = (state.pair + 1) % PAIRS.length;
-               // update pairGrid active state
-               const btns = pairGrid.querySelectorAll('.pair-btn');
-               btns.forEach((x, idx) => {
-                 const active = idx === state.pair;
-                 x.classList.toggle('is-active', active);
-                 x.setAttribute('aria-selected', String(active));
-               });
-               rebuildPlan();
-               // small hold before next morph so slow motion is visible
-               setTimeout(() => { if (pgVisible && !document.hidden) restart(); }, isSlow ? 600 : 300);
-             }
+             try {
+               if (state.animationSet.length >= 2) {
+                 state.animationIndex = (state.animationIndex + 1) % state.animationSet.length;
+                 rebuildPlan();
+                 restart();
+               } else {
+                 // no set: auto-advance through built-in pairs to show every icon morphing
+                 state.pair = (state.pair + 1) % PAIRS.length;
+                 // update pairGrid active state
+                 const btns = pairGrid.querySelectorAll('.pair-btn');
+                 btns.forEach((x, idx) => {
+                   const active = idx === state.pair;
+                   x.classList.toggle('is-active', active);
+                   x.setAttribute('aria-selected', String(active));
+                 });
+                 rebuildPlan();
+                 // small hold before next morph so slow motion is visible
+                 setTimeout(() => { if (pgVisible && !document.hidden) restart(); }, isSlow ? 600 : 300);
+               }
+             } catch {}
            }
         }
     }
@@ -677,7 +776,17 @@ const pg = (() => {
    // expose for viewport test
    window._pgSlow = () => slow;
    state.setAnimationSet = (names) => {
-     state.animationSet = Array.isArray(names) ? names.filter((name) => typeof name === 'string' && LUCIDE[name]) : [];
+     // Keep any non-empty string ref (deduped). Unknown or broken refs resolve
+     // to the fallback icon at draw/plan time, so a set never collapses and
+     // the auto-morph sequence never breaks.
+     const seen = new Set();
+     state.animationSet = Array.isArray(names)
+       ? names.filter((name) => {
+           if (typeof name !== 'string' || !name.trim() || seen.has(name)) return false;
+           seen.add(name);
+           return true;
+         })
+       : [];
      state.animationIndex = 0;
      rebuildPlan();
      restart();
@@ -686,8 +795,8 @@ const pg = (() => {
 })();
 
 /* ============================================================
-   LUCIDE BROWSER — search the generated catalog without mounting
-   every icon into the document at once.
+   ICON LIBRARY BROWSER — search the Lucide, Heroicons and Tabler
+   catalogs without mounting every icon into the document at once.
    ============================================================ */
 (() => {
   const results = document.getElementById('lucideResults');
@@ -700,18 +809,39 @@ const pg = (() => {
    const animationSetCount = document.getElementById('animationSetCount');
    const animationSetHint = document.getElementById('animationSetHint');
   const downloadSelectedIconsBtn = document.getElementById('downloadSelectedIcons');
-  const more = document.getElementById('lucideMore');
   const filters = document.querySelectorAll('[data-lucide-filter]');
-  const names = Object.keys(LUCIDE).sort((a, b) => a.localeCompare(b));
-  const shapePattern = /circle|square|triangle|diamond|hexagon|octagon|pentagon|star|heart|badge|box|disc|dot|shapes?/;
+   const entries = [];
+   Object.keys(LIBRARIES).forEach((lib) => {
+     const meta = LIBRARIES[lib];
+     Object.keys(meta.data).forEach((name) => {
+       const d = meta.data[name];
+       // never offer an icon that cannot morph (empty/non-string d)
+       if (typeof d !== 'string' || !d.trim()) return;
+       entries.push({ ref: `${lib}:${name}`, lib, name, d });
+     });
+   });
+  const libOrder = Object.keys(LIBRARIES);
+  entries.sort((a, b) => {
+    const lo = libOrder.indexOf(a.lib) - libOrder.indexOf(b.lib);
+    return lo !== 0 ? lo : a.name.localeCompare(b.name);
+  });
   const DART_KEYWORDS = new Set([
     'assert','break','case','catch','class','const','continue','default','do','else','enum','extends','false','final','finally','for','if','in','is','new','null','rethrow','return','super','switch','this','throw','true','try','var','void','while','with'
   ]);
   function toDartIdentifier(kebab) {
-    const parts = String(kebab).split('-');
-    const first = parts[0] || '';
-    const rest = parts.slice(1).map((p) => (p ? p[0].toUpperCase() + p.slice(1) : ''));
-    let id = first + rest.join('');
+    let body = String(kebab);
+    let prefix = '';
+    const ci = body.indexOf(':');
+    if (ci > 0) {
+      prefix = body.slice(0, ci);
+      body = body.slice(ci + 1);
+    }
+    const camel = body
+      .split('-')
+      .filter((p) => p)
+      .map((p, i) => (i === 0 && !prefix ? p : p[0].toUpperCase() + p.slice(1)))
+      .join('');
+    let id = prefix + camel;
     if (!id || /^[0-9]/.test(id)) {
       id = 'icon' + (id ? id[0].toUpperCase() + id.slice(1) : 'Icon');
     }
@@ -726,10 +856,15 @@ const pg = (() => {
     return String(value).replaceAll('\\', '\\\\').replaceAll('"', '\\"').replaceAll('$', '\\$');
   }
   function buildSelectedIconsDart(names) {
-    const safeNames = Array.isArray(names) ? names.filter((n) => typeof n === 'string' && LUCIDE[n]) : [];
+    const safeNames = Array.isArray(names) ? names.filter((n) => typeof n === 'string' && dForRef(n)) : [];
+    const used = new Set();
     const lines = safeNames.map((name) => {
-      const id = toDartIdentifier(name);
-      const d = LUCIDE[name] || '';
+      const base = toDartIdentifier(name);
+      let id = base;
+      let n = 2;
+      while (used.has(id)) id = base + n++;
+      used.add(id);
+      const d = dForRef(name) || '';
       const escaped = escapeDartString(d);
       return `  static const String ${id} = "${escaped}";`;
     });
@@ -749,9 +884,20 @@ const pg = (() => {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
    const state = { filter: 'all', query: '', limit: 36, selected: '', animationSet: [] };
+   // true once every filtered icon is rendered (nothing left to load)
+   let allVisible = false;
 
    window.setLucideAnimationSet = (names) => {
-     state.animationSet = Array.isArray(names) ? names.filter((name) => LUCIDE[name]) : [];
+     // Keep non-empty string refs (deduped); unknown/broken refs fall back to
+     // the fallback icon when drawn/planned instead of breaking the sequence.
+     const seen = new Set();
+     state.animationSet = Array.isArray(names)
+       ? names.filter((name) => {
+           if (typeof name !== 'string' || !name.trim() || seen.has(name)) return false;
+           seen.add(name);
+           return true;
+         })
+       : [];
      render();
    };
 
@@ -761,8 +907,8 @@ const pg = (() => {
        const item = document.createElement('div');
        item.className = 'animation-set-item';
        item.setAttribute('role', 'listitem');
-       item.title = `${index + 1}. ${name}`;
-       item.appendChild(svgFromD(LUCIDE[name], '#ededed', pg.stroke));
+       item.title = `${index + 1}. ${iconLabel(name)}`;
+       item.appendChild(svgFromD(resolveD(name), '#ededed', pg.stroke));
        const remove = document.createElement('button');
        remove.type = 'button';
        remove.className = 'animation-set-remove';
@@ -781,38 +927,41 @@ const pg = (() => {
      pg.setAnimationSet(state.animationSet);
    }
 
-  function filteredNames() {
-    return names.filter((name) => {
-      if (state.query && !name.includes(state.query)) return false;
-      if (state.filter === 'arrow' && !name.includes('arrow')) return false;
-      if (state.filter === 'shape' && !shapePattern.test(name)) return false;
+  function filteredEntries() {
+    return entries.filter((entry) => {
+      if (state.filter !== 'all' && entry.lib !== state.filter) return false;
+      if (state.query && !entry.name.includes(state.query) && entry.lib !== state.query) return false;
       return true;
     });
   }
 
   function render() {
-    const matches = filteredNames();
+    const matches = filteredEntries();
     const visible = matches.slice(0, state.limit);
     const fragment = document.createDocumentFragment();
     results.replaceChildren();
-    visible.forEach((name) => {
+    visible.forEach((entry) => {
       const button = document.createElement('button');
-       const isSelected = state.animationSet.includes(name);
+       const isSelected = state.animationSet.includes(entry.ref);
       button.type = 'button';
       button.className = `lucide-item${isSelected ? ' is-selected' : ''}`;
       button.setAttribute('role', 'option');
-      button.setAttribute('aria-label', `Select Lucide icon ${name}`);
+      button.setAttribute('aria-label', `Select ${LIBRARIES[entry.lib].label} icon ${entry.name}`);
        button.setAttribute('aria-selected', String(isSelected));
-      button.title = `Lucide: ${name}`;
-       button.appendChild(svgFromD(LUCIDE[name], '#ededed', pg.stroke));
+      button.title = `${LIBRARIES[entry.lib].label}: ${entry.name}`;
+       button.appendChild(svgFromD(entry.d, '#ededed', pg.stroke));
       const label = document.createElement('span');
-      label.textContent = name;
+      label.textContent = entry.name;
       button.appendChild(label);
+      const libTag = document.createElement('span');
+      libTag.className = 'lucide-item-lib';
+      libTag.textContent = LIBRARIES[entry.lib].label;
+      button.appendChild(libTag);
       button.addEventListener('click', () => {
-          state.selected = name;
-          state.animationSet = isSelected ? state.animationSet.filter((item) => item !== name) : [...state.animationSet, name];
+          state.selected = entry.ref;
+          state.animationSet = isSelected ? state.animationSet.filter((item) => item !== entry.ref) : [...state.animationSet, entry.ref];
           // hide D string — show name only to prevent layout reflow
-          selected.textContent = isSelected ? `Removed ${name}` : `Added ${name} · ${state.animationSet.length} in set`;
+          selected.textContent = isSelected ? `Removed ${entry.ref}` : `Added ${entry.ref} · ${state.animationSet.length} in set`;
           render();
        });
       fragment.appendChild(button);
@@ -820,8 +969,7 @@ const pg = (() => {
     results.appendChild(fragment);
      renderAnimationSet();
     count.textContent = `${matches.length} icons`;
-    more.hidden = visible.length >= matches.length;
-    more.disabled = !matches.length;
+    allVisible = visible.length >= matches.length;
   }
 
   search.addEventListener('input', () => {
@@ -841,13 +989,6 @@ const pg = (() => {
       render();
     });
   });
-  more.addEventListener('click', () => {
-    state.limit += 36;
-    const top = results.scrollTop;
-    render();
-    // keep scroll position after manual Load more so view doesn't jump
-    results.scrollTop = top;
-  });
 
   // --- infinite scroll: auto-load when user scrolls near bottom ---
   let scrollRaf = null;
@@ -858,7 +999,7 @@ const pg = (() => {
     if (lucideSentinel && lucideIO) {
       try { lucideIO.unobserve(lucideSentinel); } catch {}
     }
-    if (more.hidden || more.disabled) {
+    if (allVisible) {
       if (lucideSentinel) { lucideSentinel.remove(); lucideSentinel = null; }
       return;
     }
@@ -871,12 +1012,12 @@ const pg = (() => {
     if (!lucideIO && 'IntersectionObserver' in window) {
       lucideIO = new IntersectionObserver((entries) => {
         if (!entries[0].isIntersecting) return;
-        if (more.hidden || more.disabled) return;
+        if (allVisible) return;
         // throttle via rAF to avoid double-fire with scroll handler
         if (scrollRaf) return;
         scrollRaf = requestAnimationFrame(() => {
           scrollRaf = null;
-          if (more.hidden || more.disabled) return;
+          if (allVisible) return;
           const top = results.scrollTop;
           state.limit += 36;
           render();
@@ -893,7 +1034,7 @@ const pg = (() => {
     if (scrollRaf) return;
     scrollRaf = requestAnimationFrame(() => {
       scrollRaf = null;
-      if (more.hidden || more.disabled) return;
+      if (allVisible) return;
       const threshold = 96;
       const nearBottom = results.scrollTop + results.clientHeight >= results.scrollHeight - threshold;
       if (nearBottom) {

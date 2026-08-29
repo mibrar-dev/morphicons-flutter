@@ -1,16 +1,6 @@
 MIT License
 
-Copyright (c) 2026 Infinora
-
-Portions of this software are a faithful port of the morphicons library:
-
-  Copyright (c) Guillermo (https://guillermolg.com)
-  https://github.com/guillermolg00/morphicons
-
-The core algorithm — SVG path normalization, arc-length resampling with corner
-anchoring, subpath correspondence search, 2D closed-form Procrustes alignment,
-polar interpolation with block transport, and the spring integrator — is the
-design and mathematics of the original morphicons project, transcribed to Dart.
+Copyright (c) 2026 mibrar-dev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

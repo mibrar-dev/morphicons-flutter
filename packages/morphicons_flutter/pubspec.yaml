@@ -1,10 +1,8 @@
 name: morphicons_flutter
 description: >-
   Similarity-aware icon morphing: MorphIcon animates between any two stroke
-  or filled icons — raw SVG path data or IconData — with one widget. Closed-form
-  rotation (2D Procrustes), polar interpolation, spring physics. Uncontrolled,
-  controlled and imperative modes, plus MorphMask, MorphCanvas, MorphTween.
-version: 1.0.0
+  or filled icons (SVG path data or IconData) with one widget. Zero dependencies.
+version: 1.0.1
 homepage: https://github.com/mibrar-dev/morphicons-flutter
 repository: https://github.com/mibrar-dev/morphicons-flutter
 issue_tracker: https://github.com/mibrar-dev/morphicons-flutter/issues

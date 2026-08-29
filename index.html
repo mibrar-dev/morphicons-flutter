@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Morphicons — similarity-aware icon morphing for Flutter</title>
+<meta name="description" content="Morphicons for Flutter: morphs stroke icons with a similarity-transform solver. Rotations stay rigid, corners stay sharp, springs feel physical.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="morphicons-mark.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="wordmark" href="#top">
+      <svg class="wordmark-mark" viewBox="0 0 512 512" width="28" height="28" role="img" aria-label="Morphicons mark" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="wordmarkGradient" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4F46E5"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs><rect x="0" y="0" width="512" height="512" rx="112" fill="url(#wordmarkGradient)"/><g fill="none" stroke="#FFFFFF" stroke-width="28" stroke-linecap="round"><line x1="172.8" y1="161.6" x2="339.2" y2="230.4"/><line x1="172.8" y1="350.4" x2="339.2" y2="281.6"/><line x1="206" y1="256" x2="306" y2="256" opacity="0.4"/></g></svg>
+      <span>Morphicons</span>
+      <span class="wordmark-sub">for Flutter</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#playground">Playground</a>
+      <a href="#playground" data-frame-tab-link="converter">Converter</a>
+      <a href="showcase/">Showcase</a>
+      <a href="roadmap/">Roadmap</a>
+      <a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-sm nav-cta" href="https://pub.dev/packages/morphicons_flutter">pub.dev</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu-inner">
+    <p class="mobile-menu-kicker mono">Navigate</p>
+    <nav class="mobile-menu-links" aria-label="Mobile navigation">
+      <a href="#playground">Playground</a>
+      <a href="#playground" data-frame-tab-link="converter">Converter</a>
+      <a href="showcase/">Showcase</a>
+      <a href="roadmap/">Roadmap</a>
+      <a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+    <a class="btn mobile-menu-cta" href="https://pub.dev/packages/morphicons_flutter">View on pub.dev <span class="btn-icon" aria-hidden="true">↗</span></a>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- ============ HERO — short, centered, max-w 720 ============ -->
+<section class="hero">
+  <div class="hero-meta reveal">
+    <span class="tag tag-green">v1.0.0 · MIT</span>
+    <span class="tag tag-blue">0 runtime dependencies</span>
+    <span class="tag tag-yellow">float64 parity</span>
+  </div>
+  <h1 class="hero-title reveal">Morph any Flutter icon<br>into any other.</h1>
+  <p class="hero-sub reveal">Animate Lucide, Tabler, Heroicons or any stroke icon set. Optimal rotation solved in closed form, spring physics, zero dependencies.</p>
+  <div class="hero-cta reveal">
+    <span class="install-chip" id="installChip">
+      <span class="mono install-prompt" aria-hidden="true">$</span>
+      <code class="mono">flutter pub add morphicons_flutter</code>
+      <button class="btn btn-sm btn-ghost install-copy" id="copyInstall" type="button" aria-label="Copy install command">Copy</button>
+    </span>
+  </div>
+</section>
+
+<!-- ============ APP FRAME — single sub-website interface (consolidated) ============ -->
+<section id="playground" class="frame-section">
+  <div class="app-frame reveal">
+    <!-- Window chrome + sub-website header -->
+    <div class="frame-bar">
+      <div class="frame-bar-left">
+        <div class="frame-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+        <span class="mono frame-title">studio.morphicons — flutter</span>
+        <span class="mono frame-subtitle">· single frame · auto-morph slow → normal</span>
+      </div>
+      <div class="frame-bar-right">
+        <label class="toggle-row mono frame-slow-toggle" for="pgSlow" title="Toggle slow (0.5×) vs normal">
+          <input type="checkbox" id="pgSlow" checked>
+          <span>Slow</span>
+          <span class="frame-slow-divider" aria-hidden="true"></span>
+          <span>Normal</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Internal tabs — not scroll labels, but in-frame navigation -->
+    <div class="frame-tabs" role="tablist" aria-label="Studio sections">
+      <button class="frame-tab is-active" type="button" role="tab" aria-selected="true" data-frame-tab="playground">Playground</button>
+      <button class="frame-tab" type="button" role="tab" aria-selected="false" data-frame-tab="converter">Converter</button>
+      <button class="frame-tab" type="button" role="tab" aria-selected="false" data-frame-tab="code">Code</button>
+      <button class="frame-tab" type="button" role="tab" aria-selected="false" data-frame-tab="info">How it works</button>
+    </div>
+
+    <!-- Frame body: all content lives here, no external scroll sections -->
+    <div class="frame-body">
+
+      <!-- ============ PLAYGROUND PANEL ============ -->
+      <div class="frame-panel is-active" data-panel="playground">
+        <div class="studio-grid studio-grid--balanced">
+          <!-- Stage -->
+          <div class="studio-stage">
+            <div class="mesh" aria-hidden="true"></div>
+            <div class="window pg-stage" style="position:relative; z-index:1; width:100%;">
+              <div class="window-bar"><span></span><span></span><span></span><p class="window-title mono" id="pgTitle">menu → x</p></div>
+              <div class="pg-canvas-wrap">
+                <canvas id="pgCanvas" width="640" height="640"></canvas>
+                <div class="pg-compare" id="pgCompareWrap" hidden>
+                  <canvas id="pgCompareCanvas" width="640" height="640"></canvas>
+                  <p class="pg-compare-label mono">naive x/y lerp</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="stage-readout" id="stageReadout">
+              <span id="pairSource" style="display:none" aria-hidden="true"></span>
+              <div class="readout mono" style="width:100%; max-width:340px; margin:0 auto;">
+                <div class="readout-row"><span>rotation θ</span><b id="roTheta">—</b></div>
+                <div class="readout-row"><span>scale σ</span><b id="roSigma">—</b></div>
+                <div class="readout-row"><span>residual</span><b id="roRes">—</b></div>
+                <div class="readout-row"><span>block hybrid</span><b id="roBlock">—</b></div>
+              </div>
+              <canvas id="curveCanvas" width="560" height="150" class="curve" aria-label="Spring progress curve" style="max-width:340px; margin:12px auto 0;"></canvas>
+            </div>
+
+            <div class="pg-scrub" style="width:100%; max-width:360px; position:relative; z-index:1;">
+              <div class="pg-scrub-row">
+                <button class="btn btn-sm btn-icon-only" id="pgPlay" type="button" aria-pressed="true" aria-label="Pause" title="Pause"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg></button>
+                <button class="btn btn-sm btn-ghost btn-icon-only" id="pgReplay" type="button" aria-label="Restart" title="Restart"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg></button>
+                <input type="range" id="pgT" min="0" max="1" step="0.001" value="0" aria-label="Interpolation progress">
+                <span class="mono pg-t-val" id="pgTVal">t = 0.000</span>
+              </div>
+            </div>
+
+            <div class="studio-meta-row" style="position:relative; z-index:1; display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center; width:100%; max-width:360px;">
+              <span class="mono" style="font-size:11px; color:var(--muted)" id="roPlanMs">—</span>
+              <span class="mono" style="font-size:11px; color:var(--muted)" id="roSettle">—</span>
+              <label class="toggle-row" style="margin:0; font-size:11px"><input type="checkbox" id="pgCompare"> <span>Compare naive</span></label>
+            </div>
+            <div class="hero-fromto" id="pgFromTo" style="justify-content:center; position:relative; z-index:1">
+              <canvas id="pgFromCanvas" width="84" height="84" aria-hidden="true"></canvas>
+              <span class="mono" style="color:var(--muted)">→</span>
+              <canvas id="pgToCanvas" width="84" height="84" aria-hidden="true"></canvas>
+            </div>
+          </div>
+
+          <!-- Picker — balanced: quick pairs + sequence on top, then Lucide browser fills remaining height -->
+          <div class="studio-picker studio-picker--balanced">
+            <div class="picker-quick">
+              <div class="picker-quick-head">
+                <p class="card-label" style="margin:0">Quick pairs</p>
+                <span class="mono" style="font-size:11px; color:var(--muted)">tap to preview</span>
+              </div>
+              <div class="pair-grid pair-grid--compact" id="pairGrid" role="listbox" aria-label="Icon pair"></div>
+              <div class="animation-set" aria-labelledby="animationSetLabel" style="position:relative; z-index:1;">
+                <div class="card-label-row">
+                  <p class="card-label" id="animationSetLabel">Animation set</p>
+                  <div style="display:flex; align-items:center; gap:8px;">
+                    <span class="mono" id="animationSetCount">0 icons</span>
+                    <button class="btn btn-sm btn-ghost" id="downloadSelectedIcons" type="button" aria-label="Download selected icons as Dart file" disabled title="Download Dart file">
+                      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="animation-set-strip" id="animationSet" role="list"></div>
+                <p class="hint" id="animationSetHint">Choose two or more icons to make a sequence. Auto-morph cycles slowly.</p>
+              </div>
+            </div>
+
+            <div class="picker-browser">
+              <div class="picker-head">
+              <div class="lucide-filters" role="group" aria-label="Icon library filters">
+                <button class="filter-btn is-active" type="button" data-lucide-filter="all" aria-pressed="true">All</button>
+                <button class="filter-btn" type="button" data-lucide-filter="lucide" aria-pressed="false">Lucide</button>
+                <button class="filter-btn" type="button" data-lucide-filter="heroicons" aria-pressed="false">Heroicons</button>
+                <button class="filter-btn" type="button" data-lucide-filter="tabler" aria-pressed="false">Tabler</button>
+              </div>
+              <div style="position:relative; flex:1; min-width:140px;">
+                <input class="lucide-search mono" id="lucideSearch" type="search" placeholder="Search icons" autocomplete="off">
+                <span class="tag tag-blue" id="lucideCount" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); pointer-events:none; font-size:10px; padding:2px 6px;">loading</span>
+              </div>
+            </div>
+            <div class="lucide-results icon-pane lucide-results--flex" id="lucideResults" role="listbox" aria-label="Icon library icons"></div>
+              <div class="lucide-browser-foot">
+                <span class="hint mono" id="lucideSelected" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">Select an icon</span>
+              </div>
+            </div>
+            <p class="hint" style="margin:0">Every icon auto-morphs on load (slow). Toggle to normal. Click to build a sequence.</p>
+          </div>
+        </div>
+
+        <!-- Config footer — stays inside frame, not external card -->
+        <div class="studio-config">
+          <div class="seg-wrap">
+            <span class="mono" style="font-size:11px; color:var(--muted)">spring</span>
+            <div class="seg" id="presetSeg" role="tablist">
+              <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-preset="smooth">smooth</button>
+              <button class="seg-btn" type="button" role="tab" aria-selected="false" data-preset="snappy">snappy</button>
+              <button class="seg-btn" type="button" role="tab" aria-selected="false" data-preset="bouncy">bouncy</button>
+              <button class="seg-btn" type="button" role="tab" aria-selected="false" data-preset="custom">custom</button>
+            </div>
+          </div>
+          <div class="seg-wrap">
+            <span class="mono" style="font-size:11px; color:var(--muted)">stroke</span>
+            <div class="slider-row" style="margin:0;">
+              <input type="range" id="pgStroke" min="1" max="2.5" step="0.1" value="2" style="width:110px">
+              <span class="mono" id="pgStrokeVal">2.0</span>
+            </div>
+          </div>
+          <div class="slider-row" style="margin:0;">
+            <label for="pgK" class="mono" style="font-size:11px; color:var(--muted)">k</label>
+            <input type="range" id="pgK" min="40" max="600" step="1" value="170" style="width:90px">
+            <span class="mono" id="pgKVal">170</span>
+          </div>
+          <div class="slider-row" style="margin:0;">
+            <label for="pgC" class="mono" style="font-size:11px; color:var(--muted)">c</label>
+            <input type="range" id="pgC" min="4" max="40" step="0.5" value="26" style="width:90px">
+            <span class="mono" id="pgCVal">26</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ CONVERTER PANEL ============ -->
+      <div class="frame-panel" data-panel="converter" hidden>
+        <div class="conv-frame-head">
+          <div>
+            <p class="card-label" style="margin-bottom:4px">SVG → Dart converter</p>
+            <p class="hint" style="margin:0">Drop an SVG or paste markup. Flattens stroke geometry to a morph-ready <span class="mono">d</span> string. Preview morphs automatically (slow).</p>
+          </div>
+          <span class="tag tag-yellow">float64 · no D reflow</span>
+        </div>
+        <div class="conv-grid">
+          <div class="conv-left">
+            <div class="conv-drop" id="convDrop">
+              <label class="mono" for="convInput" style="font-size:11px; color:var(--muted)">SVG markup</label>
+              <textarea id="convInput" class="conv-input mono" placeholder="&lt;svg viewBox=&quot;0 0 24 24&quot;&gt;...&lt;/svg&gt;" rows="10"></textarea>
+              <input type="file" id="convFile" accept=".svg,image/svg+xml" hidden>
+              <div class="conv-drop-hint mono">
+                <span>Drop SVG here or</span>
+                <button type="button" class="btn btn-sm btn-ghost" id="convBrowse" style="height:26px; padding:0 10px; margin-left:6px">Browse</button>
+                <button type="button" class="btn btn-sm" id="convSample" style="height:26px; padding:0 10px; margin-left:6px">Load sample</button>
+              </div>
+              <div class="conv-actions" style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap; align-items:center">
+                <button class="btn btn-sm" id="convRun" type="button">Convert</button>
+                <label class="mono" style="font-size:11px; color:var(--muted); display:flex; align-items:center; gap:6px">as <input id="convName" class="lucide-search mono" value="myIcon" style="width:120px; height:32px"></label>
+                <span class="mono hint" id="convStatus" style="flex:1; min-width:160px; margin:0">Awaiting SVG…</span>
+              </div>
+            </div>
+            <div class="conv-stats mono" style="display:flex; gap:16px; margin-top:14px; font-size:11px; color:var(--muted)">
+              <span>subs <b id="cvSubs" style="color:var(--ink)">—</b></span>
+              <span>pts <b id="cvPts" style="color:var(--ink)">—</b></span>
+              <span>status <b id="cvVerdict" style="color:var(--ink)">—</b></span>
+            </div>
+          </div>
+          <div class="conv-right">
+            <div class="conv-preview-wrap window" style="padding:0; overflow:hidden">
+              <div class="window-bar"><span></span><span></span><span></span><p class="window-title mono">preview · auto-morph</p></div>
+              <div style="display:grid; place-items:center; padding:16px; background:var(--canvas); min-height:220px">
+                <canvas id="convPreview" width="360" height="360" style="width:180px; height:180px; display:block"></canvas>
+              </div>
+            </div>
+            <div class="code-panel" style="margin-top:14px">
+              <div class="code-panel-head">
+                <div class="conv-tabs seg" id="convTabs" role="tablist" aria-label="Converter output" style="border:0; margin:0; display:flex; gap:4px">
+                  <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-out="dart">dart</button>
+                  <button class="seg-btn" type="button" role="tab" aria-selected="false" data-out="map">map</button>
+                  <button class="seg-btn" type="button" role="tab" aria-selected="false" data-out="raw">raw</button>
+                </div>
+                <div style="display:flex; gap:8px; align-items:center">
+                  <button class="btn btn-sm btn-ghost" id="convCopy" type="button">Copy</button>
+                  <button class="btn btn-sm btn-ghost" id="convDownload" type="button">.dart</button>
+                </div>
+              </div>
+              <pre class="code-output" style="max-height:180px"><code id="convOut">// No stroke geometry yet</code></pre>
+            </div>
+            <div class="conv-morph-ctl" style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap">
+              <select id="convMorphTarget" class="lucide-search mono" style="flex:1; min-width:140px" aria-label="Morph target"><option value="">morph to…</option></select>
+              <button class="btn btn-sm" id="convMorphPlay" type="button" disabled>Preview morph</button>
+            </div>
+            <p class="hint" style="margin-top:8px">D strings hidden from layout; use Copy to grab raw. Converter morphs automatically on preview.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ CODE PANEL ============ -->
+      <div class="frame-panel" data-panel="code" hidden>
+        <div class="code-panel">
+          <div class="code-panel-head">
+            <div class="code-tabs" id="codeTabs" role="tablist" aria-label="Dart usage">
+              <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-code-tab="uncontrolled">uncontrolled</button>
+              <button class="seg-btn" type="button" role="tab" aria-selected="false" data-code-tab="controlled">controlled</button>
+              <button class="seg-btn" type="button" role="tab" aria-selected="false" data-code-tab="imperative">imperative</button>
+              <button class="seg-btn" type="button" role="tab" aria-selected="false" data-code-tab="core">core</button>
+            </div>
+            <div class="code-out-head" style="margin:0;">
+              <span class="mono" id="codeLanguage">dart</span>
+              <button class="btn btn-sm btn-ghost" id="copyCode" type="button">Copy</button>
+            </div>
+          </div>
+          <pre class="code-output"><code id="dartCode"></code></pre>
+        </div>
+        <p class="hint" style="margin-top:12px; text-align:center">Swap the pair for any two icons above. No wrappers, no keys, no configuration.</p>
+        <pre hidden><code id="code-panel">MorphIcon(icon: isOpen ? MorphIconsLucide.x : MorphIconsLucide.menu, spring: SpringPreset.snappy)</code></pre>
+        <pre hidden><code id="code-uncontrolled">MorphIcon(icon: isOpen ? MorphIconsLucide.x : MorphIconsLucide.menu)</code></pre>
+        <pre hidden><code id="code-controlled">MorphIcon.controlled(from: MorphIconsLucide.menu, icon: MorphIconsLucide.x, progress: t)</code></pre>
+        <pre hidden><code id="code-mask">MorphMask(icon: MorphIconsLucide.heart, child: DecoratedBox(decoration: BoxDecoration(gradient: LinearGradient(colors: [Color(0xfff857a6), Color(0xffff5858)])), child: SizedBox(width: 220, height: 150)))</code></pre>
+      </div>
+
+      <!-- ============ INFO PANEL (How it works) ============ -->
+      <div class="frame-panel" data-panel="info" hidden>
+        <div class="how-grid">
+          <div>
+            <h2>Six kilobytes of math.</h2>
+            <p>morphicons solves the optimal similarity between two shapes in closed form (2D Procrustes): if a pair is congruent under rotation, it rotates; if not, it morphs in the aligned frame. Nobody declares rotation groups by hand. Springs are interruptible, corners stay sharp at rest, and the core is pure Dart — no <span class="mono">Widget</span>, no <span class="mono">BuildContext</span> — so every Flutter surface is a first-class driver: <span class="mono">Widget</span>, <span class="mono">CustomPainter</span>, charts, games.</p>
+            <p>Icons are consumed as data, not widgets: an <span class="mono">IconData</span> or a raw SVG <span class="mono">d</span> maps to the same 24×24 cubic pipeline, structurally typed. Custom <span class="mono">d</span> just works; font glyphs resolve through the curated table in <span class="mono">icon_data_resolver.dart</span>. Raw paths stay off-layout until you Copy.</p>
+            <a class="btn" href="https://github.com/mibrar-dev/morphicons-flutter#readme" target="_blank" rel="noopener">See the full docs <span class="btn-icon" aria-hidden="true">→</span></a>
+          </div>
+          <dl class="stats-grid">
+            <div><dt class="sr-only">core, gzipped</dt><dd>6.5 KB</dd><p>core, gzipped, everything included</p></div>
+            <div><dt class="sr-only">runtime dependencies</dt><dd>0</dd><p>runtime dependencies</p></div>
+            <div><dt class="sr-only">to plan any morph pair</dt><dd>&lt;1 ms</dd><p>to plan any morph pair</p></div>
+            <div><dt class="sr-only">shared Ticker</dt><dd>1</dd><p>shared Ticker for every icon on screen</p></div>
+          </dl>
+        </div>
+        <div class="compat-pills-wrap">
+          <p>Works with any icon set — stroke or filled, any grid, via <span class="mono">fitIcon</span> + <span class="mono">IconData</span> resolver.</p>
+          <p class="compat-lead hint">Same <span class="mono">MorphIcon</span> for <span class="mono">String d</span> and <span class="mono">IconData</span>. Canonical 24 grid; other grids (20, 16, 32…) fitted once via <span class="mono">fitIcon(raw, "0 0 20 20")</span>. Paste custom SVG as <span class="mono">d</span> — no extra widget. Add any font glyph by extending the resolver table (see <span class="mono">lib/src/icon_data_resolver.dart</span>).</p>
+          <ul class="compat-pills" aria-label="Compatible icon sets for Flutter">
+            <li title="1500+ stroke icons — morphicons_lucide pack, 24×24">Lucide</li>
+            <li title="~4800 outline icons — extract via tool/extract_tabler.mjs, 24×24">Tabler</li>
+            <li title="24 outline + 20/16 solid — tool/extract_heroicons.mjs handles fitted variants">Heroicons</li>
+            <li title="Stroke set on 24 — fitIcon not needed">Iconoir</li>
+            <li title="Phosphor — stroke/fill variants on 256 grid, use fitIcon">Phosphor</li>
+            <li title="Curated Map<int,String> in lib/src/icon_data_resolver.dart — extend via TTF codegen">Material Symbols <span class="compat-pill-meta">IconData</span></li>
+            <li title="CupertinoIcons / cupertino_icons — SF-style, via resolver or custom d">Cupertino <span class="compat-pill-meta">IconData</span></li>
+            <li class="is-generic" title="Any SVG path d — paste or generate, same solver">Any SVG → <span class="mono">String d</span></li>
+            <li class="is-generic" title="Any font — Material, FontAwesome, Iconsax, custom TTF via codePoint">Any <span class="mono">IconData</span></li>
+          </ul>
+          <ul class="compat-pills compat-pills--tight" aria-label="Additional compatible sources">
+            <li class="is-muted" title="Outline set often used with shadcn/ui components, also SVG d">Feather</li>
+            <li class="is-muted">Font Awesome</li>
+            <li class="is-muted">Fluent UI</li>
+            <li class="is-muted">Custom TTF</li>
+          </ul>
+          <p class="compat-note mono">Mixed morphs: <span class="mono">IconData ↔ String d</span> in one widget. Stroke ↔ filled same solver. Grids normalized in aligned frame — no rotation bleed.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <p class="hint mono frame-footnote" style="margin-top:10px; text-align:center; font-size:11px">Frame is one scroll label: playground · converter · code · info live inside. D hidden. Square 6px · dark minimal.</p>
+</section>
+
+<!-- ============ ICONDATA — Flutter IconData live (filled) ============ -->
+<section id="icondata" class="icondata-section">
+  <div class="icondata-inner reveal">
+    <div class="icondata-header">
+      <p class="kicker">Flutter-native · IconData · filled</p>
+      <h2>Morph <code>Icons.home</code> into any other <code>IconData</code>.</h2>
+      <p class="section-sub" style="margin-top:12px; max-width:64ch">Morph any <span class="mono">IconData</span> with the same <span class="mono">MorphIcon</span> widget and solver used for path strings. Filled and stroked icons share one ticker and morph seamlessly — pass an <span class="mono">IconData</span> or a <span class="mono">String d</span> to the same widget.</p>
+    </div>
+
+    <div class="icondata-grid">
+      <!-- Live stage -->
+      <div class="icondata-stage">
+        <div class="window" style="width:100%; position:relative; z-index:1">
+          <div class="window-bar"><span></span><span></span><span></span><p class="window-title mono" id="iconDataTitle">home → favorite · filled</p></div>
+          <div class="icondata-canvas-wrap">
+            <canvas id="iconDataCanvas" width="640" height="640" aria-label="IconData morph canvas"></canvas>
+          </div>
+        </div>
+
+        <div class="icondata-fromto" id="iconDataFromTo" style="display:flex; align-items:center; justify-content:center; gap:12px; margin-top:14px">
+          <canvas id="iconDataFromCanvas" width="84" height="84" aria-hidden="true" style="width:56px; height:56px; border:1px solid var(--hairline); border-radius:6px; background:var(--canvas)"></canvas>
+          <span class="mono" style="color:var(--muted)">→</span>
+          <canvas id="iconDataToCanvas" width="84" height="84" aria-hidden="true" style="width:56px; height:56px; border:1px solid var(--hairline); border-radius:6px; background:var(--canvas)"></canvas>
+        </div>
+
+        <div class="icondata-controls" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap; width:100%; max-width:360px; margin-top:14px">
+          <button class="btn btn-sm btn-icon-only" id="iconDataPlay" type="button" aria-pressed="true" aria-label="Pause" title="Pause"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="4" width="4" height="16" rx="1"></rect><rect x="14" y="4" width="4" height="16" rx="1"></rect></svg></button>
+          <button class="btn btn-sm btn-ghost btn-icon-only" id="iconDataReplay" type="button" aria-label="Restart" title="Restart"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><path d="M3 3v5h5"></path></svg></button>
+          <label class="toggle-row mono" style="font-size:11px; margin:0"><input type="checkbox" id="iconDataSlow"> <span>Slow 0.5×</span></label>
+          <span class="mono" id="iconDataMeta" style="margin-left:auto; font-size:11px; color:var(--muted)">—</span>
+        </div>
+
+        <canvas id="iconDataCurve" width="560" height="120" class="curve" aria-label="IconData spring curve" style="max-width:360px; width:100%; margin-top:10px"></canvas>
+
+        <div class="icondata-pills" role="group" aria-label="Material icon pairs" style="display:flex; flex-wrap:wrap; gap:6px; justify-content:center; margin-top:14px">
+          <button class="filter-btn is-active" type="button" data-icondata-pair="home-favorite" aria-pressed="true">home → favorite</button>
+          <button class="filter-btn" type="button" data-icondata-pair="star-home" aria-pressed="false">star → home</button>
+          <button class="filter-btn" type="button" data-icondata-pair="search-star" aria-pressed="false">search → star</button>
+          <button class="filter-btn" type="button" data-icondata-pair="menu-close" aria-pressed="false">menu → close</button>
+          <button class="filter-btn" type="button" data-icondata-pair="settings-home" aria-pressed="false">settings → home</button>
+          <button class="filter-btn" type="button" data-icondata-pair="home-lucide-x" aria-pressed="false">home ↔ lucide x (mixed)</button>
+        </div>
+
+        <p class="hint" style="margin-top:10px; text-align:center; max-width:36ch">Filled silhouettes morph with the same Procrustes + polar solver. Rapid clicks re-sample the interpolated polyline — no jumps.</p>
+      </div>
+
+      <!-- Code + Flutter live -->
+      <div class="icondata-copy">
+        <div class="code-panel" style="margin:0">
+          <div class="code-panel-head">
+            <span class="mono" style="color:var(--code-mute); font-size:11px">IconData · dart</span>
+            <button class="btn btn-sm btn-ghost" id="copyIconDataCode" type="button">Copy</button>
+          </div>
+          <pre class="code-output" style="margin:0"><code id="iconDataCode">import 'package:flutter/material.dart';
+import 'package:morphicons_flutter/morphicons_flutter.dart';
+
+// Uncontrolled — swap IconData, spring animates
+MorphIcon(
+  icon: isHome ? Icons.home : Icons.favorite,
+  spring: SpringPreset.snappy,
+  size: 48,
+)
+
+// ALSO works: same widget, String d
+MorphIcon(
+  icon: isHome ? MorphIconsLucide.house : MorphIconsLucide.heart,
+)
+
+// Mixed — IconData ↔ String d
+MorphIcon(
+  icon: isHome ? Icons.home : MorphIconsLucide.x,
+)
+
+// Controlled — scrub progress yourself
+MorphIcon.controlled(
+  from: Icons.home,
+  icon: Icons.settings,
+  progress: t,
+)
+
+// Typed factories — static safety
+MorphIcon.font(icon: Icons.home)
+MorphIcon.svg(icon: MorphIconsLucide.house)
+MorphIcon.controlledFont(from: Icons.home, icon: Icons.settings, progress: t)
+
+// Imperative
+final key = GlobalKey&lt;MorphIconState&gt;();
+MorphIcon(key: key, icon: Icons.home);
+key.currentState?.morphTo(Icons.favorite);</code></pre>
+        </div>
+
+        <div class="icondata-flutter-card window" style="margin-top:16px; padding:0; overflow:hidden">
+          <div class="window-bar"><span></span><span></span><span></span><p class="window-title mono">flutter — live IconData</p><a href="flutter/index.html?demo=iconData" target="_blank" rel="noopener" style="margin-left:auto; font-size:11px; text-decoration:none; color:var(--muted)" class="mono">open full ↗</a></div>
+          <div style="background:var(--canvas); padding:0; display:grid; place-items:center">
+            <iframe id="iconDataFlutterFrame" src="flutter/index.html?demo=iconData" title="Flutter IconData live demo" style="width:100%; height:420px; border:0; background:#101010" loading="lazy"></iframe>
+          </div>
+        </div>
+        <p class="hint" style="margin-top:8px">Flutter iframe above uses the real <span class="mono">morphicons_flutter</span> package compiled to web (same <span class="mono">MorphIcon(icon: Icons.home)</span> call).</p>
+
+        <div class="icondata-table mono" style="margin-top:18px; font-size:11px; color:var(--muted); border:1px solid var(--hairline); border-radius:6px; padding:12px 14px; background:var(--canvas)">
+          <p style="color:var(--ink); font-weight:500; margin-bottom:6px">Curated resolver table — <span class="mono">lib/src/icon_data_resolver.dart</span></p>
+          <p>home <span style="color:var(--muted)">0xe318</span> · favorite 0xe25b · star 0xe5f9 · search 0xe567 · settings 0xe57f · menu 0xe3dc · close 0xe16a · check 0xe156</p>
+          <p style="margin-top:6px">Add entries via <span class="mono">tool/generate_font_map.dart</span>-style codegen (TTF → <span class="mono">Map&lt;IconData,String&gt;</span>) — see report §5. Runtime stays sync.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p>Morphicons for Flutter · MIT · <a href="https://github.com/guillermolg00/morphicons">algorithm & design credit · Guillermo / morphicons</a></p>
+    <p class="mono">flutter pub add morphicons_flutter</p>
+  </div>
+</footer>
+
+<script src="assets/morphicons-core.js"></script>
+<script src="assets/lucide-catalog.js"></script>
+<script src="assets/heroicons-catalog.js"></script>
+<script src="assets/tabler-catalog.js"></script>
+<script src="app.js"></script>
+<script type="module" src="converter.js"></script>
+</body>
+</html>

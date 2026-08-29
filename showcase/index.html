@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Showcase — Morphicons for Flutter</title>
+<meta name="description" content="Flutter interaction patterns built with Morphicons. Core showcase with live morphs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="icon" type="image/png" href="../flutter/favicon.png">
+</head>
+<body class="route-page" style="background:#101010;">
+<div class="ambient" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
+<header class="nav"><div class="nav-inner">
+  <a class="wordmark" href="../"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg><span>Morphicons</span><span class="wordmark-sub">for Flutter</span></a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="../">Home</a>
+    <div class="nav-dropdown">
+      <button class="nav-dropdown-trigger" type="button" aria-haspopup="true" aria-expanded="false">Showcase <span class="nav-caret">▾</span></button>
+      <div class="nav-dropdown-menu" role="menu">
+        <a href="./" role="menuitem" class="is-active">Core patterns</a>
+        <a href="mask/" role="menuitem">MorphMask</a>
+        <a href="../roadmap/" role="menuitem">Roadmap</a>
+      </div>
+    </div>
+    <a href="../roadmap/">Roadmap</a>
+    <a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+  <div class="nav-actions">
+    <a class="btn btn-sm nav-cta" href="https://pub.dev/packages/morphicons_flutter">pub.dev</a>
+    <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu"><span class="nav-toggle-line"></span><span class="nav-toggle-line"></span></button>
+  </div>
+</div></header>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true"><div class="mobile-menu-inner"><p class="mobile-menu-kicker mono">Flutter workbench</p><nav class="mobile-menu-links" aria-label="Mobile navigation"><a href="../">Home</a><a href="./">Showcase — Core</a><a href="mask/">MorphMask</a><a href="../roadmap/">Roadmap</a><a href="https://github.com/mibrar-dev/morphicons-flutter" target="_blank" rel="noopener">GitHub</a></nav><a class="btn mobile-menu-cta" href="https://pub.dev/packages/morphicons_flutter">View on pub.dev <span class="btn-icon">↗</span></a></div></div>
+<main>
+  <section class="showcase-hero-section">
+    <div class="showcase-hero-inner">
+      <h1 class="showcase-title">Showcase</h1>
+      <nav class="showcase-main-tabs" aria-label="Showcase sections">
+        <a class="is-active" href="./">Core</a>
+        <a href="mask/">Mask adapter</a>
+        <a href="../roadmap/">Canvas adapter</a>
+      </nav>
+      <p class="showcase-desc">A hardened core for production motion. Flutter-native morphing that keeps state local, geometry explicit and springs physical — from clipboard confirmation to file-tree disclosure. Six everyday interactions where a morph clarifies intent without adding chrome.</p>
+      <div class="showcase-meta-grid">
+        <div class="meta-col">
+          <h3>WHY THIS PATH</h3>
+          <p>Rotation is solved in closed form. If a pair is congruent under a similarity transform it rotates; otherwise it morphs in the aligned frame. No manual rotation groups.</p>
+        </div>
+        <div class="meta-col">
+          <h3>WHAT IT WEIGHS</h3>
+          <p>6.5 kB gzipped core, zero runtime dependencies, one shared Ticker for every icon on screen. Planning any pair costs &lt;1 ms on a mid-range device.</p>
+        </div>
+        <div class="meta-col">
+          <h3>THE TRADEOFF</h3>
+          <p>Stroke is first-class; filled shapes reuse the same polar solver. Corners stay sharp at rest, and masks stay small to avoid an extra save-layer per frame.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="showcase-workbench-section" id="patterns" aria-label="Core patterns workbench">
+    <div class="showcase-workbench">
+      <aside class="showcase-sidebar" aria-label="Showcase controls">
+        <div class="control-group">
+          <p class="control-label">LIBRARY</p>
+          <div class="seg control-seg" role="tablist" aria-label="Library">
+            <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-control="library" data-value="lucide">Lucide</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="library" data-value="heroicons">Heroicons</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="library" data-value="tabler">Tabler</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <p class="control-label">SPRING</p>
+          <div class="seg control-seg" role="tablist" aria-label="Spring preset">
+            <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-control="spring" data-value="smooth">smooth</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="spring" data-value="snappy">snappy</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="spring" data-value="bouncy">bouncy</button>
+          </div>
+        </div>
+        <div class="control-group">
+          <p class="control-label">STROKE</p>
+          <div class="seg control-seg" role="tablist" aria-label="Stroke width">
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="stroke" data-value="1">1</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="stroke" data-value="1.5">1.5</button>
+            <button class="seg-btn is-active" type="button" role="tab" aria-selected="true" data-control="stroke" data-value="2">2</button>
+            <button class="seg-btn" type="button" role="tab" aria-selected="false" data-control="stroke" data-value="2.5">2.5</button>
+          </div>
+        </div>
+        <p class="control-hint">Library switches the catalog — same 6 patterns rendered with Lucide, Heroicons or Tabler strokes on the Flutter 24 grid. Spring and stroke drive every live morph on the right.</p>
+      </aside>
+      <div class="showcase-stage">
+        <div class="pattern-grid">
+          <!-- 1. Copy to clipboard — npm pill with morph inside button -->
+          <article class="card pattern-card demo-card" data-pattern="copy" tabindex="0" role="button" aria-label="Copy to clipboard — tap to show confirmation morph">
+            <div class="demo-card-head">
+              <div>
+                <h3>Copy to clipboard</h3>
+                <p>The most repeated swap: Copy settles into Check.</p>
+              </div>
+              <button type="button" class="demo-card-copy-btn mono" data-copy-npm aria-label="Copy Flutter snippet">Flutter</button>
+            </div>
+            <div class="demo-body demo-body-centered">
+              <div class="demo-npm-pill">
+                <span class="mono demo-npm-text">flutter pub add morphicons_flutter</span>
+                <button id="live-copy-btn" class="demo-icon-btn demo-npm-btn" type="button" aria-label="Copy command" aria-pressed="false">
+                  <canvas id="live-copy" width="64" height="64" aria-hidden="true"></canvas>
+                </button>
+              </div>
+            </div>
+            <span class="mono demo-hint">tap card or icon → check</span>
+          </article>
+
+          <!-- 2. Password visibility — real input with eye morph inside trailing button -->
+          <article class="card pattern-card demo-card" data-pattern="password" tabindex="0" role="button" aria-label="Password visibility — tap to toggle eye morph">
+            <div class="demo-card-head">
+              <div>
+                <h3>Password visibility</h3>
+                <p>Eye to EyeOff on the input's trailing button.</p>
+              </div>
+              <span class="mono demo-card-badge">Input</span>
+            </div>
+            <div class="demo-body demo-body-centered">
+              <div class="demo-field">
+                <input id="live-password-input" class="demo-input" type="password" value="correct-horse-battery" autocomplete="off" spellcheck="false" aria-label="Password">
+                <button id="live-eye-btn" type="button" aria-label="Show password" aria-pressed="false" class="demo-field-btn">
+                  <canvas id="live-eye" width="64" height="64" aria-hidden="true"></canvas>
+                </button>
+              </div>
+            </div>
+            <span class="mono demo-hint">tap card or eye → eye-off</span>
+          </article>
+
+          <!-- 3. Theme toggle — sun/moon in one button -->
+          <article class="card pattern-card demo-card" data-pattern="theme" tabindex="0" role="button" aria-label="Theme toggle — tap to morph sun and moon">
+            <div class="demo-card-head">
+              <div>
+                <h3>Theme toggle</h3>
+                <p>Sun to Moon in one slot — no double SVG.</p>
+              </div>
+              <span class="mono demo-card-badge">Toggle</span>
+            </div>
+            <div class="demo-body demo-body-centered">
+              <button id="live-theme-btn" type="button" aria-label="Toggle theme" aria-pressed="false" class="demo-theme-btn">
+                <canvas id="live-theme" width="64" height="64" aria-hidden="true"></canvas>
+              </button>
+            </div>
+            <span class="mono demo-hint">tap card or icon → moon</span>
+          </article>
+
+          <!-- 4. Player controls — play/pause + mute with progress -->
+          <article class="card pattern-card demo-card" data-pattern="player" tabindex="0" role="button" aria-label="Player controls — tap to toggle play, tap speaker to mute">
+            <div class="demo-card-head">
+              <div>
+                <h3>Player controls</h3>
+                <p>Play and pause, plus mute on the same cluster.</p>
+              </div>
+              <span class="mono demo-card-badge">Audio</span>
+            </div>
+            <div class="demo-body demo-body-centered">
+              <div class="demo-player">
+                <div class="demo-player-head mono"><span>ambient-01.wav</span><span>3:42</span></div>
+                <div class="demo-player-bar"><div class="demo-player-progress"></div></div>
+                <div class="demo-player-controls">
+                  <button id="live-play-btn" type="button" aria-label="Play" class="demo-play-btn">
+                    <canvas id="live-play" width="64" height="64" aria-hidden="true"></canvas>
+                  </button>
+                  <button id="live-mute-btn" type="button" aria-label="Mute" aria-pressed="false" class="demo-mute-btn">
+                    <canvas id="live-mute" width="64" height="64" aria-hidden="true"></canvas>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <span class="mono demo-hint">tap card → play/pause · tap speaker → mute</span>
+          </article>
+
+          <!-- 5. Inline validation — email field with trailing check/x morph -->
+          <article class="card pattern-card demo-card" data-pattern="validation" tabindex="0" role="button" aria-label="Inline validation — type an email to morph check and x">
+            <div class="demo-card-head">
+              <div>
+                <h3>Inline validation</h3>
+                <p>Trailing icon tracks the field: Check when valid, X when not.</p>
+              </div>
+              <span class="mono demo-card-badge">Form</span>
+            </div>
+            <div class="demo-body demo-body-centered">
+              <div class="demo-field">
+                <input id="live-email" class="demo-input" type="email" placeholder="you@example.com" autocomplete="off" spellcheck="false" aria-label="Email">
+                <div class="demo-field-trailing" aria-hidden="true">
+                  <canvas id="live-valid-icon" width="64" height="64" aria-hidden="true" style="display:none; opacity:0;"></canvas>
+                </div>
+              </div>
+            </div>
+            <span class="mono demo-hint">tap card to cycle · type to validate → check/x</span>
+          </article>
+
+          <!-- 6. File tree — folder morph with disclosure chevron (CSS) -->
+          <article class="card pattern-card demo-card" data-pattern="tree" tabindex="0" role="button" aria-label="File tree — tap to disclose folder">
+            <div class="demo-card-head">
+              <div>
+                <h3>File tree</h3>
+                <p>Folders morph open; the disclosure chevron stays CSS.</p>
+              </div>
+              <span class="mono demo-card-badge">Tree</span>
+            </div>
+            <div class="demo-body demo-body-centered">
+              <div class="demo-tree">
+                <button id="live-tree-btn" type="button" aria-expanded="false" class="demo-tree-row">
+                  <span id="live-chevron" class="demo-chevron" aria-hidden="true">›</span>
+                  <canvas id="live-folder" width="64" height="64" aria-hidden="true"></canvas>
+                  <span class="mono demo-tree-label">components</span>
+                </button>
+                <div id="live-tree-files" hidden class="demo-tree-children mono">
+                  <span>button.tsx</span>
+                  <span>input.tsx</span>
+                  <span>toggle.tsx</span>
+                </div>
+                <div class="demo-tree-row static" style="opacity:0.55; cursor:default;">
+                  <span class="demo-chevron" style="visibility:hidden;" aria-hidden="true">›</span>
+                  <span class="demo-folder-static" aria-hidden="true" style="width:18px; height:18px; display:grid; place-items:center; font-size:12px; color:#737373;">◻</span>
+                  <span class="mono demo-tree-label">lib</span>
+                </div>
+              </div>
+            </div>
+            <span class="mono demo-hint">tap card or folder → open/close</span>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-alt"><div class="section-head"><p class="kicker">Dart usage</p><h2>Copy the smallest useful example.</h2></div><div class="doc-block code-card"><div class="code-out-head"><span class="mono">core_patterns.dart</span><button class="btn btn-sm btn-ghost" data-copy-target="core-code">Copy</button></div><pre><code id="core-code">import 'package:flutter/material.dart';
+import 'package:morphicons_lucide/morphicons_lucide.dart';
+import 'package:morphicons_flutter/morphicons_flutter.dart';
+class CopyButton extends StatefulWidget {
+  const CopyButton({super.key});
+  @override
+  State&lt;CopyButton&gt; createState() =&gt; _CopyButtonState();
+}
+class _CopyButtonState extends State&lt;CopyButton&gt; {
+  var copied = false;
+  @override
+  Widget build(BuildContext context) =&gt; IconButton(
+    onPressed: () =&gt; setState(() =&gt; copied = true),
+    icon: MorphIcon(icon: copied ? MorphIconsLucide.check : MorphIconsLucide.copy),
+    tooltip: copied ? 'Copied' : 'Copy',
+  );
+}</code></pre></div></section>
+</main>
+<footer class="footer"><div class="footer-inner"><p>Morphicons for Flutter · MIT · <a href="../">Back to the workbench</a></p><p class="mono"><a href="mask/">MorphMask</a> · <a href="../roadmap/">Roadmap</a></p></div></footer>
+<script src="../assets/morphicons-core.js"></script>
+<script src="../assets/lucide-catalog.js"></script>
+<script src="../assets/heroicons-catalog.js"></script>
+<script src="../assets/tabler-catalog.js"></script>
+<script src="../showcase.js"></script>
+<script src="../showcase-live.js"></script>
+<script>
+(() => {
+  const sidebar = document.querySelector('.showcase-sidebar');
+  if (!sidebar) return;
+  sidebar.querySelectorAll('.control-seg').forEach(seg => {
+    seg.querySelectorAll('.seg-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        seg.querySelectorAll('.seg-btn').forEach(b => {
+          const isActive = b === btn;
+          b.classList.toggle('is-active', isActive);
+          b.setAttribute('aria-selected', String(isActive));
+        });
+        const control = btn.dataset.control;
+        const value = btn.dataset.value;
+        if (control === 'spring' || control === 'stroke' || control === 'library') {
+          window.dispatchEvent(new CustomEvent('showcase:control', { detail: { control, value } }));
+        }
+      });
+    });
+  });
+})();
+</script>
+</body></html>

@@ -12,7 +12,7 @@ library;
 import 'dart:typed_data';
 
 import 'package:flutter/rendering.dart';
-import 'package:morphicons_core/morphicons_core.dart';
+import 'core/morphicons_core.dart';
 
 /// CustomPainter for rendering a morph plan at progress t.
 ///

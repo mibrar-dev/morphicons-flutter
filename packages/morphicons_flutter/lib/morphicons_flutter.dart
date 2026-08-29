@@ -1,9 +1,8 @@
-/// Flutter binding for Morphicons: `MorphIcon` widget, shared ticker
-/// scheduler and `CustomPainter` paint driver on top of the pure-Dart
-/// `morphicons_core` solver.
+/// Morphicons for Flutter: `MorphIcon` widget, shared ticker scheduler and
+/// `CustomPainter` paint driver on top of the vendored pure-Dart solver.
 library;
 
-export 'package:morphicons_core/morphicons_core.dart'
+export 'src/core/morphicons_core.dart'
     show Spring, SpringPreset, springSettled, planBetween, buildPlan, MorphPlan;
 
 export 'src/morph_icon.dart';

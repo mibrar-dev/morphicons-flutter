@@ -16,7 +16,7 @@
 /// it works in pure-Dart contexts.
 library;
 
-import 'package:morphicons_core/morphicons_core.dart';
+import 'core/morphicons_core.dart';
 
 import 'morph_render.dart';
 

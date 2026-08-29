@@ -12,7 +12,7 @@ import 'dart:typed_data';
 
 import 'dart:ui';
 
-import 'package:morphicons_core/morphicons_core.dart';
+import 'core/morphicons_core.dart';
 
 /// Immutable, pre-allocated render state for a from → to icon pair.
 ///

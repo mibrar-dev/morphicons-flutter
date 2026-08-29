@@ -22,7 +22,7 @@ library;
 import 'dart:typed_data';
 
 import 'package:flutter/widgets.dart';
-import 'package:morphicons_core/morphicons_core.dart';
+import 'core/morphicons_core.dart';
 
 import 'icon_data_resolver.dart';
 import 'morph_painter.dart';

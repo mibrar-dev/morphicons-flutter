@@ -4,7 +4,7 @@ library;
 import 'dart:math' as math;
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:morphicons_core/morphicons_core.dart';
+import 'core/morphicons_core.dart';
 
 import 'morph_render.dart';
 import 'morph_scheduler.dart';

@@ -678,10 +678,10 @@ input[type="range"]::-webkit-slider-thumb:active { transform: scale(1.15); }
 .lucide-browser-foot .btn[hidden] { display: none; }
 .animation-set { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); }
 .animation-set .card-label-row { margin-bottom: 8px; }
-.animation-set-strip { display: flex; gap: 7px; min-height: 50px; overflow-x: auto; padding: 2px 1px 5px; }
-.animation-set-item { position: relative; flex: 0 0 50px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 6px; background: var(--surface-2); color: var(--ink); }
-.animation-set-item svg { width: 25px; height: 25px; }
-.animation-set-remove { position: absolute; top: -7px; right: -7px; width: 18px; height: 18px; border: 1px solid var(--line); border-radius: 50%; background: #171717; color: var(--muted); cursor: pointer; font: 12px/15px var(--mono); }
+.animation-set-strip { display: flex; flex-wrap: wrap; gap: 9px; min-height: 72px; overflow-x: auto; padding: 10px 10px 8px; }
+.animation-set-item { position: relative; flex: 0 0 72px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 6px; background: var(--surface-2); color: var(--ink); }
+.animation-set-item svg { width: 36px; height: 36px; }
+.animation-set-remove { position: absolute; top: -9px; right: -9px; width: 22px; height: 22px; border: 1px solid var(--line); border-radius: 50%; background: #171717; color: var(--muted); cursor: pointer; font: 13px/19px var(--mono); }
 .animation-set-remove:hover, .animation-set-remove:focus-visible { background: #fff; color: #0a0a0a; border-color: #fff; }
 #downloadSelectedIcons { width:28px; height:28px; padding:0; display:grid; place-items:center; border-radius:6px; }
 #downloadSelectedIcons svg { width:14px; height:14px; display:block; }

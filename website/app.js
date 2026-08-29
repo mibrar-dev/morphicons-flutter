@@ -209,14 +209,15 @@ function createMorphButton(btn, fromD, toD) {
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     M.interpPolar(plan, Math.min(1, Math.max(0, value)), out);
-    for (const pts of out) {
+    for (let k = 0; k < out.length; k++) {
+      const pts = out[k];
       if (typeof pts === 'string') continue;
       const n = pts.length / 2;
       if (n < 2) continue;
       ctx.beginPath();
       ctx.moveTo(pts[0] * s, pts[1] * s);
       for (let i = 1; i < n; i++) ctx.lineTo(pts[2 * i] * s, pts[2 * i + 1] * s);
-      ctx.closePath();
+      // play/pause are open strokes — never close
       ctx.stroke();
     }
   }
@@ -270,7 +271,7 @@ function fitCanvas(canvas) {
   return { ctx, w, h, dpr };
 }
 
-function drawSubs(ctx, w, h, subs, color, lineWidthPx) {
+function drawSubs(ctx, w, h, subs, color, lineWidthPx, closed) {
   ctx.clearRect(0, 0, w, h);
   const pad = 0.10;
   const s = (Math.min(w, h) / 24) * (1 - 2 * pad);
@@ -280,13 +281,17 @@ function drawSubs(ctx, w, h, subs, color, lineWidthPx) {
   ctx.lineWidth = lineWidthPx;
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
-  for (const pts of subs) {
+  for (let k = 0; k < subs.length; k++) {
+    const pts = subs[k];
     if (typeof pts === 'string') continue;
     const n = pts.length / 2;
     if (n < 2) continue;
     ctx.beginPath();
     ctx.moveTo(ox + pts[0] * s, oy + pts[1] * s);
     for (let i = 1; i < n; i++) ctx.lineTo(ox + pts[2 * i] * s, oy + pts[2 * i + 1] * s);
+    // closed subpaths (closed=true in the plan) must connect the last resampled
+    // point back to the first — otherwise the final perimeter segment is a gap.
+    if (closed && closed[k]) ctx.closePath();
     ctx.stroke();
   }
 }
@@ -296,7 +301,7 @@ function svgFromD(d, stroke, strokeWidth) {
   const svg = document.createElementNS(NS, 'svg');
   svg.setAttribute('viewBox', '0 0 24 24');
   svg.setAttribute('fill', 'none');
-  svg.setAttribute('stroke', stroke || '#ededed');
+  svg.setAttribute('stroke', stroke || 'currentColor');
   svg.setAttribute('stroke-width', String(strokeWidth ?? 2));
   svg.setAttribute('stroke-linecap', 'round');
   svg.setAttribute('stroke-linejoin', 'round');
@@ -387,6 +392,7 @@ const hero = (() => {
   const heroSection = canvas.closest('.hero') || canvas.parentElement;
   let idx = 0;
   let plan = null, out = null;
+  let planClosed = null;
   const spring = new M.Spring();
   let phase = 'morph'; // morph -> hold -> next
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -403,7 +409,7 @@ const hero = (() => {
       const soloPlan = M.buildPlan(M.resampleIcon(d), M.resampleIcon(d));
       const soloOut = M.allocOutputs(soloPlan);
       M.interpPolar(soloPlan, 1, soloOut);
-      drawSubs(fit.ctx, fit.w, fit.h, soloOut, '#7d7d7d', 1.6 * (fit.w / 112) * 0.9);
+      drawSubs(fit.ctx, fit.w, fit.h, soloOut, '#7d7d7d', 1.6 * (fit.w / 112) * 0.9, soloPlan.items.map((it) => !!it.closed));
     } catch {}
   }
 
@@ -412,6 +418,7 @@ const hero = (() => {
     const t0 = performance.now();
     plan = M.buildPlan(M.resampleIcon(p.from), M.resampleIcon(p.to));
     out = M.allocOutputs(plan);
+    planClosed = plan.items.map((it) => !!it.closed);
     spring.config(slow ? 90 : 170, slow ? 20 : 26);
     spring.start();
     phase = 'morph';
@@ -440,16 +447,16 @@ const hero = (() => {
       const { ctx, w, h } = fit;
       if (reducedMotion) {
         M.interpPolar(plan, 1, out);
-        drawSubs(ctx, w, h, out, '#ededed', 2 * (w / 240) * 0.9);
+        drawSubs(ctx, w, h, out, '#ededed', 2 * (w / 240) * 0.9, planClosed);
       } else if (phase === 'morph') {
         const dt = slow ? 1/120 : 1/60; // slow motion halves speed
         const settled = spring.step(dt);
         M.interpPolar(plan, Math.min(spring.x, 1), out);
-        drawSubs(ctx, w, h, out, '#ededed', 2 * (w / 240) * 0.9);
+        drawSubs(ctx, w, h, out, '#ededed', 2 * (w / 240) * 0.9, planClosed);
         if (settled) { phase = 'hold'; holdUntil = performance.now() + (slow ? 2200 : 1400); }
       } else if (phase === 'hold') {
         M.interpPolar(plan, 1, out);
-        drawSubs(ctx, w, h, out, '#ededed', 2 * (w / 240) * 0.9);
+        drawSubs(ctx, w, h, out, '#ededed', 2 * (w / 240) * 0.9, planClosed);
         if (performance.now() > holdUntil) {
           idx = (idx + 1) % PAIRS.length;
           loadPair(idx);
@@ -539,7 +546,7 @@ const pg = (() => {
      b.setAttribute('aria-selected', String(i === 0));
      b.setAttribute('aria-label', `Use icon pair ${p.label}`);
      b.title = p.label;
-     b.appendChild(svgFromD(p.to, '#ededed', state.stroke));
+     b.appendChild(svgFromD(p.to, 'currentColor', state.stroke));
     const lbl = document.createElement('span');
     lbl.textContent = p.label;
     b.appendChild(lbl);
@@ -567,7 +574,7 @@ const pg = (() => {
      return PAIRS[state.pair];
    }
 
-    function rebuildPlan() {
+    function rebuildPlan(fromD) {
       const p = currentPair();
       if (!p || !p.from || !p.to) return;
      title.textContent = p.label;
@@ -576,7 +583,10 @@ const pg = (() => {
      pairSource.setAttribute('data-d-from', p.from);
      pairSource.setAttribute('data-d-to', p.to);
     const t0 = performance.now();
-    const plan = safeBuildPlan(p.from, p.to);
+    // fromD (optional): d-string snapshot of the shape currently on screen.
+    // Used when the sequence is retargeted (icon picked/removed) so the new
+    // plan starts from exactly what the eye sees — a continuous morph, no snap.
+    const plan = safeBuildPlan(typeof fromD === 'string' && fromD.trim() ? fromD : p.from, p.to);
     if (!plan) return; // keep the previous plan — never break the loop
     state.plan = plan;
     const ms = performance.now() - t0;
@@ -618,14 +628,14 @@ const pg = (() => {
     const fit = fitCanvas(canvas);
     if (fit && state.plan) {
       M.interpPolar(state.plan, t, state.out);
-       drawSubs(fit.ctx, fit.w, fit.h, state.out, '#ededed', state.stroke * (fit.w / 320) * 0.9);
+       drawSubs(fit.ctx, fit.w, fit.h, state.out, '#ededed', state.stroke * (fit.w / 320) * 0.9, state.plan.items.map((it) => !!it.closed));
     }
     if (!cmpWrap.hidden) {
       const fit2 = fitCanvas(cmpCanvas);
       if (fit2 && state.plan) {
         const outL = M.allocOutputs(state.plan);
         M.interpLinear(state.plan, t, outL);
-         drawSubs(fit2.ctx, fit2.w, fit2.h, outL, '#9F2F2D', state.stroke * (fit2.w / 320) * 0.9);
+         drawSubs(fit2.ctx, fit2.w, fit2.h, outL, '#9F2F2D', state.stroke * (fit2.w / 320) * 0.9, state.plan.items.map((it) => !!it.closed));
       }
     }
     tSlider.value = t;
@@ -818,7 +828,7 @@ const pg = (() => {
        const soloPlan = M.buildPlan(M.resampleIcon(d), M.resampleIcon(d));
        const soloOut = M.allocOutputs(soloPlan);
        M.interpPolar(soloPlan, 1, soloOut);
-       drawSubs(fit.ctx, fit.w, fit.h, soloOut, color, 1.6 * (fit.w / 84) * 0.9);
+       drawSubs(fit.ctx, fit.w, fit.h, soloOut, color, 1.6 * (fit.w / 84) * 0.9, soloPlan.items.map((it) => !!it.closed));
      } catch {}
    }
 
@@ -842,7 +852,7 @@ const pg = (() => {
        const fit = fitCanvas(canvasEl);
        if (!fit || !plan || !out) return;
        M.interpPolar(plan, Math.min(1, Math.max(0, t)), out);
-       drawSubs(fit.ctx, fit.w, fit.h, out, '#6b6b6b', 1.6 * (fit.w / 84) * 0.9);
+       drawSubs(fit.ctx, fit.w, fit.h, out, '#6b6b6b', 1.6 * (fit.w / 84) * 0.9, plan.items.map((it) => !!it.closed));
      }
      function frame() {
        rafId = null;
@@ -924,11 +934,11 @@ const pg = (() => {
        }
      });
    }
-   const origRebuild = rebuildPlan;
-   rebuildPlan = function() {
-     origRebuild();
-     drawFromToPG();
-   };
+    const origRebuild = rebuildPlan;
+    rebuildPlan = function(...args) {
+      origRebuild(...args);
+      drawFromToPG();
+    };
 
    window.addEventListener('resize', () => { render(Math.min(state.t, 1)); if (slow) drawFromToPG(); });
 
@@ -937,22 +947,57 @@ const pg = (() => {
    requestAnimationFrame(tick);
    // expose for viewport test
    window._pgSlow = () => slow;
-   state.setAnimationSet = (names) => {
-     // Keep any non-empty string ref (deduped). Unknown or broken refs resolve
-     // to the fallback icon at draw/plan time, so a set never collapses and
-     // the auto-morph sequence never breaks.
-     const seen = new Set();
-     state.animationSet = Array.isArray(names)
-       ? names.filter((name) => {
-           if (typeof name !== 'string' || !name.trim() || seen.has(name)) return false;
-           seen.add(name);
-           return true;
-         })
-       : [];
-     state.animationIndex = 0;
-     rebuildPlan();
-     restart();
-   };
+    // Snapshot whatever the stage is showing right now (mid-flight spring
+    // interpolation included) as a d-string. Rebuilding a plan from it makes
+    // any retarget a continuous morph — the spring restarts from the on-screen
+    // shape, so the flight keeps going whether the stage was idle or playing.
+    function snapshotDisplayedD() {
+      try {
+        if (state.plan && state.out) {
+          return M.serialize(state.out, state.plan.items.map((it) => !!it.closed));
+        }
+      } catch {}
+      return null;
+    }
+    state.setAnimationSet = (names, focusIndex) => {
+      // Keep any non-empty string ref (deduped). Unknown or broken refs resolve
+      // to the fallback icon at draw/plan time, so a set never collapses and
+      // the auto-morph sequence never breaks.
+      const seen = new Set();
+      const next = Array.isArray(names)
+        ? names.filter((name) => {
+            if (typeof name !== 'string' || !name.trim() || seen.has(name)) return false;
+            seen.add(name);
+            return true;
+          })
+        : [];
+      const unchanged = next.length === state.animationSet.length
+        && next.every((name, i) => name === state.animationSet[i]);
+      state.animationSet = next;
+      if (unchanged && typeof focusIndex !== 'number') return; // no-op: keep the stage as-is
+      const len = state.animationSet.length;
+      if (len < 2) {
+        // below sequence size — fall back to the built-in pair cycle
+        state.animationIndex = 0;
+        rebuildPlan();
+        restart();
+        return;
+      }
+      // Never reset the sequence to 0 on selection — advance in place.
+      if (typeof focusIndex === 'number' && Number.isFinite(focusIndex)) {
+        // Icon just picked in the browser: morph the stage directly onto it.
+        // The plan that LANDS on set[focusIndex] starts one slot back; once it
+        // settles the auto-advance steps to focusIndex and the sequence keeps
+        // cycling from the selected icon.
+        state.animationIndex = ((focusIndex - 1) % len + len) % len;
+      } else {
+        // Set content changed (e.g. icon removed): clamp, keep cycling.
+        state.animationIndex = ((state.animationIndex % len) + len) % len;
+      }
+      const snap = snapshotDisplayedD();
+      rebuildPlan(snap || undefined);
+      restart();
+    };
    return state;
 })();
 
@@ -1063,14 +1108,14 @@ const pg = (() => {
      render();
    };
 
-   function renderAnimationSet() {
+   function renderAnimationSet(focusRef) {
      animationSet.replaceChildren();
      state.animationSet.forEach((name, index) => {
        const item = document.createElement('div');
        item.className = 'animation-set-item';
        item.setAttribute('role', 'listitem');
        item.title = `${index + 1}. ${iconLabel(name)}`;
-       item.appendChild(svgFromD(resolveD(name), '#ededed', pg.stroke));
+       item.appendChild(svgFromD(resolveD(name), 'currentColor', pg.stroke));
        const remove = document.createElement('button');
        remove.type = 'button';
        remove.className = 'animation-set-remove';
@@ -1086,7 +1131,9 @@ const pg = (() => {
      animationSetCount.textContent = `${state.animationSet.length} icon${state.animationSet.length === 1 ? '' : 's'}`;
      animationSetHint.textContent = state.animationSet.length < 2 ? 'Choose two or more icons to make a sequence.' : 'Stage advance cycles current → next through this set.';
      if (downloadSelectedIconsBtn) downloadSelectedIconsBtn.disabled = state.animationSet.length === 0;
-     pg.setAnimationSet(state.animationSet);
+     // focusRef: ref just added via the browser — the stage morphs onto it
+     const fi = typeof focusRef === 'string' ? state.animationSet.indexOf(focusRef) : -1;
+     pg.setAnimationSet(state.animationSet, fi >= 0 ? fi : undefined);
    }
 
   function filteredEntries() {
@@ -1106,7 +1153,7 @@ const pg = (() => {
     button.setAttribute('aria-label', `Select ${LIBRARIES[entry.lib].label} icon ${entry.name}`);
     button.setAttribute('aria-selected', String(state.animationSet.includes(entry.ref)));
     button.title = `${LIBRARIES[entry.lib].label}: ${entry.name}`;
-    button.appendChild(svgFromD(entry.d, '#ededed', pg.stroke));
+    button.appendChild(svgFromD(entry.d, 'currentColor', pg.stroke));
     const label = document.createElement('span');
     label.textContent = entry.name;
     button.appendChild(label);
@@ -1128,7 +1175,9 @@ const pg = (() => {
       const on = !wasSelected;
       button.classList.toggle('is-selected', on);
       button.setAttribute('aria-selected', String(on));
-      renderAnimationSet();
+      // adding an icon retargets the stage at it (smooth morph, no reset to
+      // index 0); removing just updates the set and keeps cycling in place
+      renderAnimationSet(on ? entry.ref : undefined);
     });
     return button;
   }

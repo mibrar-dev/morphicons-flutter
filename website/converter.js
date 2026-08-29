@@ -115,7 +115,7 @@ function mountConverter(config) {
     ctx.restore();
   }
 
-  function drawSubsOnPreview(subs, color, viewBox) {
+  function drawSubsOnPreview(subs, color, viewBox, closedFlags) {
     const rect = preview.getBoundingClientRect();
     const dpr = Math.min(window.devicePixelRatio || 1, 2);
     preview.width = Math.max(1, Math.round(rect.width * dpr));
@@ -142,12 +142,14 @@ function mountConverter(config) {
     ctx.lineWidth = 2 * (preview.width / 480) * (maxDim / 24);
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
-    for (const pts of subs) {
+    for (let k = 0; k < subs.length; k++) {
+      const pts = subs[k];
       const n = pts.length / 2;
       if (n < 2) continue;
       ctx.beginPath();
       ctx.moveTo(ox + pts[0] * scale, oy + pts[1] * scale);
       for (let i = 1; i < n; i++) ctx.lineTo(ox + pts[2 * i] * scale, oy + pts[2 * i + 1] * scale);
+      if (closedFlags && closedFlags[k]) ctx.closePath();
       ctx.stroke();
     }
   }
@@ -344,6 +346,7 @@ function mountConverter(config) {
         return;
       }
       const out = M.allocOutputs(plan);
+      const closedFlags = plan.items.map((it) => !!it.closed);
       const spring = new M.Spring();
       spring.config(170, 26);
       spring.start();
@@ -354,7 +357,7 @@ function mountConverter(config) {
         }
         const settled = spring.step(1 / 60);
         M.interpPolar(plan, Math.min(spring.x, 1), out);
-        drawSubsOnPreview(out, '#ededed', currentViewBox);
+        drawSubsOnPreview(out, '#ededed', currentViewBox, closedFlags);
         if (!settled) morphAnim = requestAnimationFrame(tick);
         else morphAnim = null;
       };
